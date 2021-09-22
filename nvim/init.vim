@@ -24,7 +24,6 @@ source $HOME/.config/nvim/plug-config/git.vim
 source $HOME/.config/nvim/plug-config/remaps.vim
 source $HOME/.config/nvim/plug-config/sets.vim
 source $HOME/.config/nvim/plug-config/nvimtree-config.vim
-source $HOME/.config/nvim/plug-config/worktree-config.vim
 
 " lua require('stat_lualine')
 " lua require('evil_lualine')

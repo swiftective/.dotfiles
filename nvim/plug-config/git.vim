@@ -12,3 +12,11 @@
 
 nnoremap <leader>gm :Gitsigns toggle_current_line_blame<CR>
 
+" branches
+nnoremap <leader>gb :lua require('theprimeagen.telescope').git_branches()<CR>
+
+" worktree 
+nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
+nnoremap <leader>gc :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
+
+
