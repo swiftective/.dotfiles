@@ -11,7 +11,7 @@
 " let g:gitgutter_highlight_linenrs = 1
 
 " search git files
-nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
+nnoremap <leader>gg :lua require('telescope.builtin').git_files()<CR>
 
 
 nnoremap <leader>gm :Gitsigns toggle_current_line_blame<CR>
