@@ -34,6 +34,11 @@ nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
 
+noremap e b
+noremap E B
+
+nnoremap H 5<C-w><
+nnoremap L 5<C-w>>
 
 " folds
 nnoremap zo za
