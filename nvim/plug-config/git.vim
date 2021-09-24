@@ -17,7 +17,7 @@ nnoremap <leader>gg :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>gm :Gitsigns toggle_current_line_blame<CR>
 
 " branches
-nnoremap <leader>gb :lua require('theprimeagen.telescope').git_branches()<CR>
+nnoremap <leader>gb :lua require('telescope.builtin').git_branches()<CR>
 
 " worktree 
 nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
