@@ -1,0 +1,50 @@
+# Inserts a blank line between shell prompts
+
+#add_newline = true
+
+# Make prompt a single line instead of two lines
+[line_break]
+disabled = true
+
+[python]
+disabled = false
+format = "➤ [$symbol($version )]($style)"
+
+[lua]
+disabled = false
+format = "➤ [$symbol($version )]($style)"
+
+[nodejs]
+disabled = false
+format = "➤ [$symbol($version )]($style)"
+
+[ruby]
+disabled = false
+format = "➤ [$symbol($version )]($style)"
+
+[ocaml]
+disabled = false
+format = "➤ [$symbol($version )]($style)"
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[λ](white)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[λ](bold red)"
+vicmd_symbol = "[λ](blue)"
+
+# configure directory
+[directory]
+truncation_length = 10
+truncate_to_repo = false # truncates directory to root folder if in github repo
+home_symbol = "⟰"
+style = "italic #565f90"
+
+[git_branch]
+style="italic bold  yellow"
+
+# docker
+[docker_context]
+symbol = "🐋 "
+disabled = false
+
+
