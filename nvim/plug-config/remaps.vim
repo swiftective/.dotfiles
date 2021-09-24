@@ -42,12 +42,6 @@ nnoremap zo za
 xnoremap Y "+y
 nnoremap Y "+yy
 
-" personal custom
-nnoremap H 0
-nnoremap L $
-vnoremap H 0
-vnoremap L $
-
 " buffers
 nnoremap <leader><Tab> :BufferLineCycleNext<CR>
 nnoremap <leader><leader><Tab> :BufferLineCyclePrev<CR>
