@@ -3,6 +3,7 @@ source $HOME/.config/nvim/plug-config/plug.vim
 
 " Remaps
 inoremap jk <Esc>
+inoremap kj <C-o>
 
 " leader key
 let mapleader = " "
