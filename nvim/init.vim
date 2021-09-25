@@ -9,7 +9,6 @@ let mapleader = " "
 
 let g:undotree_SetFocusWhenToggle=1
 
-source $HOME/.config/nvim/plug-config/color-scheme.vim
 
 source $HOME/.config/nvim/plug-config/indentline.vim
 " source $HOME/.config/nvim/plug-config/statline.vim
@@ -33,9 +32,12 @@ lua require('git-signs')
 lua require('telescope-config')
 " lua require('worktree-config')
 lua require('compe-config')
+lua require('lsp-config')
+lua require('lsp_saga-config')
 
 lua require('lspconfig').pyright.setup{}
 
-lua require'lspconfig'.bashls.setup{}
+lua require('lspconfig').bashls.setup{}
 
 
+source $HOME/.config/nvim/plug-config/color-scheme.vim

@@ -69,6 +69,12 @@ Plug 'honza/vim-snippets'
 " lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'folke/lsp-colors.nvim'
+Plug 'folke/trouble.nvim'
+
+
+
 
 " terminal
 " Plug 'voldikss/vim-floaterm'
