@@ -3,7 +3,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Color scheme 
-" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chriskempson/base16-vim'
 " Plug 'yashguptaz/calvera-dark.nvim'
 " Plug 'mhartington/oceanic-next'
