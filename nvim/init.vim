@@ -25,8 +25,8 @@ source $HOME/.config/nvim/plug-config/sets.vim
 source $HOME/.config/nvim/plug-config/nvimtree-config.vim
 source $HOME/.config/nvim/plug-config/lsp-pref.vim
 
-lua require('stat_lualine')
-" lua require('evil_lualine')
+" lua require('stat_lualine')
+lua require('evil_lualine')
 " lua require('stat_galaxyline')
 lua require('git-signs')
 lua require('telescope-config')
