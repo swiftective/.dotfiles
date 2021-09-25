@@ -26,7 +26,7 @@ alias grm='git rm'
 alias gsh='git show'
 alias gs='git status'
 
-alias gstu='gsta --include-untracked'
+alias gstu='git stash --include-untracked'
 alias gstp='git stash pop'
 alias gsw='git switch'
 
