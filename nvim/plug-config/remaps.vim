@@ -65,3 +65,6 @@ xnoremap <S-Tab> <gv
 " nnoremap <leader>ra :%s//gI<Left><Left><Left>
 
 
+" which key
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+

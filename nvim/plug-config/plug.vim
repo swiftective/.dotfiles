@@ -17,6 +17,9 @@ Plug 'chriskempson/base16-vim'
 " git worktree
 Plug 'ThePrimeagen/git-worktree.nvim'
 
+" which key 
+Plug 'liuchengxu/vim-which-key'
+
 
 " statusline
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
