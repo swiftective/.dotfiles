@@ -1,1 +1,3 @@
 # Dotfiles
+
+## Coc config
