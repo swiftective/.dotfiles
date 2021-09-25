@@ -22,9 +22,9 @@ Plug 'liuchengxu/vim-which-key'
 
 
 " statusline
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 " Plug 'famiu/feline.nvim'
-" Plug 'hoob3rt/lualine.nvim'
+Plug 'hoob3rt/lualine.nvim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 
@@ -63,8 +63,12 @@ Plug 'Yggdroot/indentLine'
 " auto complete and other features
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
+
+" lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 
 " terminal
 " Plug 'voldikss/vim-floaterm'

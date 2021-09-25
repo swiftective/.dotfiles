@@ -19,10 +19,6 @@ nnoremap <Leader>w <C-w>
 " nnoremap <Leader>l <C-w>l
 " nnoremap <Leader>h <C-w>h
 
-" coc configs
-nnoremap <leader>n :CocNext<CR>
-nnoremap <leader>p :CocPrev<CR>
-
 nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprev<CR>
 
