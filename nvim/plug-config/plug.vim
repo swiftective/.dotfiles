@@ -18,7 +18,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'ThePrimeagen/git-worktree.nvim'
 
 " which key 
-Plug 'liuchengxu/vim-which-key'
+" Plug 'liuchengxu/vim-which-key'
 
 
 " statusline
