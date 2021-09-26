@@ -1,5 +1,6 @@
-# Dotfiles
-
-## Coc config
+# Dotfiles 
 
 ## NVIM lsp
+
+## COC config
+
