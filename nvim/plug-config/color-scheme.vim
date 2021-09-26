@@ -25,4 +25,4 @@ hi GitSignsAdd guibg=none guifg=#27db57
 hi GitSignsChange guibg=none guifg=#2193de
 hi GitSignsDelete guibg=none guifg=#d10f3f
 hi NvimTreeFolderIcon guifg=#008ae6
-
+hi VertSplit guibg=none guifg=none
