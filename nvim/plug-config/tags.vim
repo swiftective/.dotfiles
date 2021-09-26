@@ -44,9 +44,11 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 
+" autopairs
+let g:AutoPairsFlyMode = 0
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,jsx,tsx,js,xml EmmetInstall
 
-let g:user_emmet_leader_key='<M-e>'
+let g:user_emmet_leader_key='<M-m>'
 

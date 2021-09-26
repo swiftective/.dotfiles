@@ -5,7 +5,7 @@ local lualine = require 'lualine'
 
 -- Color table for highlights
 local colors = {
-  bg = '#202328',
+  bg = 'none',
   fg = '#bbc2cf',
   yellow = '#ECBE7B',
   cyan = '#008080',
@@ -84,19 +84,19 @@ ins_left {
   function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
+      n = colors.blue,
       i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
+      v = colors.violet,
+      [''] = colors.violet,
+      V = colors.violet,
+      c = colors.yellow,
       no = colors.red,
       s = colors.orange,
       S = colors.orange,
       [''] = colors.orange,
       ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
+      R = colors.red,
+      Rv = colors.red,
       cv = colors.red,
       ce = colors.red,
       r = colors.cyan,

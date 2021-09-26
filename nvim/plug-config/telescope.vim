@@ -4,5 +4,6 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>fi :Telescope builtin<CR>
+nnoremap <leader>fo :Telescope lsp_dynamic_workspace_symbols<CR>
 
-
+lua require('telescope-config')

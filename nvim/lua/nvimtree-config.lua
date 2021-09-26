@@ -35,3 +35,4 @@ require'nvim-tree'.setup {
     args = {}
   },
 }
+
