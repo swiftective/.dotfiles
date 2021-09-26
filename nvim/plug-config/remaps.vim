@@ -9,15 +9,10 @@ nnoremap <leader>e :NvimTreeToggle<CR>
 nnoremap <Leader>rc :source $MYVIMRC<CR>
 
 " vim sessions
-nnoremap <Leader>ob :Obsession<CR>
+nnoremap <Leader>o :Telescope lsp_dynamic_workspace_symbols<CR>
 
 " splits
 nnoremap <C-w>m :MaximizerToggle<CR>
-" nnoremap <Leader>wv <C-w>v
-" nnoremap <Leader>j <C-w>j
-" nnoremap <Leader>k <C-w>k
-" nnoremap <Leader>l <C-w>l
-" nnoremap <Leader>h <C-w>h
 
 nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprev<CR>
