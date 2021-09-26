@@ -18,8 +18,8 @@ gl.short_line_list = {
 -- VistaPlugin = extension.vista_nearest
 
 local colors = {
-    bg = '#232323',
-    line_bg = '#232323',
+    bg = 'none',
+    line_bg = 'none',
     fg = 'white',
     fg_green = '#65a380',
 
