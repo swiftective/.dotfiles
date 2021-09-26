@@ -110,6 +110,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 " neoformat
 Plug 'sbdchd/neoformat'
 
+Plug 'szw/vim-maximizer'
+
 " easy motion
 " Plug 'easymotion/vim-easymotion'
 

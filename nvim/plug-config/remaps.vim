@@ -12,7 +12,7 @@ nnoremap <Leader>rc :source $MYVIMRC<CR>
 nnoremap <Leader>ob :Obsession<CR>
 
 " splits
-nnoremap <Leader>w <C-w>
+nnoremap <C-w>m :MaximizerToggle<CR>
 " nnoremap <Leader>wv <C-w>v
 " nnoremap <Leader>j <C-w>j
 " nnoremap <Leader>k <C-w>k
@@ -35,6 +35,11 @@ noremap E B
 
 nnoremap H 5<C-w><
 nnoremap L 5<C-w>>
+
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " folds
 nnoremap zo za

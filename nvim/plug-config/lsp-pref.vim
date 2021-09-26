@@ -15,7 +15,6 @@ let g:neoformat_only_msg_on_error = 1
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gR <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
 " lsp trouble
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
