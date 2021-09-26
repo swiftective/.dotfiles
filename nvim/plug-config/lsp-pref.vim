@@ -4,6 +4,13 @@ lua require('lsp-config')
 lua require('lsp_saga-config')
 lua require('lsp_install')
 
+let g:neoformat_enabled_python = ['autopep8', 'yapf', 'docformatter']
+let g:neoformat_try_node_exe = 1
+let g:neoformat_basic_format_align = 1
+let g:neoformat_basic_format_retab = 1
+let g:neoformat_basic_format_trim = 1
+let g:neoformat_only_msg_on_error = 1
+
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gR <cmd>lua vim.lsp.buf.references()<CR>

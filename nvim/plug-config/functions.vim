@@ -20,6 +20,5 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
-  autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
