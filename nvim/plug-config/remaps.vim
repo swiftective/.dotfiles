@@ -1,12 +1,12 @@
 
-" coc explorer 
+" coc explorer
 " nnoremap <Leader>e :CocCommand explorer --toggle<CR>
 
 " nvimtree
 nnoremap <leader>e :NvimTreeToggle<CR>
 
 " source config
-nnoremap <Leader>rc :source $HOME/.config/nvim/init.vim<CR>
+nnoremap <Leader>rc :source $MYVIMRC<CR>
 
 " vim sessions
 nnoremap <Leader>ob :Obsession<CR>
@@ -48,12 +48,11 @@ nnoremap <leader><Tab> :BufferLineCycleNext<CR>
 nnoremap <leader><leader><Tab> :BufferLineCyclePrev<CR>
 nnoremap <leader>qq :q!<CR>
 
-
 " treesitter
 nnoremap <leader>ts :TSPlaygroundToggle<CR>
 
 
-" tab indent 
+" tab indent
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
 
@@ -62,5 +61,5 @@ xnoremap <S-Tab> <gv
 
 
 " which key
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
