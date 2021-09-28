@@ -11,6 +11,9 @@ require("bufferline").setup({
       end
       return s
     end,
+    -- numbers = function(opts)
+    --   return string.format('%s%s', opts.ordinal, opts.raise(opts.id))
+    -- end,
   },
   offsets = {
     {

@@ -7,9 +7,6 @@ inoremap jk <Esc>
 " leader key
 let mapleader = " "
 
-let g:undotree_SetFocusWhenToggle=1
-
-
 source $HOME/.config/nvim/plug-config/indentline.vim
 source $HOME/.config/nvim/plug-config/statline.vim
 source $HOME/.config/nvim/plug-config/functions.vim

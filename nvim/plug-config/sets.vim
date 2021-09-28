@@ -2,6 +2,9 @@
 " timeout
 set timeoutlen=800
 
+" undotree
+let g:undotree_SetFocusWhenToggle=1
+
 " Sets
 set tabstop=2 softtabstop=2
 set shiftwidth=2
