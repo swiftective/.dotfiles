@@ -22,6 +22,11 @@ nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
 
+" buffer
+nnoremap <silent>>> :BufferLineMoveNext<CR>
+nnoremap <silent><< :BufferLineMovePrev<CR>
+
+
 noremap e b
 noremap E B
 
@@ -38,16 +43,19 @@ xnoremap Y "+y
 nnoremap Y "+yy
 
 " buffers
-nnoremap <leader><Tab> :BufferLineCycleNext<CR>
-nnoremap <leader><leader><Tab> :BufferLineCyclePrev<CR>
+nnoremap <silent><C-k> :BufferLineCycleNext<CR>
+nnoremap <silent><C-j> :BufferLineCyclePrev<CR>
 nnoremap <leader>qq :q!<CR>
+
+nnoremap <silent><C-l> <C-^>
+
 
 " treesitter
 nnoremap <leader>ts :TSPlaygroundToggle<CR>
 
 " tab indent
-xnoremap <Tab> >gv
-xnoremap <S-Tab> <gv
+xnoremap > >gv
+xnoremap < <gv
 
 " Alias replace all to
 " nnoremap <leader>ra :%s//gI<Left><Left><Left>
