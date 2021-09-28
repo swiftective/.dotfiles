@@ -1,5 +1,5 @@
 
-alias cat='bat --theme Visual\ Studio\ Dark+'
+alias cat='bat'
 alias less='bat'
 alias vim='nvim'
 alias copy='xclip -sel clip'

@@ -1,6 +1,4 @@
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
+
 local lualine = require 'lualine'
 
 -- Color table for highlights
@@ -26,6 +24,12 @@ local conditions = {
     local gitdir = vim.fn.finddir('.git', filepath .. ';')
     return gitdir and #gitdir > 0 and #gitdir < #filepath
   end
+}
+
+-- my extensions
+local blankstat = {
+  sections = {},
+  filetypes = {'fugitive', 'NvimTree'},
 }
 
 -- Config
@@ -60,7 +64,8 @@ local config = {
     lualine_z = {},
     lualine_c = {},
     lualine_x = {}
-  }
+  },
+  extensions = {blankstat},
 }
 
 -- Inserts a component in lualine_c at left section
@@ -202,7 +207,7 @@ ins_right {
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = {added = ' ', modified = '柳 ', removed = ' '},
+  symbols = {added = ' ', modified = '柳', removed = ' '},
   color_added = colors.green,
   color_modified = colors.orange,
   color_removed = colors.red,
@@ -217,7 +222,3 @@ ins_right {
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
-
-
-require("bufferline").setup{}
-

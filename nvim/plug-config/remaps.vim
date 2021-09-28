@@ -1,7 +1,4 @@
 
-" coc explorer
-" nnoremap <Leader>e :CocCommand explorer --toggle<CR>
-
 " nvimtree
 nnoremap <leader>e :NvimTreeToggle<CR>
 
@@ -12,7 +9,7 @@ nnoremap <Leader>rc :source $MYVIMRC<CR>
 nnoremap <Leader>o :Telescope lsp_dynamic_workspace_symbols<CR>
 
 " splits
-nnoremap <C-w>m :MaximizerToggle<CR>
+nnoremap <leader>wm :MaximizerToggle<CR>
 
 nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprev<CR>
@@ -31,10 +28,7 @@ noremap E B
 nnoremap H 5<C-w><
 nnoremap L 5<C-w>>
 
-nnoremap <C-j> <C-w>j
-nnoremap <C-h> <C-w>h
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>w <C-w>
 
 " folds
 nnoremap zo za
@@ -51,7 +45,6 @@ nnoremap <leader>qq :q!<CR>
 " treesitter
 nnoremap <leader>ts :TSPlaygroundToggle<CR>
 
-
 " tab indent
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
@@ -63,3 +56,8 @@ xnoremap <S-Tab> <gv
 " which key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
+noremap # *
+noremap * #
+
+noremap { }
+noremap } {
