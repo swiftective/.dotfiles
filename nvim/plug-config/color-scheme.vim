@@ -16,7 +16,7 @@ colorscheme base16-oceanicnext
 
 syntax on
 hi Normal guibg=none
-hi IncSearch guibg=#d8636b
+hi IncSearch guibg=#d8636b guifg=white
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=black
