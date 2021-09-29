@@ -6,12 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'marko-cerovac/material.nvim'
-" Plug 'flazz/vim-colorschemes'
-" Plug 'yashguptaz/calvera-dark.nvim'
-" Plug 'morhetz/gruvbox'
-" Plug 'gruvbox-community/gruvbox'
 
 " git worktree
 Plug 'ThePrimeagen/git-worktree.nvim'
