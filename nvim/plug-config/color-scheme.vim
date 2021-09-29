@@ -47,3 +47,12 @@ hi BufferLineInfoSelected guibg=#000000
 hi BufferLineDevIconDefault guibg=#000000
 hi BufferLineFill guibg=#000000
 hi BufferLineDevIconDefaultSelected guibg=#000000
+
+" rainbow brackets
+hi rainbowcol1 guifg=#d8636b
+hi rainbowcol2 guifg=#d47c39
+hi rainbowcol3 guifg=#e0bf3a
+hi rainbowcol4 guifg=#72db1d
+hi rainbowcol5 guifg=#1cd4d4
+hi rainbowcol6 guifg=#6888f7
+hi rainbowcol7 guifg=#e983f2

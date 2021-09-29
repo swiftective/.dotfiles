@@ -28,6 +28,7 @@ function! Colord()
   syntax on
   :hi Normal guibg=none
   :hi LineNr guibg=NONE ctermbg=NONE
+  :hi NvimTreeFolderIcon guifg=#008ae6
   :hi SignColumn guibg=NONE ctermbg=NONE
   :hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=black
   :hi GitSignsAdd guibg=none guifg=#27db57
@@ -54,4 +55,11 @@ function! Colord()
   :hi BufferLineDevIconDefault guibg=#000000
   :hi BufferLineFill guibg=#000000
   :hi BufferLineDevIconDefaultSelected guibg=#000000
+  :hi rainbowcol1 guifg=#d8636b
+  :hi rainbowcol2 guifg=#d47c39
+  :hi rainbowcol3 guifg=#e0bf3a
+  :hi rainbowcol4 guifg=#72db1d
+  :hi rainbowcol5 guifg=#1cd4d4
+  :hi rainbowcol6 guifg=#5a76cc
+  :hi rainbowcol7 guifg=#c685c9
 endfunction
