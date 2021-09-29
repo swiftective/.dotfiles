@@ -6,6 +6,7 @@ require'nvim-tree'.setup {
   auto_close          = false,
   open_on_tab         = false,
   hijack_cursor       = false,
+  lsp_diagnostics     = true,
   update_cwd          = false,
   update_focused_file = {
     enable      = true,
@@ -16,5 +17,14 @@ require'nvim-tree'.setup {
     cmd  = nil,
     args = {}
   },
+  view = {
+    width = 30,
+    side = 'right',
+    auto_resize = true,
+    mappings = {
+      custom_only = false,
+      list = {}
+    }
+  }
 }
 

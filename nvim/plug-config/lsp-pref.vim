@@ -3,6 +3,7 @@ lua require('compe-config')
 lua require('lsp-config')
 lua require('lsp_saga-config')
 lua require('lsp_install')
+lua require('symbols')
 
 let g:neoformat_enabled_python = ['autopep8', 'yapf', 'docformatter']
 let g:neoformat_try_node_exe = 1

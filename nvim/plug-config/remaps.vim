@@ -6,7 +6,7 @@ nnoremap <leader>e :NvimTreeToggle<CR>
 nnoremap <Leader>rc :source $MYVIMRC<CR>
 
 " vim sessions
-nnoremap <Leader>o :Telescope lsp_dynamic_workspace_symbols<CR>
+nnoremap <Leader>o :SymbolsOutline<CR>
 
 " splits
 nnoremap <leader>wm :MaximizerToggle<CR>

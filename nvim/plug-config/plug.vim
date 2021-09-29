@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Color scheme
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chriskempson/base16-vim'
+Plug 'flazz/vim-colorschemes'
 " Plug 'yashguptaz/calvera-dark.nvim'
 " Plug 'mhartington/oceanic-next'
 " Plug 'arcticicestudio/nord-vim'
@@ -23,6 +24,9 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 " colors
 Plug 'ap/vim-css-color'
 
+" outline
+Plug 'simrat39/symbols-outline.nvim'
+
 " statusline
 " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 " Plug 'famiu/feline.nvim'
@@ -31,9 +35,8 @@ Plug 'hoob3rt/lualine.nvim'
 " Plug 'vim-airline/vim-airline-themes'
 
 " git features
-" Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-" Plug 'rhysd/git-messenger.vim'
+Plug 'junegunn/gv.vim'
 Plug 'lewis6991/gitsigns.nvim'
 
 
