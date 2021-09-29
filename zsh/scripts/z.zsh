@@ -18,7 +18,7 @@ jb() {
 }
 
 jc() {
-    _zlua -c $@ 
+    _zlua -c $@
     printf '\e[1;31m%s\n\e[0m' "$(pwd)"
 }
 

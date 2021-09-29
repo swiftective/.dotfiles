@@ -26,7 +26,7 @@ vii() {
 # Loads NVM
 ns() {
   export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 }
 
 
@@ -35,9 +35,8 @@ ws (){
   if (git worktree list &> /dev/null); then
     dir=`git worktree list | sk | awk '{print $1}'`
     cd $dir
-  else 
+  else
     echo "No git repo found !!!"
   fi
   unset dir
 }
-

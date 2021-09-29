@@ -24,6 +24,11 @@ augroup fmt
   autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
 
+augroup zsh
+  autocmd!
+  autocmd BufWinEnter *.zsh :set filetype=sh
+augroup end
+
 function! Colord()
   syntax on
   :hi Normal guibg=none
@@ -56,8 +61,8 @@ function! Colord()
   :hi BufferLineFill guibg=#000000
   :hi BufferLineDevIconDefaultSelected guibg=#000000
   :hi rainbowcol1 guifg=#d8636b
-  :hi rainbowcol2 guifg=#d47c39
-  :hi rainbowcol3 guifg=#e0bf3a
+  :hi rainbowcol2 guifg=#e0bf3a
+  :hi rainbowcol3 guifg=#d47c39
   :hi rainbowcol4 guifg=#72db1d
   :hi rainbowcol5 guifg=#1cd4d4
   :hi rainbowcol6 guifg=#5a76cc
