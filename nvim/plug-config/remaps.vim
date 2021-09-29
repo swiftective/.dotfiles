@@ -27,6 +27,7 @@ nnoremap <silent>>> :BufferLineMoveNext<CR>
 nnoremap <silent><< :BufferLineMovePrev<CR>
 " nnoremap <silent><leader>a :BufferLinePick<CR>
 
+tnoremap <A-s> <C-\><C-n>
 
 noremap e b
 noremap E B
