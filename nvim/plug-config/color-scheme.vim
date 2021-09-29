@@ -8,8 +8,7 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-tomorrow-night
 let g:tokyonight_style = "night"
 let g:tokyonight_transparent = "true"
-colorscheme base16-oceanicnext
-" colorscheme base16-onedark
+colorscheme base16-onedark
 
 
 
