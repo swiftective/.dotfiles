@@ -22,3 +22,4 @@ source $HOME/.config/nvim/plug-config/nvimtree-config.vim
 source $HOME/.config/nvim/plug-config/lsp-pref.vim
 source $HOME/.config/nvim/plug-config/vsnip.vim
 source $HOME/.config/nvim/plug-config/color-scheme.vim
+source $HOME/.config/nvim/plug-config/treesitter-config.vim

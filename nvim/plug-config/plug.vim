@@ -49,6 +49,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/playground'
 
+Plug 'p00f/nvim-ts-rainbow'
+
 " comments
 Plug 'tpope/vim-commentary'
 
