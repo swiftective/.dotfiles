@@ -916,9 +916,9 @@ schemes:
 # normal dark theme
 colors: *tokyo-night
 
-# shell:
-#   program: /usr/bin/dash
-#   args:
-#     - -c
-#     - 'tmux attach || tmux new'
+shell:
+  program: /usr/bin/dash
+  args:
+    - -c
+    - 'tmux attach || tmux new'
 
