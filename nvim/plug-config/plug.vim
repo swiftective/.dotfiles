@@ -5,14 +5,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Color scheme
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chriskempson/base16-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'marko-cerovac/material.nvim'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'yashguptaz/calvera-dark.nvim'
-" Plug 'mhartington/oceanic-next'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'ghifarit53/tokyonight-vim'
 " Plug 'morhetz/gruvbox'
-" Plug 'marko-cerovac/material.nvim'
 " Plug 'gruvbox-community/gruvbox'
 
 " git worktree
