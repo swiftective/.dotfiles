@@ -11,7 +11,6 @@ source $HOME/.zsh/scripts/directories.zsh
 source $HOME/.zsh/scripts/completion.zsh
 source $HOME/.zsh/scripts/git.zsh
 source $HOME/.zsh/scripts/z.zsh
-# source $HOME/.zsh/scripts/autojump.zsh
 
 fpath=($HOME/.zsh/plugins/zsh-completions/src $fpath)
 
