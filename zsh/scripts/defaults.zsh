@@ -17,8 +17,6 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 bindkey -M vicmd e vi-backward-word
-bindkey -M vicmd F vi-find-prev-char-skip
-bindkey -M vicmd f vi-find-next-char-skip
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
@@ -50,8 +48,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
-
-
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

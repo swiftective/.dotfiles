@@ -32,10 +32,10 @@ tnoremap <A-s> <C-\><C-n>
 noremap e b
 noremap E B
 
-noremap f t
-noremap F T
-noremap t f
-noremap T F
+onoremap f t
+onoremap F T
+onoremap t f
+onoremap T F
 
 
 nnoremap H 5<C-w><
