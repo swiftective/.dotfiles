@@ -24,11 +24,17 @@ augroup fmt
   autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
 
-augroup zsh
+augroup zsh_conf
   autocmd!
   autocmd BufWinEnter *.zsh :set filetype=sh
 augroup end
 
+augroup vim_conf
+  autocmd!
+  autocmd BufWinEnter *.vim :TSBufDisable highlight
+augroup end
+
+" colorscheme mess
 function! Colord()
   syntax on
   :hi Normal guibg=none
