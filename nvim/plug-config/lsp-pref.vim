@@ -18,12 +18,15 @@ nnoremap <silent> gR <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 
 " lsp trouble
-nnoremap <leader>xx <cmd>TroubleToggle<cr>
-nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
-nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap <leader>tt <cmd>TroubleToggle<cr>
+nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
 nnoremap gr <cmd>TroubleToggle lsp_references<cr>
+
+" treesitter
+nnoremap <leader>ts :TSPlaygroundToggle<CR>
 
 " Lspsaga
 nnoremap <leader>rn :Lspsaga rename<CR>
