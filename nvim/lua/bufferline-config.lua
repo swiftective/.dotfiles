@@ -2,8 +2,8 @@
 require("bufferline").setup({
   options = {
     show_close_icon = false,
+    always_show_bufferline = false,
   },
-  highlight = {guibg = "black"},
   offsets = {
     {
       filetype = "NvimTree",
