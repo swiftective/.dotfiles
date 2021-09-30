@@ -30,6 +30,8 @@ cmp.setup({
 
     { name = 'nvim_lsp' },
 
+    { name = 'nvim_lua' },
+
     -- -- For vsnip user.
     -- { name = 'vsnip' },
 
