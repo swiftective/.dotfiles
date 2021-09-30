@@ -26,12 +26,12 @@ augroup END
 
 augroup zsh_conf
   autocmd!
-  autocmd BufWinEnter *.zsh :set filetype=sh
+  autocmd FileType zsh :set filetype=sh
 augroup end
 
 augroup vim_conf
   autocmd!
-  autocmd BufWinEnter *.vim :TSBufDisable highlight
+  autocmd FileType vim :TSBufDisable highlight
 augroup end
 
 " colorscheme mess

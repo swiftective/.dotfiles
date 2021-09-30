@@ -1,6 +1,6 @@
 
-lua require('compe-config')
 lua require('lsp-config')
+lua require('compe-config')
 lua require('lsp_saga-config')
 lua require('lsp_install')
 lua require('symbols')
