@@ -24,14 +24,14 @@ augroup fmt
   autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
 
-augroup zsh_conf
+augroup swiftective
   autocmd!
   autocmd FileType zsh :set filetype=sh
 augroup end
 
 augroup vim_conf
   autocmd!
-  autocmd FileType vim :TSBufDisable highlight
+  autocmd BufWinEnter *.vim :TSBufDisable highlight
 augroup end
 
 " colorscheme mess
