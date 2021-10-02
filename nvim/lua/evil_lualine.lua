@@ -206,7 +206,6 @@ ins_left {
 ins_right {
   'branch',
   icon = '',
-  condition = conditions.check_git_workspace,
   color = {fg = colors.violet, gui = 'bold'}
 }
 
