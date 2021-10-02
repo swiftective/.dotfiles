@@ -6,7 +6,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'marko-cerovac/material.nvim'
 
 " git worktree
 Plug 'ThePrimeagen/git-worktree.nvim'
@@ -21,11 +20,7 @@ Plug 'ap/vim-css-color'
 Plug 'simrat39/symbols-outline.nvim'
 
 " statusline
-" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-" Plug 'famiu/feline.nvim'
 Plug 'hoob3rt/lualine.nvim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 " git features
 Plug 'tpope/vim-fugitive'
@@ -64,7 +59,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " lsp
@@ -83,7 +77,6 @@ Plug 'onsails/lspkind-nvim'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
-" Plug 'rafamadriz/friendly-snippets'
 Plug 'honza/vim-snippets'
 
 Plug 'glepnir/lspsaga.nvim'
@@ -93,7 +86,7 @@ Plug 'folke/trouble.nvim'
 Plug 'kabouzeid/nvim-lspinstall'
 
 " terminal
-" Plug 'voldikss/vim-floaterm'
+Plug 'akinsho/toggleterm.nvim'
 
 " Good looking stuff in vim
 Plug 'kyazdani42/nvim-web-devicons'
