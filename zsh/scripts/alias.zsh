@@ -1,4 +1,5 @@
 
+alias cat='bat'
 alias less='bat'
 alias vim='nvim'
 alias copy='xclip -sel clip'
