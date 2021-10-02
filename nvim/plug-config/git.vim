@@ -13,11 +13,11 @@
 nnoremap <leader>gm :Gitsigns toggle_current_line_blame<CR>
 
 " branches
-nnoremap <leader>gb :lua require('telescope.builtin').git_branches()<CR>
+nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches()<CR>
 
 " worktree
-nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
-nnoremap <leader>gc :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
+nnoremap <leader>gw <cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
+nnoremap <leader>gc <cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
 
 
 lua require('git-signs')
