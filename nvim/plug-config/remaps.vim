@@ -17,11 +17,6 @@ nnoremap <C-p> :cprev<CR>
 " undo tree
 nnoremap <Leader>u :UndotreeToggle<CR>
 
-" git fugitive
-nnoremap <leader>gh :diffget //3<CR>
-nnoremap <leader>gf :diffget //2<CR>
-nnoremap <leader>gs :G<CR>
-
 " buffer
 nnoremap <silent>>> :BufferLineMoveNext<CR>
 nnoremap <silent><< :BufferLineMovePrev<CR>
