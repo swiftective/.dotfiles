@@ -29,14 +29,6 @@ nnoremap <silent><< :BufferLineMovePrev<CR>
 
 tnoremap <A-s> <C-\><C-n>
 
-noremap e b
-noremap E B
-
-onoremap f t
-onoremap F T
-onoremap t f
-onoremap T F
-
 
 nnoremap H 5<C-w><
 nnoremap L 5<C-w>>
@@ -46,9 +38,6 @@ nnoremap <leader>w <C-w>
 " folds
 nnoremap zo za
 
-" personal custom
-xnoremap Y "+y
-nnoremap Y "+yy
 
 " buffers
 nnoremap <silent><C-k> :BufferLineCycleNext<CR>
@@ -72,15 +61,20 @@ nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 xnoremap > >gv
 xnoremap < <gv
 
-" Alias replace all to
-" nnoremap <leader>ra :%s//gI<Left><Left><Left>
-
-
 " which key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
-noremap # *
-noremap * #
+" personal custom
+xnoremap Y "+y
+nnoremap Y "+yy
+
+noremap e b
+noremap E B
+
+onoremap f t
+onoremap F T
+onoremap t f
+onoremap T F
 
 noremap { }
 noremap } {
