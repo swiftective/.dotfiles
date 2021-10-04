@@ -29,7 +29,7 @@ local conditions = {
 -- my extensions
 local blankstat = {
   sections = {},
-  filetypes = {'fugitive', 'NvimTree'},
+  filetypes = {'fugitive', 'NvimTree', 'undotree'},
 }
 
 -- Config
