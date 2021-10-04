@@ -21,3 +21,4 @@ source $HOME/.config/nvim/plug-config/vsnip.vim
 source $HOME/.config/nvim/plug-config/color-scheme.vim
 source $HOME/.config/nvim/plug-config/treesitter-config.vim
 source $HOME/.config/nvim/plug-config/term.vim
+source $HOME/.config/nvim/plug-config/undotree-config.vim

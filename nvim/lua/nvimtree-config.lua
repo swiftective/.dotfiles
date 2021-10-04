@@ -19,7 +19,7 @@ require'nvim-tree'.setup {
   },
   view = {
     width = 30,
-    side = 'right',
+    side = 'left',
     auto_resize = true,
     mappings = {
       custom_only = false,
