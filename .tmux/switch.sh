@@ -6,11 +6,11 @@ if [[ $1 == tss ]]; then
 fi
 
 # switch tmux windows
-if [[ $1 == tsw ]]; then
+if [[ $1 == tsW ]]; then
   tmux lsw | fzf-tmux -p --reverse | awk -F ':' '{print $1}' | xargs -I {} tmux selectw -t '{}'
 fi
 
 # switch all tmux windows
-if [[ $1 == tsW ]]; then
+if [[ $1 == tsw ]]; then
   tmux list-windows -a -F '#S:#I: #W' | fzf-tmux -p --reverse | sed 's/\ /\\\ /g' | awk -F ':' '{print $1":"$2}' | xargs tmux switchc -t
 fi
