@@ -65,6 +65,8 @@ nnoremap Y "+yy
 
 noremap e b
 noremap E B
+noremap b e
+noremap B E
 
 noremap { }
 noremap } {
