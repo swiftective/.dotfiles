@@ -31,8 +31,6 @@ Plug 'lewis6991/gitsigns.nvim'
 " undotree
 Plug 'mbbill/undotree'
 
-
-
 " telescope (fuzzy finder)
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/popup.nvim'
