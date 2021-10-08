@@ -10,9 +10,6 @@ let g:tokyonight_style = "night"
 let g:tokyonight_transparent = "true"
 colorscheme onedark
 
-
-
-
 syntax on
 hi Normal guibg=none
 hi IncSearch guibg=#d8636b guifg=white
@@ -25,9 +22,6 @@ hi GitSignsChange guibg=none guifg=#2193de
 hi GitSignsDelete guibg=none guifg=#d10f3f
 hi NvimTreeFolderIcon guifg=#008ae6
 hi VertSplit guibg=none guifg=none
-
-hi Pmenu ctermfg=7 ctermbg=18 guifg=#C0C5CE guibg=#343D46
-hi PmenuSel ctermfg=18 ctermbg=7 guifg=#343D46 guibg=#C0C5CE
 
 " bufferine
 hi BufferLineBackground guibg=#000000
