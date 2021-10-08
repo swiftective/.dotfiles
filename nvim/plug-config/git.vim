@@ -25,5 +25,7 @@ nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
 
+" refresh
+nnoremap <leader>gr :Gitsigns refresh<CR>
 
 lua require('git-signs')
