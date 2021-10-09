@@ -920,4 +920,4 @@ shell:
   program: /usr/bin/dash
   args:
     - -c
-    - "tmux attach 2> /dev/null || tmux"
+    - "tmux attach 2> /dev/null || tmux 1> /dev/null"
