@@ -16,7 +16,11 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-bindkey -M vicmd e vi-backward-word
+bindkey -M vicmd w vi-backward-word
+bindkey -M vicmd W vi-backward-blank-word
+bindkey -M vicmd b vi-forward-word
+bindkey -M vicmd B vi-forward-blank-word
+bindkey -M vicmd / history-incremental-pattern-search-backward
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line

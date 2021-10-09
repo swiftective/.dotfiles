@@ -63,10 +63,10 @@ xnoremap < <gv
 xnoremap Y "+y
 nnoremap Y "+yy
 
-noremap e b
-noremap E B
-noremap b e
-noremap B E
+noremap w b
+noremap W B
+noremap b w
+noremap B W
 
 noremap { }
 noremap } {
