@@ -111,6 +111,8 @@ Plug 'szw/vim-maximizer'
 " Plug 'easymotion/vim-easymotion'
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+" games
+Plug 'ThePrimeagen/vim-be-good'
 
 " Session management
 Plug 'tpope/vim-obsession'

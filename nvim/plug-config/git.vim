@@ -23,7 +23,7 @@ nnoremap <leader>gc <cmd>lua require('telescope').extensions.git_worktree.create
 " git fugitive
 nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
-nnoremap <leader>gs :G<CR>
+nnoremap <leader>gg :G<CR>
 
 " refresh
 nnoremap <leader>gr :Gitsigns refresh<CR>
