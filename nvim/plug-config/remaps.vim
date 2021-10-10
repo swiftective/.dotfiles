@@ -63,7 +63,7 @@ xnoremap < <gv
 xnoremap Y "+y
 nnoremap Y "+yy
 
-inoremap <C-w> <C-[>2dhs
+inoremap <C-w> <BS><BS><BS>
 
 noremap w b
 noremap W B
