@@ -63,8 +63,6 @@ xnoremap < <gv
 xnoremap Y "+y
 nnoremap Y "+yy
 
-inoremap <C-w> <BS><BS><BS>
-
 noremap w b
 noremap W B
 noremap b w
