@@ -30,7 +30,7 @@ nnoremap <leader>ts :TSPlaygroundToggle<CR>
 
 " Lspsaga
 nnoremap <leader>rn :Lspsaga rename<CR>
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+nnoremap <silent><leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 nnoremap <silent><leader>cs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
