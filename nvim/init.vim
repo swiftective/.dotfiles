@@ -7,6 +7,10 @@ inoremap jk <Esc>
 " leader key
 let mapleader = " "
 
+" 12587 issue neovim
+let g:cursorhold_updatetime = 100
+
+
 source $HOME/.config/nvim/plug-config/indentline.vim
 source $HOME/.config/nvim/plug-config/statline.vim
 source $HOME/.config/nvim/plug-config/functions.vim

@@ -68,6 +68,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'onsails/lspkind-nvim'
 
+Plug 'antoinemadec/FixCursorHold.nvim'
+
 " Plug 'hrsh7th/cmp-vsnip'
 " Plug 'hrsh7th/vim-vsnip'
 
