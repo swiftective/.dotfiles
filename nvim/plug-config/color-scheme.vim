@@ -2,6 +2,7 @@
 
 
 set termguicolors
+set background=dark
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
@@ -23,6 +24,12 @@ hi GitSignsDelete guibg=none guifg=#d10f3f
 hi NvimTreeFolderIcon guifg=#008ae6
 hi VertSplit guibg=none guifg=none
 
+" buffers
+hi BufferInactive guibg=none guifg=gray
+hi BufferTabpageFill guibg=none
+hi BufferInactiveMod guibg=none
+hi BufferInactiveSign guibg=none
+
 " sneak
 highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
 highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
@@ -30,28 +37,6 @@ highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
 hi Pmenu guifg=#C0C5CE guibg=#121212
 hi PmenuSel guifg=#343D46 guibg=#C0C5CE
-
-" bufferine
-hi BufferLineBackground guibg=#000000
-hi BufferLineCloseButton guibg=#000000
-hi BufferLineCloseButtonSelected guibg=#000000
-hi BufferLineBufferSelected guibg=#000000
-hi BufferLineSeparator guibg=#000000
-hi BufferLineSeparatorSelected guibg=#000000
-hi BufferLineGroupSeparator guibg=#000000
-hi BufferLineWarningDiagnostic guibg=#000000
-hi BufferLineIndicatorSelected guibg=#000000
-hi BufferLineModified guibg=#000000
-hi BufferLineWarning guibg=#000000
-hi BufferLineWarningSelected guibg=#000000
-hi BufferLineError guibg=#000000
-hi BufferLineErrorSelected guibg=#000000
-hi BufferLineModifiedSelected guibg=#000000
-hi BufferLineInfo guibg=#000000
-hi BufferLineInfoSelected guibg=#000000
-hi BufferLineDevIconDefault guibg=#000000
-hi BufferLineFill guibg=#000000
-hi BufferLineDevIconDefaultSelected guibg=#000000
 
 " rainbow brackets
 hi rainbowcol1 guifg=#d8636b

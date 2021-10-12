@@ -97,7 +97,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-repeat'
 
 " bufferline for asthetics
-Plug 'akinsho/bufferline.nvim'
+Plug 'romgrk/barbar.nvim'
+
 
 " file tree
 Plug 'kyazdani42/nvim-tree.lua'

@@ -3,13 +3,13 @@ source $HOME/.config/nvim/plug-config/plug.vim
 
 " Remaps
 inoremap jk <Esc>
+inoremap JK <C-o>
 
 " leader key
 let mapleader = " "
 
 " 12587 issue neovim
 let g:cursorhold_updatetime = 100
-
 
 source $HOME/.config/nvim/plug-config/indentline.vim
 source $HOME/.config/nvim/plug-config/sneak.vim
