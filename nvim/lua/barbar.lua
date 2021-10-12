@@ -4,8 +4,8 @@ local opts = { noremap = true, silent = true }
 
 map('n', '<C-j>', ':BufferPrevious<CR>', opts)
 map('n', '<C-k>', ':BufferNext<CR>', opts)
-map('n', '>>', ':BufferMovePrevious<CR>', opts)
-map('n', '<<', ' :BufferMoveNext<CR>', opts)
+map('n', '>>', ' :BufferMoveNext<CR>', opts)
+map('n', '<<', ':BufferMovePrevious<CR>', opts)
 map('n', '<leader>1', ':BufferGoto 1<CR>', opts)
 map('n', '<leader>2', ':BufferGoto 2<CR>', opts)
 map('n', '<leader>3', ':BufferGoto 3<CR>', opts)
