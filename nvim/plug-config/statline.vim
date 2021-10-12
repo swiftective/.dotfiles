@@ -1,3 +1,3 @@
 
 lua require('evil_lualine')
-lua require('barbar')
+lua require('barbar-config')
