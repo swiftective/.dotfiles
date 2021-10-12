@@ -6,6 +6,7 @@ set timeoutlen=800
 " Sets
 set tabstop=2 softtabstop=2
 set shiftwidth=2
+set mouse=a
 set hidden
 set expandtab
 set smartindent
