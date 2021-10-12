@@ -37,6 +37,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
+" motion
+Plug 'justinmk/vim-sneak'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter'

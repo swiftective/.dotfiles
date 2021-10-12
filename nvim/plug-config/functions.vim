@@ -38,6 +38,8 @@ augroup end
 function! Colord()
   syntax on
   :hi Normal guibg=none
+  :highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+  :highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
   :hi LineNr guibg=NONE ctermbg=NONE
   :hi NvimTreeFolderIcon guifg=#008ae6
   :hi SignColumn guibg=NONE ctermbg=NONE

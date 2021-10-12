@@ -23,6 +23,11 @@ hi GitSignsDelete guibg=none guifg=#d10f3f
 hi NvimTreeFolderIcon guifg=#008ae6
 hi VertSplit guibg=none guifg=none
 
+" sneak
+highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+
+
 hi Pmenu guifg=#C0C5CE guibg=#121212
 hi PmenuSel guifg=#343D46 guibg=#C0C5CE
 

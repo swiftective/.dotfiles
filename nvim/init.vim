@@ -12,6 +12,7 @@ let g:cursorhold_updatetime = 100
 
 
 source $HOME/.config/nvim/plug-config/indentline.vim
+source $HOME/.config/nvim/plug-config/sneak.vim
 source $HOME/.config/nvim/plug-config/statline.vim
 source $HOME/.config/nvim/plug-config/functions.vim
 source $HOME/.config/nvim/plug-config/tags.vim
