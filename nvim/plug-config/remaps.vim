@@ -39,8 +39,7 @@ xnoremap < <gv
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " personal custom
-xnoremap Y "+y
-nnoremap Y "+yy
+noremap Y "+y
 
 noremap w b
 noremap W B
