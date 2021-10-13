@@ -1,4 +1,12 @@
 
+# notfication made easy
+notify() {
+  app_name=$1
+  shift
+  notify-send --app-name="$app_name" "$*"
+  unset app_name
+}
+
 # Start NVIM Session
 vs() {
     if [[ ! -e Session.vim ]]; then
