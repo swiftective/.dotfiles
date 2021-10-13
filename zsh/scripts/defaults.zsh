@@ -49,8 +49,6 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
-# Enable searching through history
-bindkey '^R' history-incremental-pattern-search-backward
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
