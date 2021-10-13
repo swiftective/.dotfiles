@@ -18,17 +18,17 @@ vs() {
 
 # FZF for changing Directories
 cid() {
-    cd `fd -H -t d . '/home/rv/' | sk`
+    cd `fd -H -t d . '/home/rv/' | sk --prompt="🔍 "`
 }
 
 # Whole System File Search
 via() {
-    fd -t f -H . '/home/rv/' | sk | xargs -r nvim
+    fd -t f -H . '/home/rv/' | sk --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="🔍 " | xargs -r nvim
 }
 
 # Project File Search
 vii() {
-    fd -t f | sk | xargs -r nvim
+    fd -t f | sk --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="🔍 " | xargs -r nvim
 }
 
 # Loads NVM
