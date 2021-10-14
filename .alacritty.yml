@@ -952,7 +952,7 @@ schemes:
       cyan: "0x0db9d7"
       white: "0xacb0d0"
 # normal dark theme
-colors: *tokyo-night
+colors: *one-dark
 
 shell:
   program: /usr/bin/dash
