@@ -36,7 +36,7 @@ augroup end
 
 " colorscheme mess
 function! Colord()
-  syntax on
+  :syntax on
 
   :hi Normal guibg=none
   :hi IncSearch guibg=#d8636b guifg=white
