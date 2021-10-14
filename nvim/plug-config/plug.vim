@@ -82,7 +82,6 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'glepnir/lspsaga.nvim'
-Plug 'folke/lsp-colors.nvim'
 Plug 'folke/trouble.nvim'
 
 Plug 'kabouzeid/nvim-lspinstall'
