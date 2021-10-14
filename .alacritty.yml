@@ -863,11 +863,6 @@ schemes:
       background: "#000000"
       foreground: "0xa9b1d6"
 
-    # Cursor colors
-    cursor:
-      text: '0x2c323c'
-      cursor: '0x5c6370'
-
     # Selection colors
     selection:
       text: CellForeground
@@ -952,7 +947,7 @@ schemes:
       cyan: "0x0db9d7"
       white: "0xacb0d0"
 # normal dark theme
-colors: *one-dark
+colors: *tokyo-night
 
 shell:
   program: /usr/bin/dash
