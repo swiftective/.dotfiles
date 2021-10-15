@@ -31,7 +31,7 @@ hi BufferInactiveMod guibg=none
 hi BufferInactiveSign guibg=none
 
 " sneak
-highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+highlight Sneak guifg=cyan guibg=none ctermfg=cyan ctermbg=none
 highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
 
