@@ -40,11 +40,3 @@ xnoremap < <gv
 
 " personal custom
 noremap Y "+y
-
-noremap w b
-noremap W B
-noremap b w
-noremap B W
-
-noremap { }
-noremap } {
