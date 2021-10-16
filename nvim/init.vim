@@ -5,6 +5,9 @@ source $HOME/.config/nvim/plug-config/plug.vim
 inoremap jk <Esc>
 inoremap JK <C-o>
 
+" trying mulity cursors
+let g:VM_mouse_mappings = 1
+
 " leader key
 let mapleader = " "
 

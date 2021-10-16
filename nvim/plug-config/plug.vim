@@ -111,9 +111,8 @@ Plug 'szw/vim-maximizer'
 " Plug 'easymotion/vim-easymotion'
 
 
-" Trying new plugins
-" Plug 'easymotion/vim-easymotion'
-" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" vim multi cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " games
 Plug 'ThePrimeagen/vim-be-good'

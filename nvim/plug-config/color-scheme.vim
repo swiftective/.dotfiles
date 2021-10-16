@@ -1,6 +1,5 @@
 
 
-
 set termguicolors
 set background=dark
 
@@ -30,13 +29,13 @@ hi BufferTabpageFill guibg=none
 hi BufferInactiveMod guibg=none
 hi BufferInactiveSign guibg=none
 
+
 " sneak
 highlight Sneak guifg=cyan guibg=none ctermfg=cyan ctermbg=none
 highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
 
 hi Pmenu guifg=#C0C5CE guibg=#121212
-hi PmenuSel guifg=#343D46 guibg=#C0C5CE
 
 " rainbow brackets
 hi rainbowcol1 guifg=#d8636b

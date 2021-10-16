@@ -11,8 +11,8 @@ nnoremap <Leader>o :SymbolsOutline<CR>
 " splits
 nnoremap <leader>wm :MaximizerToggle<CR>
 
-nnoremap <C-n> :cnext<CR>
-nnoremap <C-p> :cprev<CR>
+nnoremap <leader>n :cnext<CR>
+nnoremap <leader>p :cprevious<CR>
 
 " undo tree
 nnoremap <Leader>u :UndotreeToggle<CR>
