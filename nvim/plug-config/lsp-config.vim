@@ -14,8 +14,9 @@ let g:neoformat_only_msg_on_error = 1
 
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gR <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent><leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 
 " lsp trouble
 nnoremap <leader>tt <cmd>TroubleToggle<cr>
@@ -23,20 +24,18 @@ nnoremap <leader>tw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
 nnoremap <leader>td <cmd>TroubleToggle lsp_document_diagnostics<cr>
 nnoremap <leader>tq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>tl <cmd>TroubleToggle loclist<cr>
-nnoremap gr <cmd>TroubleToggle lsp_references<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " treesitter
 nnoremap <leader>ts :TSPlaygroundToggle<CR>
 
 " Lspsaga
 nnoremap <leader>rn :Lspsaga rename<CR>
-nnoremap <silent><leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
-nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent><leader>cs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 nnoremap <silent> gD <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 nnoremap <silent> gi <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
-
+nnoremap <silent> gh <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
 nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 
