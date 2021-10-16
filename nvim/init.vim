@@ -5,9 +5,6 @@ source $HOME/.config/nvim/plug-config/plug.vim
 inoremap jk <Esc>
 inoremap JK <C-o>
 
-" trying mulity cursors
-let g:VM_mouse_mappings = 1
-
 " leader key
 let mapleader = " "
 
@@ -16,6 +13,7 @@ let g:cursorhold_updatetime = 100
 
 source $HOME/.config/nvim/plug-config/indentline.vim
 source $HOME/.config/nvim/plug-config/sneak.vim
+source $HOME/.config/nvim/plug-config/vm-config.vim
 source $HOME/.config/nvim/plug-config/statline.vim
 source $HOME/.config/nvim/plug-config/functions.vim
 source $HOME/.config/nvim/plug-config/tags.vim
