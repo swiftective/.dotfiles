@@ -24,15 +24,15 @@ hi NvimTreeFolderIcon guifg=#008ae6
 hi VertSplit guibg=none guifg=none
 
 " buffers
-hi BufferInactive guibg=none guifg=gray
+hi BufferInactive guibg=none guifg=Gray
 hi BufferTabpageFill guibg=none
 hi BufferInactiveMod guibg=none
 hi BufferInactiveSign guibg=none
 
 
 " sneak
-highlight Sneak guifg=cyan guibg=none ctermfg=cyan ctermbg=none
-highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+highlight Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
+highlight SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=yellow
 
 
 hi Pmenu guifg=#C0C5CE guibg=#121212
