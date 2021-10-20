@@ -69,6 +69,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'onsails/lspkind-nvim'
+Plug 'folke/lsp-colors.nvim'
 
 Plug 'antoinemadec/FixCursorHold.nvim'
 
