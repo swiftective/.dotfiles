@@ -14,7 +14,7 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 " Plug 'liuchengxu/vim-which-key'
 
 " colors
-Plug 'ap/vim-css-color'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " outline
 Plug 'simrat39/symbols-outline.nvim'
