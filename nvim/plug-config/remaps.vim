@@ -30,6 +30,7 @@ nnoremap <leader>w <C-w>
 " folds
 nnoremap zo za
 
+noremap <C-f> <C-u>
 
 " tab indent
 xnoremap > >gv

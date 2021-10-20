@@ -39,6 +39,7 @@ function! Colord()
   :syntax on
 
   :hi Normal guibg=none
+  :hi NvimTreeNormal guibg=none
   :hi IncSearch guibg=#d8636b guifg=white
   :hi LineNr guibg=NONE ctermbg=NONE
   :hi SignColumn guibg=NONE ctermbg=NONE
@@ -52,18 +53,10 @@ function! Colord()
 
 
   " buffers
-  :hi BufferInactive guibg=none guifg=gray
+  :hi BufferInactive guibg=none
   :hi BufferTabpageFill guibg=none
   :hi BufferInactiveMod guibg=none
   :hi BufferInactiveSign guibg=none
-  :hi BufferCurrent guifg=#abb2bf guibg=#282c34
-  :hi BufferCurrent guibg=none
-  :hi BufferCurrentSign guibg=none
-  :hi BufferCurrent guibg=none
-  :hi BufferCurrentSign guibg=none
-
-
-
 
   " sneak
   :highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan

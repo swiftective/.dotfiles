@@ -36,8 +36,6 @@ nnoremap <silent><leader>cs <cmd>lua require('lspsaga.signaturehelp').signature_
 nnoremap <silent> gD <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
 nnoremap <silent> gi <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 nnoremap <silent> gh <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 
 nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
 
