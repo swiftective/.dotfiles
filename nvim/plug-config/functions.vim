@@ -43,14 +43,14 @@ function! Colord()
   :hi GitSignsChange guibg=none guifg=#2193de
   :hi GitSignsDelete guibg=none guifg=#d10f3f
   :hi NvimTreeFolderIcon guifg=#008ae6
-  :hi VertSplit guibg=none guifg=none
+  :hi VertSplit guifg=Gray10 guibg=none
   :hi NvimTreeNormalNC guibg=none
   :hi NvimTreeFolderName guibg=none
   :hi NvimTreeOpenedFolderName guibg=none
   :hi NvimTreeEmptyFolderName guibg=none
   :hi UndotreeSavedBig guibg=none guifg=Gold
   :hi UndotreeSavedSmall guibg=none
-  :hi UndotreeNode guibg=none
+  :hi UndotreNode guibg=none
 
 
 
@@ -61,8 +61,8 @@ function! Colord()
   :hi BufferInactiveSign guibg=none
 
   " sneak
-  :highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
-  :highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+  :hi Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
+  :hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=yellow
 
   :hi rainbowcol1 guifg=#d8636b
   :hi rainbowcol2 guifg=#e0bf3a
