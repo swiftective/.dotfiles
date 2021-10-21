@@ -52,13 +52,13 @@ function! Colord()
   :hi UndotreeSavedSmall guibg=none
   :hi UndotreNode guibg=none
 
-
-
   " buffers
   :hi BufferInactive guibg=none
   :hi BufferTabpageFill guibg=none
   :hi BufferInactiveMod guibg=none
   :hi BufferInactiveSign guibg=none
+
+  :hi Pmenu guifg=#C0C5CE guibg=#121212
 
   " sneak
   :hi Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
@@ -66,9 +66,9 @@ function! Colord()
 
   :hi rainbowcol1 guifg=#d8636b
   :hi rainbowcol2 guifg=#e0bf3a
-  :hi rainbowcol3 guifg=#d47c39
-  :hi rainbowcol4 guifg=#72db1d
-  :hi rainbowcol5 guifg=#1cd4d4
-  :hi rainbowcol6 guifg=#5a76cc
-  :hi rainbowcol7 guifg=#c685c9
+  :hi rainbowcol3 guifg=#f59842
+  :hi rainbowcol4 guifg=#c685c9
+  :hi rainbowcol5 guifg=#5a76cc
+  :hi rainbowcol6 guifg=#1cd4d4
+  :hi rainbowcol7 guifg=#6A9955
 endfunction

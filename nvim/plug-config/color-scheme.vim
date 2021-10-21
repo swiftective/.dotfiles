@@ -40,8 +40,8 @@ hi BufferInactiveSign guibg=none
 
 
 " sneak
-highlight Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
-highlight SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=yellow
+hi Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
+hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=yellow
 
 
 hi Pmenu guifg=#C0C5CE guibg=#121212
@@ -50,7 +50,7 @@ hi Pmenu guifg=#C0C5CE guibg=#121212
 hi rainbowcol1 guifg=#d8636b
 hi rainbowcol2 guifg=#e0bf3a
 hi rainbowcol3 guifg=#f59842
-hi rainbowcol4 guifg=#72db1d
-hi rainbowcol5 guifg=#1cd4d4
-hi rainbowcol6 guifg=#5a76cc
-hi rainbowcol7 guifg=#c685c9
+hi rainbowcol4 guifg=#c685c9
+hi rainbowcol5 guifg=#5a76cc
+hi rainbowcol6 guifg=#1cd4d4
+hi rainbowcol7 guifg=#6A9955
