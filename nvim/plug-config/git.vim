@@ -23,9 +23,19 @@ nnoremap <leader>gc <cmd>lua require('telescope').extensions.git_worktree.create
 " git fugitive
 nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
-nnoremap <leader>gs :G<CR>
 
 " refresh
 nnoremap <leader>gr :Gitsigns refresh<CR>
+
+" git fugitve toggle function
+function! ToggleGStatus()
+  if buflisted(bufname('.git/index'))
+    bd .git/index
+  else
+    Git
+  endif
+endfunction
+command ToggleGStatus :call ToggleGStatus()
+nnoremap <leader>gs :ToggleGStatus<CR>
 
 lua require('git-signs')
