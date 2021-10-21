@@ -23,6 +23,8 @@ set incsearch
 set scrolloff=15
 set signcolumn=yes
 set nowrap
+set t_Co=256
+set t_ut=
 
 
 
