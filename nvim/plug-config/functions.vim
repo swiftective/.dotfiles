@@ -44,6 +44,14 @@ function! Colord()
   :hi GitSignsDelete guibg=none guifg=#d10f3f
   :hi NvimTreeFolderIcon guifg=#008ae6
   :hi VertSplit guibg=none guifg=none
+  :hi NvimTreeNormalNC guibg=none
+  :hi NvimTreeFolderName guibg=none
+  :hi NvimTreeOpenedFolderName guibg=none
+  :hi NvimTreeEmptyFolderName guibg=none
+  :hi UndotreeSavedBig guibg=none guifg=Gold
+  :hi UndotreeSavedSmall guibg=none
+  :hi UndotreeNode guibg=none
+
 
 
   " buffers
