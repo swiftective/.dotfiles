@@ -10,7 +10,7 @@ read -p "Enter Query: " query
 
 if grep -qs "$selected" ~/.chx-languages; then
   query=`echo $query | tr ' ' '+'`
-  tmux neww -n  "Cheat Sheet 🗒 " bash -c "curl -s cht.sh/$selected/$query | bat --paging=always --theme=Visual\ Studio\ Dark+"
+  tmux neww -n  "Cheat Sheet 🗒 " bash -c "curl -s cht.sh/$selected/$query | bat --paging=always"
 else
   tmux neww -n  "Cheat Sheet 🗒 " bash -c "curl -s cht.sh/$selected~$query | bat --paging=always"
 fi
