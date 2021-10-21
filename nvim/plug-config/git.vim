@@ -36,6 +36,6 @@ function! ToggleGStatus()
   endif
 endfunction
 command ToggleGStatus :call ToggleGStatus()
-nnoremap <leader>gs :ToggleGStatus<CR>
+nnoremap <leader>gs <cmd>ToggleGStatus<CR>
 
 lua require('git-signs')
