@@ -71,6 +71,9 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'onsails/lspkind-nvim'
 Plug 'folke/lsp-colors.nvim'
 
+" lspinstall
+Plug 'williamboman/nvim-lsp-installer'
+
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 " Plug 'hrsh7th/cmp-vsnip'
@@ -85,7 +88,6 @@ Plug 'honza/vim-snippets'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'folke/trouble.nvim'
 
-Plug 'kabouzeid/nvim-lspinstall'
 
 " terminal
 Plug 'akinsho/toggleterm.nvim'
