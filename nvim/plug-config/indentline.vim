@@ -2,7 +2,7 @@
 "Indentline
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_fileTypeExclude = ["vimwiki", "coc-explorer", "help", "undotree", "diff"]
-let g:indentLine_bufTypeExclude = ["help", "terminal", "nofile"]
+let g:indentLine_bufTypeExclude = ["help", "terminal", "nofile", "nowrite"]
 let g:indentLine_indentLevel = 6
 let g:indentLine_setConceal = 1
 let g:indentLine_concealcursor = "inc"
