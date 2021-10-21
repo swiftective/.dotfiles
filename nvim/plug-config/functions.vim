@@ -21,17 +21,11 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
   autocmd BufWritePre * %s/\s\+$//e
-  autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
 
 augroup swiftective
   autocmd!
   autocmd FileType zsh :set filetype=sh
-augroup end
-
-augroup vim_conf
-  autocmd!
-  autocmd BufWinEnter *.vim :TSBufDisable highlight
 augroup end
 
 " colorscheme mess
