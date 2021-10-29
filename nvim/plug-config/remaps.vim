@@ -41,3 +41,5 @@ xnoremap < <gv
 
 " personal custom
 noremap Y "+y
+
+inoremap <C-v> <C-r>"

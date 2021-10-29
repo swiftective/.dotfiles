@@ -213,9 +213,11 @@ ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
   symbols = {added = ' ', modified = '柳', removed = ' '},
-  color_added = colors.green,
-  color_modified = colors.blue,
-  color_removed = colors.red,
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
   condition = conditions.hide_in_width
 }
 
