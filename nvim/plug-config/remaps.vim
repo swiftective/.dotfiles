@@ -22,8 +22,11 @@ tnoremap <A-s> <C-\><C-n>
 nnoremap <leader>qq :q!<CR>
 nnoremap <silent><C-l> <C-^>
 
-nnoremap H 5<C-w><
-nnoremap L 5<C-w>>
+nnoremap <leader>w< 5<C-w><
+nnoremap <leader>w> 5<C-w>>
+
+noremap L $
+noremap H 0
 
 nnoremap <leader>w <C-w>
 
