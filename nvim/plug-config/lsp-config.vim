@@ -5,7 +5,6 @@ lua require('lsp_saga-config')
 lua require('lsp_install')
 lua require('symbols')
 
-let g:neoformat_enabled_python = ['autopep8', 'yapf', 'docformatter']
 let g:neoformat_try_node_exe = 1
 let g:neoformat_basic_format_align = 1
 let g:neoformat_basic_format_retab = 1
@@ -41,9 +40,3 @@ nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
 
 nnoremap <silent> <leader>j :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> <leader>k :Lspsaga diagnostic_jump_prev<CR>
-
-
-" auto-format
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
