@@ -215,7 +215,7 @@ ins_right {
   symbols = {added = ' ', modified = '柳', removed = ' '},
   diff_color = {
     added = { fg = colors.green },
-    modified = { fg = colors.orange },
+    modified = { fg = colors.blue },
     removed = { fg = colors.red },
   },
   condition = conditions.hide_in_width

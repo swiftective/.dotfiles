@@ -6,7 +6,8 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>fi <cmd>Telescope builtin<CR>
 nnoremap <leader>fo <cmd>Telescope lsp_dynamic_workspace_symbols<CR>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').git_files()<CR>
-
+noremap <C-p> <cmd>lua require('telescope.builtin').git_files()<CR>
+noremap <A-p> <cmd>Telescope builtin<CR>
 
 
 lua require('telescope-config')

@@ -49,6 +49,7 @@ let g:AutoPairsFlyMode = 0
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,jsx,tsx,js,xml EmmetInstall
+let g:AutoPairsShortcutToggle = ''
 
 let g:user_emmet_leader_key='<M-m>'
 
