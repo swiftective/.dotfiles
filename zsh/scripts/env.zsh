@@ -6,7 +6,6 @@ export LANG=en_US.UTF-8
 export VISUAL='nvim'
 export MANPAGER="sh -c 'col -bx | bat --theme TwoDark -l man -p'"
 
-export PATH=$PATH:$HOME/.nvm/versions/node/v14.17.3/bin
 # export TERM="xterm-256color"
 
 
