@@ -71,6 +71,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'onsails/lspkind-nvim'
 Plug 'folke/lsp-colors.nvim'
+Plug 'weilbith/nvim-code-action-menu'
 
 " lspinstall
 Plug 'williamboman/nvim-lsp-installer'

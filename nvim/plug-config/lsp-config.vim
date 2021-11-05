@@ -11,11 +11,15 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 let g:neoformat_only_msg_on_error = 1
 
+
+let g:code_action_menu_show_details = v:false
+let g:code_action_menu_show_diff = v:false
+
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent><leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent><leader>ca <cmd>CodeActionMenu<CR>
 
 " lsp trouble
 nnoremap <leader>tt <cmd>TroubleToggle<cr>
