@@ -31,6 +31,7 @@ augroup end
 function! Colord()
   :syntax on
 
+  :hi link TSVariable TSKeyword
   :hi Normal guibg=none
   :hi NvimTreeNormal guibg=none
   :hi IncSearch guibg=#d8636b guifg=white
