@@ -17,14 +17,13 @@ nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gr :Gitsigns refresh<CR>
 
 " git fugitve toggle function
-function! ToggleGStatus()
-  if buflisted(bufname('.git/index'))
-    bd .git/index
-  else
+function FugitiveToggle() abort
+  try
+    exe filter(getwininfo(), "get(v:val['variables'], 'fugitive_status', v:false) != v:false")[0].winnr .. "wincmd c"
+  catch /E684/
     Git
-  endif
+  endtry
 endfunction
-command ToggleGStatus :call ToggleGStatus()
-nnoremap <leader>gs <cmd>ToggleGStatus<CR>
+nnoremap <space>gs <cmd>call FugitiveToggle()<CR>
 
 lua require('git-signs')
