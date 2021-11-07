@@ -25,8 +25,8 @@ source $HOME/.config/nvim/plug-config/vsnip.vim
 source $HOME/.config/nvim/plug-config/color-scheme.vim
 source $HOME/.config/nvim/plug-config/undotree-config.vim
 
-luafile $HOME/.config/nvim/lua/evil_lualine.lua
-luafile $HOME/.config/nvim/lua/barbar-config.lua
-luafile $HOME/.config/nvim/lua/colorizer-config.lua
-luafile $HOME/.config/nvim/lua/term-config.lua
-luafile $HOME/.config/nvim/lua/treesitter-config.lua
+source $HOME/.config/nvim/lua/evil_lualine.lua
+source $HOME/.config/nvim/lua/barbar-config.lua
+source $HOME/.config/nvim/lua/colorizer-config.lua
+source $HOME/.config/nvim/lua/term-config.lua
+source $HOME/.config/nvim/lua/treesitter-config.lua
