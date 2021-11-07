@@ -12,7 +12,8 @@ colorscheme onedark
 " colorscheme codedark
 
 syntax on
-hi link TSVariable TSKeyword
+hi TSVariable ctermfg=204 guifg=#E06C75
+hi Keyword ctermfg=170 guifg=#C678DD
 hi Normal guibg=none
 hi IncSearch guibg=#d8636b guifg=white
 hi LineNr guibg=NONE ctermbg=NONE
