@@ -30,10 +30,7 @@ augroup end
 " colorscheme mess
 function! Colord()
   :syntax on
-
-  :hi link TSVariable TSKeyword
   :hi Normal guibg=none
-  :hi NvimTreeNormal guibg=none
   :hi IncSearch guibg=#d8636b guifg=white
   :hi LineNr guibg=NONE ctermbg=NONE
   :hi SignColumn guibg=NONE ctermbg=NONE
@@ -43,6 +40,7 @@ function! Colord()
   :hi GitSignsChange guibg=none guifg=#2193de
   :hi GitSignsDelete guibg=none guifg=#d10f3f
   :hi NvimTreeFolderIcon guifg=#008ae6
+  :hi NvimTreeNormal guibg=none
   :hi VertSplit guifg=Gray10 guibg=none
   :hi NvimTreeNormalNC guibg=none
   :hi NvimTreeFolderName guibg=none
@@ -50,20 +48,21 @@ function! Colord()
   :hi NvimTreeEmptyFolderName guibg=none
   :hi UndotreeSavedBig guibg=none guifg=Gold
   :hi UndotreeSavedSmall guibg=none
-  :hi UndotreNode guibg=none
-
-  " buffers
-  :hi BufferInactive guibg=none
+  :hi UndotreeNode guibg=none
+  :hi NvimTreeEndOfBuffer guibg=none guifg=black
+  :hi LspDiagnosticsDefaultHint guifg=#1b6e6a
+  :hi DiagnosticHint guifg=#1b6e6a
+  :hi LspDiagnosticsDefaultInformation guifg=#6699cc
+  :hi BufferInactive guibg=none guifg=#4e5661
   :hi BufferTabpageFill guibg=none
   :hi BufferInactiveMod guibg=none
   :hi BufferInactiveSign guibg=none
-
-  :hi Pmenu guifg=#C0C5CE guibg=#121212
-
-  " sneak
+  :hi BufferVisible guibg=none
+  :hi BufferVisibleMod guibg=none
+  :hi BufferVisibleSign guibg=none
   :hi Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
   :hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=yellow
-
+  :hi Pmenu guifg=#C0C5CE guibg=#121212
   :hi rainbowcol1 guifg=#d8636b
   :hi rainbowcol2 guifg=#e0bf3a
   :hi rainbowcol3 guifg=#f59842

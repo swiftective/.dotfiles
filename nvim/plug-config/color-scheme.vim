@@ -8,12 +8,14 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-tomorrow-night
 let g:tokyonight_style = "night"
 let g:tokyonight_transparent = "true"
+let g:onedark_transparent_background = "true"
+let g:onedark_hide_ending_tildes = "true"
+let g:onedark_style = 'deep'
 colorscheme onedark
 " colorscheme codedark
 
 syntax on
 hi TSVariable ctermfg=204 guifg=#E06C75
-hi Keyword ctermfg=170 guifg=#C678DD
 hi Normal guibg=none
 hi IncSearch guibg=#d8636b guifg=white
 hi LineNr guibg=NONE ctermbg=NONE
@@ -33,13 +35,19 @@ hi NvimTreeEmptyFolderName guibg=none
 hi UndotreeSavedBig guibg=none guifg=Gold
 hi UndotreeSavedSmall guibg=none
 hi UndotreeNode guibg=none
+hi NvimTreeEndOfBuffer guibg=none guifg=black
+hi LspDiagnosticsDefaultHint guifg=#1b6e6a
+hi DiagnosticHint guifg=#1b6e6a
+hi LspDiagnosticsDefaultInformation guifg=#6699cc
 
 " buffers
-hi BufferInactive guibg=none guifg=Gray
+hi BufferInactive guibg=none guifg=#4e5661
 hi BufferTabpageFill guibg=none
 hi BufferInactiveMod guibg=none
 hi BufferInactiveSign guibg=none
-
+hi BufferVisible guibg=none
+hi BufferVisibleMod guibg=none
+hi BufferVisibleSign guibg=none
 
 " sneak
 hi Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
