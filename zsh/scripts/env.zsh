@@ -8,6 +8,7 @@ export MANPAGER="sh -c 'col -bx | bat --theme TwoDark -l man -p'"
 
 # export TERM="xterm-256color"
 
+export PATH=$PATH:$HOME/.cargo/bin
 
 # vj mode
 export KEYTIMEOUT=20

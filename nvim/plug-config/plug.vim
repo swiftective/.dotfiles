@@ -4,9 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Color scheme
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'chriskempson/base16-vim'
 Plug 'navarasu/onedark.nvim'
-Plug 'tomasiser/vim-code-dark'
 
 " git worktree
 Plug 'ThePrimeagen/git-worktree.nvim'
