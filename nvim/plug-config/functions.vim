@@ -46,7 +46,7 @@ function! Colord()
   :hi NvimTreeFolderName guibg=none
   :hi NvimTreeOpenedFolderName guibg=none
   :hi NvimTreeEmptyFolderName guibg=none
-  :hi UndotreeSavedBig guibg=none guifg=Gold
+  :hi UndotreeSavedBig guibg=none guifg=#efbd5d
   :hi UndotreeSavedSmall guibg=none
   :hi UndotreeNode guibg=none
   :hi NvimTreeEndOfBuffer guibg=none guifg=black
@@ -63,6 +63,13 @@ function! Colord()
   :hi Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
   :hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=yellow
   :hi Pmenu guifg=#C0C5CE guibg=#121212
+  :hi LspDiagnosticsDefaultHint guifg=#1b6e6a
+  :hi DiagnosticHint guifg=#1b6e6a
+  :hi LspDiagnosticsDefaultInformation guifg=#6699cc
+  :hi LspDiagnosticsVirtualTextWarning guifg=#8f610d
+  :hi! link NvimTreeLspDiagnosticsWarning LspDiagnosticsVirtualTextWarning
+  :hi! link LspDiagnosticsSignWarning LspDiagnosticsVirtualTextWarning
+  :hi LspDiagnosticsDefaultWarning guifg=#efbd5d
   :hi rainbowcol1 guifg=#d8636b
   :hi rainbowcol2 guifg=#e0bf3a
   :hi rainbowcol3 guifg=#f59842

@@ -61,11 +61,11 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
-
 " lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
@@ -78,14 +78,10 @@ Plug 'williamboman/nvim-lsp-installer'
 
 Plug 'antoinemadec/FixCursorHold.nvim'
 
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
-
-" For ultisnips user.
-Plug 'SirVer/ultisnips'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-
-Plug 'honza/vim-snippets'
+" For luasnip users.
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets'
 
 Plug 'glepnir/lspsaga.nvim'
 Plug 'folke/trouble.nvim'
@@ -111,10 +107,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'sbdchd/neoformat'
 
 Plug 'szw/vim-maximizer'
-
-" easy motion
-" Plug 'easymotion/vim-easymotion'
-
 
 " vim multi cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}

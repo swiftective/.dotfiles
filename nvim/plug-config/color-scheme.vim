@@ -17,7 +17,7 @@ colorscheme onedark
 syntax on
 hi TSVariable ctermfg=204 guifg=#E06C75
 hi Normal guibg=none
-hi IncSearch guibg=#d8636b guifg=white
+" hi IncSearch guibg=#d8636b guifg=white
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=black
@@ -26,19 +26,24 @@ hi GitSignsAdd guibg=none guifg=#27db57
 hi GitSignsChange guibg=none guifg=#2193de
 hi GitSignsDelete guibg=none guifg=#d10f3f
 hi NvimTreeFolderIcon guifg=#008ae6
+hi NvimTreeRootFolder guifg=#008ae6
 hi NvimTreeNormal guibg=none
 hi VertSplit guifg=Gray10 guibg=none
 hi NvimTreeNormalNC guibg=none
 hi NvimTreeFolderName guibg=none
 hi NvimTreeOpenedFolderName guibg=none
 hi NvimTreeEmptyFolderName guibg=none
-hi UndotreeSavedBig guibg=none guifg=Gold
+hi UndotreeSavedBig guibg=none guifg=#efbd5d
 hi UndotreeSavedSmall guibg=none
 hi UndotreeNode guibg=none
 hi NvimTreeEndOfBuffer guibg=none guifg=black
 hi LspDiagnosticsDefaultHint guifg=#1b6e6a
 hi DiagnosticHint guifg=#1b6e6a
 hi LspDiagnosticsDefaultInformation guifg=#6699cc
+hi LspDiagnosticsVirtualTextWarning guifg=#8f610d
+hi! link NvimTreeLspDiagnosticsWarning LspDiagnosticsVirtualTextWarning
+hi! link LspDiagnosticsSignWarning LspDiagnosticsVirtualTextWarning
+hi LspDiagnosticsDefaultWarning guifg=#efbd5d
 
 " buffers
 hi BufferInactive guibg=none guifg=#4e5661
