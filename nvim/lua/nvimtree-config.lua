@@ -8,6 +8,12 @@ require'nvim-tree'.setup {
   hijack_cursor       = false,
   diagnostics = {
     enable = true,
+    icons = {
+      hint = " ",
+      info = " ",
+      warning = " ",
+      error = " ",
+    }
   },
   update_cwd          = false,
   update_focused_file = {
