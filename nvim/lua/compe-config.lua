@@ -42,10 +42,6 @@ cmp.setup(
                 end,
                 {"i", "s"}
             ),
-            ["<c-q>"] = cmp.mapping.confirm {
-                behavior = cmp.ConfirmBehavior.Replace,
-                select = true
-            },
             ["<C-k>"] = cmp.mapping(
                 function(fallback)
                     if luasnip.jumpable(-1) then
