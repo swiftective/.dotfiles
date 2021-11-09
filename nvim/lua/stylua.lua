@@ -9,6 +9,6 @@ end
 
 vim.cmd [[
   augroup StyluaAuto
-    autocmd BufWritePre *.lua :lua require("tj.stylua").format()
+    autocmd BufWritePre *.lua :lua require("rv.stylua").format()
   augroup END
 ]]
