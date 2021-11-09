@@ -16,7 +16,7 @@ lsp_installer.on_server_ready(function(server)
     settings = {
       Lua = {
         diagnostics = {
-          globals = { "vim" },
+          globals = { "vim", "Luasnip_ns_id" },
         },
       },
     },
