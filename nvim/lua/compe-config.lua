@@ -89,9 +89,6 @@ cmp.setup {
       return vim_item
     end,
   },
-  experimental = {
-    ghost_text = true,
-  },
 }
 
 local tabnine = require "cmp_tabnine.config"
