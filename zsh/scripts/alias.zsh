@@ -6,6 +6,7 @@ alias copy='xclip -sel clip'
 alias vi='nvim'
 alias grep='rg'
 alias pacman='pamac'
+alias pac='pamac'
 alias fdh="fd -H"
 alias so="exec"
 alias ta='tmux attach'
