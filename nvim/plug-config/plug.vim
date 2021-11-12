@@ -9,6 +9,9 @@ Plug 'navarasu/onedark.nvim'
 " git worktree
 Plug 'ThePrimeagen/git-worktree.nvim'
 
+
+Plug 'lewis6991/impatient.nvim'
+
 " which key
 " Plug 'liuchengxu/vim-which-key'
 
