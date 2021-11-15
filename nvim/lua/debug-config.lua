@@ -64,7 +64,8 @@ require("dapui").setup {
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-map("n", "<leader>dc", '<cmd>lua require"dap".continue()<CR>', opts)
+map("n", "<leader>dcc", '<cmd>lua require"dap".continue()<CR>', opts)
+map("n", "<leader>dcr", '<cmd>lua require"dap".reverse_continue()<CR>', opts)
 map("n", "<leader>dsv", '<cmd>lua require"dap".step_over()<CR>', opts)
 map("n", "<leader>dsi", '<cmd>lua require"dap".step_into()<CR>', opts)
 map("n", "<leader>dso", '<cmd>lua require"dap".step_out()<CR>', opts)
