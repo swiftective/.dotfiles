@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Color scheme
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'Mofiqul/vscode.nvim'
 Plug 'navarasu/onedark.nvim'
 
 " git worktree

@@ -6,13 +6,14 @@ set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
 " colorscheme base16-tomorrow-night
+let g:vscode_style = "dark"
 let g:tokyonight_style = "night"
 let g:tokyonight_transparent = "true"
 let g:onedark_transparent_background = "true"
 let g:onedark_hide_ending_tildes = "true"
 let g:onedark_style = 'deep'
+" colorscheme vscode
 colorscheme onedark
-" colorscheme codedark
 
 syntax on
 hi TSVariable ctermfg=204 guifg=#E06C75
@@ -28,8 +29,8 @@ hi GitSignsDelete guibg=none guifg=#d10f3f
 hi NvimTreeFolderIcon guifg=#008ae6
 hi NvimTreeRootFolder guifg=#008ae6
 hi NvimTreeNormal guibg=none
-hi VertSplit guifg=Gray10 guibg=none
 hi NvimTreeNormalNC guibg=none
+hi VertSplit guifg=Gray10 guibg=none
 hi NvimTreeFolderName guibg=none
 hi NvimTreeOpenedFolderName guibg=none
 hi NvimTreeEmptyFolderName guibg=none
