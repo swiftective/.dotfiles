@@ -25,6 +25,7 @@ augroup END
 augroup swiftective
   autocmd!
   autocmd FileType zsh :set filetype=sh
+  autocmd ColorScheme * call Colord()
 augroup end
 
 " colorscheme mess
