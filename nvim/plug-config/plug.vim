@@ -43,10 +43,6 @@ Plug 'nvim-lua/plenary.nvim'
 " motion
 Plug 'justinmk/vim-sneak'
 
-" treesitter
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/playground'
-
 Plug 'p00f/nvim-ts-rainbow'
 
 " comments
@@ -76,6 +72,18 @@ Plug 'onsails/lspkind-nvim'
 Plug 'folke/lsp-colors.nvim'
 Plug 'weilbith/nvim-code-action-menu'
 
+" Debugging tools
+Plug 'mfussenegger/nvim-dap'
+Plug 'Pocco81/DAPInstall.nvim'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'nvim-telescope/telescope-dap.nvim'
+Plug 'David-Kunz/jester'
+
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
 " lspinstall
 Plug 'williamboman/nvim-lsp-installer'
 
@@ -97,7 +105,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " To add the . functionality to other plugins
-Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-repeat'
 
 " bufferline for asthetics
 Plug 'romgrk/barbar.nvim'

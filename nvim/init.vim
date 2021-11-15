@@ -24,6 +24,7 @@ source $HOME/.config/nvim/plug-config/lsp-config.vim
 source $HOME/.config/nvim/plug-config/color-scheme.vim
 source $HOME/.config/nvim/plug-config/undotree-config.vim
 
+source $HOME/.config/nvim/lua/debug-config.lua
 source $HOME/.config/nvim/lua/evil_lualine.lua
 source $HOME/.config/nvim/lua/barbar-config.lua
 source $HOME/.config/nvim/lua/colorizer-config.lua

@@ -44,6 +44,7 @@ hi LspDiagnosticsVirtualTextWarning guifg=#8f610d
 hi! link NvimTreeLspDiagnosticsWarning LspDiagnosticsVirtualTextWarning
 hi! link LspDiagnosticsSignWarning LspDiagnosticsVirtualTextWarning
 hi LspDiagnosticsDefaultWarning guifg=#efbd5d
+hi! link CmpItemKind CmpItemKindDefault
 
 " buffers
 hi BufferInactive guibg=none guifg=#4e5661

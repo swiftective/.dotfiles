@@ -35,6 +35,18 @@ local blankstat = {
   filetypes = { "fugitive", "NvimTree", "undotree" },
 }
 
+local dapstat = {
+  sections = {
+    lualine_c = {
+      {
+        "filetype",
+        color = { bg = "#121212" },
+      },
+    },
+  },
+  filetypes = { "dapui_stacks", "dapui_scopes", "dapui_watches", "dapui_breakpoints", "dap-repl" },
+}
+
 -- Config
 local config = {
   options = {
@@ -68,7 +80,7 @@ local config = {
     lualine_c = {},
     lualine_x = {},
   },
-  extensions = { blankstat },
+  extensions = { blankstat, dapstat },
 }
 
 -- Inserts a component in lualine_c at left section
