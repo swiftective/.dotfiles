@@ -1,20 +1,46 @@
 vim.cmd [[packadd packer.nvim]]
-vim.cmd [[packadd vimball]]
+
+local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local fn = vim.fn
+local packer = require "packer"
+local use = packer.use
+
+-- install packer if needed
+if fn.empty(fn.glob(install_path)) > 0 then
+  Packer_bootstrap = fn.system {
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  }
+end
 
 local disabled_built_ins = {
   "netrw",
   "netrwPlugin",
   "netrwSettings",
   "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin",
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  "matchit",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. plugin] = 1
 end
-
-vim.opt.shell = "/bin/bash"
-
-local packer = require "packer"
 
 packer.init {
   git = {
@@ -22,13 +48,6 @@ packer.init {
   },
   display = {
     open_fn = require("packer.util").float, -- An optional function to open a window for packer's display
-    working_sym = "⟳", -- The symbol for a plugin being installed/updated
-    error_sym = "✗", -- The symbol for a plugin with an error in installation/updating
-    done_sym = "✓", -- The symbol for a plugin which has completed installation/updating
-    removed_sym = "-", -- The symbol for an unused plugin which was removed
-    moved_sym = "→", -- The symbol for a plugin which was moved (e.g. from opt to start)
-    header_sym = "━", -- The symbol for the header line in packer's display
-    show_all_info = true, -- Should packer show all update details automatically?
     prompt_border = "double", -- Border style of prompt popups.
   },
   profile = {
@@ -37,7 +56,6 @@ packer.init {
   },
 }
 
-local use = packer.use
 packer.reset()
 
 return packer.startup(function()
@@ -53,7 +71,22 @@ return packer.startup(function()
     end,
   }
   use "ThePrimeagen/git-worktree.nvim"
-  use { "norcalli/nvim-colorizer.lua" }
+  use {
+    "norcalli/nvim-colorizer.lua",
+    event = "CursorHold",
+    config = function()
+      require("colorizer").setup({ "*" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        names = true, -- "Name" codes like Blue
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end,
+  }
   use "simrat39/symbols-outline.nvim"
 
   -- statusline
@@ -63,10 +96,13 @@ return packer.startup(function()
   }
 
   -- Git
-  use { "tpope/vim-fugitive" }
-  use { "junegunn/gv.vim", cmd = "GV" }
+  use { "tpope/vim-fugitive", cmd = "Git" }
   use {
     "lewis6991/gitsigns.nvim",
+    event = "BufEnter",
+    config = function()
+      require "git-signs"
+    end,
     requires = {
       "nvim-lua/plenary.nvim",
     },
@@ -98,7 +134,37 @@ return packer.startup(function()
   }
 
   -- Indentline
-  use "lukas-reineke/indent-blankline.nvim"
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup {
+        char = "▏",
+        buftype_exclude = { "help", "terminal", "nofile", "nowrite" },
+        filetype_exclude = {
+          "vimwiki",
+          "coc-explorer",
+          "help",
+          "undotree",
+          "diff",
+          "dapui_stacks",
+          "dapui_scopes",
+          "dapui_watches",
+          "dapui_breakpoints",
+          "dap-repl",
+        },
+        char_highlight_list = {
+          "rainbowcol1",
+          "rainbowcol2",
+          "rainbowcol3",
+          "rainbowcol4",
+          "rainbowcol5",
+          "rainbowcol6",
+        },
+        show_current_context = true,
+        show_current_context_start = true,
+      }
+    end,
+  }
 
   use {
     "blackCauldron7/surround.nvim",
@@ -122,8 +188,23 @@ return packer.startup(function()
   }
 
   -- Autocompletion
-  use "hrsh7th/nvim-cmp"
-  use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
+  use { "hrsh7th/nvim-cmp" }
+  use {
+    "tzachar/cmp-tabnine",
+    event = "InsertEnter",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = "..",
+      }
+    end,
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  }
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-cmdline"
@@ -133,16 +214,59 @@ return packer.startup(function()
   use "onsails/lspkind-nvim"
 
   -- Debugging
-  use "mfussenegger/nvim-dap"
+  use {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require("dap.ext.vscode").load_launchjs()
+      local dap = require "dap"
+      dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
+    end,
+  }
   use "Pocco81/DAPInstall.nvim"
-  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+  use {
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
+      require("dapui").setup {
+        sidebar = {
+          elements = {
+            {
+              id = "scopes",
+              size = 0.20, -- Can be float or integer > 1
+            },
+            { id = "breakpoints", size = 0.20 },
+            { id = "stacks", size = 0.30 },
+            { id = "watches", size = 0.20 },
+          },
+          size = 15,
+          position = "bottom", -- Can be "left", "right", "top", "bottom"
+        },
+        tray = {
+          elements = { "repl" },
+          size = 50,
+          position = "right", -- Can be "left", "right", "top", "bottom"
+        },
+        floating = {
+          max_height = 0.3, -- These can be integers or a float between 0 and 1.
+          max_width = 0.3, -- Floats will be treated as percentage of your screen.
+          border = "rounded", -- Border style. Can be "single", "double" or "rounded"
+        },
+        windows = { indent = 0 },
+      }
+    end,
+  }
   use {
     "theHamsta/nvim-dap-virtual-text",
     config = function()
       require("nvim-dap-virtual-text").setup()
     end,
   }
-  use "nvim-telescope/telescope-dap.nvim"
+  use {
+    "nvim-telescope/telescope-dap.nvim",
+    config = function()
+      require("telescope").load_extension "dap"
+    end,
+  }
   use "David-Kunz/jester"
   use "szw/vim-maximizer"
 
@@ -196,13 +320,22 @@ return packer.startup(function()
         insert_mappings = true,
         direction = "horizontal",
         close_on_exit = true,
-        shell = "/usr/bin/zsh",
       }
     end,
   }
 
   -- Notify
-  use "rcarriga/nvim-notify"
+  use {
+    "rcarriga/nvim-notify",
+    event = "CursorHold",
+    config = function()
+      require("notify").setup {
+        timeout = 800,
+        background_colour = "#000000",
+      }
+      vim.notify = require "notify"
+    end,
+  }
 
   -- bufferline for asthetics
   use { "romgrk/barbar.nvim", event = "CursorHold" }
@@ -210,16 +343,20 @@ return packer.startup(function()
   -- file tree
   use "kyazdani42/nvim-tree.lua"
 
-  use "tpope/vim-repeat" -- I'm very lazy
+  use { "tpope/vim-repeat", event = "CursorHold" } -- I'm very lazy
 
   -- vim multi cursors
   use {
     "mg979/vim-visual-multi",
-    event = "CursorHold",
+    keys = "<C-n>",
   }
 
-  use "ThePrimeagen/vim-be-good" -- A game for vimmers
+  use { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" } -- A game for vimmers
 
   -- Session management
-  use "tpope/vim-obsession"
+  use { "tpope/vim-obsession", cmd = "Obsession" }
+
+  if Packer_bootstrap then
+    packer.sync()
+  end
 end)

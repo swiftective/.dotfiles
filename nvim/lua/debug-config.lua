@@ -1,10 +1,3 @@
-require("telescope").load_extension "dap"
-require("nvim-dap-virtual-text").setup()
-require("dap.ext.vscode").load_launchjs()
-
-local dap = require "dap"
-dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
-
 local dap_install = require "dap-install"
 dap_install.config("jsnode", {})
 dap_install.config("python", {})
@@ -22,44 +15,6 @@ vim.fn.sign_define(
   { text = "", texthl = "LspDiagnosticsSignWarning", linehl = "", numhl = "" }
 )
 vim.fn.sign_define("DapLogPoint", { text = "", texthl = "LspDiagnosticsSignHint", linehl = "", numhl = "" })
-
-require("dapui").setup {
-  icons = { expanded = "▾", collapsed = "▸" },
-  mappings = {
-    expand = { "<CR>", "<2-LeftMouse>" },
-    open = "o",
-    remove = "d",
-    edit = "e",
-    repl = "r",
-  },
-  sidebar = {
-    elements = {
-      {
-        id = "scopes",
-        size = 0.20, -- Can be float or integer > 1
-      },
-      { id = "breakpoints", size = 0.20 },
-      { id = "stacks", size = 0.30 },
-      { id = "watches", size = 0.20 },
-    },
-    size = 15,
-    position = "bottom", -- Can be "left", "right", "top", "bottom"
-  },
-  tray = {
-    elements = { "repl" },
-    size = 50,
-    position = "right", -- Can be "left", "right", "top", "bottom"
-  },
-  floating = {
-    max_height = 0.3, -- These can be integers or a float between 0 and 1.
-    max_width = 0.3, -- Floats will be treated as percentage of your screen.
-    border = "rounded", -- Border style. Can be "single", "double" or "rounded"
-    mappings = {
-      close = { "q", "<Esc>" },
-    },
-  },
-  windows = { indent = 0 },
-}
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }

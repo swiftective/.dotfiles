@@ -26,7 +26,4 @@ function FugitiveToggle() abort
 endfunction
 nnoremap <space>gs <cmd>call FugitiveToggle()<CR>
 
-
 ]]
-
-require "git-signs"
