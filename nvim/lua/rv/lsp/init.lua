@@ -10,34 +10,13 @@ saga.config_values = {
   infor_sign = "",
   dianostic_header_icon = "   ",
   -- code action title icon
-  code_action_icon = " ",
-  code_action_prompt = {
-    enable = true,
-    sign = true,
-    sign_priority = 40,
-    virtual_text = true,
-  },
-  finder_definition_icon = "  ",
-  finder_reference_icon = "  ",
-  max_preview_lines = 10,
-  finder_action_keys = {
-    open = "o",
-    vsplit = "s",
-    split = "i",
-    quit = "q",
-    scroll_down = "<C-f>",
-    scroll_up = "<C-b>",
-  },
-  code_action_keys = {
-    quit = "q",
-    exec = "<CR>",
-  },
+  max_preview_lines = 20,
   rename_action_keys = {
     quit = "<C-c>",
     exec = "<CR>",
   },
   definition_preview_icon = "  ",
-  border_style = "single",
+  border_style = "round",
   rename_prompt_prefix = "➤",
   server_filetype_map = {},
 }
@@ -49,7 +28,7 @@ local extend_config = function(opts)
   end
   for key, value in pairs(opts) do
     if saga.config_values[key] == nil then
-      error(string.format("[LspSaga] Key %s not exist in config values", key))
+      error(string.format("[LSP] Key %s not exist in config values", key))
       return
     end
     if type(saga.config_values[key]) == "table" then
@@ -64,13 +43,13 @@ end
 
 function saga.init_lsp_saga(opts)
   extend_config(opts)
-  local diagnostic = require "lspsaga.diagnostic"
+  local diagnostic = require "rv.lsp.diagnostic"
 
   if saga.config_values.use_saga_diagnostic_sign then
     diagnostic.lsp_diagnostic_sign(saga.config_values)
   end
   if saga.config_values.code_action_prompt.enable then
-    vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'lspsaga.codeaction'.code_action_prompt()]]
+    print "No Code action"
   end
 end
 

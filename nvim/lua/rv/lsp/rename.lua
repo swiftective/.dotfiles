@@ -61,18 +61,18 @@ local rename = function()
     contents = {},
     filetype = "",
     enter = true,
-    highlight = "LspSagaRenameBorder",
+    highlight = "LspDiagnosticsDefaultHint",
   }
 
   local bufnr, winid = window.create_win_with_border(content_opts, opts)
-  local saga_rename_prompt_prefix = api.nvim_create_namespace "lspsaga_rename_prompt_prefix"
+  local saga_rename_prompt_prefix = api.nvim_create_namespace "LSP_rename_prompt_prefix"
   api.nvim_win_set_option(winid, "scrolloff", 0)
   api.nvim_win_set_option(winid, "sidescrolloff", 0)
   api.nvim_buf_set_option(bufnr, "modifiable", true)
   local prompt_prefix = get_prompt_prefix()
   api.nvim_buf_set_option(bufnr, "buftype", "prompt")
   vim.fn.prompt_setprompt(bufnr, prompt_prefix)
-  api.nvim_buf_add_highlight(bufnr, saga_rename_prompt_prefix, "LspSagaRenamePromptPrefix", 0, 0, #prompt_prefix)
+  api.nvim_buf_add_highlight(bufnr, saga_rename_prompt_prefix, "LspRenamePromptPrefix", 0, 0, #prompt_prefix)
   vim.cmd [[startinsert!]]
   api.nvim_win_set_var(0, unique_name, winid)
   api.nvim_command "autocmd QuitPre <buffer> ++nested ++once :silent lua require('rv.lsp.rename').close_rename_win()"

@@ -45,14 +45,7 @@ return packer.startup(function()
   use "wbthomason/packer.nvim"
 
   -- Color-scheme
-  use {
-    "navarasu/onedark.nvim",
-    config = function()
-      vim.g.onedark_transparent_background = true
-      vim.g.onedark_hide_ending_tildes = true
-      vim.g.onedark_style = "deep"
-    end,
-  }
+  use { "navarasu/onedark.nvim" }
   use {
     "Mofiqul/vscode.nvim",
     config = function()
@@ -70,8 +63,8 @@ return packer.startup(function()
   }
 
   -- Git
-  use "tpope/vim-fugitive"
-  use "junegunn/gv.vim"
+  use { "tpope/vim-fugitive" }
+  use { "junegunn/gv.vim", cmd = "GV" }
   use {
     "lewis6991/gitsigns.nvim",
     requires = {
@@ -98,6 +91,7 @@ return packer.startup(function()
   -- Comment plugin
   use {
     "numToStr/Comment.nvim",
+    event = "VimEnter",
     config = function()
       require("Comment").setup()
     end,
@@ -108,12 +102,14 @@ return packer.startup(function()
 
   use {
     "blackCauldron7/surround.nvim",
+    event = "VimEnter",
     config = function()
       require("surround").setup { mappings_style = "surround" }
     end,
   }
   use {
     "windwp/nvim-autopairs",
+    event = "VimEnter",
     config = function()
       require("nvim-autopairs").setup()
     end,
@@ -162,7 +158,6 @@ return packer.startup(function()
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
   use "antoinemadec/FixCursorHold.nvim" -- Lsp performance issue to fix
-  use "glepnir/lspsaga.nvim"
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
