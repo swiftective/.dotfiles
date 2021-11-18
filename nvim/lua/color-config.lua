@@ -11,7 +11,7 @@ let g:onedark_transparent_background = "true"
 let g:onedark_hide_ending_tildes = "true"
 let g:onedark_style = 'deep'
 " colorscheme vscode
-colorscheme onedark
+" colorscheme onedark
 
 syntax on
 hi LightspeedShortcutOverlapped guibg=none guifg=Cyan

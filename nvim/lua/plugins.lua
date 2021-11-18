@@ -60,6 +60,7 @@ return packer.startup(function()
       vim.g.onedark_transparent_background = true
       vim.g.onedark_hide_ending_tildes = true
       vim.g.onedark_style = "deep"
+      vim.cmd [[colorscheme onedark]]
     end,
   }
   use {
@@ -67,16 +68,13 @@ return packer.startup(function()
     config = function()
       vim.g.tokyonight_style = "night"
       vim.g.tokyonight_transparent = true
-      vim.cmd [[colorscheme onedark]]
     end,
-    opts = true,
   }
   use {
     "Mofiqul/vscode.nvim",
     config = function()
       vim.g.vscode_style = "dark"
     end,
-    opts = true,
   }
   use "ThePrimeagen/git-worktree.nvim"
   use { "norcalli/nvim-colorizer.lua" }
