@@ -1,4 +1,4 @@
-
+vim.cmd [[
 " git blame
 nnoremap <leader>gm :Gitsigns toggle_current_line_blame<CR>
 
@@ -26,4 +26,7 @@ function FugitiveToggle() abort
 endfunction
 nnoremap <space>gs <cmd>call FugitiveToggle()<CR>
 
-lua require('git-signs')
+
+]]
+
+require "git-signs"

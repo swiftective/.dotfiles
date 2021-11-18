@@ -1,3 +1,6 @@
+vim.cmd [[
+" main remap
+inoremap jk <Esc>
 
 " nvimtree
 nnoremap <leader>e :NvimTreeToggle<CR>
@@ -46,3 +49,9 @@ xnoremap < <gv
 noremap Y "+y
 
 inoremap <C-v> <C-r>"
+
+map ; <Plug>Lightspeed_;_sx
+map , <Plug>Lightspeed_,_sx
+map ; <Plug>Lightspeed_;_ft
+map , <Plug>Lightspeed_,_ft
+]]

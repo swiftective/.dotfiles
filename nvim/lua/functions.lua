@@ -1,14 +1,15 @@
+vim.cmd [[
 
-function! HandleURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
-  echo s:uri
-  if s:uri != ""
-    silent exec "!xdg-open '".s:uri."'"
-  else
-    echo "No URI found in line."
-  endif
-endfunction
-nnoremap <M-u> :call HandleURL()<cr>
+" function! HandleURL()
+"   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+"   echo s:uri
+"   if s:uri != ""
+"     silent exec "!xdg-open '".s:uri."'"
+"   else
+"     echo "No URI found in line."
+"   endif
+" endfunction
+" nnoremap <M-u> :call HandleURL()<cr>
 
 augroup highlight_yank
   autocmd!
@@ -79,3 +80,4 @@ function! Colord()
   :hi rainbowcol6 guifg=#1cd4d4
   :hi rainbowcol7 guifg=#6A9955
 endfunction
+]]

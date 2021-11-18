@@ -3,7 +3,7 @@ require("nvim-dap-virtual-text").setup()
 require("dap.ext.vscode").load_launchjs()
 
 local dap = require "dap"
-dap.defaults.fallback.terminal_win_cmd = "60vsplit new"
+dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
 
 local dap_install = require "dap-install"
 dap_install.config("jsnode", {})
@@ -42,7 +42,7 @@ require("dapui").setup {
       { id = "stacks", size = 0.30 },
       { id = "watches", size = 0.20 },
     },
-    size = 20,
+    size = 15,
     position = "bottom", -- Can be "left", "right", "top", "bottom"
   },
   tray = {
@@ -51,9 +51,9 @@ require("dapui").setup {
     position = "right", -- Can be "left", "right", "top", "bottom"
   },
   floating = {
-    max_height = 0.5, -- These can be integers or a float between 0 and 1.
-    max_width = 0.5, -- Floats will be treated as percentage of your screen.
-    border = "double", -- Border style. Can be "single", "double" or "rounded"
+    max_height = 0.3, -- These can be integers or a float between 0 and 1.
+    max_width = 0.3, -- Floats will be treated as percentage of your screen.
+    border = "rounded", -- Border style. Can be "single", "double" or "rounded"
     mappings = {
       close = { "q", "<Esc>" },
     },
@@ -66,9 +66,9 @@ local opts = { noremap = true, silent = true }
 
 map("n", "<leader>dcc", '<cmd>lua require"dap".continue()<CR>', opts)
 map("n", "<leader>dcr", '<cmd>lua require"dap".reverse_continue()<CR>', opts)
-map("n", "<leader>dsv", '<cmd>lua require"dap".step_over()<CR>', opts)
-map("n", "<leader>dsi", '<cmd>lua require"dap".step_into()<CR>', opts)
-map("n", "<leader>dso", '<cmd>lua require"dap".step_out()<CR>', opts)
+map("n", "<leader>dv", '<cmd>lua require"dap".step_over()<CR>', opts)
+map("n", "<leader>di", '<cmd>lua require"dap".step_into()<CR>', opts)
+map("n", "<leader>do", '<cmd>lua require"dap".step_out()<CR>', opts)
 map("n", "<leader>dsb", '<cmd>lua require"dap".step_back()<CR>', opts)
 map("n", "<leader>dk", '<cmd>lua require"dap".up()<CR>', opts)
 map("n", "<leader>dj", '<cmd>lua require"dap".down()<CR>', opts)

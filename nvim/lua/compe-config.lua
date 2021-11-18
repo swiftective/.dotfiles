@@ -5,7 +5,6 @@ local cmp = require "cmp"
 local luasnip = require "luasnip"
 
 local lspkind = require "lspkind"
-lspkind.init()
 
 local source_mapping = {
   buffer = "[Buffer]",
@@ -14,6 +13,7 @@ local source_mapping = {
   cmp_tabnine = "[TN]",
   path = "[Path]",
   luasnip = "[Snip]",
+  cmp_git = "[GH]",
 }
 
 cmp.setup {
@@ -24,10 +24,7 @@ cmp.setup {
   },
   mapping = {
     ["<c-space>"] = cmp.mapping {
-      i = cmp.mapping.complete(),
-      c = function(
-        _ --[[fallback]]
-      )
+      i = function()
         if cmp.visible() then
           if not cmp.confirm { select = true } then
             return
@@ -66,14 +63,21 @@ cmp.setup {
       "s",
     }),
   },
+  experimental = {
+    ghost_text = true,
+  },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  },
   sources = {
-    { name = "cmp_tabnine" },
     { name = "luasnip" },
     { name = "nvim_lsp" },
+    { name = "cmp_tabnine" },
     { name = "nvim_lua" },
+    { name = "buffer" },
     { name = "path" },
     { name = "cmdline" },
-    { name = "buffer" },
+    { name = "cmp_git" },
   },
   formatting = {
     format = function(entry, vim_item)
@@ -84,6 +88,12 @@ cmp.setup {
           menu = entry.completion_item.data.detail .. "  " .. menu
         end
         vim_item.kind = ""
+      end
+      if entry.source.name == "cmp_git" then
+        if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+          menu = entry.completion_item.data.detail .. "  " .. menu
+        end
+        vim_item.kind = ""
       end
       vim_item.menu = menu
       return vim_item
@@ -101,4 +111,3 @@ tabnine:setup {
 }
 
 vim.opt.runtimepath = vim.opt.runtimepath + "~/.config/nvim/snippets"
-require("luasnip/loaders/from_vscode").lazy_load()

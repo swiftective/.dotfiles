@@ -1,9 +1,7 @@
-
-
+vim.cmd [[
 set termguicolors
 set background=dark
 
-let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
 " colorscheme base16-tomorrow-night
 let g:vscode_style = "dark"
@@ -16,12 +14,16 @@ let g:onedark_style = 'deep'
 colorscheme onedark
 
 syntax on
+hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
+hi LightspeedShortcut guibg=none guifg=Cyan
+hi LightspeedLabel guibg=none guifg=Cyan
+hi! link LightspeedGreyWash Comment
+hi IndentBlanklineContextChar guifg=#c7223b
 hi TSVariable ctermfg=204 guifg=#E06C75
-hi Normal guibg=none
-" hi IncSearch guibg=#d8636b guifg=white
+hi IncSearch guibg=#d8636b guifg=White
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=black
+hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=Black
 hi cssUnitDecorators guifg=#d8636b
 hi GitSignsAdd guibg=none guifg=#27db57
 hi GitSignsChange guibg=none guifg=#2193de
@@ -37,7 +39,7 @@ hi NvimTreeEmptyFolderName guibg=none
 hi UndotreeSavedBig guibg=none guifg=#efbd5d
 hi UndotreeSavedSmall guibg=none
 hi UndotreeNode guibg=none
-hi NvimTreeEndOfBuffer guibg=none guifg=black
+hi NvimTreeEndOfBuffer guibg=none guifg=Black
 hi LspDiagnosticsDefaultHint guifg=#1b6e6a
 hi DiagnosticHint guifg=#1b6e6a
 hi LspDiagnosticsDefaultInformation guifg=#6699cc
@@ -56,9 +58,10 @@ hi BufferVisible guibg=none
 hi BufferVisibleMod guibg=none
 hi BufferVisibleSign guibg=none
 
+
 " sneak
-hi Sneak guifg=cyan guibg=none ctermfg=Cyan ctermbg=none
-hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=yellow
+hi Sneak guifg=Cyan guibg=none ctermfg=Cyan ctermbg=none
+hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=Yellow
 
 
 hi Pmenu guifg=#C0C5CE guibg=#121212
@@ -71,3 +74,8 @@ hi rainbowcol4 guifg=#c685c9
 hi rainbowcol5 guifg=#5a76cc
 hi rainbowcol6 guifg=#1cd4d4
 hi rainbowcol7 guifg=#6A9955
+
+
+hi Normal guibg=none ctermbg=none
+
+]]
