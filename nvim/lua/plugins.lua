@@ -62,20 +62,22 @@ return packer.startup(function()
       vim.g.onedark_style = "deep"
     end,
   }
-  -- use {
-  --   "folke/tokyonight.nvim",
-  --   config = function()
-  --     vim.g.tokyonight_style = "night"
-  --     vim.g.tokyonight_transparent = true
-  --     vim.cmd [[colorscheme onedark]]
-  --   end,
-  -- }
-  -- use {
-  --   "Mofiqul/vscode.nvim",
-  --   config = function()
-  --     vim.g.vscode_style = "dark"
-  --   end,
-  -- }
+  use {
+    "folke/tokyonight.nvim",
+    config = function()
+      vim.g.tokyonight_style = "night"
+      vim.g.tokyonight_transparent = true
+      vim.cmd [[colorscheme onedark]]
+    end,
+    opts = true,
+  }
+  use {
+    "Mofiqul/vscode.nvim",
+    config = function()
+      vim.g.vscode_style = "dark"
+    end,
+    opts = true,
+  }
   use "ThePrimeagen/git-worktree.nvim"
   use { "norcalli/nvim-colorizer.lua" }
   use "simrat39/symbols-outline.nvim"
