@@ -108,7 +108,7 @@ local function show_diagnostics(opts, get_diagnostics)
   local content_opts = {
     contents = wrap_message,
     filetype = "plaintext",
-    highlight = "LspDiagnosticBorder",
+    highlight = "LspDiagnosticsDefaultInformation",
   }
 
   local bufnr, winid = window.create_win_with_border(content_opts, opts)

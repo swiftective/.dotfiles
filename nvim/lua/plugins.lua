@@ -146,6 +146,9 @@ return packer.startup(function()
   use "David-Kunz/jester"
   use "szw/vim-maximizer"
 
+  -- Running code snippet
+  use { "michaelb/sniprun", run = "bash ./install.sh", cmd = "SnipRun" }
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
