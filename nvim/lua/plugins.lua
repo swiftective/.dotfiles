@@ -77,7 +77,7 @@ return packer.startup(function()
   --   end,
   -- }
   use "ThePrimeagen/git-worktree.nvim"
-  use "norcalli/nvim-colorizer.lua"
+  use { "norcalli/nvim-colorizer.lua" }
   use "simrat39/symbols-outline.nvim"
 
   -- statusline
@@ -207,7 +207,7 @@ return packer.startup(function()
   use "rcarriga/nvim-notify"
 
   -- bufferline for asthetics
-  use "romgrk/barbar.nvim"
+  use { "romgrk/barbar.nvim", event = "CursorHold" }
 
   -- file tree
   use "kyazdani42/nvim-tree.lua"
@@ -215,7 +215,10 @@ return packer.startup(function()
   use "tpope/vim-repeat" -- I'm very lazy
 
   -- vim multi cursors
-  use { "mg979/vim-visual-multi", event = "VimEnter" }
+  use {
+    "mg979/vim-visual-multi",
+    event = "CursorHold",
+  }
 
   use "ThePrimeagen/vim-be-good" -- A game for vimmers
 
