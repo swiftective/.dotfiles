@@ -1,3 +1,6 @@
+vim.cmd [[packadd packer.nvim]]
+vim.cmd [[packadd vimball]]
+
 local disabled_built_ins = {
   "netrw",
   "netrwPlugin",
@@ -12,8 +15,6 @@ end
 vim.opt.shell = "/bin/dash"
 
 local packer = require "packer"
-
-vim.cmd [[packadd packer.nvim]]
 
 packer.init {
   git = {
@@ -49,13 +50,6 @@ return packer.startup(function()
     end,
   }
   use {
-    "folke/tokyonight.nvim",
-    config = function()
-      vim.g.tokyonight_style = "night"
-      vim.g.tokyonight_transparent = true
-    end,
-  }
-  use {
     "Mofiqul/vscode.nvim",
     config = function()
       vim.g.vscode_style = "dark"
@@ -79,15 +73,6 @@ return packer.startup(function()
     requires = {
       "nvim-lua/plenary.nvim",
     },
-    config = function()
-      require("gitsigns").setup {
-        keymaps = {
-          noremap = true,
-          ["n ("] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'" },
-          ["n )"] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'" },
-        },
-      }
-    end,
   }
 
   -- undotree
