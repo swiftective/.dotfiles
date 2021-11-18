@@ -14,7 +14,6 @@ for type, icon in pairs(signs) do
 end
 
 require "compe-config"
-require "lsp_saga-config"
 require "lsp_install"
 require "symbols"
 
