@@ -1,15 +1,7 @@
+vim.g.onedark_transparent_background = true
+vim.g.onedark_hide_ending_tildes = true
+vim.g.onedark_style = "deep"
 vim.cmd [[
-set termguicolors
-set background=dark
-
-" colorscheme base16-default-dark
-" colorscheme base16-tomorrow-night
-let g:vscode_style = "dark"
-let g:tokyonight_style = "night"
-let g:tokyonight_transparent = "true"
-let g:onedark_transparent_background = "true"
-let g:onedark_hide_ending_tildes = "true"
-let g:onedark_style = 'deep'
 " colorscheme vscode
 colorscheme onedark
 

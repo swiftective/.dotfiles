@@ -1,57 +1,49 @@
-vim.cmd [[
-" main remap
-inoremap jk <Esc>
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
-" nvimtree
-nnoremap <leader>e :NvimTreeToggle<CR>
+map("i", "jk", "<Esc>", opts)
 
-" source config
-nnoremap <Leader>rc :source $MYVIMRC<CR>
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
-" vim sessions
-nnoremap <Leader>o :SymbolsOutline<CR>
+map("n", "<Leader>rc", ":source $MYVIMRC<CR>", opts)
 
-" splits
-nnoremap <leader>wm :MaximizerToggle<CR>
+map("n", "<Leader>o", ":SymbolsOutline<CR>", opts)
 
-nnoremap <leader>n :cnext<CR>
-nnoremap <leader>p :cprevious<CR>
+map("n", "<leader>wm", ":MaximizerToggle<CR>", opts)
 
-" undo tree
-nnoremap <Leader>u :UndotreeToggle<CR>
+map("n", "<leader>n", ":cnext<CR>", opts)
 
-tnoremap <A-s> <C-\><C-n>
+map("n", "<leader>p", ":cprevious<CR>", opts)
 
-nnoremap <leader>qq :q!<CR>
-nnoremap <silent><C-l> <C-^>
+map("n", "<Leader>u", ":UndotreeToggle<CR>", opts)
 
-nnoremap <leader>w< 5<C-w><
-nnoremap <leader>w> 5<C-w>>
+map("t", "<A-s>", "<C-\\><C-n>", opts)
 
-noremap L $
-noremap H 0
+map("n", "<leader>qq", ":q!<CR>", opts)
 
-nnoremap <leader>w <C-w>
+map("n", "<silent><C-l>", "<C-^>", opts)
 
-" folds
-nnoremap zo za
+map("n", "<leader>w<", "5<C-w><", opts)
 
-noremap <C-f> <C-u>
+map("n", "<leader>w>", "5<C-w>>", opts)
 
-" tab indent
-xnoremap > >gv
-xnoremap < <gv
+map("", "L", "$", opts)
+map("", "H", "0", opts)
 
-" which key
-" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+map("n", "<leader>w", "<C-w>", opts)
 
-" personal custom
-noremap Y "+y
+map("n", "zo", "za", opts)
 
-inoremap <C-v> <C-r>"
+map("n", "<C-f>", "<C-u>", opts)
 
-map ; <Plug>Lightspeed_;_sx
-map , <Plug>Lightspeed_,_sx
-map ; <Plug>Lightspeed_;_ft
-map , <Plug>Lightspeed_,_ft
-]]
+map("x", ">", ">gv", opts)
+map("x", "<", "<gv", opts)
+
+map("n", "Y", '+y"', opts)
+
+map("i", "<C-v>", '<C-r>"', opts)
+
+map("", ";", "<Plug>Lightspeed_;_sx", { noremap = false })
+map("", ",", "<Plug>Lightspeed_,_sx", { noremap = false })
+map("", ";", "<Plug>Lightspeed_;_ft", { noremap = false })
+map("", ",", "<Plug>Lightspeed_,_ft", { noremap = false })

@@ -29,6 +29,11 @@ augroup swiftective
   autocmd ColorScheme * call Colord()
 augroup end
 
+augroup packer_user_config
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
+
 " colorscheme mess
 function! Colord()
   :syntax on

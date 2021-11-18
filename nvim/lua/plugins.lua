@@ -31,6 +31,10 @@ packer.init {
     show_all_info = true, -- Should packer show all update details automatically?
     prompt_border = "double", -- Border style of prompt popups.
   },
+  profile = {
+    enable = true,
+    threshold = 1, -- integer in milliseconds, plugins which load faster than this won't be shown in profile output
+  },
 }
 
 local use = packer.use
