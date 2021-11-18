@@ -153,6 +153,20 @@ return packer.startup(function()
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        rainbow = {
+          enable = true,
+          extended_mode = true,
+          max_file_lines = nil,
+        },
+        highlight = {
+          enable = true,
+          extended_mode = true,
+          max_file_lines = nil,
+        },
+      }
+    end,
   }
   use "nvim-treesitter/playground"
   use "p00f/nvim-ts-rainbow"
@@ -173,7 +187,19 @@ return packer.startup(function()
   use "rafamadriz/friendly-snippets"
 
   -- Terminal
-  use "akinsho/toggleterm.nvim"
+  use {
+    "akinsho/toggleterm.nvim",
+    config = function()
+      require("toggleterm").setup {
+        size = 20,
+        open_mapping = [[<A-t>]],
+        insert_mappings = true,
+        direction = "horizontal",
+        close_on_exit = true,
+        shell = "/usr/bin/zsh",
+      }
+    end,
+  }
 
   -- Notify
   use "rcarriga/nvim-notify"
