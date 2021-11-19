@@ -1,10 +1,3 @@
-vim.cmd [[
-  let g:VM_mouse_mappings = 1
-  let g:VM_custom_remaps = {'<c-c>': '<c-[>', '<C-f>': '<C-u>', '<C-j>': '<C-Down>', '<C-k>': '<C-Up>'}
-]]
-vim.g["undotree_SetFocusWhenToggle"] = 1
-vim.g["undotree_WindowLayout"] = 3
-
 vim.o.lazyredraw = true
 vim.o.termguicolors = true
 vim.o.timeoutlen = 800

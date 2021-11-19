@@ -4,6 +4,7 @@ local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nv
 local fn = vim.fn
 local packer = require "packer"
 local use = packer.use
+local chold = "CursorHold"
 
 -- install packer if needed
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -73,7 +74,7 @@ return packer.startup(function()
   use "ThePrimeagen/git-worktree.nvim"
   use {
     "norcalli/nvim-colorizer.lua",
-    event = "CursorHold",
+    event = chold,
     config = function()
       require("colorizer").setup({ "*" }, {
         RGB = true, -- #RGB hex codes
@@ -87,7 +88,7 @@ return packer.startup(function()
       })
     end,
   }
-  use "simrat39/symbols-outline.nvim"
+  use { "simrat39/symbols-outline.nvim", event = chold }
 
   -- statusline
   use {
@@ -99,7 +100,7 @@ return packer.startup(function()
   use { "tpope/vim-fugitive", cmd = "Git" }
   use {
     "lewis6991/gitsigns.nvim",
-    event = "BufEnter",
+    event = chold,
     config = function()
       require "git-signs"
     end,
@@ -109,7 +110,14 @@ return packer.startup(function()
   }
 
   -- undotree
-  use "mbbill/undotree"
+  use {
+    "mbbill/undotree",
+    event = chold,
+    config = function()
+      vim.g["undotree_SetFocusWhenToggle"] = 1
+      vim.g["undotree_WindowLayout"] = 3
+    end,
+  }
 
   -- Fuzzy Finder
   use {
@@ -122,12 +130,12 @@ return packer.startup(function()
   use "nvim-lua/popup.nvim"
 
   -- motion plugin
-  use "ggandor/lightspeed.nvim"
+  use { "ggandor/lightspeed.nvim", keys = { "s", "S", "F", "f", "t", "T" } }
 
   -- Comment plugin
   use {
     "numToStr/Comment.nvim",
-    event = "VimEnter",
+    event = chold,
     config = function()
       require("Comment").setup()
     end,
@@ -136,6 +144,7 @@ return packer.startup(function()
   -- Indentline
   use {
     "lukas-reineke/indent-blankline.nvim",
+    event = chold,
     config = function()
       require("indent_blankline").setup {
         char = "▏",
@@ -168,14 +177,14 @@ return packer.startup(function()
 
   use {
     "blackCauldron7/surround.nvim",
-    event = "VimEnter",
+    event = chold,
     config = function()
       require("surround").setup { mappings_style = "surround" }
     end,
   }
   use {
     "windwp/nvim-autopairs",
-    event = "VimEnter",
+    event = chold,
     config = function()
       require("nvim-autopairs").setup()
     end,
@@ -185,6 +194,8 @@ return packer.startup(function()
     config = function()
       require("nvim-ts-autotag").setup()
     end,
+    ft = { "html", "jsx", "tsx", "vue", "php", "svelte" },
+    requires = "nvim-treesitter/nvim-treesitter",
   }
 
   -- Autocompletion
@@ -205,13 +216,19 @@ return packer.startup(function()
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   }
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-nvim-lua"
-  use { "petertriho/cmp-git", requires = "nvim-lua/plenary.nvim" }
-  use "onsails/lspkind-nvim"
+  use { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter", requires = "hrsh7th/compe" }
+  use { "hrsh7th/cmp-buffer", event = "insertenter" }
+  use { "hrsh7th/cmp-cmdline", event = "InsertEnter" }
+  use { "hrsh7th/cmp-path", event = "InsertEnter" }
+  use { "hrsh7th/cmp-nvim-lua", event = "InsertEnter" }
+  use { "petertriho/cmp-git", event = "InsertEnter" }
+  use { "saadparwaiz1/cmp_luasnip", event = "insertenter" }
+
+  use { "onsails/lspkind-nvim" }
+
+  -- Snippets
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
 
   -- Debugging
   use {
@@ -268,7 +285,7 @@ return packer.startup(function()
     end,
   }
   use "David-Kunz/jester"
-  use "szw/vim-maximizer"
+  use { "szw/vim-maximizer", event = chold }
 
   -- Running code snippet
   use { "michaelb/sniprun", run = "bash ./install.sh", cmd = "SnipRun" }
@@ -292,7 +309,7 @@ return packer.startup(function()
       }
     end,
   }
-  use "nvim-treesitter/playground"
+  use { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" }
   use "p00f/nvim-ts-rainbow"
 
   -- LSP
@@ -301,14 +318,20 @@ return packer.startup(function()
   use "antoinemadec/FixCursorHold.nvim" -- Lsp performance issue to fix
   use {
     "folke/trouble.nvim",
+    event = chold,
     requires = "kyazdani42/nvim-web-devicons",
   }
-  use "sbdchd/neoformat" -- Formatting (Need to replace with null-ls)
-
-  -- Snippets
-  use "L3MON4D3/LuaSnip"
-  use "saadparwaiz1/cmp_luasnip"
-  use "rafamadriz/friendly-snippets"
+  use {
+    "sbdchd/neoformat",
+    event = chold,
+    config = function()
+      vim.g["neoformat_try_node_exe"] = 1
+      vim.g["neoformat_basic_format_align"] = 1
+      vim.g["neoformat_basic_format_retab"] = 1
+      vim.g["neoformat_basic_format_trim"] = 1
+      vim.g["neoformat_only_msg_on_error"] = 1
+    end,
+  } -- Formatting (Need to replace with null-ls)
 
   -- Terminal
   use {
@@ -327,7 +350,7 @@ return packer.startup(function()
   -- Notify
   use {
     "rcarriga/nvim-notify",
-    event = "CursorHold",
+    event = chold,
     config = function()
       require("notify").setup {
         timeout = 800,
@@ -338,17 +361,23 @@ return packer.startup(function()
   }
 
   -- bufferline for asthetics
-  use { "romgrk/barbar.nvim", event = "CursorHold" }
+  use { "romgrk/barbar.nvim", event = chold }
 
   -- file tree
   use "kyazdani42/nvim-tree.lua"
 
-  use { "tpope/vim-repeat", event = "CursorHold" } -- I'm very lazy
+  use { "tpope/vim-repeat", event = chold } -- I'm very lazy
 
   -- vim multi cursors
   use {
     "mg979/vim-visual-multi",
     keys = "<C-n>",
+    config = function()
+      vim.cmd [[
+       let g:VM_mouse_mappings = 1
+       let g:VM_custom_remaps = {'<c-c>': '<c-[>', '<C-f>': '<C-u>', '<C-j>': '<C-Down>', '<C-k>': '<C-Up>'}
+       ]]
+    end,
   }
 
   use { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" } -- A game for vimmers
