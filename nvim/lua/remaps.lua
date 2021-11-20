@@ -63,9 +63,9 @@ map("n", "<leader>bc", ":BufferClose<CR>", opts)
 -- Magic buffer-picking mode
 map("n", "<leader>bp", ":BufferPick<CR>", opts)
 -- Sort automatically by...
-map("n", "<Space>bb", ":BufferOrderByBufferNumber<CR>", opts)
-map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
-map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
+map("n", "<leader>bb", ":BufferOrderByBufferNumber<CR>", opts)
+map("n", "<leader>bd", ":BufferOrderByDirectory<CR>", opts)
+map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
 -- pin buffer
 map("n", "<leader>bi", ":BufferPin<CR>", opts)
 
