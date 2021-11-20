@@ -19,7 +19,7 @@ map("n", "zo", "za", opts)
 map("n", "<C-f>", "<C-u>", opts)
 map("x", ">", ">gv", opts)
 map("x", "<", "<gv", opts)
-map("n", "Y", [["+y]], opts)
+map("", "Y", [["+y]], opts)
 map("i", "<C-v>", '<C-r>"', opts)
 map("n", "<M-u>", "<cmd>lua require('functions').HandleURL()<CR>", opts)
 --  Undo Tree
