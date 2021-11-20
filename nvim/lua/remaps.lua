@@ -77,3 +77,7 @@ map("n", "<leader>gc", "<cmd>lua require('telescope').extensions.git_worktree.cr
 map("n", "<leader>gh", ":diffget //3<CR>", opts)
 map("n", "<leader>gf", ":diffget //2<CR>", opts)
 map("n", "<leader>gr", "<cmd>Gitsigns refresh<CR>", opts)
+
+-- SnipRun
+map("n", "<leader>rs", ":SnipRun<CR>", opts)
+map("v", "<leader>rs", ":SnipRun<CR>", opts)

@@ -296,7 +296,7 @@ return packer.startup(function()
         display = { "Classic", "NvimNotify" },
       }
     end,
-    cmd = "SnipRun",
+    cmd = { "SnipRun", "'<,'>SnipRun" },
   }
 
   -- Treesitter
