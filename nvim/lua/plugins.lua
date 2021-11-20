@@ -359,6 +359,7 @@ return packer.startup(function()
   -- Terminal
   use {
     "akinsho/toggleterm.nvim",
+    keys = "<A-t>",
     config = function()
       require("toggleterm").setup {
         size = 20,
