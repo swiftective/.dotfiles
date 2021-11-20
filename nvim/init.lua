@@ -7,7 +7,6 @@ vim.g["cursorhold_updatetime"] = 100
 require "plugins"
 require "telescope-config"
 require "remaps"
-require "git-config"
 require "lsp-config"
 require "functions"
 require "color-config"

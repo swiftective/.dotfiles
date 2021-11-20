@@ -21,7 +21,7 @@ map("x", ">", ">gv", opts)
 map("x", "<", "<gv", opts)
 map("n", "Y", [["+y]], opts)
 map("i", "<C-v>", '<C-r>"', opts)
-
+map("n", "<M-u>", "<cmd>lua require('functions').HandleURL()<CR>", opts)
 --  Undo Tree
 map("n", "<Leader>u", ":UndotreeToggle<CR>", opts)
 

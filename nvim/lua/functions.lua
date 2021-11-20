@@ -1,15 +1,13 @@
 vim.cmd [[
-
-" function! HandleURL()
-"   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
-"   echo s:uri
-"   if s:uri != ""
-"     silent exec "!xdg-open '".s:uri."'"
-"   else
-"     echo "No URI found in line."
-"   endif
-" endfunction
-" nnoremap <M-u> :call HandleURL()<cr>
+" git fugitve toggle function
+function FugitiveToggle() abort
+  try
+    exe filter(getwininfo(), "get(v:val['variables'], 'fugitive_status', v:false) != v:false")[0].winnr .. "wincmd c"
+  catch /E684/
+    Git
+  endtry
+endfunction
+nnoremap <space>gs <cmd>call FugitiveToggle()<CR>
 
 augroup highlight_yank
   autocmd!
@@ -102,3 +100,15 @@ function! Colord()
   :hi Normal guibg=none ctermbg=none
 endfunction
 ]]
+
+M = {}
+M.HandleURL = function()
+  local url = string.match(vim.fn.getline ".", "[a-z]*://[^ >,;]*")
+  if url ~= nil then
+    vim.cmd("exec \"!xdg-open '" .. url .. "'\"")
+  else
+    vim.notify(" No URI found in line. ", "error", { title = debug.getinfo(1, "n").name })
+  end
+end
+
+return M

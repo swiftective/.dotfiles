@@ -288,7 +288,16 @@ return packer.startup(function()
   use { "szw/vim-maximizer", event = chold }
 
   -- Running code snippet
-  use { "michaelb/sniprun", run = "bash ./install.sh", cmd = "SnipRun" }
+  use {
+    "michaelb/sniprun",
+    run = "bash ./install.sh",
+    config = function()
+      require("sniprun").setup {
+        display = { "Classic", "NvimNotify" },
+      }
+    end,
+    cmd = "SnipRun",
+  }
 
   -- Treesitter
   use {
