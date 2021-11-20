@@ -7,7 +7,7 @@ function FugitiveToggle() abort
     Git
   endtry
 endfunction
-nnoremap <space>gs <cmd>call FugitiveToggle()<CR>
+nnoremap <leader>gs <cmd>call FugitiveToggle()<CR>
 
 augroup highlight_yank
   autocmd!

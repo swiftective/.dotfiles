@@ -1,3 +1,4 @@
+vim.g.mapleader = " " -- Leader key
 vim.o.lazyredraw = true
 vim.o.termguicolors = true
 vim.o.timeoutlen = 800

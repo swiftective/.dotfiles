@@ -331,7 +331,14 @@ return packer.startup(function()
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
-  use "antoinemadec/FixCursorHold.nvim" -- Lsp performance issue to fix
+  use {
+    "antoinemadec/FixCursorHold.nvim",
+    event = "VImEnter",
+    config = function()
+      -- 12587 issue neovim
+      vim.g["cursorhold_updatetime"] = 100
+    end,
+  }
   use {
     "folke/trouble.nvim",
     event = chold,

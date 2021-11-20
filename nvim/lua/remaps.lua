@@ -79,7 +79,7 @@ map("n", "<leader>gf", ":diffget //2<CR>", opts)
 map("n", "<leader>gr", "<cmd>Gitsigns refresh<CR>", opts)
 
 -- treesitter
-map("n", "<leader>ts", ":TSPlaygroundToggle<CR>", opts)
+map("n", "<leader>ts", "<cmd>TSPlaygroundToggle<CR>", opts)
 
 -- SnipRun
 map("n", "<leader>rs", ":SnipRun<CR>", opts)
