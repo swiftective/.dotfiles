@@ -68,3 +68,12 @@ map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
 map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
 -- pin buffer
 map("n", "<leader>bi", ":BufferPin<CR>", opts)
+
+-- Git
+map("n", "<leader>gm", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
+map("n", "<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<CR>", opts)
+map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", opts)
+map("n", "<leader>gc", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", opts)
+map("n", "<leader>gh", ":diffget //3<CR>", opts)
+map("n", "<leader>gf", ":diffget //2<CR>", opts)
+map("n", "<leader>gr", "<cmd>Gitsigns refresh<CR>", opts)
