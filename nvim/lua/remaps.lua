@@ -35,10 +35,10 @@ map("", ";", "<Plug>Lightspeed_;_ft", { noremap = false })
 map("", ",", "<Plug>Lightspeed_,_ft", { noremap = false })
 
 --  Telescope
-map("n", "<leader>fd", "<cmd>lua require('telescope.builtin').fd()<cr>", opts)
-map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+map("n", "<leader>fd", "<cmd>lua require('telescope.builtin').fd()<CR>", opts)
+map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
+map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)
+map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
 map("", "<C-p>", "<cmd>lua require('telescope-config').project_files()<CR>", opts)
@@ -78,6 +78,34 @@ map("n", "<leader>gh", ":diffget //3<CR>", opts)
 map("n", "<leader>gf", ":diffget //2<CR>", opts)
 map("n", "<leader>gr", "<cmd>Gitsigns refresh<CR>", opts)
 
+-- treesitter
+map("n", "<leader>ts", ":TSPlaygroundToggle<CR>", opts)
+
 -- SnipRun
 map("n", "<leader>rs", ":SnipRun<CR>", opts)
 map("v", "<leader>rs", ":SnipRun<CR>", opts)
+
+--LSP
+map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+map("n", "<leader>cs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+
+-- LSP config (the mappings used in the default file don't quite work right)
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+map("n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+map("n", "<leader>ca", "<cmd>Telescope lsp_code_actions theme=cursor<CR>", opts)
+
+-- lsp trouble
+map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)
+map("n", "<leader>tw", "<cmd>TroubleToggle lsp_workspace_diagnostics<CR>", opts)
+map("n", "<leader>td", "<cmd>TroubleToggle lsp_document_diagnostics<CR>", opts)
+map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", opts)
+map("n", "<leader>tl", "<cmd>TroubleToggle loclist<CR>", opts)
+map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)
+
+-- LSP custom functions
+map("n", "<leader>rn", "<cmd>lua require('rv.lsp.rename').rename()<CR>", opts)
+map("n", "gD", "<cmd>lua require'rv.lsp.provider'.preview_definition()<CR>", opts)
+map("n", "<leader>cd", "<cmd>lua require('rv.lsp.diagnostic').show_line_diagnostics()<CR>", opts)
+map("n", "<leader>j", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_next()<CR>", opts)
+map("n", "<leader>k", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_prev()<CR>", opts)
