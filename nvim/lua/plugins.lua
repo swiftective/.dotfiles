@@ -216,7 +216,7 @@ return packer.startup(function()
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   }
-  use { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter", requires = "hrsh7th/compe" }
+  use { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" }
   use { "hrsh7th/cmp-buffer", event = "insertenter" }
   use { "hrsh7th/cmp-cmdline", event = "InsertEnter" }
   use { "hrsh7th/cmp-path", event = "InsertEnter" }
