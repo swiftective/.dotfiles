@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 vim.g["cursorhold_updatetime"] = 100
 
 require "plugins"
+require "impatient"
 require "telescope-config"
 require "remaps"
 require "lsp-config"

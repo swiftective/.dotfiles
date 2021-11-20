@@ -63,6 +63,13 @@ return packer.startup(function()
   -- Packer
   use "wbthomason/packer.nvim"
 
+  use {
+    "lewis6991/impatient.nvim",
+    config = function()
+      require("impatient").enable_profile()
+    end,
+  }
+
   -- Color-scheme
   use { "navarasu/onedark.nvim" }
   use {
