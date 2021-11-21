@@ -333,7 +333,7 @@ return packer.startup(function()
   use "williamboman/nvim-lsp-installer"
   use {
     "antoinemadec/FixCursorHold.nvim",
-    event = "VImEnter",
+    event = "VimEnter",
     config = function()
       -- 12587 issue neovim
       vim.g["cursorhold_updatetime"] = 100
