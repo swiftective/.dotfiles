@@ -38,7 +38,7 @@ function! Colord()
   :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
   :hi LightspeedShortcut guibg=none guifg=Cyan
   :hi LightspeedLabel guibg=none guifg=Cyan
-  :hi! link LightspeedGreyWash Comment
+  :hi LightspeedGreyWash guifg=#455574
   :hi IndentBlanklineContextChar guifg=#c7223b
   :hi TSVariable ctermfg=204 guifg=#E06C75
   :hi IncSearch guibg=#d8636b guifg=White
