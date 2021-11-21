@@ -16,15 +16,6 @@ vs() {
     fi
 }
 
-# FZF for changing Directories
-cid() {
-    cd `fd -H -t d . '/home/rv/' | sk --prompt="🔍 "`
-}
-
-# Whole System File Search
-via() {
-    fd -t f -H . '/home/rv/' | sk --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="🔍 " | xargs -r nvim
-}
 
 # Project File Search
 vii() {
