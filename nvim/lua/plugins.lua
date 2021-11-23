@@ -409,6 +409,14 @@ return packer.startup(function()
   -- Session management
   use { "tpope/vim-obsession", cmd = "Obsession" }
 
+  -- Lua
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup()
+    end,
+  }
+
   if Packer_bootstrap then
     packer.sync()
   end

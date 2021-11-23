@@ -96,6 +96,7 @@ function! Colord()
   :hi rainbowcol6 guifg=#1cd4d4
   :hi rainbowcol7 guifg=#6A9955
 
+  :hi WhichKeyFloat guibg=none
 
   :hi Normal guibg=none ctermbg=none
 endfunction
