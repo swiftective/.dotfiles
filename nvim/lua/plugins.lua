@@ -298,12 +298,12 @@ return packer.startup(function()
   use {
     "michaelb/sniprun",
     run = "bash ./install.sh",
+    -- event = chold,
     config = function()
       require("sniprun").setup {
         display = { "Classic", "NvimNotify" },
       }
     end,
-    cmd = { "SnipRun", "'<,'>SnipRun" },
   }
 
   -- Treesitter

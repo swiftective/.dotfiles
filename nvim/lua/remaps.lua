@@ -82,8 +82,8 @@ map("n", "<leader>gr", "<cmd>Gitsigns refresh<CR>", opts)
 map("n", "<leader>ts", "<cmd>TSPlaygroundToggle<CR>", opts)
 
 -- SnipRun
-map("n", "<leader>rs", ":SnipRun<CR>", opts)
-map("v", "<leader>rs", ":SnipRun<CR>", opts)
+map("n", "<leader>rs", "<Plug>SnipRunOperator", {})
+map("v", "<leader>rs", "<Plug>SnipRun", {})
 
 --LSP
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
