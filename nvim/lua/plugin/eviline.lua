@@ -47,6 +47,24 @@ local dapstat = {
   filetypes = { "dapui_stacks", "dapui_scopes", "dapui_watches", "dapui_breakpoints", "dap-repl" },
 }
 
+-- local gitstat = {
+--   sections = {
+--     lualine_c = {
+--       {
+--         function()
+--           return "%="
+--         end,
+--       },
+--       {
+--         function()
+--           return "    "
+--         end,
+--       },
+--     },
+--   },
+--   filetypes = { "fugitive" },
+-- }
+
 -- Config
 local config = {
   options = {
