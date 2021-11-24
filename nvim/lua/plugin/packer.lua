@@ -128,7 +128,19 @@ return packer.startup(function()
   use "nvim-lua/popup.nvim"
 
   -- motion plugin
-  use { "ggandor/lightspeed.nvim", keys = { "s", "S", "F", "f", "t", "T" } }
+  use {
+    "ggandor/lightspeed.nvim",
+    keys = { "s", "S", "F", "f", "t", "T" },
+    config = function()
+      -- Surround
+      vim.api.nvim_set_keymap(
+        "x",
+        "S",
+        "<Esc>gv<Cmd>lua require'surround'.surround_add()<CR>",
+        { noremap = true, silent = true }
+      )
+    end,
+  }
 
   -- Comment plugin
   use {
@@ -151,7 +163,6 @@ return packer.startup(function()
   use {
     "blackCauldron7/surround.nvim",
     event = chold,
-    after = "lightspeed.nvim",
     config = function()
       require("surround").setup { mappings_style = "surround" }
     end,
