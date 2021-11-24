@@ -13,8 +13,8 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-require "compe-config"
-require "lsp_install"
+require "plugin.cmp"
+require "plugin.lsp-install"
 
 -- Formatting
-require "stylua"
+require "rv.stylua"

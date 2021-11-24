@@ -41,7 +41,7 @@ map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", op
 map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
-map("", "<C-p>", "<cmd>lua require('telescope-config').project_files()<CR>", opts)
+map("", "<C-p>", "<cmd>lua require('plugin.telescope').project_files()<CR>", opts)
 map("", "<A-p>", "<cmd>Telescope builtin<CR>", opts)
 
 -- Barbar
@@ -70,6 +70,7 @@ map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
 map("n", "<leader>bi", ":BufferPin<CR>", opts)
 
 -- Git
+map("n", "<leader>gs", "<cmd>call FugitiveToggle()<CR>", opts)
 map("n", "<leader>gm", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
 map("n", "<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<CR>", opts)
 map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", opts)
@@ -103,9 +104,41 @@ map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", opts)
 map("n", "<leader>tl", "<cmd>TroubleToggle loclist<CR>", opts)
 map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)
 
+-- Debugging keymaps
 -- LSP custom functions
 map("n", "<leader>rn", "<cmd>lua require('rv.lsp.rename').rename()<CR>", opts)
 map("n", "gD", "<cmd>lua require'rv.lsp.provider'.preview_definition()<CR>", opts)
 map("n", "<leader>cd", "<cmd>lua require('rv.lsp.diagnostic').show_line_diagnostics()<CR>", opts)
 map("n", "<leader>j", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_next()<CR>", opts)
 map("n", "<leader>k", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_prev()<CR>", opts)
+
+map("n", "<leader>dcc", '<cmd>lua require"dap".continue()<CR>', opts)
+map("n", "<leader>dcr", '<cmd>lua require"dap".reverse_continue()<CR>', opts)
+map("n", "<leader>dv", '<cmd>lua require"dap".step_over()<CR>', opts)
+map("n", "<leader>di", '<cmd>lua require"dap".step_into()<CR>', opts)
+map("n", "<leader>do", '<cmd>lua require"dap".step_out()<CR>', opts)
+map("n", "<leader>dsb", '<cmd>lua require"dap".step_back()<CR>', opts)
+map("n", "<leader>dk", '<cmd>lua require"dap".up()<CR>', opts)
+map("n", "<leader>dj", '<cmd>lua require"dap".down()<CR>', opts)
+map("n", "<leader>dbt", '<cmd>lua require"dap".toggle_breakpoint()<CR>', opts)
+map("n", "<leader>dbc", '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', opts)
+map("n", "<leader>dbm", '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', opts)
+map("n", "<leader>dbe", ':lua require"dap".set_exception_breakpoints({"all"})<CR>', opts)
+map("n", "<leader>drt", ':lua require"dap".repl.toggle({}, "40vsplit")<CR>', opts)
+map("n", "<leader>drl", '<cmd>lua require"dap".repl.run_last()<CR>', opts)
+map("n", "<leader>d?", ':lua local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes)<CR>', opts)
+map("n", "<leader>dh", ':lua require"dap.ui.widgets".hover()<CR>', opts)
+-- jester
+map("n", "<leader>djdr", '<cmd>lua require"jester".debug({ path_to_jest = "../node_modules/.bin/jest" })<CR>', opts)
+map("n", "<leader>djr", ':lua require"jester".run()<cr>', opts)
+map("n", "<leader>djl", ':lua require"jester".run_last()<cr>', opts)
+map("n", "<leader>djf", ':lua require"jester".run_file()<cr>', opts)
+map("n", "<leader>djdl", ':lua require"jester".debug_last({ path_to_jest = "../node_modules/.bin/jest" })<cr>', opts)
+map("n", "<leader>djdf", ':lua require"jester".debug_file({ path_to_jest = "../node_modules/.bin/jest" })<cr>', opts)
+-- telescope-dap
+map("n", "<leader>dtc", '<cmd>lua require"telescope".extensions.dap.commands{}<CR>', opts)
+map("n", "<leader>dts", '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>', opts)
+map("n", "<leader>dtb", '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>', opts)
+map("n", "<leader>dtv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', opts)
+map("n", "<leader>dtf", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', opts)
+map("n", "<leader>dui", '<cmd>lua require("dapui").toggle()<CR>', opts)

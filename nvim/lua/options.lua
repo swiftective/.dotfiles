@@ -22,7 +22,6 @@ vim.o.incsearch = true
 vim.o.scrolloff = 15
 vim.o.signcolumn = "yes"
 vim.o.wrap = false
-
 vim.g.bufferline = {
   animation = true,
   auto_hide = true,

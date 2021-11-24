@@ -83,16 +83,7 @@ return packer.startup(function()
     "norcalli/nvim-colorizer.lua",
     event = chold,
     config = function()
-      require("colorizer").setup({ "*" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
-        names = true, -- "Name" codes like Blue
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      })
+      require "plugin.colorizer"
     end,
   }
   use { "simrat39/symbols-outline.nvim", event = chold }
@@ -109,7 +100,7 @@ return packer.startup(function()
     "lewis6991/gitsigns.nvim",
     event = chold,
     config = function()
-      require "git-signs"
+      require "plugin.git-signs"
     end,
     requires = {
       "nvim-lua/plenary.nvim",
@@ -153,32 +144,7 @@ return packer.startup(function()
     "lukas-reineke/indent-blankline.nvim",
     event = chold,
     config = function()
-      require("indent_blankline").setup {
-        char = "▏",
-        buftype_exclude = { "help", "terminal", "nofile", "nowrite" },
-        filetype_exclude = {
-          "vimwiki",
-          "coc-explorer",
-          "help",
-          "undotree",
-          "diff",
-          "dapui_stacks",
-          "dapui_scopes",
-          "dapui_watches",
-          "dapui_breakpoints",
-          "dap-repl",
-        },
-        char_highlight_list = {
-          "rainbowcol1",
-          "rainbowcol2",
-          "rainbowcol3",
-          "rainbowcol4",
-          "rainbowcol5",
-          "rainbowcol6",
-        },
-        show_current_context = true,
-        show_current_context_start = true,
-      }
+      require "plugin.indentline"
     end,
   }
 
@@ -385,7 +351,10 @@ return packer.startup(function()
   }
 
   -- bufferline for asthetics
-  use { "romgrk/barbar.nvim", event = chold }
+  use {
+    "romgrk/barbar.nvim",
+    event = chold,
+  }
 
   -- file tree
   use "kyazdani42/nvim-tree.lua"
