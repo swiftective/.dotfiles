@@ -1,10 +1,10 @@
 vim.o.completeopt = "menuone,noselect"
 
-local cmp = require "cmp"
+local cmp = require "cmp" -- Completion
 
-local luasnip = require "luasnip"
+local luasnip = require "luasnip" -- Snippets
 
-local lspkind = require "lspkind"
+local lspkind = require "lspkind" -- Add icons
 
 local source_mapping = {
   buffer = "[Buffer]",
