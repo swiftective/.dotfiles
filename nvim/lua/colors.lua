@@ -13,6 +13,7 @@ vim.cmd [[
 function! Colord()
   :syntax on
   :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
+  :hi CursorLine guibg=#1f262e
   :hi LightspeedShortcut guibg=none guifg=Cyan
   :hi LightspeedOneCharMatch guibg=none guifg=Cyan
   :hi LightspeedLabel guibg=none guifg=Cyan
