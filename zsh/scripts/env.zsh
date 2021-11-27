@@ -10,6 +10,9 @@ export MANPAGER="sh -c 'col -bx | bat --theme TwoDark -l man -p'"
 
 export PATH=$PATH:$HOME/.cargo/bin
 
+# Starship prompt
+export STARSHIP_CONFIG=~/.config/starship/init.toml
+
 # vj mode
 export KEYTIMEOUT=20
 
