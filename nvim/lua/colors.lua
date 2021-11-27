@@ -5,8 +5,8 @@ vim.g.onedark_style = "deep"
 vim.g.onedark_toggle_style_keymap = "<nop>"
 vim.g.vscode_style = "dark"
 
--- vim.g.colors_name = "vscode"
-vim.g.colors_name = "onedark"
+vim.g.colors_name = "vscode"
+-- vim.g.colors_name = "onedark"
 
 vim.cmd [[
 " colorscheme mess
@@ -14,7 +14,10 @@ function! Colord()
   :syntax on
   :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
   :hi LightspeedShortcut guibg=none guifg=Cyan
+  :hi LightspeedOneCharMatch guibg=none guifg=Cyan
   :hi LightspeedLabel guibg=none guifg=Cyan
+  :hi BufferCurrentTarget guibg=none guifg=Cyan
+  :hi BufferInactiveTarget guibg=none guifg=Cyan
   :hi LightspeedGreyWash guifg=#455574
   :hi IndentBlanklineContextChar guifg=#c7223b
   :hi TSVariable ctermfg=204 guifg=#E06C75
