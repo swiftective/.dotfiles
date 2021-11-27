@@ -267,11 +267,13 @@ return packer.startup(function()
       require("nvim-treesitter.configs").setup {
         rainbow = {
           enable = true,
+          disable = { "html" },
           extended_mode = true,
           max_file_lines = nil,
         },
         highlight = {
           enable = true,
+          disable = { "html" },
           extended_mode = true,
           max_file_lines = nil,
         },
