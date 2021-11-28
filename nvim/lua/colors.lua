@@ -7,8 +7,8 @@ vim.g.onedark_style = "deep"
 vim.g.onedark_toggle_style_keymap = "<nop>"
 vim.g.vscode_style = "dark"
 
--- vim.g.colors_name = "tokyonight"
-vim.g.colors_name = "vscode"
+vim.g.colors_name = "tokyonight"
+-- vim.g.colors_name = "vscode"
 -- vim.g.colors_name = "onedark"
 
 vim.cmd [[
