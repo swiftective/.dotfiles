@@ -7,16 +7,6 @@ notify() {
   unset app_name
 }
 
-# Start NVIM Session
-vs() {
-    if [[ ! -e Session.vim ]]; then
-        nvim . -S
-    else
-        nvim -S
-    fi
-}
-
-
 # Project File Search
 vii() {
     fd -t f | sk --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="🔍 " | xargs -r nvim
