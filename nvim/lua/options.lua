@@ -1,6 +1,6 @@
 vim.g.mapleader = " " -- Leader key
 -- vim.o.lazyredraw = true
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
+vim.o.sessionoptions = "curdir,folds,help,winsize,winpos,terminal"
 vim.o.termguicolors = true
 vim.o.timeoutlen = 800
 vim.o.tabstop = 2
