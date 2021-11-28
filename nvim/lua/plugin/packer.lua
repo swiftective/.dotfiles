@@ -365,7 +365,23 @@ return packer.startup(function()
   use { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" } -- A game for vimmers
 
   -- Session management
-  use { "tpope/vim-obsession", cmd = "Obsession" }
+  use {
+    "rmagatti/auto-session",
+    config = function()
+      require("auto-session").setup {
+        log_level = "info",
+        auto_session_suppress_dirs = { "~/", "~/workspace/Projects" },
+      }
+    end,
+  }
+
+  use {
+    "rmagatti/session-lens",
+    requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("session-lens").setup {}
+    end,
+  }
 
   -- Lua
   use {

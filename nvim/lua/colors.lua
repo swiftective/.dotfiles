@@ -12,7 +12,9 @@ vim.cmd [[
 " colorscheme mess
 function! Colord()
   :syntax on
+  :hi NvimDapVirtualText guifg=#455574 guibg=none]
   :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
+  :hi Folded guifg=#5c719c guibg=none
   :hi CursorLine guibg=#1f262e
   :hi LightspeedShortcut guibg=none guifg=Cyan
   :hi LightspeedOneCharMatch guibg=none guifg=Cyan
