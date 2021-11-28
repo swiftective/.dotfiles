@@ -1,3 +1,5 @@
+vim.g.tokyonight_transparent = true
+
 vim.g.onedark_transparent_background = true
 vim.g.onedark_hide_ending_tildes = true
 vim.g.onedark_tranparent = true
@@ -5,6 +7,7 @@ vim.g.onedark_style = "deep"
 vim.g.onedark_toggle_style_keymap = "<nop>"
 vim.g.vscode_style = "dark"
 
+-- vim.g.colors_name = "tokyonight"
 vim.g.colors_name = "vscode"
 -- vim.g.colors_name = "onedark"
 
@@ -12,9 +15,12 @@ vim.cmd [[
 " colorscheme mess
 function! Colord()
   :syntax on
-  :hi NvimDapVirtualText guifg=#455574 guibg=none]
+  :hi BufferCurrentSign guibg=none
+  :hi BufferCurrentMod guibg=none
+  :hi BufferCurrent guibg=none
+  :hi NvimDapVirtualText guifg=#455574 guibg=none gui=bold
   :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
-  :hi Folded guifg=#5c719c guibg=none
+  :hi Folded guifg=#5c719c guibg=#121212
   :hi CursorLine guibg=#1f262e
   :hi LightspeedShortcut guibg=none guifg=Cyan
   :hi LightspeedOneCharMatch guibg=none guifg=Cyan
@@ -48,9 +54,10 @@ function! Colord()
   :hi DiagnosticHint guifg=#1b6e6a
   :hi LspDiagnosticsDefaultInformation guifg=#6699cc
   :hi LspDiagnosticsVirtualTextWarning guifg=#8f610d
-  :hi! link NvimTreeLspDiagnosticsWarning LspDiagnosticsVirtualTextWarning
-  :hi! link LspDiagnosticsSignWarning LspDiagnosticsVirtualTextWarning
-  :hi LspDiagnosticsDefaultWarning guifg=#efbd5d
+  :hi! link LspDiagnosticsVirtualTextWarning LspDiagnosticsDefaultWarning
+  :hi! link LspDiagnosticsVirtualTextError LspDiagnosticsDefaultError
+  :hi! link LspDiagnosticsVirtualTextInformation LspDiagnosticsDefaultInformation
+  :hi! link LspDiagnosticsVirtualTextHint LspDiagnosticsDefaultHint
   :hi! link CmpItemKind CmpItemKindDefault
 
   " buffers

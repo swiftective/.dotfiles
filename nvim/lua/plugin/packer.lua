@@ -72,6 +72,7 @@ return packer.startup(function()
 
   -- Color-scheme
   use { "navarasu/onedark.nvim" }
+  use "folke/tokyonight.nvim"
   use {
     "Mofiqul/vscode.nvim",
     config = function()
