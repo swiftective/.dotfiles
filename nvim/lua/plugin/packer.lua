@@ -79,7 +79,13 @@ return packer.startup(function()
       vim.g.vscode_style = "dark"
     end,
   }
-  use "ThePrimeagen/git-worktree.nvim"
+  use {
+    "ThePrimeagen/git-worktree.nvim",
+    config = function()
+      require("telescope").load_extension "git_worktree"
+    end,
+    event = chold,
+  }
   use {
     "norcalli/nvim-colorizer.lua",
     event = chold,
@@ -124,7 +130,14 @@ return packer.startup(function()
     requires = { { "nvim-lua/plenary.nvim" } },
   }
 
-  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+  use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make",
+    config = function()
+      require("telescope").load_extension "fzf"
+    end,
+    event = chold,
+  }
 
   -- Pop up implementation still no baked
   use "nvim-lua/popup.nvim"
@@ -366,6 +379,17 @@ return packer.startup(function()
 
   use { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" } -- A game for vimmers
 
+  -- Project Management
+  -- Lua
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup()
+      require("telescope").load_extension "projects"
+    end,
+    event = chold,
+  }
+
   -- Session management
   use {
     "rmagatti/auto-session",
@@ -383,6 +407,7 @@ return packer.startup(function()
     config = function()
       require("session-lens").setup {}
     end,
+    cmd = "lua require('session-lens').search_session()",
   }
 
   -- Lua
