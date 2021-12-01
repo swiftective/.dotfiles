@@ -379,17 +379,6 @@ return packer.startup(function()
 
   use { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" } -- A game for vimmers
 
-  -- Project Management
-  -- Lua
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup()
-      require("telescope").load_extension "projects"
-    end,
-    event = chold,
-  }
-
   -- Session management
   use {
     "rmagatti/auto-session",
