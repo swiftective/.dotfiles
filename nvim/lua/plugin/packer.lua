@@ -396,7 +396,7 @@ return packer.startup(function()
     config = function()
       require("session-lens").setup {}
     end,
-    cmd = "lua require('session-lens').search_session()",
+    event = chold,
   }
 
   -- Lua
