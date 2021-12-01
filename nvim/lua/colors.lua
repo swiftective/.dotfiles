@@ -29,7 +29,7 @@ function! Colord()
   :hi BufferInactiveTarget guibg=none guifg=Cyan
   :hi LightspeedGreyWash guifg=#455574
   :hi IndentBlanklineContextChar guifg=#c7223b
-  :hi TSVariable ctermfg=204 guifg=#E06C75
+  :hi TSVariable ctermfg=204 guifg=#fa7a84
   :hi IncSearch guibg=Cyan guifg=Black
   :hi LineNr guibg=NONE ctermbg=NONE
   :hi SignColumn guibg=NONE ctermbg=NONE
