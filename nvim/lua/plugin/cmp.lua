@@ -67,6 +67,7 @@ cmp.setup {
     ghost_text = {
       hl_group = "NvimDapVirtualText",
     },
+    -- native_menu = true,
   },
   documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
