@@ -106,7 +106,6 @@ map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", opts)
 map("n", "<leader>tl", "<cmd>TroubleToggle loclist<CR>", opts)
 map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)
 
--- Debugging keymaps
 -- LSP custom functions
 map("n", "<leader>rn", "<cmd>lua require('rv.lsp.rename').rename()<CR>", opts)
 map("n", "gD", "<cmd>lua require'rv.lsp.provider'.preview_definition()<CR>", opts)
@@ -114,6 +113,7 @@ map("n", "<leader>cd", "<cmd>lua require('rv.lsp.diagnostic').show_line_diagnost
 map("n", "<leader>j", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_next()<CR>", opts)
 map("n", "<leader>k", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_prev()<CR>", opts)
 
+-- Debugging keymaps
 map("n", "<leader>dcc", '<cmd>lua require"dap".continue()<CR>', opts)
 map("n", "<leader>dcr", '<cmd>lua require"dap".reverse_continue()<CR>', opts)
 map("n", "<leader>dv", '<cmd>lua require"dap".step_over()<CR>', opts)
