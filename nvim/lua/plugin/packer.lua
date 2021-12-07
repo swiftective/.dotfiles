@@ -260,7 +260,7 @@ return packer.startup(function()
     end,
   }
   use "David-Kunz/jester"
-  use { "szw/vim-maximizer", event = chold }
+  use { "szw/vim-maximizer", cmd = "MaximizerToggle" }
 
   -- Running code snippet
   use {
