@@ -77,7 +77,12 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "cmp_tabnine" },
     { name = "nvim_lua" },
-    { name = "buffer" },
+    {
+      name = "buffer",
+      get_bufnrs = function()
+        return vim.api.nvim_list_bufs()
+      end,
+    },
     { name = "path" },
     { name = "cmdline" },
     { name = "cmp_git" },
