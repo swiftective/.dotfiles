@@ -148,12 +148,7 @@ return packer.startup(function()
     keys = { "s", "S", "F", "f", "t", "T" },
     config = function()
       -- Surround
-      vim.api.nvim_set_keymap(
-        "x",
-        "S",
-        "<Esc>gv<Cmd>lua require'surround'.surround_add()<CR>",
-        { noremap = true, silent = true }
-      )
+      vim.api.nvim_set_keymap("x", "S", "<Plug>VSurround", {})
     end,
   }
 
@@ -175,13 +170,8 @@ return packer.startup(function()
     end,
   }
 
-  use {
-    "blackCauldron7/surround.nvim",
-    event = chold,
-    config = function()
-      require("surround").setup { mappings_style = "surround" }
-    end,
-  }
+  use { "tpope/vim-surround", event = chold }
+
   use {
     "windwp/nvim-autopairs",
     event = chold,
@@ -189,6 +179,7 @@ return packer.startup(function()
       require("nvim-autopairs").setup()
     end,
   }
+
   use {
     "windwp/nvim-ts-autotag",
     config = function()
