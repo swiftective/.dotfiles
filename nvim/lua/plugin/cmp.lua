@@ -79,9 +79,9 @@ cmp.setup {
     { name = "nvim_lua" },
     {
       name = "buffer",
-      get_bufnrs = function()
-        return vim.api.nvim_list_bufs()
-      end,
+      -- get_bufnrs = function()
+      --   return vim.api.nvim_list_bufs()
+      -- end, -- To add completon from all buffers
     },
     { name = "path" },
     { name = "cmdline" },

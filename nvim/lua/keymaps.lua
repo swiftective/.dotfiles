@@ -1,7 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- map("i", "jk", "<Esc>", opts) -- Use CTRL-C
+map("i", "jk", "<Esc>", opts)
 map("n", "<Leader>rc", ":source $MYVIMRC<CR>", opts)
 map("n", "<Leader>o", ":SymbolsOutline<CR>", opts)
 map("n", "wm", ":MaximizerToggle<CR>", opts)
