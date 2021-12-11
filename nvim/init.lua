@@ -13,9 +13,6 @@ require "plugin.lsp-config"
 require "plugin.cmp"
 require "plugin.lsp-install"
 
--- Formatting
-require "rv.format"
-
 require "plugin.nvimtree"
 
 require "plugin.dap"
@@ -28,4 +25,5 @@ require "keymaps"
 
 require "colors"
 
-require "rv.functions"
+require "rv.functions" -- Custom fun
+require "rv.format" -- Formatting

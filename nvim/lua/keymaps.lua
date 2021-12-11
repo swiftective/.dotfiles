@@ -90,10 +90,10 @@ map("v", "<leader>rs", "<Plug>SnipRun", {})
 
 --LSP
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "<leader>cs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
 -- LSP config (the mappings used in the default file don't quite work right)
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
@@ -108,7 +108,7 @@ map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)
 
 -- LSP custom functions
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+map("n", "gD", "<cmd>lua require('rv.lsp').PeekDefinition()<CR>", opts)
 map("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 map("n", "<leader>j", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 map("n", "<leader>k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
