@@ -398,6 +398,13 @@ return packer.startup(function()
     end,
   }
 
+  use {
+    "stevearc/dressing.nvim",
+    config = function()
+      require "plugin.dress"
+    end,
+  }
+
   if Packer_bootstrap then
     packer.sync()
   end

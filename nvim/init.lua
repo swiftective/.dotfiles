@@ -14,7 +14,7 @@ require "plugin.cmp"
 require "plugin.lsp-install"
 
 -- Formatting
-require "rv.stylua"
+require "rv.format"
 
 require "plugin.nvimtree"
 
@@ -22,10 +22,10 @@ require "plugin.dap"
 
 require "plugin.eviline"
 
-require "rv.functions"
-
 require "options"
 
 require "keymaps"
 
 require "colors"
+
+require "rv.functions"

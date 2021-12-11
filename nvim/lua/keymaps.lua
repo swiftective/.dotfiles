@@ -96,7 +96,7 @@ map("n", "<leader>cs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-map("n", "<leader>ca", "<cmd>Telescope lsp_code_actions theme=cursor<CR>", opts)
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
 -- lsp trouble
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)
@@ -107,11 +107,11 @@ map("n", "<leader>tl", "<cmd>TroubleToggle loclist<CR>", opts)
 map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)
 
 -- LSP custom functions
-map("n", "<leader>rn", "<cmd>lua require('rv.lsp.rename').rename()<CR>", opts)
-map("n", "gD", "<cmd>lua require'rv.lsp.provider'.preview_definition()<CR>", opts)
-map("n", "<leader>cd", "<cmd>lua require('rv.lsp.diagnostic').show_line_diagnostics()<CR>", opts)
-map("n", "<leader>j", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_next()<CR>", opts)
-map("n", "<leader>k", "<cmd>lua require('rv.lsp.diagnostic').lsp_jump_diagnostic_prev()<CR>", opts)
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+map("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+map("n", "<leader>j", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+map("n", "<leader>k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 
 -- Debugging keymaps
 map("n", "<leader>dcc", '<cmd>lua require"dap".continue()<CR>', opts)

@@ -7,11 +7,8 @@ vim.g.onedark_style = "deep"
 vim.g.onedark_toggle_style_keymap = "<nop>"
 vim.g.vscode_style = "dark"
 
-vim.g.colors_name = "tokyonight"
--- vim.g.colors_name = "vscode"
--- vim.g.colors_name = "onedark"
-
 vim.cmd [[
+
 " colorscheme mess
 function! Colord()
   :syntax on
@@ -53,12 +50,13 @@ function! Colord()
   :hi LspDiagnosticsDefaultHint guifg=#1b6e6a
   :hi DiagnosticHint guifg=#1b6e6a
   :hi LspDiagnosticsDefaultInformation guifg=#6699cc
-  :hi LspDiagnosticsVirtualTextWarning guifg=#8f610d
-  :hi! link LspDiagnosticsVirtualTextWarning LspDiagnosticsDefaultWarning
-  :hi! link LspDiagnosticsVirtualTextError LspDiagnosticsDefaultError
-  :hi! link LspDiagnosticsVirtualTextInformation LspDiagnosticsDefaultInformation
-  :hi! link LspDiagnosticsVirtualTextHint LspDiagnosticsDefaultHint
-  :hi! link CmpItemKind CmpItemKindDefault
+  :hi DiagnosticVirtualTextWarn guibg=none
+  :hi DiagnosticVirtualTextWarning guibg=none guifg=#e0af68
+  :hi DiagnosticVirtualTextError guibg=none
+  :hi DiagnosticVirtualTextInfo guibg=none
+  :hi DiagnosticVirtualTextHint guibg=none
+  :hi FloatBorder guibg=none
+  :hi DressingHl guibg=none
 
   " buffers
   :hi BufferInactive guibg=none guifg=#4e5661
@@ -89,5 +87,10 @@ function! Colord()
   :hi WhichKeyFloat guibg=none
 
   :hi Normal guibg=none ctermbg=none
+  :hi NvimTreeExecFile guifg=#04cf84
 endfunction
+
+colorscheme tokyonight
+call Colord()
+
 ]]
