@@ -292,6 +292,16 @@ return packer.startup(function()
     event = chold,
     requires = "kyazdani42/nvim-web-devicons",
   }
+
+  -- Lua
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  }
+
   use {
     "sbdchd/neoformat",
     event = chold,
