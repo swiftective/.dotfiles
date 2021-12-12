@@ -270,20 +270,7 @@ return packer.startup(function()
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup {
-        rainbow = {
-          enable = true,
-          disable = { "html" },
-          extended_mode = true,
-          max_file_lines = nil,
-        },
-        highlight = {
-          enable = true,
-          disable = { "html" },
-          extended_mode = true,
-          max_file_lines = nil,
-        },
-      }
+      require "plugin.treesitter"
     end,
   }
   use { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" }
@@ -403,6 +390,15 @@ return packer.startup(function()
     config = function()
       require "plugin.dress"
     end,
+  }
+
+  use {
+    "nvim-neorg/neorg",
+    branch = "unstable",
+    config = function()
+      require "plugin.norg"
+    end,
+    requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
   }
 
   if Packer_bootstrap then
