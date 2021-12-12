@@ -16,7 +16,7 @@ require("dressing").setup {
 
     winblend = 10,
 
-    prompt_buffer = true,
+    prompt_buffer = false,
 
     get_config = nil,
   },
