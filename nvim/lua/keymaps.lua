@@ -5,8 +5,8 @@ map("i", "jk", "<Esc>", opts)
 map("n", "<Leader>rc", ":source $MYVIMRC<CR>", opts)
 map("n", "<Leader>o", ":SymbolsOutline<CR>", opts)
 map("n", "wm", ":MaximizerToggle<CR>", opts)
-map("n", "<leader>n", ":cnext<CR>", opts)
-map("n", "<leader>p", ":cprevious<CR>", opts)
+map("n", "<C-j>", ":cnext<CR>", opts)
+map("n", "<C-k>", ":cprevious<CR>", opts)
 map("t", "<A-s>", [[<C-\><C-n>]], opts)
 map("n", "<leader>qq", ":q!<CR>", opts)
 map("n", "<C-l>", "<C-^>", opts)
@@ -47,8 +47,6 @@ map("", "<C-p>", "<cmd>lua require('plugin.telescope').project_files()<CR>", opt
 map("", "<A-p>", "<cmd>Telescope builtin<CR>", opts)
 
 -- Barbar
-map("n", "<C-j>", ":BufferPrevious<CR>", opts)
-map("n", "<C-k>", ":BufferNext<CR>", opts)
 map("n", ">>", " :BufferMoveNext<CR>", opts)
 map("n", "<<", ":BufferMovePrevious<CR>", opts)
 map("n", "<leader>b1", ":BufferGoto 1<CR>", opts)
@@ -63,7 +61,7 @@ map("n", "<leader>b9", ":BufferLast<CR>", opts)
 -- Close buffer
 map("n", "<leader>bc", ":BufferClose<CR>", opts)
 -- Magic buffer-picking mode
-map("n", "<leader>bp", ":BufferPick<CR>", opts)
+map("n", "<leader>s", ":BufferPick<CR>", opts)
 -- Sort automatically by...
 map("n", "<leader>bb", ":BufferOrderByBufferNumber<CR>", opts)
 map("n", "<leader>bd", ":BufferOrderByDirectory<CR>", opts)
