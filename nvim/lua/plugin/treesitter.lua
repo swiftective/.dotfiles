@@ -11,6 +11,9 @@ require("nvim-treesitter.configs").setup {
     extended_mode = true,
     max_file_lines = nil,
   },
+  indent = {
+    enable = true,
+  },
 }
 
 local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
