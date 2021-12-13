@@ -402,6 +402,7 @@ return packer.startup(function()
     end,
   }
 
+  -- Neorg for Note Taking
   use {
     "nvim-neorg/neorg",
     config = function()
@@ -409,6 +410,37 @@ return packer.startup(function()
     end,
     requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
   }
+
+  -- Orgmode alternative for Note Taking
+  use {
+    "nvim-orgmode/orgmode",
+    config = function()
+      require("orgmode").setup {
+        org_agenda_files = { "~/Dropbox/org/*", "~/org/**/*" },
+        org_default_notes_file = "~/Dropbox/org/Notes/*",
+      }
+    end,
+  }
+
+  -- Bullets for org mode
+  use {
+    "akinsho/org-bullets.nvim",
+    config = function()
+      require("org-bullets").setup {
+        symbols = { "◉", "○", "✸", "✿" },
+      }
+    end,
+  }
+
+  -- Fancy headlines for Orgmode
+  use {
+    "lukas-reineke/headlines.nvim",
+    config = function()
+      require("headlines").setup()
+    end,
+  }
+
+  use { "dhruvasagar/vim-table-mode", ft = "org" }
 
   if Packer_bootstrap then
     packer.sync()

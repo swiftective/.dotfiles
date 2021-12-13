@@ -14,6 +14,8 @@ local source_mapping = {
   path = "[Path]",
   luasnip = "[Snip]",
   cmp_git = "[GH]",
+  orgmode = "[ORG]",
+  neorg = "[NORG]",
 }
 
 cmp.setup {
@@ -84,6 +86,7 @@ cmp.setup {
       -- end, -- To add completon from all buffers
     },
     { name = "neorg" },
+    { name = "orgmode" },
     { name = "path" },
     { name = "cmdline" },
     { name = "cmp_git" },
@@ -103,6 +106,18 @@ cmp.setup {
           menu = entry.completion_item.data.detail .. "  " .. menu
         end
         vim_item.kind = ""
+      end
+      if entry.source.name == "neorg" then
+        if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+          menu = entry.completion_item.data.detail .. "  " .. menu
+        end
+        vim_item.kind = "🪄"
+      end
+      if entry.source.name == "orgmode" then
+        if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+          menu = entry.completion_item.data.detail .. "  " .. menu
+        end
+        vim_item.kind = "🖋"
       end
       vim_item.menu = menu
       return vim_item
