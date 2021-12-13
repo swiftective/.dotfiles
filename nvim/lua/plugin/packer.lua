@@ -416,8 +416,8 @@ return packer.startup(function()
     "nvim-orgmode/orgmode",
     config = function()
       require("orgmode").setup {
-        org_agenda_files = { "~/Dropbox/org/*", "~/org/**/*" },
-        org_default_notes_file = "~/Dropbox/org/Notes/*",
+        org_agenda_files = { "~/Dropbox/Documents/org/**/*", "~/org/**/*" },
+        org_default_notes_file = "~/Dropbox/Documents/org/start.org",
       }
     end,
   }
@@ -427,7 +427,7 @@ return packer.startup(function()
     "akinsho/org-bullets.nvim",
     config = function()
       require("org-bullets").setup {
-        symbols = { "◉", "○", "✸", "✿" },
+        symbols = { "◉", "○", "✸", "⭐", "∗" },
       }
     end,
   }
