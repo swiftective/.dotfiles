@@ -87,7 +87,7 @@ map("v", "<leader>rs", "<Plug>SnipRun", {})
 
 --LSP
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+map("n", "gd", "<cmd>TroubleToggle lsp_definitions<CR>", opts)
 map("n", "<leader>cs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
 -- LSP config (the mappings used in the default file don't quite work right)
@@ -97,8 +97,8 @@ map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
 -- lsp trouble
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)
-map("n", "<leader>tw", "<cmd>TroubleToggle lsp_workspace_diagnostics<CR>", opts)
-map("n", "<leader>td", "<cmd>TroubleToggle lsp_document_diagnostics<CR>", opts)
+map("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<CR>", opts)
+map("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<CR>", opts)
 map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", opts)
 map("n", "<leader>tl", "<cmd>TroubleToggle loclist<CR>", opts)
 map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)

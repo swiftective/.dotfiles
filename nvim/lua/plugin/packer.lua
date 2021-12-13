@@ -404,7 +404,6 @@ return packer.startup(function()
 
   use {
     "nvim-neorg/neorg",
-    branch = "unstable",
     config = function()
       require "plugin.norg"
     end,
