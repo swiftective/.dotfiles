@@ -19,15 +19,6 @@ require("nvim-treesitter.configs").setup {
 
 local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
 
--- neorg
-parser_configs.norg = {
-  install_info = {
-    url = "https://github.com/nvim-neorg/tree-sitter-norg",
-    files = { "src/parser.c", "src/scanner.cc" },
-    branch = "main",
-  },
-}
-
 parser_configs.org = {
   install_info = {
     url = "https://github.com/milisims/tree-sitter-org",
