@@ -66,7 +66,7 @@ function! Colord()
   :hi BufferVisible guibg=none
   :hi BufferVisibleMod guibg=none
   :hi BufferVisibleSign guibg=none
-
+  :hi BufferVisibleTarget guibg=none guifg=cyan
 
   " sneak
   :hi Sneak guifg=Cyan guibg=none ctermfg=Cyan ctermbg=none
