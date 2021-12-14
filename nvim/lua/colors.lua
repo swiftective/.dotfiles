@@ -57,6 +57,8 @@ function! Colord()
   :hi DiagnosticVirtualTextHint guibg=none
   :hi FloatBorder guibg=none
   :hi DressingHl guibg=none
+  :hi Headline guibg=none
+  :hi CodeBlock guibg=none
 
   " buffers
   :hi BufferInactive guibg=none guifg=#4e5661

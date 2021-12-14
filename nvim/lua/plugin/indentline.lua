@@ -12,6 +12,8 @@ require("indent_blankline").setup {
     "dapui_watches",
     "dapui_breakpoints",
     "dap-repl",
+    "org",
+    "norg",
   },
   char_highlight_list = {
     "rainbowcol1",
