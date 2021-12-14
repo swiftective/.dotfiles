@@ -402,15 +402,6 @@ return packer.startup(function()
     end,
   }
 
-  -- Neorg for Note Taking
-  use {
-    "nvim-neorg/neorg",
-    config = function()
-      require "plugin.norg"
-    end,
-    requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
-  }
-
   -- Orgmode alternative for Note Taking
   use {
     "nvim-orgmode/orgmode",
@@ -440,7 +431,7 @@ return packer.startup(function()
     end,
   }
 
-  use { "dhruvasagar/vim-table-mode", ft = "org" }
+  use { "dhruvasagar/vim-table-mode", ft = { "org", "norg" } }
 
   if Packer_bootstrap then
     packer.sync()
