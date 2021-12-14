@@ -32,7 +32,7 @@ local conditions = {
 -- my extensions
 local blankstat = {
   sections = {},
-  filetypes = { "fugitive", "NvimTree", "undotree" },
+  filetypes = { "fugitive", "NvimTree", "undotree", "Outline" },
 }
 
 local dapstat = {
