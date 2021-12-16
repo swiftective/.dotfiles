@@ -260,7 +260,7 @@ return packer.startup(function()
     -- event = chold,
     config = function()
       require("sniprun").setup {
-        display = { "Classic", "NvimNotify" },
+        display = { "Classic" },
       }
     end,
   }
