@@ -59,6 +59,7 @@ function! Colord()
   :hi DressingHl guibg=none
   :hi Headline guibg=none
   :hi CodeBlock guibg=none
+  :hi LightspeedPendingOpArea guibg=cyan guifg=black
 
   " buffers
   :hi BufferInactive guibg=none guifg=#4e5661
