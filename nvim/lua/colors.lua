@@ -47,9 +47,9 @@ function! Colord()
   :hi UndotreeSavedSmall guibg=none
   :hi UndotreeNode guibg=none
   :hi NvimTreeEndOfBuffer guibg=none guifg=Black
-  :hi LspDiagnosticsDefaultHint guifg=#1b6e6a
   :hi DiagnosticHint guifg=#1b6e6a
-  :hi LspDiagnosticsDefaultInformation guifg=#6699cc
+  :hi DiagnosticHint guifg=#1b6e6a
+  :hi DiagnosticInformation guifg=#6699cc
   :hi DiagnosticVirtualTextWarn guibg=none
   :hi DiagnosticVirtualTextWarning guibg=none guifg=#e0af68
   :hi DiagnosticVirtualTextError guibg=none
