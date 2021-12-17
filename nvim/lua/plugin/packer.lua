@@ -145,7 +145,7 @@ return packer.startup(function()
   -- motion plugin
   use {
     "ggandor/lightspeed.nvim",
-    keys = { "s", "S", "F", "f", "t", "T" },
+    event = chold,
     config = function()
       -- Surround
       vim.api.nvim_set_keymap("x", "S", "<Plug>VSurround", {})
