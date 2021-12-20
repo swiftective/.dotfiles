@@ -443,6 +443,7 @@ return packer.startup(function()
     end,
     requires = "nvim-lua/plenary.nvim",
   }
+  use "nvim-neorg/neorg-telescope"
 
   if Packer_bootstrap then
     packer.sync()
