@@ -14,6 +14,7 @@ require("indent_blankline").setup {
     "dap-repl",
     "org",
     "norg",
+    "lisp",
   },
   char_highlight_list = {
     "rainbowcol1",
