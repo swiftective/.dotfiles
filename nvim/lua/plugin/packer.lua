@@ -148,6 +148,9 @@ return packer.startup(function()
     event = chold,
     config = function()
       -- Surround
+      require("lightspeed").setup {
+        ignore_case = true,
+      }
       vim.api.nvim_set_keymap("x", "S", "<Plug>VSurround", {})
     end,
   }
