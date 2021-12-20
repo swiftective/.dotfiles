@@ -139,9 +139,6 @@ return packer.startup(function()
     event = chold,
   }
 
-  -- Pop up implementation still no baked
-  use "nvim-lua/popup.nvim"
-
   -- motion plugin
   use {
     "ggandor/lightspeed.nvim",
@@ -316,21 +313,6 @@ return packer.startup(function()
       vim.g["neoformat_only_msg_on_error"] = 1
     end,
   } -- Formatting (Need to replace with null-ls)
-
-  -- Terminal
-  use {
-    "akinsho/toggleterm.nvim",
-    keys = "<A-t>",
-    config = function()
-      require("toggleterm").setup {
-        size = 20,
-        open_mapping = [[<A-t>]],
-        insert_mappings = true,
-        direction = "horizontal",
-        close_on_exit = true,
-      }
-    end,
-  }
 
   -- Notify
   use {
