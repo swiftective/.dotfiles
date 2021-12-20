@@ -90,6 +90,7 @@ cmp.setup {
     { name = "path" },
     { name = "cmdline" },
     { name = "cmp_git" },
+    { name = "neorg" },
   },
   formatting = {
     format = function(entry, vim_item)

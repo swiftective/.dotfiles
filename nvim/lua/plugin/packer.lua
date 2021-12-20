@@ -433,6 +433,14 @@ return packer.startup(function()
 
   use { "dhruvasagar/vim-table-mode", ft = { "org", "norg" } }
 
+  use {
+    "nvim-neorg/neorg",
+    config = function()
+      require "plugin.norg"
+    end,
+    requires = "nvim-lua/plenary.nvim",
+  }
+
   if Packer_bootstrap then
     packer.sync()
   end
