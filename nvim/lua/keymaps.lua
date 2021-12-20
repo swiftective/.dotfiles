@@ -93,7 +93,7 @@ map("n", "<leader>cs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 -- LSP config (the mappings used in the default file don't quite work right)
 map("n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+map("n", "<leader>ca", "<cmd>Telescope lsp_code_actions theme=cursor<CR>", opts)
 
 -- lsp trouble
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)

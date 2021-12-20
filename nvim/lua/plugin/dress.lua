@@ -24,7 +24,7 @@ require("dressing").setup {
     backend = { "telescope", "builtin" },
 
     telescope = {
-      theme = "cursor",
+      theme = "dropdown",
     },
 
     builtin = {
