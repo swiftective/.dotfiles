@@ -75,7 +75,7 @@
     (t
      :inverse-video t)))
 
-(setq fancy-splash-image "~/Documents/Icons/arch.svg")
+(setq fancy-splash-image "~/.doom.d/.img/arch.svg")
 
 (setq evil-normal-state-cursor '(box "#c7223b")
       evil-insert-state-cursor '(bar "#c7223b")
@@ -85,4 +85,18 @@
  :nv "C-f" #'evil-scroll-up
  :nv "L" #'evil-end-of-line
  :nv "H" #'evil-beginning-of-line
+ "M-p" #'execute-extended-command
+ :nv "C-p" #'projectile-find-file
+ :nv "C-l" #'evil-buffer
 )
+
+(setq select-enable-clipboard nil) ;; NO SYS CLIPBOARD
+
+
+(map! :leader
+      :desc "Git Status"
+      "g s" #'magit-status
+      "h s" #'git-gutter:stage-hunk
+      "h r" #'git-gutter:revert-hunk
+      "h R" #'vc-revert
+      )
