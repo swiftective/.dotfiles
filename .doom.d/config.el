@@ -99,4 +99,5 @@
       "h s" #'git-gutter:stage-hunk
       "h r" #'git-gutter:revert-hunk
       "h R" #'vc-revert
+      "e" #'+neotree/open
       )
