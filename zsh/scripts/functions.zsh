@@ -1,12 +1,4 @@
 
-# notfication made easy
-notify() {
-  app_name=$1
-  shift
-  notify-send --app-name="$app_name" "$*"
-  unset app_name
-}
-
 # Project File Search
 vii() {
     fd -t f | sk --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="🔍 " | xargs -r nvim
