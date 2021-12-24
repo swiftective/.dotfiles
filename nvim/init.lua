@@ -25,5 +25,4 @@ require "keymaps"
 
 require "colors"
 
-require "rv.functions" -- Custom fun
-require "rv.format" -- Formatting
+require "rv.functions"
