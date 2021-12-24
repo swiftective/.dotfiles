@@ -17,21 +17,10 @@ lsp_installer.on_server_ready(function(server)
       Lua = {
         runtime = {
           version = "LuaJIT",
-          -- Setup your lua path
-          path = vim.split(package.path, ";"),
         },
         diagnostics = {
-          -- Get the language server to recognize the `vim` global
           globals = { "vim", "Luasnip_ns_id" },
         },
-        -- workspace = {
-        --   -- Make the server aware of Neovim runtime files
-        --   library = {
-        --     [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-        --     [vim.fn.expand "$VIMRUNTIME/lua/plugin"] = true,
-        --     [vim.fn.expand "$VIMRUNTIME/lua/after"] = true,
-        --   },
-        -- },
       },
     },
   }
