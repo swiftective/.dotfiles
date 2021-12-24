@@ -7,10 +7,6 @@ require("null-ls").setup {
     formatting.stylua,
     formatting.prettier.with {
       filetypes = {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
         "vue",
         "css",
         "scss",

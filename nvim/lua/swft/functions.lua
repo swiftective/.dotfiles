@@ -34,8 +34,8 @@ augroup end
 
 ]]
 
-M = {}
-M.HandleURL = function()
+Swft = {}
+Swft.HandleURL = function()
   local url = string.match(vim.fn.getline ".", "[a-z]*://[^ >,;]*")
   if url ~= nil then
     vim.cmd("exec \"!xdg-open '" .. url .. "'\"")
@@ -44,4 +44,4 @@ M.HandleURL = function()
   end
 end
 
-return M
+return Swft

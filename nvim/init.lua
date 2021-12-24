@@ -25,4 +25,4 @@ require "keymaps"
 
 require "colors"
 
-require "rv.functions"
+require "swft.functions"

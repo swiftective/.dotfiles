@@ -21,7 +21,7 @@ map("x", ">", ">gv", opts)
 map("x", "<", "<gv", opts)
 map("", "Y", [["+y]], opts)
 map("i", "<C-v>", '<C-r>"', opts)
-map("n", "<M-u>", "<cmd>lua require('functions').HandleURL()<CR>", opts)
+map("n", "<M-u>", "<cmd>lua Swft.HandleURL()<CR>", opts)
 --  Undo Tree
 map("n", "<Leader>u", ":UndotreeToggle<CR>", opts)
 
@@ -87,8 +87,11 @@ map("v", "<leader>rs", "<Plug>SnipRun", {})
 
 --LSP
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-map("n", "gd", "<cmd>TroubleToggle lsp_definitions<CR>", opts)
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 map("n", "<leader>cs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+map("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+map("n", "<leader>j", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+map("n", "<leader>k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 
 -- LSP config (the mappings used in the default file don't quite work right)
 map("n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
@@ -97,6 +100,7 @@ map("n", "<leader>ca", "<cmd>Telescope lsp_code_actions theme=cursor<CR>", opts)
 
 -- lsp trouble
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)
+map("n", "gd", "<cmd>TroubleToggle lsp_definitions<CR>", opts)
 map("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<CR>", opts)
 map("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<CR>", opts)
 map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", opts)
@@ -104,11 +108,7 @@ map("n", "<leader>tl", "<cmd>TroubleToggle loclist<CR>", opts)
 map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)
 
 -- LSP custom functions
-map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-map("n", "gD", "<cmd>lua require('rv.lsp').PeekDefinition()<CR>", opts)
-map("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-map("n", "<leader>j", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-map("n", "<leader>k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+map("n", "gD", "<cmd>lua require('swft.lsp').PeekDefinition()<CR>", opts)
 
 -- Debugging keymaps
 map("n", "<leader>dcc", '<cmd>lua require"dap".continue()<CR>', opts)
