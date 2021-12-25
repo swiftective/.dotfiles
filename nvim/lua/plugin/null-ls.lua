@@ -7,6 +7,10 @@ require("null-ls").setup {
     formatting.stylua,
     formatting.prettier.with {
       filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
         "vue",
         "css",
         "scss",
@@ -24,3 +28,5 @@ require("null-ls").setup {
     completion.spell,
   },
 }
+
+vim.cmd [[command! LspFormat lua vim.lsp.buf.formatting()]]
