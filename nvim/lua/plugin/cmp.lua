@@ -75,7 +75,6 @@ cmp.setup {
   sources = {
     { name = "luasnip" },
     { name = "nvim_lsp" },
-    { name = "cmp_tabnine" },
     { name = "nvim_lua" },
     {
       name = "buffer",
@@ -89,6 +88,7 @@ cmp.setup {
     { name = "cmdline" },
     { name = "cmp_git" },
     { name = "neorg" },
+    { name = "cmp_tabnine" },
   },
   formatting = {
     format = function(entry, vim_item)

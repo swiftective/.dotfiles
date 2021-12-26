@@ -148,7 +148,7 @@ return packer.startup(function()
       require("lightspeed").setup {
         ignore_case = true,
       }
-      vim.api.nvim_set_keymap("x", "S", "<Plug>VSurround", {})
+      vim.api.nvim_set_keymap("x", "E", "<Plug>VSurround", {})
     end,
   }
 
