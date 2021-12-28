@@ -22,7 +22,7 @@ require("null-ls").setup {
         "graphql",
         "solidity",
       },
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+      extra_args = { "--single-quote", "--jsx-single-quote" },
     },
     formatting.autopep8,
     completion.spell,

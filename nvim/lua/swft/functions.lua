@@ -18,6 +18,7 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 augroup fmt
   autocmd!
   autocmd BufWritePre * %s/\s\+$//e
+  autocmd BUfWritePre *.lua lua vim.lsp.buf.formatting_seq_sync()
 augroup END
 
 augroup swiftective
