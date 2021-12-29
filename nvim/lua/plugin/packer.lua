@@ -191,22 +191,6 @@ return packer.startup(function()
 
   -- Autocompletion
   use { "hrsh7th/nvim-cmp" }
-  -- use {
-  --   "tzachar/cmp-tabnine",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     local tabnine = require "cmp_tabnine.config"
-  --     tabnine:setup {
-  --       max_lines = 1000,
-  --       max_num_results = 20,
-  --       sort = true,
-  --       run_on_every_keystroke = true,
-  --       snippet_placeholder = "..",
-  --     }
-  --   end,
-  --   run = "./install.sh",
-  --   requires = "hrsh7th/nvim-cmp",
-  -- }
   use { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" }
   use { "hrsh7th/cmp-buffer", event = "insertenter" }
   use { "hrsh7th/cmp-cmdline", event = "InsertEnter" }
@@ -214,6 +198,22 @@ return packer.startup(function()
   use { "hrsh7th/cmp-nvim-lua", event = "InsertEnter" }
   use { "petertriho/cmp-git", event = "InsertEnter" }
   use { "saadparwaiz1/cmp_luasnip", event = "insertenter" }
+  use {
+    "tzachar/cmp-tabnine",
+    event = "InsertEnter",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = "..",
+      }
+    end,
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  }
 
   use { "onsails/lspkind-nvim" }
 
