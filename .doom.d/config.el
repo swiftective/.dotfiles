@@ -100,4 +100,5 @@
       "h r" #'git-gutter:revert-hunk
       "h R" #'vc-revert
       "e" #'+neotree/open
+      "o c" #'org-capture
       )
