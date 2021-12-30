@@ -1,4 +1,3 @@
-eval "$(lua $HOME/.zsh/plugins/z.lua/z.lua --init enhanced zsh)"
 
 alias jr='z -r'
 alias jt='z -t'
