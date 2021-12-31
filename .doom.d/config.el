@@ -63,23 +63,9 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(load-theme 'doom-dark+ t)
-(after! solaire-mode
-  (solaire-global-mode -1))
-(set-background-color "black")
-
-(face-spec-set 'mode-line
-  '((((class color) (min-colors 88))
-     :box (:line-width -1 :style released-button)
-     :background "black" :foreground "grey75")
-    (t
-     :inverse-video t)))
+(load-theme 'doom-tokyo-night t)
 
 (setq fancy-splash-image "~/.doom.d/.img/arch.svg")
-
-(setq evil-normal-state-cursor '(box "#c7223b")
-      evil-insert-state-cursor '(bar "#c7223b")
-      evil-visual-state-cursor '(hollow "#c7223b"))
 
 (map!
  :nv "C-f" #'evil-scroll-up
@@ -91,7 +77,6 @@
 )
 
 (setq select-enable-clipboard nil) ;; NO SYS CLIPBOARD
-
 
 (map! :leader
       :desc "Git Status"
