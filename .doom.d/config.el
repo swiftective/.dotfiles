@@ -54,18 +54,22 @@
 ;; they are implemented.
 
 ;; set transparency
-(set-frame-parameter (selected-frame) 'alpha '(80 80))
-(add-to-list 'default-frame-alist '(alpha 80 80))
-
-(set-face-attribute 'default nil :height 125)
-
-(set-frame-font "Jetbrains Mono" nil t)
-
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (load-theme 'doom-tokyo-night t)
-
 (setq fancy-splash-image "~/.doom.d/.img/arch.svg")
+
+(setq default-frame-alist '(
+        (right-divider-width . 1)
+        (bottom-divider-width . 1)
+        (fullscreen . maximized)
+        (alpha 80 80)
+        (font . "Jetbrains Mono")
+        (vertical-scroll-bars)
+        (tool-bar-lines . 0)
+        (menu-bar-lines . 0)
+        (buffer-predicate . doom-buffer-frame-predicate)
+        (left-fringe . 4)
+        (right-fringe . 4)))
 
 (map!
  :nv "C-f" #'evil-scroll-up
