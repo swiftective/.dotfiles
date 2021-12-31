@@ -74,7 +74,9 @@
  "M-p" #'execute-extended-command
  :nv "C-p" #'projectile-find-file
  :nv "C-l" #'evil-buffer
-)
+ :i "C-v" #'clipboard-yank
+ :i "C-M-i" #'org-roam-node-insert-immediate
+ )
 
 (setq select-enable-clipboard nil) ;; NO SYS CLIPBOARD
 
@@ -100,3 +102,18 @@
                      (list 'Info-mode 'term-mode 'eshell-mode 'shell-mode 'erc-mode)))
       (centered-cursor-mode))))
 (my-global-centered-cursor-mode 1)
+
+
+(defun org-roam-node-insert-immediate (arg &rest args)
+  (interactive "P")
+  (let ((args (cons arg args))
+        (org-roam-capture-templates (list (append (car org-roam-capture-templates)
+                                                  '(:immediate-finish t)))))
+    (apply #'org-roam-node-insert args)))
+
+(after! org
+  (setq org-capture-templates
+        '(("t" "Task Entry" entry
+           (file "~/org/todo.org")
+           "* TODO %?"
+           :kill-buffer t))))
