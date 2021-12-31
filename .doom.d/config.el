@@ -92,3 +92,11 @@
 (after! vterm
   (set-popup-rule! "*doom:vterm-popup:main" :size 0.50 :vslot -4 :select t :quit nil :ttl 0)
   )
+
+;; center the cursor
+(define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
+  (lambda ()
+    (when (not (memq major-mode
+                     (list 'Info-mode 'term-mode 'eshell-mode 'shell-mode 'erc-mode)))
+      (centered-cursor-mode))))
+(my-global-centered-cursor-mode 1)
