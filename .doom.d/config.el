@@ -87,3 +87,8 @@
       "e" #'+neotree/open
       "o c" #'org-capture
       )
+
+
+(after! vterm
+  (set-popup-rule! "*doom:vterm-popup:main" :size 0.50 :vslot -4 :select t :quit nil :ttl 0)
+  )
