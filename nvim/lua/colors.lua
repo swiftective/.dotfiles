@@ -78,6 +78,10 @@ function! Colord()
 
   :hi Pmenu guifg=#C0C5CE guibg=#121212
 
+  " Telescope
+  :hi TelescopeNormal guibg=none
+  :hi TelescopeBorder guibg=none
+
   " rainbow brackets
   :hi rainbowcol1 guifg=#d8636b
   :hi rainbowcol2 guifg=#e0bf3a
