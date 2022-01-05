@@ -328,6 +328,8 @@ return packer.startup(function()
     event = chold,
   }
 
+  use "ThePrimeagen/harpoon"
+
   -- file tree
   use "kyazdani42/nvim-tree.lua"
 
