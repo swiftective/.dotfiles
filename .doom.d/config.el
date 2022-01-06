@@ -56,7 +56,6 @@
 ;; set transparency
 
 (load-theme 'doom-tokyo-night t)
-(setq fancy-splash-image "~/.doom.d/.img/arch.svg")
 
 (setq default-frame-alist '(
         (right-divider-width . 1)
@@ -121,3 +120,28 @@
            (file "~/org/todo.org")
            "* TODO %?"
            :kill-buffer t))))
+
+(defun custom-dashboard-func ()
+  (mapc (lambda (line)
+          (insert (propertize (+doom-dashboard--center +doom-dashboard--width line)
+                              'face 'font-lock-comment-face) " ")
+          (insert "\n"))
+        '("                                     "
+                "                                   "
+                "                                   "
+                "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          "
+                "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       "
+                "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     "
+                "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    "
+                "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   "
+                "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  "
+                "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   "
+                " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  "
+                " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ "
+                "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     "
+                "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     "
+                "                               ")))
+
+(setq +doom-dashboard-ascii-banner-fn #'custom-dashboard-func)
+
+(setq fancy-splash-image "~/.doom.d/.img/arch.svg")
