@@ -2,6 +2,7 @@
 alias cat='bat -p'
 alias less='bat'
 alias vim='nvim'
+alias emc='emacsclient -nc'
 alias copy='xclip -sel clip'
 alias vi='nvim'
 alias grep='rg'
