@@ -21,3 +21,7 @@ ws (){
   fi
   unset dir
 }
+
+em() {
+  emacsclient -c $@ &; disown
+}
