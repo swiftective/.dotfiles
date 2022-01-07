@@ -25,6 +25,7 @@ augroup swiftective
   autocmd!
   autocmd FileType zsh :set filetype=sh
   autocmd ColorScheme * call Colord()
+  autocmd FileType fugitive nmap <buffer> <Tab> =
 augroup end
 
 augroup packer_user_config
