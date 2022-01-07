@@ -145,3 +145,12 @@
 (setq +doom-dashboard-ascii-banner-fn #'custom-dashboard-func)
 
 (setq fancy-splash-image "~/.doom.d/.img/arch.svg")
+
+(use-package! tree-sitter
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+(pushnew! tree-sitter-major-mode-language-alist
+          '(scss-mode . css))
