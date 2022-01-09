@@ -1,12 +1,5 @@
 vim.g.tokyonight_transparent = true
 
-vim.g.onedark_transparent_background = true
-vim.g.onedark_hide_ending_tildes = true
-vim.g.onedark_tranparent = true
-vim.g.onedark_style = "deep"
-vim.g.onedark_toggle_style_keymap = "<nop>"
-vim.g.vscode_style = "dark"
-
 vim.cmd [[
 
 " colorscheme mess
