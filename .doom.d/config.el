@@ -79,6 +79,12 @@
  :nv "C-l" #'evil-buffer
  :i "C-v" #'clipboard-yank
  :i "C-M-i" #'org-roam-node-insert-immediate
+ :nv "/" #'evil-search-forward
+ :nv "?" #'evil-search-backward
+ :nv "n" #'evil-search-next
+ :nv "N" #'evil-search-previous
+ :nv ")" #'git-gutter:next-hunk
+ :nv "(" #'git-gutter:previous-hunk
  )
 
 (setq select-enable-clipboard nil) ;; NO SYS CLIPBOARD
