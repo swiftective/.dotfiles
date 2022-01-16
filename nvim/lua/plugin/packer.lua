@@ -195,7 +195,13 @@ return packer.startup(function()
   use { "hrsh7th/cmp-cmdline", event = "InsertEnter" }
   use { "hrsh7th/cmp-path", event = "InsertEnter" }
   use { "hrsh7th/cmp-nvim-lua", event = "InsertEnter" }
-  use { "petertriho/cmp-git", event = "InsertEnter" }
+  use {
+    "petertriho/cmp-git",
+    event = "InsertEnter",
+    config = function()
+      require("cmp_git").setup()
+    end,
+  }
   use { "saadparwaiz1/cmp_luasnip", event = "insertenter" }
   use {
     "tzachar/cmp-tabnine",
