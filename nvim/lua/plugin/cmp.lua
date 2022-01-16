@@ -67,7 +67,6 @@ cmp.setup {
     ghost_text = {
       hl_group = "NvimDapVirtualText",
     },
-    -- native_menu = true,
   },
   documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -76,12 +75,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    {
-      name = "buffer",
-      -- get_bufnrs = function()
-      --   return vim.api.nvim_list_bufs()
-      -- end, -- To add completon from all buffers
-    },
+    { name = "buffer" },
     { name = "neorg" },
     { name = "orgmode" },
     { name = "path" },
