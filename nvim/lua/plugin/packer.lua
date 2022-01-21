@@ -97,7 +97,7 @@ return packer.startup(function()
   -- statusline
   use {
     "nvim-lualine/lualine.nvim",
-    requires = { "swiftective/nvim-web-devicons", opt = true },
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
   }
 
   -- Git
@@ -296,7 +296,7 @@ return packer.startup(function()
   use {
     "folke/trouble.nvim",
     event = chold,
-    requires = "swiftective/nvim-web-devicons",
+    requires = "kyazdani42/nvim-web-devicons",
   }
 
   -- Lua
