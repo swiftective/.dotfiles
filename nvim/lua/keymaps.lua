@@ -46,7 +46,7 @@ map("", "<C-p>", "<cmd>lua require('plugin.telescope').project_files()<CR>", opt
 map("", "<A-p>", "<cmd>Telescope builtin<CR>", opts)
 
 -- Navigation
-map("n", ",w", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
+map("n", "mm", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
 map("n", ",o", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 map("n", ",f", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", opts)
 map("n", ",d", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", opts)
