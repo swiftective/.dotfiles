@@ -153,3 +153,5 @@ map("n", "<leader>dtb", '<cmd>lua require"telescope".extensions.dap.list_breakpo
 map("n", "<leader>dtv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', opts)
 map("n", "<leader>dtf", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', opts)
 map("n", "<leader>dui", '<cmd>lua require("dapui").toggle()<CR>', opts)
+-- packer
+map("n", "<leader>pc", "<cmd>PackerCompile<CR>", opts)
