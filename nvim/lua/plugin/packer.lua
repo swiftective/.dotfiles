@@ -220,8 +220,6 @@ return packer.startup(function()
     requires = "hrsh7th/nvim-cmp",
   }
 
-  use { "onsails/lspkind-nvim" }
-
   -- Snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"

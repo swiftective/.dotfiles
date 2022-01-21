@@ -4,7 +4,33 @@ local cmp = require "cmp" -- Completion
 
 local luasnip = require "luasnip" -- Snippets
 
-local lspkind = require "lspkind" -- Add icons
+local icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 local source_mapping = {
   buffer = "[Buffer]",
@@ -86,30 +112,28 @@ cmp.setup {
   },
   formatting = {
     format = function(entry, vim_item)
-      vim_item.kind = lspkind.presets.default[vim_item.kind] .. " "
+      vim_item.kind = string.format("%s ", icons[vim_item.kind])
       local menu = source_mapping[entry.source.name]
-      if entry.source.name == "cmp_tabnine" then
+      local emptyCheck = function()
         if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
           menu = entry.completion_item.data.detail .. "  " .. menu
         end
+      end
+
+      if entry.source.name == "cmp_tabnine" then
+        emptyCheck()
         vim_item.kind = ""
       end
       if entry.source.name == "cmp_git" then
-        if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-          menu = entry.completion_item.data.detail .. "  " .. menu
-        end
+        emptyCheck()
         vim_item.kind = ""
       end
       if entry.source.name == "neorg" then
-        if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-          menu = entry.completion_item.data.detail .. "  " .. menu
-        end
+        emptyCheck()
         vim_item.kind = "🪄"
       end
       if entry.source.name == "orgmode" then
-        if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-          menu = entry.completion_item.data.detail .. "  " .. menu
-        end
+        emptyCheck()
         vim_item.kind = "🖋"
       end
       vim_item.menu = menu
