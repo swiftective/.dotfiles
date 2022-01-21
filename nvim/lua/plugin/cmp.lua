@@ -114,26 +114,26 @@ cmp.setup {
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s ", icons[vim_item.kind])
       local menu = source_mapping[entry.source.name]
-      local emptyCheck = function()
+      local empty_check = function()
         if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
           menu = entry.completion_item.data.detail .. "  " .. menu
         end
       end
 
       if entry.source.name == "cmp_tabnine" then
-        emptyCheck()
+        empty_check()
         vim_item.kind = ""
       end
       if entry.source.name == "cmp_git" then
-        emptyCheck()
+        empty_check()
         vim_item.kind = ""
       end
       if entry.source.name == "neorg" then
-        emptyCheck()
+        empty_check()
         vim_item.kind = "🪄"
       end
       if entry.source.name == "orgmode" then
-        emptyCheck()
+        empty_check()
         vim_item.kind = "🖋"
       end
       vim_item.menu = menu
