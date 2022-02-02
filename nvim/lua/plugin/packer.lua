@@ -393,8 +393,8 @@ return packer.startup(function()
     "nvim-orgmode/orgmode",
     config = function()
       require("orgmode").setup {
-        org_agenda_files = { "~/Dropbox/Documents/org/**/*" },
-        org_default_notes_file = "~/Dropbox/Documents/org/todo.org",
+        org_agenda_files = { "~/org/**/*" },
+        org_default_notes_file = "~/org/todo.org",
       }
     end,
   }
