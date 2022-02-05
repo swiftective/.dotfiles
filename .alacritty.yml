@@ -1,10 +1,3 @@
-window:
-  padding:
-    x: 8
-    y: 0
-
-  startup_mode: Maximized
-
 scrolling:
   history: 10000
 
@@ -27,154 +20,160 @@ font:
 
   size: 7.8
 
-background_opacity: 0.80
+window:
+  opacity: 0.80
+  padding:
+    x: 8
+    y: 0
+  startup_mode: Maximized
+
 key_bindings:
   - { key: Return, mods: Control, action: Paste }
 
 schemes:
   one-dark: &one-dark # Default colors
     primary:
-      background: "#000000"
-      foreground: "0xa9b1d6"
+      background: '#000000'
+      foreground: '0xa9b1d6'
 
     # Selection colors
     selection:
       text: CellForeground
-      background: "0x3e4452"
+      background: '0x3e4452'
 
     # Normal colors
     normal:
-      black: "0x2c323c"
-      red: "0xe06c75"
-      green: "0x98c379"
-      yellow: "0xe5c07b"
-      blue: "0x61afef"
-      magenta: "0xc678dd"
-      cyan: "0x56b6c2"
-      white: "0x5c6370"
+      black: '0x2c323c'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xe5c07b'
+      blue: '0x61afef'
+      magenta: '0xc678dd'
+      cyan: '0x56b6c2'
+      white: '0x5c6370'
 
     # Bright colors
     bright:
-      black: "0x3e4452"
-      red: "0xe06c75"
-      green: "0x98c379"
-      yellow: "0xe5c07b"
-      blue: "0x61afef"
-      magenta: "0xc678dd"
-      cyan: "0x56b6c2"
-      white: "0xabb2bf"
+      black: '0x3e4452'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xe5c07b'
+      blue: '0x61afef'
+      magenta: '0xc678dd'
+      cyan: '0x56b6c2'
+      white: '0xabb2bf'
 
   tokyo-night: &tokyo-night # Default colors
     primary:
-      background: "#000000"
-      foreground: "#a9b1d6"
+      background: '#000000'
+      foreground: '#a9b1d6'
 
     # Normal colors
     normal:
-      black: "0x32344a"
-      red: "0xf7768e"
-      green: "0x9ece6a"
-      yellow: "0xe0af68"
-      blue: "0x7aa2f7"
-      magenta: "0xad8ee6"
-      cyan: "0x449dab"
-      white: "0x787c99"
+      black: '0x32344a'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan: '0x449dab'
+      white: '0x787c99'
 
     # Bright colors
     bright:
-      black: "0x444b6a"
-      red: "0xff7a93"
-      green: "0xb9f27c"
-      yellow: "0xff9e64"
-      blue: "0x7da6ff"
-      magenta: "0xbb9af7"
-      cyan: "0x0db9d7"
-      white: "0xacb0d0"
+      black: '0x444b6a'
+      red: '0xff7a93'
+      green: '0xb9f27c'
+      yellow: '0xff9e64'
+      blue: '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan: '0x0db9d7'
+      white: '0xacb0d0'
 
   tokyo-night-storm: &tokyo-night-storm # Default colors
     primary:
-      background: "#000000"
-      foreground: "#a9b1d6"
+      background: '#000000'
+      foreground: '#a9b1d6'
 
     # Normal colors
     normal:
-      black: "0x32344a"
-      red: "0xf7768e"
-      green: "0x9ece6a"
-      yellow: "0xe0af68"
-      blue: "0x7aa2f7"
-      magenta: "0xad8ee6"
-      cyan: "0x449dab"
-      white: "0x9699a8"
+      black: '0x32344a'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan: '0x449dab'
+      white: '0x9699a8'
 
     # Bright colors
     bright:
-      black: "0x444b6a"
-      red: "0xff7a93"
-      green: "0xb9f27c"
-      yellow: "0xff9e64"
-      blue: "0x7da6ff"
-      magenta: "0xbb9af7"
-      cyan: "0x0db9d7"
-      white: "0xacb0d0"
+      black: '0x444b6a'
+      red: '0xff7a93'
+      green: '0xb9f27c'
+      yellow: '0xff9e64'
+      blue: '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan: '0x0db9d7'
+      white: '0xacb0d0'
 
   codelight: &codelight
     primary:
-      background: "#ffffff"
-      foreground: "#1e1e1e"
+      background: '#ffffff'
+      foreground: '#1e1e1e'
 
     cursor:
-      text: "#d4d4d4"
-      cursor: "#d4d4d4"
+      text: '#d4d4d4'
+      cursor: '#d4d4d4'
 
     normal:
-      black: "#1e1e1e"
-      red: "#c72e0f"
-      green: "#009000"
-      yellow: "#795e25"
-      blue: "#007acc"
-      magenta: "#af00db"
-      cyan: "#56b6c2"
-      white: "#d4d4d4"
+      black: '#1e1e1e'
+      red: '#c72e0f'
+      green: '#009000'
+      yellow: '#795e25'
+      blue: '#007acc'
+      magenta: '#af00db'
+      cyan: '#56b6c2'
+      white: '#d4d4d4'
 
     bright:
-      black: "#1e1e1e"
-      red: "#c72e0f"
-      green: "#009000"
-      yellow: "#795e25"
-      blue: "#007acc"
-      magenta: "#af00db"
-      cyan: "#56b6c2"
-      white: "#d4d4d4"
+      black: '#1e1e1e'
+      red: '#c72e0f'
+      green: '#009000'
+      yellow: '#795e25'
+      blue: '#007acc'
+      magenta: '#af00db'
+      cyan: '#56b6c2'
+      white: '#d4d4d4'
 
   codedark: &codedark
     primary:
-      background: "#000000"
-      foreground: "#d4d4d4"
+      background: '#000000'
+      foreground: '#d4d4d4'
 
     cursor:
-      text: "#d4d4d4"
-      cursor: "#d4d4d4"
+      text: '#d4d4d4'
+      cursor: '#d4d4d4'
 
     normal:
-      black: "#1e1e1e"
-      red: "#f44747"
-      green: "#608b4e"
-      yellow: "#dcdcaa"
-      blue: "#569cd6"
-      magenta: "#c678dd"
-      cyan: "#56b6c2"
-      white: "#d4d4d4"
+      black: '#1e1e1e'
+      red: '#f44747'
+      green: '#608b4e'
+      yellow: '#dcdcaa'
+      blue: '#569cd6'
+      magenta: '#c678dd'
+      cyan: '#56b6c2'
+      white: '#d4d4d4'
 
     bright:
-      black: "#545454"
-      red: "#f44747"
-      green: "#608b4e"
-      yellow: "#dcdcaa"
-      blue: "#569cd6"
-      magenta: "#c678dd"
-      cyan: "#56b6c2"
-      white: "#d4d4d4"
+      black: '#545454'
+      red: '#f44747'
+      green: '#608b4e'
+      yellow: '#dcdcaa'
+      blue: '#569cd6'
+      magenta: '#c678dd'
+      cyan: '#56b6c2'
+      white: '#d4d4d4'
 
 # normal dark theme
 colors: *tokyo-night
@@ -183,4 +182,4 @@ shell:
   program: /usr/bin/dash
   args:
     - -c
-    - "tmux attach 2> /dev/null || tmux 1> /dev/null"
+    - 'tmux attach 2> /dev/null || tmux 1> /dev/null'
