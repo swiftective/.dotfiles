@@ -15,7 +15,6 @@ require("null-ls").setup {
         "css",
         "scss",
         "less",
-        "html",
         "json",
         "yaml",
         "markdown",
