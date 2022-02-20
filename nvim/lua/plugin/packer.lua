@@ -396,6 +396,7 @@ return packer.startup(function()
         org_agenda_files = { "~/org/**/*" },
         org_default_notes_file = "~/org/todo.org",
       }
+      require("orgmode").setup_ts_grammar()
     end,
   }
 
