@@ -6,8 +6,6 @@ require("dressing").setup {
 
     anchor = "SW",
     relative = "cursor",
-    row = 0,
-    col = 0,
     border = "rounded",
 
     prefer_width = 40,
