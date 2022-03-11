@@ -28,8 +28,6 @@ require("dressing").setup {
     builtin = {
       anchor = "NW",
       relative = "cursor",
-      row = 0,
-      col = 0,
       border = "rounded",
       winblend = 10,
 
