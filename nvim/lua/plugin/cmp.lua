@@ -33,15 +33,15 @@ local icons = {
 }
 
 local source_mapping = {
-  buffer = "[Buffer]",
   nvim_lsp = "[LSP]",
   nvim_lua = "[Lua]",
   path = "[Path]",
   luasnip = "[Snip]",
+  cmp_tabnine = "[TN]",
   cmp_git = "[GH]",
   orgmode = "[ORG]",
   neorg = "[NORG]",
-  cmp_tabnine = "[TN]",
+  buffer = "[Buffer]",
 }
 
 cmp.setup {
@@ -102,13 +102,13 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "cmp_git" },
-    { name = "buffer" },
     { name = "neorg" },
     { name = "orgmode" },
     { name = "path" },
     { name = "cmdline" },
     { name = "neorg" },
     { name = "cmp_tabnine" },
+    { name = "buffer" },
   },
   formatting = {
     format = function(entry, vim_item)
