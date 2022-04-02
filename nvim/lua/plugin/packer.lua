@@ -380,9 +380,9 @@ return packer.startup(function()
 
   use {
     "stevearc/dressing.nvim",
-    config = function()
-      require "plugin.dress"
-    end,
+    -- config = function()
+    --   require "plugin.dress"
+    -- end,
   }
 
   -- Orgmode alternative for Note Taking
