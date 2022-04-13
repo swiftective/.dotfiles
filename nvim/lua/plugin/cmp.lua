@@ -94,9 +94,9 @@ cmp.setup {
       hl_group = "NvimDapVirtualText",
     },
   },
-  documentation = {
+  window = { documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
+  } },
   sources = {
     { name = "luasnip" },
     { name = "nvim_lsp" },

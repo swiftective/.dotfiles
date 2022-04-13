@@ -313,7 +313,7 @@ return packer.startup(function()
   -- Notify
   use {
     "rcarriga/nvim-notify",
-    event = chold,
+    -- event = chold,
     config = function()
       require("notify").setup {
         timeout = 800,

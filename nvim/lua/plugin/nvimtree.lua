@@ -1,4 +1,3 @@
-vim.g["nvim_tree_indent_markers"] = 1
 vim.g["nvim_tree_groutrue"] = 1
 vim.g["nvim_tree_icon_padding"] = " "
 vim.g["nvim_tree_refresh_wait"] = 20
@@ -79,6 +78,16 @@ require("nvim-tree").setup {
           filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
           buftype = { "nofile", "terminal", "help" },
         },
+      },
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
       },
     },
   },
