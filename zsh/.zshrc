@@ -1,4 +1,3 @@
-source $HOME/.zsh/scripts/env.zsh
 
 source $HOME/.zsh/scripts/defaults.zsh
 source $HOME/.zsh/scripts/functions.zsh
