@@ -9,6 +9,7 @@ export MANPAGER="sh -c 'col -bx | bat --theme TwoDark -l man -p'"
 # export TERM="xterm-256color"
 
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/workspace/flutter/bin
 
 # Starship prompt
 export STARSHIP_CONFIG=~/.config/starship/init.toml
