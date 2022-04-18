@@ -9,7 +9,18 @@ export MANPAGER="sh -c 'col -bx | bat --theme TwoDark -l man -p'"
 # export TERM="xterm-256color"
 
 export PATH=$PATH:$HOME/.cargo/bin
+
 export PATH=$PATH:$HOME/workspace/flutter/bin
+
+export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
+export PATH=$JAVA_HOME/bin:$PATH
+
+export ANDROID_SDK_ROOT='$HOME/Android/Sdk/'
+# export ANDROID_HOME='$HOME/Android/Sdk/'
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 
 # Starship prompt
 export STARSHIP_CONFIG=~/.config/starship/init.toml
