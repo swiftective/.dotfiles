@@ -440,6 +440,19 @@ return packer.startup(function()
   }
   use "nvim-neorg/neorg-telescope"
 
+  use {
+    "yamatsum/nvim-cursorline",
+    config = function()
+      require("nvim-cursorline").setup {
+        cursorline = {
+          enable = false,
+          timeout = 2000,
+          number = false,
+        },
+      }
+    end,
+  }
+
   if Packer_bootstrap then
     packer.sync()
   end

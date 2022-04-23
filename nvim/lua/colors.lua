@@ -12,7 +12,7 @@ function! Colord()
   :hi NvimDapVirtualText guifg=#455574 guibg=none gui=bold
   :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
   :hi Folded guifg=#5c719c guibg=#121212
-  :hi CursorLine guibg=#1f262e
+  :hi CursorLine guibg=#151c30
   :hi LightspeedShortcut guibg=none guifg=Cyan
   :hi LightspeedOneCharMatch guibg=none guifg=Cyan
   :hi LightspeedLabel guibg=none guifg=Cyan
@@ -57,7 +57,7 @@ function! Colord()
   " buffers
   :hi BufferInactive guibg=none guifg=#4e5661
   :hi BufferTabpageFill guibg=none
-  :hi WinSeparator guibg=none
+  :hi WinSeparator guibg=none guifg=#28394f
   :hi BufferInactiveMod guibg=none
   :hi BufferInactiveSign guibg=none
   :hi BufferVisible guibg=none
