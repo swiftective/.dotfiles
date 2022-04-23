@@ -1,7 +1,6 @@
-local dap_install = require "dap-install"
-dap_install.config("jsnode", {})
-dap_install.config("python", {})
-dap_install.config("chrome", {})
+-- local dap_install = require "dap-buddy"
+-- dap_install.config("python", {})
+-- dap_install.config("chrome", {})
 
 -- local dap = require "dap"
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError", linehl = "", numhl = "" })

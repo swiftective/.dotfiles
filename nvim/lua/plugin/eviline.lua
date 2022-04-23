@@ -29,24 +29,6 @@ local conditions = {
   end,
 }
 
--- my extensions
-local blankstat = {
-  sections = {},
-  filetypes = { "fugitive", "NvimTree", "undotree", "Outline" },
-}
-
-local dapstat = {
-  sections = {
-    lualine_c = {
-      {
-        "filetype",
-        color = { bg = "#121212" },
-      },
-    },
-  },
-  filetypes = { "dapui_stacks", "dapui_scopes", "dapui_watches", "dapui_breakpoints", "dap-repl" },
-}
-
 -- local gitstat = {
 --   sections = {
 --     lualine_c = {
@@ -78,6 +60,7 @@ local config = {
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
+    globalstatus = true,
   },
   sections = {
     -- these are to remove the defaults
@@ -98,7 +81,7 @@ local config = {
     lualine_c = {},
     lualine_x = {},
   },
-  extensions = { blankstat, dapstat },
+  extensions = {},
 }
 
 -- Inserts a component in lualine_c at left section

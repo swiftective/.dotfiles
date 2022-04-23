@@ -33,7 +33,6 @@ function! Colord()
   :hi NvimTreeRootFolder guifg=#008ae6
   :hi NvimTreeNormal guibg=none
   :hi NvimTreeNormalNC guibg=none
-  :hi VertSplit guifg=Gray10 guibg=none
   :hi NvimTreeFolderName guibg=none
   :hi NvimTreeOpenedFolderName guibg=none
   :hi NvimTreeEmptyFolderName guibg=none
@@ -58,6 +57,7 @@ function! Colord()
   " buffers
   :hi BufferInactive guibg=none guifg=#4e5661
   :hi BufferTabpageFill guibg=none
+  :hi WinSeparator guibg=none
   :hi BufferInactiveMod guibg=none
   :hi BufferInactiveSign guibg=none
   :hi BufferVisible guibg=none

@@ -70,12 +70,15 @@ return packer.startup(function()
 
   -- Color-scheme
   use "folke/tokyonight.nvim"
+
   use {
     "Mofiqul/vscode.nvim",
     config = function()
       vim.g.vscode_style = "dark"
     end,
+    event = chold,
   }
+
   use {
     "ThePrimeagen/git-worktree.nvim",
     config = function()
@@ -231,7 +234,7 @@ return packer.startup(function()
       dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
     end,
   }
-  use "Pocco81/DAPInstall.nvim"
+  use "Pocco81/dap-buddy.nvim"
   use {
     "rcarriga/nvim-dap-ui",
     requires = { "mfussenegger/nvim-dap" },
@@ -288,6 +291,17 @@ return packer.startup(function()
       vim.g["cursorhold_updatetime"] = 100
     end,
   }
+
+  use {
+    "akinsho/flutter-tools.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    ft = "dart",
+    config = function()
+      require("flutter-tools").setup {} -- use defaults
+      require("telescope").load_extension "flutter"
+    end,
+  }
+
   use {
     "folke/trouble.nvim",
     event = chold,
