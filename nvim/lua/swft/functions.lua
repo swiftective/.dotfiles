@@ -1,48 +1,85 @@
-vim.cmd [[
-" git fugitve toggle function
-function FugitiveToggle() abort
-  try
-    exe filter(getwininfo(), "get(v:val['variables'], 'fugitive_status', v:false) != v:false")[0].winnr .. "wincmd c"
-  catch /E684/
-    Git
-  endtry
-endfunction
+local group = vim.api.nvim_create_augroup("swiftective", { clear = true })
 
-augroup highlight_yank
-  autocmd!
-  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 60})
-augroup END
+local create_autocmd = function(table)
+  for _, v in ipairs(table) do
+    vim.api.nvim_create_autocmd(v.event, {
+      command = v.command,
+      pattern = v.pattern,
+      group = v.group,
+      callback = v.callback,
+    })
+  end
+end
 
-autocmd TermOpen * setlocal nonumber norelativenumber
+local autocmds = {
+  { event = "FileType", command = "set filetype=sh", pattern = "zsh", group = group },
 
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * %s/\s\+$//e
-  autocmd BUfWritePre *.lua lua vim.lsp.buf.formatting_seq_sync()
-augroup END
+  { event = "ColorScheme", callback = "Colord", pattern = "*", group = group },
 
-augroup swiftective
-  autocmd!
-  autocmd FileType zsh :set filetype=sh
-  autocmd ColorScheme * call Colord()
-  autocmd FileType fugitive nmap <buffer> <Tab> =
-augroup end
+  {
+    event = "TextYankPost",
+    callback = function()
+      require("vim.highlight").on_yank { timeout = 60 }
+    end,
+    pattern = "*",
+    group = group,
+  },
 
-augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost packer.lua source <afile> | PackerCompile
-augroup end
+  { event = "TermOpen", command = "setlocal nonumber norelativenumber", pattern = "*", group = group },
 
-]]
+  {
+    event = "BufWritePost",
+    pattern = "packer.lua",
+    group = group,
+    callback = function()
+      local file = vim.fn.expand "<afile>"
+      vim.cmd(string.format("source %s", file))
+      vim.cmd "PackerCompile"
+    end,
+  },
+
+  {
+    event = "FileType",
+    pattern = "fugitive",
+    group = group,
+    callback = function()
+      vim.api.nvim_buf_set_keymap(0, "n", "<Tab>", "=", { noremap = false })
+    end,
+  },
+
+  { event = "BUfWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
+
+  {
+    event = "BufWritePre",
+    pattern = "*.lua",
+    group = group,
+    callback = vim.lsp.buf.formatting_seq_sync,
+  },
+}
+
+create_autocmd(autocmds)
 
 Swft = {}
 Swft.HandleURL = function()
   local url = string.match(vim.fn.getline ".", "[a-z]*://[^ >,;]*")
   if url ~= nil then
-    vim.cmd("exec \"!xdg-open '" .. url .. "'\"")
+    vim.fn.system(string.format("xdg-open %s", url))
   else
     vim.notify(" No URI found in line. ", "error", { title = debug.getinfo(1, "n").name })
   end
+end
+
+Swft.FugitiveToggle = function()
+  local win = vim.api.nvim_list_wins()
+
+  for _, v in ipairs(win) do
+    if pcall(vim.api.nvim_win_get_var, v, "fugitive_status") then
+      vim.api.nvim_win_close(v, false)
+      return
+    end
+  end
+
+  vim.cmd [[Git]]
 end
 
 return Swft

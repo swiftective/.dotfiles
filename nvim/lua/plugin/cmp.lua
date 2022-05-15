@@ -4,6 +4,31 @@ local cmp = require "cmp" -- Completion
 
 local luasnip = require "luasnip" -- Snippets
 
+local types = require "luasnip.util.types"
+
+luasnip.config.set_config {
+  -- This tells LuaSnip to remember to keep around the last snippet.
+  -- You can jump back into it even if you move outside of the selection
+  history = true,
+
+  -- This one is cool cause if you have dynamic snippets, it updates as you type!
+  updateevents = "TextChanged,TextChangedI",
+
+  -- Autosnippets:
+  enable_autosnippets = true,
+
+  -- Crazy highlights!!
+  -- #vid3
+  -- ext_opts = nil,
+  ext_opts = {
+    [types.choiceNode] = {
+      active = {
+        virt_text = { { " <- Current Choice", "NonTest" } },
+      },
+    },
+  },
+}
+
 local icons = {
   Text = "",
   Method = "",
@@ -33,10 +58,10 @@ local icons = {
 }
 
 local source_mapping = {
+  luasnip = "[Snip]",
   nvim_lsp = "[LSP]",
   nvim_lua = "[Lua]",
   path = "[Path]",
-  luasnip = "[Snip]",
   cmp_tabnine = "[TN]",
   cmp_git = "[GH]",
   orgmode = "[ORG]",

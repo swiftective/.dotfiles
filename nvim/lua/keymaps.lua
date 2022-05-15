@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 
 map("i", "jk", "<Esc>", opts)
 map("n", "<Leader>ol", ":SymbolsOutline<CR>", opts)
-map("n", "wm", ":MaximizerToggle<CR>", opts)
+map("n", "wm", require("maximize").toggle, opts)
 map("n", "<C-j>", ":cnext<CR>", opts)
 map("n", "<C-k>", ":cprevious<CR>", opts)
 map("t", "<A-s>", [[<C-\><C-n>]], opts)
@@ -81,7 +81,7 @@ map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
 map("n", "<leader>bi", ":BufferPin<CR>", opts)
 
 -- Git
-map("n", "<leader>gs", "<cmd>call FugitiveToggle()<CR>", opts)
+map("n", "<leader>gs", "<cmd>lua Swft.FugitiveToggle()<CR>", opts)
 map("n", "<leader>gm", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
 map("n", "<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<CR>", opts)
 map("n", "<leader>gws", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", opts)
@@ -108,7 +108,7 @@ map("n", "<leader>k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 -- LSP config (the mappings used in the default file don't quite work right)
 map("n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-map("n", "<leader>ca", "<cmd>Telescope lsp_code_actions theme=cursor<CR>", opts)
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
 -- lsp trouble
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)

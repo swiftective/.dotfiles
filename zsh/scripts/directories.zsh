@@ -28,6 +28,6 @@ function d () {
 compdef _dirs d
 
 # List directory contents
-alias ls='lsd -a'
-alias l='lsd'
-alias la='ls -lAh'
+alias ls='exa -a --icons'
+alias l='exa --icons'
+alias la='exa -al --icons'

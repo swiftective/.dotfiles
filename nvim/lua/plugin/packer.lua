@@ -142,7 +142,6 @@ return packer.startup(function()
   -- motion plugin
   use {
     "ggandor/lightspeed.nvim",
-    event = chold,
     config = function()
       -- Surround
       require("lightspeed").setup {
@@ -204,27 +203,11 @@ return packer.startup(function()
     end,
   }
   use { "saadparwaiz1/cmp_luasnip", event = "insertenter" }
-  use {
-    "tzachar/cmp-tabnine",
-    event = "InsertEnter",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = "..",
-      }
-    end,
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
 
   -- Snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
-
+  use "Nash0x7E2/awesome-flutter-snippets"
   -- Debugging
   use {
     "mfussenegger/nvim-dap",
@@ -255,7 +238,6 @@ return packer.startup(function()
     end,
   }
   use "David-Kunz/jester"
-  use { "szw/vim-maximizer", cmd = "MaximizerToggle" }
 
   -- Running code snippet
   use {
@@ -394,9 +376,14 @@ return packer.startup(function()
 
   use {
     "stevearc/dressing.nvim",
-    -- config = function()
-    --   require "plugin.dress"
-    -- end,
+    config = function()
+      require("dressing").setup {
+        select = {
+          enabled = true,
+          telescope = require("telescope.themes").get_cursor(),
+        },
+      }
+    end,
   }
 
   -- Orgmode alternative for Note Taking
@@ -441,14 +428,10 @@ return packer.startup(function()
   use "nvim-neorg/neorg-telescope"
 
   use {
-    "yamatsum/nvim-cursorline",
+    "declancm/maximize.nvim",
     config = function()
-      require("nvim-cursorline").setup {
-        cursorline = {
-          enable = false,
-          timeout = 2000,
-          number = false,
-        },
+      require("maximize").setup {
+        default_keymaps = false,
       }
     end,
   }

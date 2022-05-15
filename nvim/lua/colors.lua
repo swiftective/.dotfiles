@@ -85,7 +85,7 @@ function! Colord()
   :hi rainbowcol6 guifg=#1cd4d4
   :hi rainbowcol7 guifg=#6A9955
 
-  :hi WhichKeyFloat guibg=none
+  :hi WhichKeyFloat guibg=#121212
 
   :hi Normal guibg=none ctermbg=none
   :hi NvimTreeExecFile guifg=#04cf84
