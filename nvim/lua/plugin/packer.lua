@@ -72,14 +72,6 @@ return packer.startup(function()
   use "folke/tokyonight.nvim"
 
   use {
-    "Mofiqul/vscode.nvim",
-    config = function()
-      vim.g.vscode_style = "dark"
-    end,
-    event = chold,
-  }
-
-  use {
     "ThePrimeagen/git-worktree.nvim",
     config = function()
       require("telescope").load_extension "git_worktree"
@@ -279,7 +271,11 @@ return packer.startup(function()
     requires = "nvim-lua/plenary.nvim",
     ft = "dart",
     config = function()
-      require("flutter-tools").setup {} -- use defaults
+      require("flutter-tools").setup {
+        dev_log = {
+          open_cmd = "edit",
+        },
+      } -- use defaults
       require("telescope").load_extension "flutter"
     end,
   }
@@ -346,26 +342,6 @@ return packer.startup(function()
 
   use { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" } -- A game for vimmers
 
-  -- Session management
-  use {
-    "rmagatti/auto-session",
-    config = function()
-      require("auto-session").setup {
-        log_level = "info",
-        auto_session_suppress_dirs = { "~/", "~/workspace/Projects" },
-      }
-    end,
-  }
-
-  use {
-    "rmagatti/session-lens",
-    requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("session-lens").setup {}
-    end,
-    event = chold,
-  }
-
   -- Lua
   use {
     "folke/which-key.nvim",
@@ -385,47 +361,6 @@ return packer.startup(function()
       }
     end,
   }
-
-  -- Orgmode alternative for Note Taking
-  use {
-    "nvim-orgmode/orgmode",
-    config = function()
-      require("orgmode").setup {
-        org_agenda_files = { "~/org/**/*" },
-        org_default_notes_file = "~/org/todo.org",
-      }
-      require("orgmode").setup_ts_grammar()
-    end,
-  }
-
-  -- Bullets for org mode
-  use {
-    "akinsho/org-bullets.nvim",
-    config = function()
-      require("org-bullets").setup {
-        symbols = { "◉", "○", "✸", "⭐", "∗" },
-      }
-    end,
-  }
-
-  -- Fancy headlines for Orgmode
-  use {
-    "lukas-reineke/headlines.nvim",
-    config = function()
-      require("headlines").setup()
-    end,
-  }
-
-  use { "dhruvasagar/vim-table-mode", ft = { "org", "norg" } }
-
-  use {
-    "nvim-neorg/neorg",
-    config = function()
-      require "plugin.norg"
-    end,
-    requires = "nvim-lua/plenary.nvim",
-  }
-  use "nvim-neorg/neorg-telescope"
 
   use {
     "declancm/maximize.nvim",

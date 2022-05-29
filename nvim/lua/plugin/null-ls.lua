@@ -1,5 +1,5 @@
 local formatting = require("null-ls").builtins.formatting
-local completion = require("null-ls").builtins.completion
+-- local completion = require("null-ls").builtins.completion
 -- local diagnostics = null_ls.builtins.diagnostics
 
 require("null-ls").setup {
@@ -24,7 +24,7 @@ require("null-ls").setup {
       extra_args = { "--single-quote", "--jsx-single-quote" },
     },
     formatting.autopep8,
-    completion.spell,
+    -- completion.spell,
   },
 }
 

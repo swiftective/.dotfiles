@@ -64,8 +64,6 @@ local source_mapping = {
   path = "[Path]",
   cmp_tabnine = "[TN]",
   cmp_git = "[GH]",
-  orgmode = "[ORG]",
-  neorg = "[NORG]",
   buffer = "[Buffer]",
 }
 
@@ -127,12 +125,8 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "cmp_git" },
-    { name = "neorg" },
-    { name = "orgmode" },
     { name = "path" },
     { name = "cmdline" },
-    { name = "neorg" },
-    { name = "cmp_tabnine" },
     { name = "buffer" },
   },
   formatting = {

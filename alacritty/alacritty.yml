@@ -3,19 +3,19 @@ scrolling:
 
 font:
   normal:
-    family: Jetbrains Mono
+    family: JetBrainsMono Nerd Font
     style: medium
 
   bold:
-    family: Jetbrains Mono
+    family: JetBrainsMono Nerd Font
     style: bold
 
   italic:
-    family: Jetbrains Mono
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: Jetbrains Mono
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
 
   size: 8.5
