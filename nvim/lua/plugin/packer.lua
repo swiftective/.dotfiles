@@ -209,12 +209,17 @@ return packer.startup(function()
       dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
     end,
   }
-  use "Pocco81/dap-buddy.nvim"
   use {
     "rcarriga/nvim-dap-ui",
     requires = { "mfussenegger/nvim-dap" },
     config = function()
       require "plugin.dapui"
+    end,
+  }
+  use {
+    "mfussenegger/nvim-dap-python",
+    config = function()
+      require("dap-python").setup()
     end,
   }
   use {

@@ -20,6 +20,7 @@ require("null-ls").setup {
         "markdown",
         "graphql",
         "solidity",
+        "html",
       },
       extra_args = { "--single-quote", "--jsx-single-quote" },
     },
