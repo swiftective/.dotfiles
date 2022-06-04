@@ -116,7 +116,7 @@ map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
 -- lsp trouble
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", opts)
-map("n", "gd", "<cmd>TroubleToggle lsp_definitions<CR>", opts)
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<CR>", opts)
 map("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<CR>", opts)
 map("n", "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", opts)
