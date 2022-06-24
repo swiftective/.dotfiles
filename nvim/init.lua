@@ -26,3 +26,4 @@ require "keymaps"
 require "colors"
 
 require "swft.functions"
+-- This is comment
