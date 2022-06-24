@@ -23,7 +23,7 @@ luasnip.config.set_config {
   ext_opts = {
     [types.choiceNode] = {
       active = {
-        virt_text = { { " <- Current Choice", "NonTest" } },
+        -- virt_text = { { " <- Current Choice", "NonTest" } },
       },
     },
   },
@@ -63,7 +63,7 @@ local source_mapping = {
   nvim_lua = "[Lua]",
   path = "[Path]",
   cmp_tabnine = "[TN]",
-  cmp_git = "[GH]",
+  git = "[GH]",
   buffer = "[Buffer]",
 }
 
@@ -124,7 +124,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "cmp_git" },
+    { name = "git" },
     { name = "path" },
     { name = "cmdline" },
     { name = "buffer" },
@@ -143,7 +143,7 @@ cmp.setup {
         empty_check()
         vim_item.kind = ""
       end
-      if entry.source.name == "cmp_git" then
+      if entry.source.name == "git" then
         empty_check()
         vim_item.kind = ""
       end

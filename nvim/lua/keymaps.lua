@@ -1,6 +1,10 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+map("i", "<C-e>", "<C-[>ea", opts)
+map("i", "<C-b>", "<C-[>bi", opts)
+map("i", "<C-h>", "<C-[>ha", opts)
+map("i", "<C-l>", "<C-[>la", opts)
 map("i", "jk", "<Esc>", opts)
 map("n", "<Leader>ol", ":SymbolsOutline<CR>", opts)
 map("n", "wm", require("maximize").toggle, opts)

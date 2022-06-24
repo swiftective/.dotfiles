@@ -1,26 +1,45 @@
 require("dapui").setup {
-  sidebar = {
-    elements = {
-      {
-        id = "scopes",
-        size = 0.20, -- Can be float or integer > 1
-      },
-      { id = "breakpoints", size = 0.20 },
-      { id = "stacks", size = 0.30 },
-      { id = "watches", size = 0.20 },
-    },
-    size = 15,
-    position = "bottom", -- Can be "left", "right", "top", "bottom"
+  icons = { expanded = "▾", collapsed = "▸" },
+  mappings = {
+    expand = { "<CR>", "<2-LeftMouse>" },
+    open = "o",
+    remove = "d",
+    edit = "e",
+    repl = "r",
+    toggle = "t",
   },
-  tray = {
-    elements = { "repl" },
-    size = 50,
-    position = "right", -- Can be "left", "right", "top", "bottom"
+  expand_lines = vim.fn.has "nvim-0.7",
+  layouts = {
+    {
+      elements = {
+
+        { id = "scopes", size = 0.25 },
+        "breakpoints",
+        "stacks",
+        "watches",
+      },
+      size = 40,
+      position = "left",
+    },
+    {
+      elements = {
+        "repl",
+        "console",
+      },
+      size = 10,
+      position = "bottom",
+    },
   },
   floating = {
-    max_height = 0.3, -- These can be integers or a float between 0 and 1.
-    max_width = 0.3, -- Floats will be treated as percentage of your screen.
-    border = "rounded", -- Border style. Can be "single", "double" or "rounded"
+    max_height = nil,
+    max_width = nil,
+    border = "single",
+    mappings = {
+      close = { "q", "<Esc>" },
+    },
   },
-  windows = { indent = 0 },
+  windows = { indent = 1 },
+  render = {
+    max_type_length = nil,
+  },
 }

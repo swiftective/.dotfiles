@@ -3,26 +3,21 @@
 -- ┣━┃┃┃┃┃╭┫╭┫┻┫━┫╭┫┣╮┃╭┫┻┫
 -- ╰━┻━━┻┻╯╰━┻━┻━┻━┻╯╰━╯╰━╯
 
-require "impatient"
+if require "swft.first_load"() then
+  return
+end
 
-require "plugin.packer"
-
-require "plugin.telescope"
-
-require "plugin.lsp-config"
-require "plugin.cmp"
-require "plugin.lsp-install"
-
-require "plugin.nvimtree"
-
-require "plugin.dap"
-
-require "plugin.eviline"
-
-require "options"
-
-require "keymaps"
-
-require "colors"
-
-require "swft.functions"
+pcall(require, "swft.disable_builtins")
+pcall(require, "impatient")
+pcall(require, "plugin.packer")
+pcall(require, "plugin.telescope")
+pcall(require, "plugin.lsp-config")
+pcall(require, "plugin.cmp")
+pcall(require, "plugin.lsp-install")
+pcall(require, "plugin.nvimtree")
+pcall(require, "plugin.dap")
+pcall(require, "plugin.eviline")
+pcall(require, "options")
+pcall(require, "keymaps")
+pcall(require, "colors")
+pcall(require, "swft.functions")

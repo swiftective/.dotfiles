@@ -1,45 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
-local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-local fn = vim.fn
 local packer = require "packer"
-local use = packer.use
-local chold = "CursorHold"
-
--- install packer if needed
-if fn.empty(fn.glob(install_path)) > 0 then
-  Packer_bootstrap = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-end
-
-local disabled_built_ins = {
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "gzip",
-  "zip",
-  "zipPlugin",
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "logipat",
-  "rrhelper",
-  "spellfile_plugin",
-  "matchit",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
-end
 
 packer.init {
   git = {
@@ -49,15 +10,11 @@ packer.init {
     open_fn = require("packer.util").float, -- An optional function to open a window for packer's display
     prompt_border = "double", -- Border style of prompt popups.
   },
-  profile = {
-    enable = true,
-    threshold = 1, -- integer in milliseconds, plugins which load faster than this won't be shown in profile output
-  },
 }
 
 packer.reset()
 
-return packer.startup(function()
+return packer.startup(function(use)
   -- Packer
   use "wbthomason/packer.nvim"
 
@@ -76,16 +33,16 @@ return packer.startup(function()
     config = function()
       require("telescope").load_extension "git_worktree"
     end,
-    event = chold,
+    event = "CursorHold",
   }
   use {
     "norcalli/nvim-colorizer.lua",
-    event = chold,
+    event = "CursorHold",
     config = function()
       require "plugin.colorizer"
     end,
   }
-  use { "simrat39/symbols-outline.nvim", event = chold }
+  use { "simrat39/symbols-outline.nvim", event = "CursorHold" }
 
   -- statusline
   use {
@@ -97,7 +54,7 @@ return packer.startup(function()
   use { "tpope/vim-fugitive", cmd = "Git" }
   use {
     "lewis6991/gitsigns.nvim",
-    event = chold,
+    event = "CursorHold",
     config = function()
       require "plugin.git-signs"
     end,
@@ -109,7 +66,7 @@ return packer.startup(function()
   -- undotree
   use {
     "mbbill/undotree",
-    event = chold,
+    event = "CursorHold",
     config = function()
       vim.g["undotree_SetFocusWhenToggle"] = 1
       vim.g["undotree_WindowLayout"] = 3
@@ -128,7 +85,7 @@ return packer.startup(function()
     config = function()
       require("telescope").load_extension "fzf"
     end,
-    event = chold,
+    event = "CursorHold",
   }
 
   -- motion plugin
@@ -146,7 +103,7 @@ return packer.startup(function()
   -- Comment plugin
   use {
     "numToStr/Comment.nvim",
-    event = chold,
+    event = "CursorHold",
     config = function()
       require("Comment").setup()
     end,
@@ -155,17 +112,17 @@ return packer.startup(function()
   -- Indentline
   use {
     "lukas-reineke/indent-blankline.nvim",
-    event = chold,
+    event = "CursorHold",
     config = function()
       require "plugin.indentline"
     end,
   }
 
-  use { "tpope/vim-surround", event = chold }
+  use { "tpope/vim-surround", event = "CursorHold" }
 
   use {
     "windwp/nvim-autopairs",
-    event = chold,
+    event = "CursorHold",
     config = function()
       require("nvim-autopairs").setup()
     end,
@@ -240,7 +197,7 @@ return packer.startup(function()
   use {
     "michaelb/sniprun",
     run = "bash ./install.sh",
-    -- event = chold,
+    -- event = "CursorHold",
     config = function()
       require("sniprun").setup {
         display = { "Classic" },
@@ -287,7 +244,7 @@ return packer.startup(function()
 
   use {
     "folke/trouble.nvim",
-    event = chold,
+    event = "CursorHold",
     requires = "kyazdani42/nvim-web-devicons",
   }
 
@@ -310,7 +267,7 @@ return packer.startup(function()
   -- Notify
   use {
     "rcarriga/nvim-notify",
-    -- event = chold,
+    -- event = "CursorHold",
     config = function()
       require("notify").setup {
         timeout = 800,
@@ -323,7 +280,7 @@ return packer.startup(function()
   -- bufferline for asthetics
   use {
     "romgrk/barbar.nvim",
-    event = chold,
+    event = "CursorHold",
   }
 
   use "ThePrimeagen/harpoon"
@@ -331,7 +288,7 @@ return packer.startup(function()
   -- file tree
   use "kyazdani42/nvim-tree.lua"
 
-  use { "tpope/vim-repeat", event = chold } -- I'm very lazy
+  use { "tpope/vim-repeat", event = "CursorHold" } -- I'm very lazy
 
   -- vim multi cursors
   use {
@@ -375,8 +332,4 @@ return packer.startup(function()
       }
     end,
   }
-
-  if Packer_bootstrap then
-    packer.sync()
-  end
 end)

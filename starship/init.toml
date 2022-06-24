@@ -10,7 +10,7 @@ disabled = true
 [character]                            # The name of the module we are configuring is "character"
 success_symbol = "[λ](#565f90)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 error_symbol = "[λ](bold red)"
-vicmd_symbol = "[λ](blue)"
+vicmd_symbol = "[λ](#5087cc)"
 
 # configure directory
 [directory]
