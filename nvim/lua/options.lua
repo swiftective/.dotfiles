@@ -1,8 +1,11 @@
 vim.g.mapleader = " " -- Leader key
--- vim.o.lazyredraw = true
+vim.o.cursorline = true
 vim.o.sessionoptions = "buffers,curdir,folds,help,winsize,winpos,terminal"
 vim.o.termguicolors = true
 vim.o.timeoutlen = 500
+vim.o.foldenable = false
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2

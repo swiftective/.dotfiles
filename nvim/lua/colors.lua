@@ -19,7 +19,7 @@ function! Colord()
   :hi BufferCurrentTarget guibg=none guifg=Cyan
   :hi BufferInactiveTarget guibg=none guifg=Cyan
   :hi LightspeedGreyWash guifg=#455574
-  :hi IndentBlanklineContextChar guifg=#c7223b
+  :hi IndentBlanklineContextChar guifg=cyan
   :hi TSVariable ctermfg=204 guifg=#aed8f2
   :hi IncSearch guibg=Cyan guifg=Black
   :hi LineNr guibg=NONE ctermbg=NONE
