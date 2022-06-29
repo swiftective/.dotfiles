@@ -325,11 +325,21 @@ return packer.startup(function(use)
   }
 
   use {
-    "declancm/maximize.nvim",
+    "yamatsum/nvim-cursorline",
+    event = "CursorHold",
     config = function()
-      require("maximize").setup {
-        default_keymaps = false,
+      require("nvim-cursorline").setup {
+        cursorline = {
+          enable = true,
+          timeout = 4000,
+          number = false,
+        },
+        cursorword = {
+          enable = false,
+        },
       }
     end,
   }
+
+  use { "szw/vim-maximizer", cmd = "MaximizerToggle" }
 end)
