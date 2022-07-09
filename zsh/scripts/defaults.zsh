@@ -1,4 +1,7 @@
 
+#magic space
+bindkey ' ' magic-space
+
 # vj mode
 bindkey -v
 bindkey 'jk' vi-cmd-mode
@@ -47,4 +50,15 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 HISTSIZE=100000
 SAVEHIST=100000
 setopt appendhistory
+
+#history
+setopt incappendhistory     # incrementally add items to HISTFILE
+
+#ignore dup history
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 

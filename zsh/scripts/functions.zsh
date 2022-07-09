@@ -21,3 +21,9 @@ ws (){
   fi
   unset dir
 }
+
+touch () {
+  dirname $@ | xargs mkdir -p
+  print -l $@ | xargs touch
+}
+
