@@ -14,3 +14,4 @@ netstat
 ss
 nmap
 ltrace
+svn

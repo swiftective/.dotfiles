@@ -16,5 +16,5 @@ require("nvim-treesitter.configs").setup {
   },
 }
 
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.dart.install_info.revision = "f95876f0ed3ef207bbd3c5c41987bc2e9cecfc97"
+-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+-- parser_config.dart.install_info.revision = "f95876f0ed3ef207bbd3c5c41987bc2e9cecfc97"
