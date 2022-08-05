@@ -27,3 +27,6 @@ touch () {
   print -l $@ | xargs touch
 }
 
+acs () {
+  alias | rg $1
+}

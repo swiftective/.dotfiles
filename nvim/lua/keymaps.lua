@@ -3,8 +3,9 @@ local opts = { noremap = true, silent = true }
 
 map("i", "<C-e>", "<C-[>ea", opts)
 map("i", "<C-b>", "<C-[>bi", opts)
-map("i", "<C-h>", "<C-[>ha", opts)
-map("i", "<C-l>", "<C-[>la", opts)
+map("i", "<C-h>", "<Left>", opts)
+map("i", "<C-l>", "<Right>", opts)
+map("i", "kj", "<C-o>", opts)
 map("i", "jk", "<Esc>", opts)
 map("n", "<Leader>ol", ":SymbolsOutline<CR>", opts)
 map("n", "wm", "<cmd>MaximizerToggle<CR>", opts)

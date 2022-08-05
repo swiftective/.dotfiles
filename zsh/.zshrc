@@ -10,7 +10,6 @@ source $HOME/.config/zsh/scripts/z.zsh
 # Plugins
 source $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.local/share/zsh/plugins/aliases/aliases.plugin.zsh
 
 eval "$(lua $HOME/.local/share/zsh/plugins/z.lua/z.lua --init enhanced zsh)"
 fpath=($HOME/.local/share/zsh/plugins/zsh-completions/src $fpath)
