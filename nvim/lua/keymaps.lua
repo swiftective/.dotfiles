@@ -42,7 +42,7 @@ map("", ";", "<Plug>Lightspeed_;_ft", { noremap = false })
 map("", ",", "<Plug>Lightspeed_,_ft", { noremap = false })
 
 --  Telescope
-map("n", "<leader>fs", "<cmd>lua require('session-lens').search_session()<CR>", opts)
+-- map("n", "<leader>fs", "<cmd>lua require('session-lens').search_session()<CR>", opts)
 map("n", "<leader>fd", "<cmd>lua require('telescope.builtin').fd()<CR>", opts)
 map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
 map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)
