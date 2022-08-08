@@ -28,5 +28,19 @@ touch () {
 }
 
 acs () {
-  alias | rg $1
+  alias | rg -i $1
 }
+
+# Get KDE Klipper Clipboard History
+klip() {
+  n=0
+  f="I am the placeholder for each line in klipper"
+  while [ 1 ]; do
+     f="$(qdbus org.kde.klipper /klipper getClipboardHistoryItem $n)"
+     if [ -z "$f" ]; then break; fi
+     echo "$f"
+     n=$((++n))
+  done
+  unset n
+}
+
