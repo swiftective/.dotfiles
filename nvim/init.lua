@@ -3,7 +3,7 @@
 -- ┣━┃┃┃┃┃╭┫╭┫┻┫━┫╭┫┣╮┃╭┫┻┫
 -- ╰━┻━━┻┻╯╰━┻━┻━┻━┻╯╰━╯╰━╯
 
-if require "swft.first_load"() then
+if require "swft.first_load" () then
   return
 end
 
