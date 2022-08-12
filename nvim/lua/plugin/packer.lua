@@ -320,8 +320,6 @@ return packer.startup(function(use)
   -- file tree
   use "kyazdani42/nvim-tree.lua"
 
-  use { "tpope/vim-repeat", event = "CursorHold" } -- I'm very lazy
-
   -- vim multi cursors
   use {
     "mg979/vim-visual-multi",
