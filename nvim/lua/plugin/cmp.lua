@@ -127,7 +127,14 @@ cmp.setup {
     { name = "git" },
     { name = "path" },
     { name = "cmdline" },
-    { name = "buffer" },
+    {
+      name = "buffer",
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+      },
+    },
   },
   formatting = {
     format = function(entry, vim_item)
