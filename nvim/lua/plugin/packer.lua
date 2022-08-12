@@ -118,7 +118,6 @@ return packer.startup(function(use)
       require("lightspeed").setup {
         ignore_case = true,
       }
-      -- vim.api.nvim_set_keymap("x", "E", "<Plug>VSurround", {})
     end,
   }
 
@@ -140,7 +139,17 @@ return packer.startup(function(use)
     end,
   }
 
-  use { "tpope/vim-surround", event = "CursorHold" }
+  use {
+    "kylechui/nvim-surround",
+    event = "CursorHold",
+    config = function()
+      require("nvim-surround").setup {
+        keymaps = {
+          visual = "E",
+        },
+      }
+    end,
+  }
 
   use {
     "windwp/nvim-autopairs",
