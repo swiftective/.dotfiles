@@ -228,7 +228,7 @@ return packer.startup(function(use)
   use {
     "michaelb/sniprun",
     run = "bash ./install.sh",
-    -- event = "CursorHold",
+    event = "CursorHold",
     config = function()
       require("sniprun").setup {
         display = { "Classic" },
@@ -250,6 +250,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
+
   use {
     "antoinemadec/FixCursorHold.nvim",
     event = "VimEnter",
@@ -282,6 +283,7 @@ return packer.startup(function(use)
   -- Lua
   use {
     "folke/todo-comments.nvim",
+    event = "CursorHold",
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require("todo-comments").setup()
@@ -298,7 +300,6 @@ return packer.startup(function(use)
   -- Notify
   use {
     "rcarriga/nvim-notify",
-    -- event = "CursorHold",
     config = function()
       require("notify").setup {
         timeout = 800,
