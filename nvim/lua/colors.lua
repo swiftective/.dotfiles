@@ -10,15 +10,10 @@ function! Colord()
   :hi BufferCurrentMod guibg=none
   :hi BufferCurrent guibg=none
   :hi NvimDapVirtualText guifg=#455574 guibg=none gui=bold
-  :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
   :hi Folded guifg=#5c719c guibg=#121212
   :hi CursorLine guibg=#151c30
-  :hi LightspeedShortcut guibg=none guifg=Cyan
-  :hi LightspeedOneCharMatch guibg=none guifg=Cyan
-  :hi LightspeedLabel guibg=none guifg=Cyan
   :hi BufferCurrentTarget guibg=none guifg=Cyan
   :hi BufferInactiveTarget guibg=none guifg=Cyan
-  :hi LightspeedGreyWash guifg=#455574
   :hi IndentBlanklineContextChar guifg=cyan
   :hi TSVariable ctermfg=204 guifg=#aed8f2
   :hi IncSearch guibg=Cyan guifg=Black
@@ -52,7 +47,6 @@ function! Colord()
   :hi DressingHl guibg=none
   :hi Headline guibg=none
   :hi CodeBlock guibg=none
-  :hi LightspeedPendingOpArea guibg=cyan guifg=black
 
   " buffers
   :hi BufferInactive guibg=none guifg=#4e5661
@@ -69,6 +63,13 @@ function! Colord()
   :hi Sneak guifg=Cyan guibg=none ctermfg=Cyan ctermbg=none
   :hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=Yellow
 
+  " Lightspeed
+  :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
+  :hi LightspeedShortcut guibg=none guifg=Cyan
+  :hi LightspeedOneCharMatch guibg=none guifg=Cyan
+  :hi LightspeedLabel guibg=none guifg=Cyan
+  :hi LightspeedGreyWash guifg=#455574
+  :hi LightspeedPendingOpArea guibg=cyan guifg=black
 
   :hi Pmenu guifg=#C0C5CE guibg=#121212
 
