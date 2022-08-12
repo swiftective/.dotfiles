@@ -7,8 +7,9 @@ packer.init {
     clone_timeout = false,
   },
   display = {
-    open_fn = require("packer.util").float, -- An optional function to open a window for packer's display
-    prompt_border = "double", -- Border style of prompt popups.
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
   },
 }
 
