@@ -5,7 +5,7 @@ vim.cmd [[
 " colorscheme mess
 function! Colord()
   :syntax on
-  :hi NormalFloat guibg=#121212
+  :hi NormalFloat guibg=none
   :hi BufferCurrentSign guibg=none
   :hi BufferCurrentMod guibg=none
   :hi BufferCurrent guibg=none
