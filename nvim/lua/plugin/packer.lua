@@ -198,6 +198,7 @@ return packer.startup(function(use)
       dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
     end,
   }
+
   use {
     "rcarriga/nvim-dap-ui",
     requires = { "mfussenegger/nvim-dap" },
@@ -205,24 +206,21 @@ return packer.startup(function(use)
       require "plugin.dapui"
     end,
   }
-  use {
-    "mfussenegger/nvim-dap-python",
-    config = function()
-      require("dap-python").setup()
-    end,
-  }
+
   use {
     "theHamsta/nvim-dap-virtual-text",
     config = function()
       require("nvim-dap-virtual-text").setup()
     end,
   }
+
   use {
     "nvim-telescope/telescope-dap.nvim",
     config = function()
       require("telescope").load_extension "dap"
     end,
   }
+
   use "David-Kunz/jester"
 
   -- Running code snippet
