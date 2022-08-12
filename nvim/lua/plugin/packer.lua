@@ -35,13 +35,15 @@ return packer.startup(function(use)
     end,
     event = "CursorHold",
   }
+
   use {
-    "norcalli/nvim-colorizer.lua",
+    "ziontee113/color-picker.nvim",
     event = "CursorHold",
     config = function()
-      require "plugin.colorizer"
+      require "color-picker"
     end,
   }
+
   use { "simrat39/symbols-outline.nvim", event = "CursorHold" }
 
   -- statusline
