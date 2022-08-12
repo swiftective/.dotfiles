@@ -370,6 +370,4 @@ return packer.startup(function(use)
       }
     end,
   }
-
-  use { "szw/vim-maximizer", cmd = "MaximizerToggle" }
 end)
