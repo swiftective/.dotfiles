@@ -12,6 +12,6 @@ if grep -qs "$selected" ~/.config/tmux/.chx-languages; then
   query=`echo $query | tr ' ' '+'`
   tmux neww -n  "Cheat Sheet" bash -c "curl -s cht.sh/$selected/$query?T | bat -p --paging=always --language=$selected"
 else
-  tmux neww -n  "Cheat Sheet" bash -c "curl -s cht.sh/$selected~$query?T | bat -p --paging=always --language=bash"
+  tmux neww -n  "Cheat Sheet" bash -c "curl -s cht.sh/$selected~$query | bat -p --paging=always"
 fi
 
