@@ -53,7 +53,9 @@ local autocmds = {
     event = "BufWritePre",
     pattern = "*.lua",
     group = group,
-    callback = vim.lsp.buf.formatting_seq_sync,
+    callback = function()
+      vim.lsp.buf.format()
+    end,
   },
 }
 

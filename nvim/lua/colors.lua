@@ -1,4 +1,25 @@
-vim.g.tokyonight_transparent = true
+require("tokyonight").setup {
+  style = "night",
+  transparent = true,
+  terminal_colors = true,
+  styles = {
+    comments = { italic = true },
+    keywords = { italic = true },
+    functions = {},
+    variables = {},
+    sidebars = "transparent",
+    floats = "transparent",
+  },
+  sidebars = {},
+  day_brightness = 0.3,
+  hide_inactive_statusline = false,
+  dim_inactive = false,
+  lualine_bold = false,
+
+  on_colors = function(colors) end,
+
+  on_highlights = function(highlights, colors) end,
+}
 
 vim.cmd [[
 
@@ -21,9 +42,6 @@ function! Colord()
   :hi SignColumn guibg=NONE ctermbg=NONE
   :hi EndOfBuffer guibg=NONE ctermbg=NONE guifg=Black
   :hi cssUnitDecorators guifg=#d8636b
-  :hi GitSignsAdd guibg=none guifg=#27db57
-  :hi GitSignsChange guibg=none guifg=#2193de
-  :hi GitSignsDelete guibg=none guifg=#d10f3f
   :hi NvimTreeFolderIcon guifg=#008ae6
   :hi NvimTreeRootFolder guifg=#008ae6
   :hi NvimTreeNormal guibg=none
@@ -71,7 +89,7 @@ function! Colord()
   :hi LightspeedGreyWash guifg=#455574
   :hi LightspeedPendingOpArea guibg=cyan guifg=black
 
-  :hi Pmenu guifg=#C0C5CE guibg=#121212
+  :hi Pmenu guifg=#C0C5CE guibg=none
 
   " Telescope
   :hi TelescopeNormal guibg=none

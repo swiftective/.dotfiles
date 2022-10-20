@@ -30,15 +30,7 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
 
   use {
-    "ThePrimeagen/git-worktree.nvim",
-    config = function()
-      require("telescope").load_extension "git_worktree"
-    end,
-    event = "CursorHold",
-  }
-
-  use {
-    "NvChad/nvim-colorizer.lua",
+    "Akianonymus/nvim-colorizer.lua",
     event = "CursorHold",
     config = function()
       require("colorizer").setup {
@@ -65,12 +57,12 @@ return packer.startup(function(use)
     end,
   }
 
-  use { "simrat39/symbols-outline.nvim", event = "CursorHold" }
+  -- use { "simrat39/symbols-outline.nvim", event = "CursorHold" }
 
   -- statusline
   use {
     "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    requires = { "kyazdani42/nvim-web-devicons", event = "UIEnter" },
   }
 
   -- Git
@@ -84,6 +76,14 @@ return packer.startup(function(use)
     requires = {
       "nvim-lua/plenary.nvim",
     },
+  }
+
+  use {
+    "ThePrimeagen/git-worktree.nvim",
+    config = function()
+      require("telescope").load_extension "git_worktree"
+    end,
+    event = "CursorHold",
   }
 
   -- undotree
@@ -192,16 +192,19 @@ return packer.startup(function(use)
   -- Debugging
   use {
     "mfussenegger/nvim-dap",
+    event = "CursorHold",
     config = function()
       require("dap.ext.vscode").load_launchjs()
       local dap = require "dap"
       dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
+      pcall(require, "plugin.dap")
     end,
   }
 
   use {
     "rcarriga/nvim-dap-ui",
     requires = { "mfussenegger/nvim-dap" },
+    event = "CursorHold",
     config = function()
       require "plugin.dapui"
     end,
@@ -209,6 +212,7 @@ return packer.startup(function(use)
 
   use {
     "theHamsta/nvim-dap-virtual-text",
+    after = "nvim-dap",
     config = function()
       require("nvim-dap-virtual-text").setup()
     end,
@@ -216,6 +220,7 @@ return packer.startup(function(use)
 
   use {
     "nvim-telescope/telescope-dap.nvim",
+    after = "nvim-dap",
     config = function()
       require("telescope").load_extension "dap"
     end,
@@ -306,6 +311,7 @@ return packer.startup(function(use)
         background_colour = "#000000",
       }
       vim.notify = require "notify"
+      require("telescope").load_extension "notify"
     end,
   }
 

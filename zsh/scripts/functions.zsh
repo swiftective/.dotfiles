@@ -22,11 +22,6 @@ ws (){
   unset dir
 }
 
-touch () {
-  dirname $@ | xargs mkdir -p
-  print -l $@ | xargs touch
-}
-
 acs () {
   alias | rg -i $1
 }
