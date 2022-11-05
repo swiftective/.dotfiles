@@ -25,3 +25,8 @@ eval "$(starship init zsh)"
 
 # fnm
 eval "$(fnm env --use-on-cd)"
+
+# pnpm
+export PNPM_HOME="/home/rv/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
