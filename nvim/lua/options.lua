@@ -47,3 +47,5 @@ vim.g.bufferline = {
   letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
   no_name_title = nil,
 }
+
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h8" }

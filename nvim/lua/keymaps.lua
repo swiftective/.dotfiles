@@ -51,7 +51,7 @@ map("n", "<leader>fo", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
 map("", "<C-p>", "<cmd>lua require('plugin.telescope').project_files()<CR>", opts)
 map("", "<A-p>", "<cmd>Telescope builtin<CR>", opts)
-map("n", "<leader>fi", "<cmd>LspFormat<CR>", opts)
+map("n", "<leader>fi", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
 
 -- Navigation
 map("n", "mm", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
