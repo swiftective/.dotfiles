@@ -12,7 +12,6 @@ alias fdh="fd -H"
 alias ta='tmux attach'
 alias tksv='tmux kill-server'
 alias tl='tmux list-sessions'
-alias clear='echo "DONOT CLEAR, USE CTRL+l !!!"'
 alias ts='ns && tmux new'
 alias t='tmux'
 alias rg='rg -i'
