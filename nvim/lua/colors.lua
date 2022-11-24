@@ -21,6 +21,7 @@ require("tokyonight").setup {
   on_highlights = function(highlights, colors) end,
 }
 
+-- TODO: Convert to lua code
 vim.cmd [[
 
 " colorscheme mess
