@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this script requires bat tool for paging
 
-selected=`cat ~/.config/tmux/.chx-languages ~/.config/tmux/.chx-commands | fzf --bind=enter:replace-query+print-query`
+selected=`cat ~/.config/tmux/.chx-languages | fzf --bind=enter:replace-query+print-query`
 if [[ -z $selected ]]; then
   exit 0
 fi
