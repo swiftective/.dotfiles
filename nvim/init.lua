@@ -20,3 +20,5 @@ pcall(require, "swft.options")
 pcall(require, "swft.keymaps")
 pcall(require, "swft.colors")
 pcall(require, "swft.functions")
+
+require("lualine").hide()

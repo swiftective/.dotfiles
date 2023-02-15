@@ -30,6 +30,7 @@ map("i", "<C-v>", '<C-r>"', opts)
 map("n", "=", "<C-a>", opts)
 map("n", "-", "<C-x>", opts)
 map("n", "gx", "<cmd>lua Swft.HandleURL()<CR>", opts)
+map("n", "<leader>st", "<cmd>lua Swft.ToggleLualine()<CR>", opts)
 --  Undo Tree
 map("n", "<Leader>u", ":UndotreeToggle<CR>", opts)
 
@@ -65,29 +66,6 @@ map("n", ",j", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", opts)
 map("n", ",k", "<cmd>lua require('harpoon.ui').nav_file(6)<CR>", opts)
 map("n", ",l", "<cmd>lua require('harpoon.ui').nav_file(7)<CR>", opts)
 map("n", ",;", "<cmd>lua require('harpoon.ui').nav_file(8)<CR>", opts)
-
--- Barbar
-map("n", ">>", ":BufferMoveNext<CR>", opts)
-map("n", "<<", ":BufferMovePrevious<CR>", opts)
-map("n", "<leader>1", ":BufferGoto 1<CR>", opts)
-map("n", "<leader>2", ":BufferGoto 2<CR>", opts)
-map("n", "<leader>3", ":BufferGoto 3<CR>", opts)
-map("n", "<leader>4", ":BufferGoto 4<CR>", opts)
-map("n", "<leader>5", ":BufferGoto 5<CR>", opts)
-map("n", "<leader>6", ":BufferGoto 6<CR>", opts)
-map("n", "<leader>7", ":BufferGoto 7<CR>", opts)
-map("n", "<leader>8", ":BufferGoto 8<CR>", opts)
-map("n", "<leader>9", ":BufferLast<CR>", opts)
--- Close buffer
-map("n", "<leader>bc", ":BufferClose<CR>", opts)
--- Magic buffer-picking mode
-map("n", "<leader>s", ":BufferPick<CR>", opts)
--- Sort automatically by...
-map("n", "<leader>bb", ":BufferOrderByBufferNumber<CR>", opts)
-map("n", "<leader>bd", ":BufferOrderByDirectory<CR>", opts)
-map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
--- pin buffer
-map("n", "<leader>bi", ":BufferPin<CR>", opts)
 
 -- Git
 map("n", "<leader>gs", "<cmd>lua Swft.FugitiveToggle()<CR>", opts)

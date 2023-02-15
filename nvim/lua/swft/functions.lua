@@ -13,7 +13,6 @@ end
 
 local autocmds = {
   { event = "FileType", command = "set filetype=sh", pattern = "zsh", group = group },
-
   { event = "ColorScheme", callback = "Colord", pattern = "*", group = group },
 
   {
@@ -82,6 +81,15 @@ Swft.FugitiveToggle = function()
   end
 
   vim.cmd [[Git]]
+end
+
+Swft.ToggleLualine = function()
+  local lualine = require "lualine"
+  if vim.o.statusline == "%#Normal#" then
+    lualine.hide { unhide = true }
+    return
+  end
+  lualine.hide()
 end
 
 return Swft
