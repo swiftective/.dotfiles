@@ -56,10 +56,6 @@ local plugins = {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "kyazdani42/nvim-web-devicons", event = "CursorHold" },
-    config = function()
-      pcall(require, "plugin.eviline")
-      require("lualine").hide()
-    end,
   },
 
   { "tpope/vim-fugitive",   cmd = "Git" },
