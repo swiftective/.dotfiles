@@ -315,12 +315,6 @@ return packer.startup(function(use)
     end,
   }
 
-  -- bufferline for asthetics
-  use {
-    "romgrk/barbar.nvim",
-    event = "CursorHold",
-  }
-
   use "ThePrimeagen/harpoon"
 
   -- file tree
