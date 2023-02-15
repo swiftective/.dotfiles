@@ -21,8 +21,6 @@ local opts = {
 
 local plugins = {
 
-  "wbthomason/packer.nvim",
-
   -- Color-scheme
   "folke/tokyonight.nvim",
 
@@ -271,19 +269,6 @@ local plugins = {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
       require "plugin.null-ls"
-    end,
-  },
-
-  -- Notify
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      require("notify").setup {
-        timeout = 800,
-        background_colour = "#000000",
-      }
-      vim.notify = require "notify"
-      require("telescope").load_extension "notify"
     end,
   },
 

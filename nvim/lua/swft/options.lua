@@ -1,7 +1,6 @@
 vim.g.mapleader = " " -- Leader key
 vim.o.cursorline = true
 vim.o.sessionoptions = "buffers,curdir,folds,help,winsize,winpos,terminal"
-vim.cmd [[set termguicolors]]
 vim.o.updatetime = 100
 vim.o.termguicolors = true
 vim.o.timeoutlen = 500
