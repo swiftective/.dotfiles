@@ -6,9 +6,8 @@ if [[ -z $selected ]]; then
   exit 0
 fi
 
-read -p "Enter Query: " query
-
 if grep -qs "$selected" ~/.config/tmux/.chx-languages; then
+  read -p "Enter Query: " query
   query=`echo $query | tr ' ' '+'`
   tmux splitw -h bash -c "curl -s cht.sh/$selected/$query?T | bat -p --paging=always --language=$selected"
 else

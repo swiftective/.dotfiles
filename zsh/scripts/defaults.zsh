@@ -5,6 +5,8 @@ bindkey ' ' magic-space
 # vj mode
 bindkey -v
 bindkey 'jk' vi-cmd-mode
+bindkey -a H beginning-of-line
+bindkey -a L end-of-line
 
 # Basic auto/tab complete:
 autoload -U compinit
