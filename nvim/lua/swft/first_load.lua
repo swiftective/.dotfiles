@@ -1,27 +1,27 @@
-local download_packer = function()
-  if vim.fn.input "Download Packer? (y for yes) " ~= "y" then
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+local download_lazy = function()
+  if vim.fn.input "Download Lazy Plugin Manager? (y for yes) " ~= "y" then
     return
   end
 
-  local directory = string.format("%s/site/pack/packer/start/", vim.fn.stdpath "data")
-
-  vim.fn.mkdir(directory, "p")
-
-  vim.fn.system(
-    string.format("git clone %s %s", "https://github.com/wbthomason/packer.nvim", directory .. "/packer.nvim")
-  )
-
-  vim.cmd "packadd packer.nvim"
-  require "plugin.packer"
-  vim.cmd "PackerSync"
+  vim.fn.system {
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  }
+  vim.opt.rtp:prepend(lazypath)
 end
 
 return function()
-  if not pcall(require, "packer") then
-    download_packer()
-
+  if not vim.loop.fs_stat(lazypath) then
+    download_lazy()
     return true
   end
 
+  vim.opt.rtp:prepend(lazypath)
   return false
 end
