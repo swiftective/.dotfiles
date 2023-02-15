@@ -29,3 +29,6 @@ vim.o.signcolumn = "yes"
 vim.o.wrap = false
 
 vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h8" }
+
+vim.g["undotree_SetFocusWhenToggle"] = 1
+vim.g["undotree_WindowLayout"] = 3

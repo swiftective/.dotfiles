@@ -1,18 +1,3 @@
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  }
-end
-
-vim.opt.rtp:prepend(lazypath)
-
 local opts = {
   ui = {
     border = "rounded",
@@ -26,29 +11,17 @@ local plugins = {
 
   {
     "Akianonymus/nvim-colorizer.lua",
-
+    lazy = true,
     config = function()
-      require("colorizer").setup {
-        css = {
-          RGB = true,
-          RRGGBB = true,
-          names = true,
-          RRGGBBAA = true,
-          rgb_fn = true,
-          hsl_fn = true,
-          css = true,
-          css_fn = true,
-          mode = "virtualtext",
-        },
-      }
+      pcall(require, "plugin.colorizer")
     end,
   },
 
   {
     "ziontee113/color-picker.nvim",
-
+    lazy = true,
     config = function()
-      require "color-picker"
+      pcall(require, "plugin.color-picker")
     end,
   },
 
@@ -58,47 +31,31 @@ local plugins = {
     dependencies = { "kyazdani42/nvim-web-devicons", event = "CursorHold" },
   },
 
-  { "tpope/vim-fugitive",   cmd = "Git" },
+  { "tpope/vim-fugitive", cmd = "Git" },
+
   {
     "lewis6991/gitsigns.nvim",
-
     config = function()
-      require "plugin.git-signs"
+      pcall(require, "plugin.gitsigns")
     end,
+    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
   },
 
-  {
-    "ThePrimeagen/git-worktree.nvim",
-    config = function()
-      require("telescope").load_extension "git_worktree"
-    end,
-  },
+  { "ThePrimeagen/git-worktree.nvim" },
 
   -- undotree
-  {
-    "mbbill/undotree",
-
-    config = function()
-      vim.g["undotree_SetFocusWhenToggle"] = 1
-      vim.g["undotree_WindowLayout"] = 3
-    end,
-  },
+  { "mbbill/undotree" },
 
   -- Fuzzy Finder
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { { "nvim-lua/plenary.nvim" } },
   },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
-    config = function()
-      require("telescope").load_extension "fzf"
-    end,
-  },
+
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
   -- motion plugin
   {
@@ -112,11 +69,7 @@ local plugins = {
   },
 
   -- Comment plugin
-  {
-    "numToStr/Comment.nvim",
-
-    config = true,
-  },
+  { "numToStr/Comment.nvim", config = true },
 
   -- Indentline
   {
@@ -129,50 +82,57 @@ local plugins = {
 
   {
     "kylechui/nvim-surround",
+    event = "CursorHold",
     config = function()
-      require("nvim-surround").setup {
-        keymaps = {
-          visual = "E",
-        },
-      }
+      require "plugin.surround"
     end,
   },
 
-  {
-    "windwp/nvim-autopairs",
-
-    config = true,
-  },
+  { "windwp/nvim-autopairs", event = "CursorHold", config = true },
 
   {
     "windwp/nvim-ts-autotag",
+    event = "CursorHold",
     config = true,
     ft = { "html", "jsx", "tsx", "vue", "php", "svelte" },
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
+
+  -- LSP
+  { "neovim/nvim-lspconfig", lazy = true },
+  { "williamboman/mason.nvim", lazy = true },
+  { "williamboman/mason-lspconfig.nvim", lazy = true },
+
   -- Autocompletion
-  { "hrsh7th/nvim-cmp" },
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    config = function()
+      pcall(require, "plugin.cmp")
+      pcall(require, "plugin.mason")
+    end,
+  },
   { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
-  { "hrsh7th/cmp-buffer",   event = "insertenter" },
-  { "hrsh7th/cmp-cmdline",  event = "InsertEnter" },
-  { "hrsh7th/cmp-path",     event = "InsertEnter" },
+  { "hrsh7th/cmp-buffer", event = "insertenter" },
+  { "hrsh7th/cmp-cmdline", event = "InsertEnter" },
+  { "hrsh7th/cmp-path", event = "InsertEnter" },
   { "hrsh7th/cmp-nvim-lua", event = "InsertEnter" },
   {
     "petertriho/cmp-git",
     event = "InsertEnter",
     config = true,
   },
-  { "saadparwaiz1/cmp_luasnip",   event = "insertenter" },
+  { "saadparwaiz1/cmp_luasnip", event = "insertenter" },
 
   -- Snippets
-  "L3MON4D3/LuaSnip",
-  "rafamadriz/friendly-snippets",
-  "Nash0x7E2/awesome-flutter-snippets",
+  { "L3MON4D3/LuaSnip", lazy = true },
+  { "rafamadriz/friendly-snippets", lazy = true },
+  { "Nash0x7E2/awesome-flutter-snippets", ft = { "dart" } },
 
   -- Debugging
   {
     "mfussenegger/nvim-dap",
-
+    lazy = true,
     config = function()
       require("dap.ext.vscode").load_launchjs()
       local dap = require "dap"
@@ -183,8 +143,8 @@ local plugins = {
 
   {
     "rcarriga/nvim-dap-ui",
+    lazy = true,
     dependencies = { "mfussenegger/nvim-dap" },
-
     config = function()
       require "plugin.dapui"
     end,
@@ -192,25 +152,30 @@ local plugins = {
 
   {
     "theHamsta/nvim-dap-virtual-text",
+    lazy = true,
     after = "nvim-dap",
     config = true,
   },
 
   {
     "nvim-telescope/telescope-dap.nvim",
+    lazy = true,
     after = "nvim-dap",
     config = function()
       require("telescope").load_extension "dap"
     end,
   },
 
-  "David-Kunz/jester",
+  {
+    "David-Kunz/jester",
+    after = "nvim-dap",
+  },
 
   -- Running code snippet
   {
     "michaelb/sniprun",
     build = "bash ./install.sh",
-
+    event = "CursorHold",
     config = function()
       require("sniprun").setup {
         display = { "Classic" },
@@ -226,12 +191,7 @@ local plugins = {
     end,
   },
   { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
-  { "p00f/nvim-ts-rainbow",       dependencies = "nvim-treesitter/nvim-treesitter" },
-
-  -- LSP
-  "neovim/nvim-lspconfig",
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  { "p00f/nvim-ts-rainbow", dependencies = "nvim-treesitter/nvim-treesitter" },
 
   {
     "akinsho/flutter-tools.nvim",
