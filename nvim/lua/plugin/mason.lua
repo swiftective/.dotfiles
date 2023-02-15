@@ -21,8 +21,8 @@ mason_lsp.setup_handlers {
     lspconfig[server_name].setup {}
   end,
   -- Next, you can provide targeted overrides for specific servers.
-  ["sumneko_lua"] = function()
-    lspconfig.sumneko_lua.setup {
+  ["lua_ls"] = function()
+    lspconfig.lua_ls.setup {
       settings = {
         Lua = {
           runtime = {
