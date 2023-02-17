@@ -67,6 +67,18 @@ local plugins = {
     end,
   },
 
+  {
+    "ggandor/flit.nvim",
+    dependencies = "ggandor/leap.nvim",
+    config = function()
+      require("flit").setup {
+        keys = { f = "f", F = "F", t = "t", T = "T" },
+        labeled_modes = "nvo",
+        multiline = true,
+        opts = {},
+      }
+    end,
+  },
   -- Comment plugin
   { "numToStr/Comment.nvim",                    config = true },
 
