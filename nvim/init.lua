@@ -3,7 +3,7 @@
 -- ┣━┃┃┃┃┃╭┫╭┫┻┫━┫╭┫┣╮┃╭┫┻┫
 -- ╰━┻━━┻┻╯╰━┻━┻━┻━┻╯╰━╯╰━╯
 
-if require "swft.first_load"() then
+if require "swft.first_load" () then
   return
 end
 
@@ -12,6 +12,8 @@ pcall(require, "plugin.lazy")
 pcall(require, "plugin.telescope")
 pcall(require, "plugin.lsp-config")
 pcall(require, "plugin.nvimtree")
+pcall(require, "plugin.cmp")
+pcall(require, "plugin.mason")
 pcall(require, "plugin.eviline")
 pcall(require, "swft.options")
 pcall(require, "swft.keymaps")

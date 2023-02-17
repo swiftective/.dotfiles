@@ -37,12 +37,6 @@ map("n", "<Leader>u", ":UndotreeToggle<CR>", opts)
 -- File Explorer
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
--- Lightspeed
-map("", ";", "<Plug>Lightspeed_;_sx", { noremap = false })
-map("", ",", "<Plug>Lightspeed_,_sx", { noremap = false })
-map("", ";", "<Plug>Lightspeed_;_ft", { noremap = false })
-map("", ",", "<Plug>Lightspeed_,_ft", { noremap = false })
-
 --  Telescope
 -- map("n", "<leader>fs", "<cmd>lua require('session-lens').search_session()<CR>", opts)
 map("n", "<leader>fd", "<cmd>lua require('telescope.builtin').fd()<CR>", opts)
@@ -140,5 +134,3 @@ map("n", "<leader>dtb", '<cmd>lua require"telescope".extensions.dap.list_breakpo
 map("n", "<leader>dtv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', opts)
 map("n", "<leader>dtf", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', opts)
 map("n", "<leader>dui", '<cmd>lua require("dapui").toggle()<CR>', opts)
--- packer
-map("n", "<leader>pc", "<cmd>PackerCompile<CR>", opts)

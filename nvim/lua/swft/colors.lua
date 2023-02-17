@@ -16,9 +16,11 @@ require("tokyonight").setup {
   dim_inactive = false,
   lualine_bold = false,
 
-  on_colors = function(colors) end,
+  on_colors = function(colors)
+  end,
 
-  on_highlights = function(highlights, colors) end,
+  on_highlights = function(highlights, colors)
+  end,
 }
 
 -- TODO: Convert to lua code
@@ -82,14 +84,6 @@ function! Colord()
   :hi Sneak guifg=Cyan guibg=none ctermfg=Cyan ctermbg=none
   :hi SneakScope guifg=red guibg=Yellow ctermfg=Red ctermbg=Yellow
 
-  " Lightspeed
-  :hi LightspeedShortcutOverlapped guibg=none guifg=Cyan
-  :hi LightspeedShortcut guibg=none guifg=Cyan
-  :hi LightspeedOneCharMatch guibg=none guifg=Cyan
-  :hi LightspeedLabel guibg=none guifg=Cyan
-  :hi LightspeedGreyWash guifg=#455574
-  :hi LightspeedPendingOpArea guibg=cyan guifg=black
-
   :hi Pmenu guifg=#C0C5CE guibg=none
 
   " Telescope
@@ -115,3 +109,24 @@ colorscheme tokyonight
 call Colord()
 
 ]]
+
+local hl = vim.api.nvim_set_hl
+hl(0, "LeapBackdrop", { link = "Comment" }) -- or some grey
+
+vim.api.nvim_set_hl(0, "LeapMatch", {
+  fg = "white",
+  bold = true,
+  nocombine = true,
+})
+
+vim.api.nvim_set_hl(0, "LeapLabelPrimary", {
+  fg = "cyan",
+  bold = true,
+  nocombine = true,
+})
+
+vim.api.nvim_set_hl(0, "LeapLabelSecondary", {
+  fg = "cyan",
+  bold = true,
+  nocombine = true,
+})

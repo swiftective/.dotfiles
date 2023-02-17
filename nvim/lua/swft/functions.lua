@@ -12,8 +12,8 @@ local create_autocmd = function(table)
 end
 
 local autocmds = {
-  { event = "FileType", command = "set filetype=sh", pattern = "zsh", group = group },
-  { event = "ColorScheme", callback = "Colord", pattern = "*", group = group },
+  { event = "FileType",    command = "set filetype=sh", pattern = "zsh", group = group },
+  { event = "ColorScheme", callback = "Colord",         pattern = "*",   group = group },
 
   {
     event = "TextYankPost",
@@ -24,18 +24,7 @@ local autocmds = {
     group = group,
   },
 
-  { event = "TermOpen", command = "setlocal nonumber norelativenumber", pattern = "*", group = group },
-
-  {
-    event = "BufWritePost",
-    pattern = "packer.lua",
-    group = group,
-    callback = function()
-      local file = vim.fn.expand "<afile>"
-      vim.cmd(string.format("source %s", file))
-      vim.cmd "PackerCompile"
-    end,
-  },
+  { event = "TermOpen",    command = "setlocal nonumber norelativenumber", pattern = "*",             group = group },
 
   {
     event = "FileType",
@@ -46,7 +35,7 @@ local autocmds = {
     end,
   },
 
-  { event = "BUfWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
+  { event = "BUfWritePre", pattern = "*",                                  command = "%s/\\s\\+$//e", group = group },
 
   {
     event = "BufWritePre",
