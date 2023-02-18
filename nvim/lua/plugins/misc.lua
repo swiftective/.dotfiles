@@ -3,7 +3,7 @@ return {
   { "numToStr/Comment.nvim", event = "VeryLazy", config = true },
   {
     "kylechui/nvim-surround",
-    keys = { "ys", "cs", "ds" },
+    event = "VeryLazy",
     config = function()
       require("nvim-surround").setup {
         keymaps = {
