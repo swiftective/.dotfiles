@@ -62,7 +62,7 @@ return { -- Lua
 
         :hi WhichKeyFloat guibg=#121212
 
-        :hi rainbowcol3 guibg=none guifg=cyan
+        :hi rainbowcol3 guibg=none guifg=#7aa2f7
         :hi NvimTreeExecFile guifg=#04cf84
       endfunction
 
