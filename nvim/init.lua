@@ -3,21 +3,47 @@
 -- ┣━┃┃┃┃┃╭┫╭┫┻┫━┫╭┫┣╮┃╭┫┻┫
 -- ╰━┻━━┻┻╯╰━┻━┻━┻━┻╯╰━╯╰━╯
 
-if require "swft.first_load" () then
+if require "swft.first_load"() then
   return
 end
 
-pcall(require, "swft.disable_builtins")
-pcall(require, "plugin.lazy")
-pcall(require, "plugin.telescope")
-pcall(require, "plugin.lsp-config")
-pcall(require, "plugin.nvimtree")
-pcall(require, "plugin.cmp")
-pcall(require, "plugin.mason")
-pcall(require, "plugin.eviline")
-pcall(require, "swft.options")
-pcall(require, "swft.keymaps")
-pcall(require, "swft.colors")
-pcall(require, "swft.functions")
+require "swft.options"
+
+local opts = {
+  ui = {
+    border = "rounded",
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "netrw",
+        "netrwPlugin",
+        "netrwSettings",
+        "netrwFileHandlers",
+        "gzip",
+        "zip",
+        "zipPlugin",
+        "getscript",
+        "getscriptPlugin",
+        "vimball",
+        "vimballPlugin",
+        "2html_plugin",
+        "logipat",
+        "rrhelper",
+        "spellfile_plugin",
+        "matchit",
+        "tarPlugin",
+      },
+    },
+  },
+}
+
+require("lazy").setup("plugins", opts) -- Package Manager
+
+require "swft.keymaps"
+require "swft.autocmds"
+require "swft.utils"
+
+vim.cmd [[colorscheme tokyonight]]
 
 require("lualine").hide()

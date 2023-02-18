@@ -6,7 +6,7 @@ map("i", "<C-b>", "<C-[>bi", opts)
 map("i", "<C-h>", "<Left>", opts)
 map("i", "<C-l>", "<Right>", opts)
 map({ "i", "s" }, "jk", "<Esc>", opts)
-map("n", "<Leader>ol", ":SymbolsOutline<CR>", opts)
+-- map("n", "<Leader>ol", ":SymbolsOutline<CR>", opts)
 map("n", "#", ":%s/<C-r><C-w>//gc<Left><Left><Left>", { noremap = true })
 map("v", "#", '"hy:%s/<C-r>h//gc<left><left><left>', { noremap = true })
 map("n", "<C-j>", ":cnext<CR>", opts)
@@ -38,14 +38,13 @@ map("n", "<Leader>u", ":UndotreeToggle<CR>", opts)
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 --  Telescope
--- map("n", "<leader>fs", "<cmd>lua require('session-lens').search_session()<CR>", opts)
 map("n", "<leader>fd", "<cmd>lua require('telescope.builtin').fd()<CR>", opts)
 map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
 map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)
 map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
-map("", "<C-p>", "<cmd>lua require('plugin.telescope').project_files()<CR>", opts)
+map("", "<C-p>", "<cmd>lua Swft.project_files()<CR>", opts)
 map("", "<A-p>", "<cmd>Telescope builtin<CR>", opts)
 map("n", "<leader>fi", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
 
@@ -101,7 +100,7 @@ map("n", "<leader>tl", "<cmd>TroubleToggle loclist<CR>", opts)
 map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", opts)
 
 -- LSP custom functions
-map("n", "gD", "<cmd>lua require('swft.lsp').PeekDefinition()<CR>", opts)
+map("n", "gD", "<cmd>lua Swft.PeekDefinition()<CR>", opts)
 
 -- Debugging keymaps
 map("n", "<leader>dcc", '<cmd>lua require"dap".continue()<CR>', opts)
