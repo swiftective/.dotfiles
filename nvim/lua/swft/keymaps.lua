@@ -1,5 +1,4 @@
 local map = vim.keymap.set
--- local opts = { noremap = true, silent = true }
 
 local function custom_keymaps(keymaps)
   for _, value in ipairs(keymaps) do
