@@ -39,6 +39,8 @@ return {
       return orig_util_open_floating_preview(contents, syntax, opts, ...)
     end
 
+    require("lspconfig.ui.windows").default_options.border = "rounded"
+
     local mason = require "mason"
     local mason_lsp = require "mason-lspconfig"
     local lspconfig = require "lspconfig"
