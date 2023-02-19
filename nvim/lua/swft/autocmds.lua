@@ -12,7 +12,7 @@ local create_autocmd = function(table)
 end
 
 local autocmds = {
-  { event = "FileType", command = "set filetype=sh",                    pattern = "zsh", group = group },
+  { event = "FileType", command = "set filetype=sh", pattern = "zsh", group = group },
 
   {
     event = "TextYankPost",
@@ -23,7 +23,7 @@ local autocmds = {
     group = group,
   },
 
-  { event = "TermOpen", command = "setlocal nonumber norelativenumber", pattern = "*",   group = group },
+  { event = "TermOpen", command = "setlocal nonumber norelativenumber", pattern = "*", group = group },
 
   {
     event = "FileType",
