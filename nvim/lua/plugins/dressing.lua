@@ -67,6 +67,7 @@ return { -- Lua
         :hi NvimTreeExecFile guifg=#04cf84
         :hi StatusLine guibg=none
         :hi StatusLineNC guibg=none
+        :hi CmpBorder guifg=#353b54
       endfunction
 
       call Colord()

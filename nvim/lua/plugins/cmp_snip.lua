@@ -13,6 +13,12 @@ return {
 
       local types = require "luasnip.util.types"
 
+      local border = {
+        border = "rounded",
+        scrollbar = false,
+        winhighlight = "FloatBorder:CmpBorder",
+      }
+
       luasnip.config.set_config {
         -- This tells LuaSnip to remember to keep around the last snippet.
         -- You can jump back into it even if you move outside of the selection
@@ -123,11 +129,11 @@ return {
           ghost_text = {
             hl_group = "NvimDapVirtualText",
           },
+          native_menu = false,
         },
         window = {
-          documentation = {
-            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-          },
+          completion = cmp.config.window.bordered(border),
+          documentation = cmp.config.window.bordered(border),
         },
         sources = {
           { name = "luasnip" },
