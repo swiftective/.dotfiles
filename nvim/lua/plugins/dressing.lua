@@ -3,6 +3,11 @@ return { -- Lua
     "folke/which-key.nvim",
     event = "VeryLazy",
     config = true,
+    opts = {
+      window = {
+        border = "rounded",
+      },
+    },
   },
 
   {
