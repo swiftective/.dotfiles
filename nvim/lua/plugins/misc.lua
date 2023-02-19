@@ -1,4 +1,7 @@
 return {
+  -- LSP reddit
+  { "j-hui/fidget.nvim", config = true, event = "VeryLazy" },
+
   -- Comment plugin
   { "numToStr/Comment.nvim", event = "VeryLazy", config = true },
   {
