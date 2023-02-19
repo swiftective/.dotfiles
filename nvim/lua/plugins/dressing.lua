@@ -35,6 +35,7 @@ return { -- Lua
         :hi NvimTreeNormal guibg=none
         :hi NvimTreeNormalNC guibg=none
         :hi NvimTreeFolderName guibg=none
+        :hi WinSeparator guifg=#353b54
         :hi NvimTreeOpenedFolderName guibg=none
         :hi NvimTreeEmptyFolderName guibg=none
         :hi UndotreeSavedBig guibg=none guifg=#efbd5d
