@@ -61,7 +61,7 @@ return { -- Lua
         :hi TelescopeNormal guibg=none
         :hi TelescopeBorder guibg=none
 
-        :hi WhichKeyFloat guibg=#121212
+        :hi WhichKeyFloat guibg=none
 
         :hi rainbowcol3 guibg=none guifg=#7aa2f7
         :hi NvimTreeExecFile guifg=#04cf84
