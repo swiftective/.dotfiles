@@ -22,14 +22,14 @@ return {
     end
 
     local border = {
-      { "╭", "none" },
-      { "─", "none" },
-      { "╮", "none" },
-      { "│", "none" },
-      { "╯", "none" },
-      { "─", "none" },
-      { "╰", "none" },
-      { "│", "none" },
+      { "╭" },
+      { "─" },
+      { "╮" },
+      { "│" },
+      { "╯" },
+      { "─" },
+      { "╰" },
+      { "│" },
     }
 
     local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
