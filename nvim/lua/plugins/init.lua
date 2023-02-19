@@ -3,7 +3,7 @@ return {
   require "plugins.cmp_snip",
   require "plugins.lsp",
   require "plugins.dap",
-  require "plugins.dressing",
+  require "plugins.ui",
   require "plugins.flutter",
   require "plugins.git",
   require "plugins.leap",
