@@ -1,6 +1,6 @@
 return {
   require "plugins.tokyonight",
-  require "plugins.cmp",
+  require "plugins.cmp_snip",
   require "plugins.lsp",
   require "plugins.dap",
   require "plugins.dressing",
