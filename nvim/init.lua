@@ -45,5 +45,3 @@ require "swft.autocmds"
 require "swft.utils"
 
 vim.cmd [[colorscheme tokyonight]]
-
-require("lualine").hide()

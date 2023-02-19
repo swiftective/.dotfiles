@@ -1,6 +1,7 @@
 -- statusline
 return {
   "nvim-lualine/lualine.nvim",
+  event = "VeryLazy",
   config = function()
     local lualine = require "lualine"
 
@@ -264,6 +265,7 @@ return {
 
     -- Now don't forget to initialize lualine
     lualine.setup(config)
+    lualine.hide()
   end,
   dependencies = {
     "kyazdani42/nvim-web-devicons",

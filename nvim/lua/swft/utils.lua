@@ -24,7 +24,7 @@ end
 
 Swft.ToggleLualine = function()
   local lualine = require "lualine"
-  if vim.o.statusline == "%#Normal#" then
+  if vim.o.statusline == " " then
     lualine.hide { unhide = true }
     return
   end
