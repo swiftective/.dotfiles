@@ -6,7 +6,6 @@ return {
   require "plugins.dressing",
   require "plugins.flutter",
   require "plugins.git",
-  require "plugins.indentline",
   require "plugins.leap",
   require "plugins.lualine",
   require "plugins.misc",
