@@ -48,13 +48,32 @@ return {
 
     require("telescope").setup {
       defaults = {
+        preview = false,
         file_sorter = require("telescope.sorters").get_fzy_sorter,
         prompt_prefix = " 🔍 ",
         color_devicons = true,
         buffer_previewer_maker = new_maker,
+
+        sorting_strategy = "ascending",
+        layout_strategy = "center",
         layout_config = {
-          horizontal = { width = 150 },
+          preview_cutoff = 1, -- Preview should always show (unless previewer = false)
+
+          width = function(_, max_columns, _)
+            return math.min(max_columns, 80)
+          end,
+
+          height = function(_, _, max_lines)
+            return math.min(max_lines, 15)
+          end,
         },
+        border = true,
+        borderchars = {
+          prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+          results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+          preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        },
+
         mappings = {
           n = {
             ["<C-x>"] = false,
@@ -80,6 +99,9 @@ return {
             -- the default case_mode is "smart_case"
           },
         },
+      },
+      pickers = {
+        fd = { preview = true },
       },
     }
   end,
