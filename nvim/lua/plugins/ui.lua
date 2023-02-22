@@ -1,13 +1,31 @@
 return { -- Lua
+
+  {
+    "utilyre/barbecue.nvim",
+    cmd = "Barbecue",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+    },
+    opts = {
+      show_dirname = false,
+    },
+  },
+
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     opts = {
+      on_open = function()
+        require("barbecue.ui").toggle(false)
+      end,
       plugins = {
         tmux = { enabled = true },
       },
     },
   },
+
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
