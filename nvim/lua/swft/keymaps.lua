@@ -98,8 +98,15 @@ local keymaps = {
   {
     "n",
     "<C-f>",
-    "<C-u>",
+    "<C-u>zz",
     "I like Ctrl f, ok",
+  },
+
+  {
+    "n",
+    "<C-d>",
+    "<C-d>zz",
+    "Scroll Down & Center",
   },
 
   {
@@ -213,7 +220,7 @@ local keymaps = {
   {
     "n",
     "<leader>fo",
-    "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
+    "<cmd>Telescope lsp_document_symbols<CR>",
     "Telescope LSP workspace symbols",
   },
 
