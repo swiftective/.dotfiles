@@ -14,7 +14,6 @@ local function mod_hl(hl_name, opts)
 end
 
 local highlights = {
-  { "BufferCurrent", { bg = "red" } },
   { "NvimDapVirtualText", { fg = "#455574", bg = "none", bold = true } },
   { "Folded", { fg = "#5c719c", bg = "#121212" } },
   { "CursorLine", { bg = "#151c30" } },
