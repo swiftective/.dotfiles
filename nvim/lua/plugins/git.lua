@@ -19,8 +19,8 @@ return {
         keymaps = {
           -- Default keymap options
           noremap = true,
-          ["n ("] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'" },
-          ["n )"] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'" },
+          ["n )"] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'" },
+          ["n ("] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'" },
           ["n <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
           ["v <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
           ["n <leader>hu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
