@@ -24,7 +24,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.errorbells = false
 vim.o.incsearch = true
-vim.o.scrolloff = 1000
 vim.o.signcolumn = "yes"
 vim.o.wrap = false
 
