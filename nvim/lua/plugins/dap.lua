@@ -19,6 +19,24 @@ return {
         { text = "", texthl = "DiagnosticWarning", linehl = "", numhl = "" }
       )
       vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticHint", linehl = "", numhl = "" })
+
+      dap.configurations.python = {
+        {
+          type = "python",
+          request = "launch",
+          name = "Launch file",
+          program = "${file}",
+          pythonPath = function()
+            return "/usr/bin/python"
+          end,
+        },
+      }
+
+      dap.adapters.python = {
+        type = "executable",
+        command = "/home/rv/.virtualenvs/debugpy/bin/python",
+        args = { "-m", "debugpy.adapter" },
+      }
     end,
     dependencies = {
       {
