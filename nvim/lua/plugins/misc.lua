@@ -24,7 +24,6 @@ return {
     "windwp/nvim-ts-autotag",
     event = "VeryLazy",
     config = true,
-    ft = { "html", "jsx", "tsx", "vue", "php", "svelte" },
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
 
