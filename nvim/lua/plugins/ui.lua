@@ -1,19 +1,6 @@
 return { -- Lua
 
   {
-    "utilyre/barbecue.nvim",
-    cmd = "Barbecue",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-    },
-    opts = {
-      show_dirname = false,
-    },
-  },
-
-  {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     opts = {
