@@ -1,9 +1,11 @@
 -- LSP
 return {
   "neovim/nvim-lspconfig",
+  event = "VeryLazy",
   dependencies = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
+    { "folke/neodev.nvim", priority = 100, config = true },
   },
   config = function()
     -- Automatically update diagnostics
@@ -82,5 +84,6 @@ return {
         }
       end,
     }
+    vim.cmd "e"
   end,
 }
