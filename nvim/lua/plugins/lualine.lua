@@ -3,6 +3,7 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   config = function()
+    vim.o.laststatus = 3
     local lualine = require "lualine"
 
     -- Color table for highlights

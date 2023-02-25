@@ -31,5 +31,6 @@ vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h8" }
 vim.g["undotree_SetFocusWhenToggle"] = 1
 vim.g["undotree_WindowLayout"] = 3
 
-vim.o.laststatus = 3
+vim.o.laststatus = 0
 vim.o.statusline = " "
+vim.o.fillchars = "eob: "

@@ -16,7 +16,6 @@ end
 local highlights = {
   { "NvimDapVirtualText", { fg = "#455574", bg = "none", bold = true } },
   { "Folded", { fg = "#5c719c", bg = "#121212" } },
-  { "CursorLine", { bg = "#151c30" } },
   { "IndentBlanklineContextChar", { fg = "cyan" } },
   { "TSVariable", { fg = "#aed8f2" } },
   { "IncSearch", { bg = "Cyan", fg = "Black" } },

@@ -22,6 +22,7 @@ return {
       on_highlights = function(hi)
         hi.Normal.bg = "none"
         hi.NormalFloat.bg = "none"
+        hi.CursorLine.bg = "#151c30"
       end,
     }
   end,
