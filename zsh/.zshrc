@@ -6,13 +6,12 @@ source $HOME/.config/zsh/scripts/alias.zsh
 source $HOME/.config/zsh/scripts/directories.zsh
 source $HOME/.config/zsh/scripts/completion.zsh
 source $HOME/.config/zsh/scripts/git.zsh
-source $HOME/.config/zsh/scripts/z.zsh
 
 # Plugins
 source $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(lua $HOME/.local/share/zsh/plugins/z.lua/z.lua --init enhanced zsh)"
+eval "$(zoxide init --cmd j zsh)"
 
 # zsh syntax highlighting
 ZSH_HIGHLIGHT_STYLES[function]=fg=cyan,bold
@@ -24,7 +23,11 @@ ZSH_HIGHLIGHT_STYLES[builtin]=fg=cyan,bold
 eval "$(starship init zsh)"
 
 # fnm
-eval "$(fnm env --use-on-cd)"
+fnm () {
+  unset -f fnm
+  eval "$(fnm env --use-on-cd)"
+  fnm "$@"
+}
 
 # pnpm
 export PNPM_HOME="/home/rv/.local/share/pnpm"

@@ -26,6 +26,7 @@ bindkey -M vicmd / history-incremental-pattern-search-backward
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+bindkey '^F' autosuggest-accept
 bindkey -M vicmd '^e' edit-command-line
 
 # Change cursor shape for different vi modes.

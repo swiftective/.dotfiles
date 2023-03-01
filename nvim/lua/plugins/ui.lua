@@ -4,9 +4,6 @@ return { -- Lua
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     opts = {
-      on_open = function()
-        require("barbecue.ui").toggle(false)
-      end,
       plugins = {
         tmux = { enabled = true },
       },

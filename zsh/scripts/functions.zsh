@@ -4,13 +4,6 @@ vii() {
     fd -t f | sk --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="🔍 " | xargs -r nvim
 }
 
-# Loads NVM
-ns() {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-}
-
-
 # git worktree switch
 ws (){
   if (git worktree list &> /dev/null); then

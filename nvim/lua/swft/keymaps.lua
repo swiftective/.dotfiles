@@ -21,7 +21,7 @@ local keymaps = {
 
   {
     "n",
-    "gz",
+    "wm",
     ":ZenMode<CR>",
     "Zen Mode Toggle",
   },
