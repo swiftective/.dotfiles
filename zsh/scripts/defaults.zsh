@@ -12,26 +12,22 @@ bindkey 'jk' vi-cmd-mode
 bindkey -a H beginning-of-line
 bindkey -a L end-of-line
 
-# Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-bindkey -M vicmd / history-incremental-pattern-search-backward
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey '^F' autosuggest-accept
-bindkey -M vicmd '^e' edit-command-line
+_zcompinit() {
+  setopt extendedglob local_options
+  autoload -Uz compinit
+  local zcd=$XDG_CACHE_HOME/.zcompdump
+  local zcdc="$zcd.zwc"
+  # Compile the completion dump to increase startup speed if dump is newer or
+  # missing. Do in background for next time to not affect the current session
+  if [[ -f "$zcd"(#qN.m+1) ]]; then
+    compinit -i -d "$zcd"
+    { rm -f "$zcdc" && zcompile "$zcd" } &!
+  else
+    compinit -i -C -d "$zcd"
+    { [[ ! -f "$zcdc" || "$zcd" -nt "$zcdc" ]] && rm -f "$zcdc" && zcompile "$zcd" } &!
+  fi
+}
+_zcompinit
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
