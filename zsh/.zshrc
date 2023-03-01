@@ -3,9 +3,7 @@ fpath+=~/.local/share/zsh/zfunc
 source $HOME/.config/zsh/scripts/defaults.zsh
 source $HOME/.config/zsh/scripts/functions.zsh
 source $HOME/.config/zsh/scripts/alias.zsh
-source $HOME/.config/zsh/scripts/directories.zsh
 source $HOME/.config/zsh/scripts/completion.zsh
-source $HOME/.config/zsh/scripts/git.zsh
 
 # Plugins
 source $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

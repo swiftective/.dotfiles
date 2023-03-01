@@ -1,3 +1,10 @@
+d () {
+  if [[ -n $1 ]]; then
+    dirs "$@"
+  else
+    dirs -v | head -10
+  fi
+}
 
 # Project File Search
 vii() {
