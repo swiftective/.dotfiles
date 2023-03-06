@@ -1,6 +1,6 @@
 return {
   -- LSP reddit
-  { "j-hui/fidget.nvim",     config = true,      event = "VeryLazy" },
+  { "j-hui/fidget.nvim", opts = { window = { blend = 0 } }, event = "VeryLazy" },
 
   -- Comment plugin
   { "numToStr/Comment.nvim", event = "VeryLazy", config = true },
