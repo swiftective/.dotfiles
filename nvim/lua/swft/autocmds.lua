@@ -41,7 +41,7 @@ local autocmds = {
     pattern = "*.lua",
     group = group,
     callback = function()
-      vim.lsp.buf.format()
+      vim.lsp.buf.format { async = true }
     end,
   },
 }

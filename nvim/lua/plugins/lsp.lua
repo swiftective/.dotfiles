@@ -68,6 +68,9 @@ return {
       -- Next, you can provide targeted overrides for specific servers.
       ["lua_ls"] = function()
         lspconfig.lua_ls.setup {
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+          end,
           settings = {
             Lua = {
               runtime = {

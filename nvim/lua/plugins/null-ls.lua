@@ -28,11 +28,11 @@ return {
           },
           extra_args = { "--single-quote", "--jsx-single-quote" },
         },
-        formatting.autopep8,
+        -- formatting.autopep8,
         -- completion.spell,
       },
     }
 
-    vim.cmd [[command! LspFormat lua vim.lsp.buf.formatting()]]
+    vim.cmd [[command! LspFormat lua vim.lsp.buf.format { async = true }]]
   end,
 }
