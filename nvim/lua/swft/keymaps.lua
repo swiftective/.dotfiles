@@ -1,12 +1,20 @@
-local map = vim.keymap.set
-
 local function custom_keymaps(keymaps)
   for _, value in ipairs(keymaps) do
-    map(value[1], value[2], value[3], { noremap = true, silent = true, desc = value[4] })
+    local map = vim.keymap.set
+    local opts = {}
+    if value.opts then
+      value.opts.desc = value[4]
+      opts = value.opts
+    else
+      opts = { noremap = true, silent = true, desc = value[4] }
+    end
+    map(value[1], value[2], value[3], opts)
   end
 end
 
 local keymaps = {
+  { "c", "<C-n>", "<Down>", opts = { noremap = true } },
+  { "c", "<C-p>", "<Up>", opts = { noremap = true } },
   { "i", "<C-e>", "<C-[>ea" },
   { "i", "<C-b>", "<C-[>bi" },
   { "i", "<C-h>", "<Left>" },
@@ -703,12 +711,12 @@ local keymaps = {
     "<cmd>0,$SnipRun<CR>",
     "SnipRun File",
   },
+
+  -- SnipRun
+  { "n", "#", ":%s/<C-r><C-w>//gc<Left><Left><Left>", opts = { noremap = true } },
+  { "v", "#", '"hy:%s/<C-r>h//gc<left><left><left>', opts = { noremap = true } },
+  { "n", "<leader>rs", "<Plug>SnipRunOperator", opts = {} },
+  { "v", "<leader>rs", "<Plug>SnipRun", opts = {} },
 }
 
 custom_keymaps(keymaps)
-
--- SnipRun
-map("n", "#", ":%s/<C-r><C-w>//gc<Left><Left><Left>", { noremap = true })
-map("v", "#", '"hy:%s/<C-r>h//gc<left><left><left>', { noremap = true })
-map("n", "<leader>rs", "<Plug>SnipRunOperator", {})
-map("v", "<leader>rs", "<Plug>SnipRun", {})

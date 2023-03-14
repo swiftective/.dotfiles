@@ -2,12 +2,14 @@ return {
   "jose-elias-alvarez/null-ls.nvim",
   event = "VeryLazy",
   config = function()
-    local formatting = require("null-ls").builtins.formatting
+    local null_ls = require "null-ls"
+    local formatting = null_ls.builtins.formatting
+    local diagnostics = null_ls.builtins.diagnostics
     -- local completion = require("null-ls").builtins.completion
-    -- local diagnostics = null_ls.builtins.diagnostics
 
     require("null-ls").setup {
       sources = {
+        diagnostics.eslint,
         formatting.stylua,
         formatting.prettier.with {
           filetypes = {

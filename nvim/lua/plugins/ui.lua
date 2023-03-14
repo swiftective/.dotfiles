@@ -4,6 +4,13 @@ return { -- Lua
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     opts = {
+      window = {
+        width = 0.55,
+        options = {
+          number = false,
+          relativenumber = false,
+        },
+      },
       plugins = {
         tmux = { enabled = true },
       },
