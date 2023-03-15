@@ -104,14 +104,14 @@ local keymaps = {
   },
 
   {
-    "n",
+    { "n", "v" },
     "<C-f>",
     "<C-u>zz",
     "I like Ctrl f, ok",
   },
 
   {
-    "n",
+    { "n", "v" },
     "<C-d>",
     "<C-d>zz",
     "Scroll Down & Center",
