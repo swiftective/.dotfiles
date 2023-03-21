@@ -71,19 +71,6 @@ return {
           on_attach = function(client)
             client.server_capabilities.documentFormattingProvider = false
           end,
-          settings = {
-            Lua = {
-              runtime = {
-                version = "LuaJIT",
-              },
-              diagnostics = {
-                globals = { "vim", "Luasnip_ns_id" },
-              },
-              telemetry = {
-                enable = false,
-              },
-            },
-          },
         }
       end,
       ["cssls"] = function()

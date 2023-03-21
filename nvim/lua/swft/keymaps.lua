@@ -13,6 +13,8 @@ local function custom_keymaps(keymaps)
 end
 
 local keymaps = {
+  { "", "n", "nzz" },
+  { "", "N", "Nzz" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
   { "i", "<C-e>", "<C-[>ea" },
