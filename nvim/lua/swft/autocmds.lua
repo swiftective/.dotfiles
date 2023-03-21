@@ -1,17 +1,26 @@
 local group = vim.api.nvim_create_augroup("swiftective", { clear = true })
 
-local create_autocmd = function(table)
-  for _, v in ipairs(table) do
-    vim.api.nvim_create_autocmd(v.event, {
-      command = v.command,
-      pattern = v.pattern,
-      group = v.group,
-      callback = v.callback,
-    })
+local create_autocmd = function(autocmds)
+  for _, autocmd in ipairs(autocmds) do
+    local event = autocmd.event
+    autocmd.event = nil
+    vim.api.nvim_create_autocmd(event, autocmd)
   end
 end
 
 local autocmds = {
+
+  {
+    event = "InsertEnter",
+    callback = function()
+      vim.schedule(function()
+        vim.cmd "nohl"
+      end)
+    end,
+    pattern = "*",
+    group = group,
+  },
+
   { event = "FileType", command = "set filetype=sh", pattern = "zsh", group = group },
 
   {
