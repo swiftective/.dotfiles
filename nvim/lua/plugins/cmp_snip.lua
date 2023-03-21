@@ -102,7 +102,7 @@ return {
             end,
           },
           ["<C-d>"] = cmp.mapping.scroll_docs(4),
-          ["<C-f>"] = cmp.mapping.scroll_docs( -4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(-4),
           ["<C-e>"] = cmp.mapping.close(),
           ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
           ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
@@ -116,8 +116,8 @@ return {
             "s",
           }),
           ["<C-p>"] = cmp.mapping(function()
-            if luasnip.jumpable( -1) then
-              luasnip.jump( -1)
+            if luasnip.jumpable(-1) then
+              luasnip.jump(-1)
             end
           end, {
             "i",
