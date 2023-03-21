@@ -81,6 +81,10 @@ return {
       }
 
       cmp.setup {
+        performance = {
+          debounce = 300,
+          throttle = 60,
+        },
         completion = {
           keyword_length = 3,
         },
