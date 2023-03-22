@@ -237,15 +237,15 @@ local keymaps = {
   {
     "n",
     "<leader>ff",
-    "<cmd>lua require('telescope.builtin').find_files()<CR>",
-    "Telescope FInd Files",
+    "<cmd>lua Swft.project_files()<CR>",
+    "Git Files or Find Files",
   },
 
   {
     "",
     "<C-p>",
-    "<cmd>lua Swft.project_files()<CR>",
-    "Git Files or Find Files",
+    "<cmd>lua require('telescope.builtin').find_files()<CR>",
+    "Telescope FInd Files",
   },
 
   {
