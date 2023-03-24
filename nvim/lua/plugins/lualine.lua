@@ -35,7 +35,8 @@ local config = function()
       lualine_y = {
         "branch",
         "filename",
-        { "location", separator = { right = "  " }, left_padding = 2 },
+        "diff",
+        { "location", separator = { right = "" }, left_padding = 2 },
       },
       lualine_z = {},
     },

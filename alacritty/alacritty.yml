@@ -181,4 +181,4 @@ shell:
   program: /usr/bin/dash
   args:
     - -c
-    - 'tmux attach 2> /dev/null || tmux 1> /dev/null'
+    - 'tmux attach 2> /dev/null || tmux new -s DEV 1> /dev/null'
