@@ -10,6 +10,9 @@ end
 require "swft.options"
 
 local opts = {
+  change_detection = {
+    enabled = false,
+  },
   ui = {
     border = "rounded",
   },
