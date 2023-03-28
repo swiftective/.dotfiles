@@ -14,7 +14,6 @@ local function mod_hl(hl_name, opts)
 end
 
 local highlights = {
-  { "Search", { fg = "none", bg = "none", underline = true } },
   { "NvimDapVirtualText", { fg = "#455574", bg = "none", bold = true } },
   { "Folded", { fg = "#5c719c", bg = "#121212" } },
   { "IndentBlanklineContextChar", { fg = "cyan" } },
