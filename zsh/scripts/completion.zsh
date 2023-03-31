@@ -13,7 +13,9 @@ bindkey -M vicmd / history-incremental-pattern-search-backward
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-bindkey '^F' autosuggest-accept
+bindkey '^ ' autosuggest-accept
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
 bindkey -M vicmd '^e' edit-command-line
 
 WORDCHARS=''
