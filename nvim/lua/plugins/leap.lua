@@ -5,7 +5,9 @@ return {
     "ggandor/leap.nvim",
     event = "VeryLazy",
     config = function()
-      require("leap").add_default_mappings()
+      local leap = require "leap"
+      leap.add_default_mappings()
+      leap.opts.safe_labels = { "s", "f", "n", "u", "t", "/", "F", "N", "L", "H", "M", "U", "G", "T", "?" }
       vim.keymap.set(
         { "n", "x", "o" },
         "gs",

@@ -9,6 +9,35 @@ local create_autocmd = function(autocmds)
 end
 
 local autocmds = {
+  {
+    event = "FileType",
+    callback = function()
+      vim.keymap.set("n", "m", function()
+        local line = vim.fn.getcharstr(0)
+        if line == "" then
+          return
+        end
+
+        local line_number = tonumber(line)
+        if line_number and line_number ~= 0 then
+          local currentline = vim.api.nvim_win_get_cursor(0)[1]
+          if currentline > line_number then
+            line = string.format(line_number - 1)
+          end
+        end
+
+        ---@diagnostic disable-next-line: param-type-mismatch
+        if not pcall(vim.cmd, "m" .. line) then
+          vim.notify "Invalid line number"
+        end
+      end, {
+        noremap = true,
+        buffer = true,
+      })
+    end,
+    pattern = "harpoon",
+    group = group,
+  },
 
   {
     event = "InsertEnter",
