@@ -1,7 +1,7 @@
 return {
   {
     "Akianonymus/nvim-colorizer.lua",
-    event = "VeryLazy",
+    cmd = "ColorizerToggle",
     config = function()
       require("colorizer").setup {
         css = {
@@ -21,7 +21,7 @@ return {
 
   {
     "ziontee113/color-picker.nvim",
-    event = "VeryLazy",
+    cmd = "PickColor",
     config = function()
       require "color-picker"
     end,

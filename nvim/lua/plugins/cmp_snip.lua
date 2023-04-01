@@ -73,7 +73,6 @@ return {
       local source_mapping = {
         luasnip = "[Snip]",
         nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]",
         path = "[Path]",
         cmp_tabnine = "[TN]",
         git = "[GH]",
@@ -141,7 +140,6 @@ return {
         sources = {
           { name = "luasnip" },
           { name = "nvim_lsp" },
-          { name = "nvim_lua" },
           { name = "git" },
           { name = "path" },
           {
@@ -192,7 +190,6 @@ return {
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-nvim-lua" },
       {
         "petertriho/cmp-git",
         config = true,
