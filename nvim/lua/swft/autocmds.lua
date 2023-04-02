@@ -18,6 +18,24 @@ local autocmds = {
           return
         end
 
+        local keys = {
+          f = 1,
+          d = 2,
+          s = 3,
+          a = 4,
+          j = 5,
+          k = 6,
+          l = 7,
+        }
+
+        if line == ";" then
+          line = string.format(8)
+        end
+
+        if keys[line] then
+          line = string.format(keys[line])
+        end
+
         local line_number = tonumber(line)
         if line_number and line_number ~= 0 then
           local currentline = vim.api.nvim_win_get_cursor(0)[1]

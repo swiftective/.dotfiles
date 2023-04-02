@@ -236,6 +236,13 @@ local keymaps = {
 
   {
     "n",
+    "<leader>fm",
+    "<cmd>Telescope harpoon marks<CR>",
+    "Telescope harpoon marks",
+  },
+
+  {
+    "n",
     "<leader>ff",
     "<cmd>lua Swft.project_files()<CR>",
     "Git Files or Find Files",
@@ -272,9 +279,12 @@ local keymaps = {
 
   {
     "n",
-    ",o",
-    "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
-    "Open Harpoon Menu",
+    "<C-e>",
+    function()
+      require("harpoon.mark").add_file()
+      require("harpoon.ui").toggle_quick_menu()
+    end,
+    "Add File and Open Harpoon Menu",
   },
 
   {
@@ -371,14 +381,14 @@ local keymaps = {
 
   {
     "n",
-    "<leader>gh",
+    "gh",
     ":diffget //3<CR>",
     "Git get changes from buffer 3",
   },
 
   {
     "n",
-    "<leader>gf",
+    "gf",
     ":diffget //2<CR>",
     "Git get changes from buffer 2",
   },
