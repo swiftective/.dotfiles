@@ -1,5 +1,4 @@
 local config = function()
-  vim.o.laststatus = 3
   local lualine = require "lualine"
 
   local colors = {
@@ -52,7 +51,8 @@ local config = function()
     extensions = {},
   }
 
-  lualine.hide { unhide = false }
+  ---@diagnostic disable-next-line: missing-parameter
+  lualine.hide()
 end
 
 -- statusline

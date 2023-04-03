@@ -47,4 +47,7 @@ require "swft.keymaps"
 require "swft.autocmds"
 require "swft.utils"
 
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[
+  colorscheme tokyonight
+  hi StatusLine guibg=none
+]]
