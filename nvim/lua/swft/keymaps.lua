@@ -317,28 +317,28 @@ local keymaps = {
 
   {
     "n",
-    ",j",
+    ",r",
     "<cmd>lua require('harpoon.ui').nav_file(5)<CR>",
     "Harpoon Goto File 5",
   },
 
   {
     "n",
-    ",k",
+    ",e",
     "<cmd>lua require('harpoon.ui').nav_file(6)<CR>",
     "Harpoon Goto File 6",
   },
 
   {
     "n",
-    ",l",
+    ",w",
     "<cmd>lua require('harpoon.ui').nav_file(7)<CR>",
     "Harpoon Goto File 7",
   },
 
   {
     "n",
-    ",;",
+    ",q",
     "<cmd>lua require('harpoon.ui').nav_file(8)<CR>",
     "Harpoon Goto File 8",
   },

@@ -23,14 +23,11 @@ local autocmds = {
           d = 2,
           s = 3,
           a = 4,
-          j = 5,
-          k = 6,
-          l = 7,
+          r = 5,
+          e = 6,
+          w = 7,
+          q = 8,
         }
-
-        if line == ";" then
-          line = string.format(8)
-        end
 
         if keys[line] then
           line = string.format(keys[line])
@@ -48,6 +45,9 @@ local autocmds = {
         if not pcall(vim.cmd, "m" .. line) then
           vim.notify "Invalid line number"
         end
+        vim.schedule(function()
+          vim.cmd "q"
+        end)
       end, {
         noremap = true,
         buffer = true,
