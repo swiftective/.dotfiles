@@ -6,4 +6,5 @@ function fish_user_key_bindings
   bind -M insert \ce edit_command_buffer
   bind  -M insert \cj prevd-or-backward-word
   bind  -M insert \ck nextd-or-forward-word
+  bind -M insert \co open_nvim
 end
