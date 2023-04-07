@@ -8,7 +8,7 @@ export LANG="en_US.UTF-8"
 export VISUAL='nvim'
 export MANPAGER="sh -c 'col -bx | bat --theme TwoDark -l man -p'"
 
-# export PATH=$PATH:$XDG_DATA_HOME/flutter/bin
+export PATH=$PATH:$XDG_DATA_HOME/flutter/bin
 
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup

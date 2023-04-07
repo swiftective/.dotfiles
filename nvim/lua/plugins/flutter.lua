@@ -9,5 +9,6 @@ return {
       },
     } -- use defaults
     require("telescope").load_extension "flutter"
+    require("luasnip").filetype_extend("dart", { "flutter" })
   end,
 }

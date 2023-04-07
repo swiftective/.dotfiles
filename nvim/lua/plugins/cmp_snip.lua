@@ -204,7 +204,6 @@ return {
     lazy = true,
     dependencies = {
       { "rafamadriz/friendly-snippets" },
-      { "Nash0x7E2/awesome-flutter-snippets" },
     },
   },
 }

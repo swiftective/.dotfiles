@@ -5,6 +5,11 @@ return {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = function()
+      vim.cmd [[
+        nmap  gcc
+        vmap  gc
+        imap  <C-[>gcc
+      ]]
       require("nvim-surround").setup {
         keymaps = {
           visual = "E",
