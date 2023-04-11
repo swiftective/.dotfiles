@@ -112,8 +112,6 @@ local keymaps = {
     "I like Ctrl f, ok",
   },
 
-  { "n", "<Tab>", "zz", "Center" },
-
   {
     "n",
     "<C-o>",
