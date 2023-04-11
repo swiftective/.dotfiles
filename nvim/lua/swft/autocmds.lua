@@ -58,6 +58,19 @@ local autocmds = {
   },
 
   {
+    event = "BufEnter",
+    callback = function()
+      vim.keymap.set("n", "<leader>rc", "<cmd>!racket %<CR>", {
+        noremap = true,
+        silent = true,
+        desc = "File Run for Racket",
+      })
+    end,
+    pattern = "*.rkt",
+    group = group,
+  },
+
+  {
     event = "InsertEnter",
     callback = function()
       vim.schedule(function()

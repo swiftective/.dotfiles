@@ -1,4 +1,5 @@
 vim.g.mapleader = " " -- Leader key
+vim.o.lazyredraw = true
 vim.o.cursorline = true
 vim.o.sessionoptions = "buffers,curdir,folds,help,winsize,winpos,terminal"
 vim.o.termguicolors = true

@@ -112,6 +112,22 @@ local keymaps = {
     "I like Ctrl f, ok",
   },
 
+  { "n", "<Tab>", "zz", "Center" },
+
+  {
+    "n",
+    "<C-o>",
+    "<C-o>zz",
+    "Center",
+  },
+
+  {
+    "n",
+    "<C-i>",
+    "<C-i>zz",
+    "Center",
+  },
+
   {
     { "n", "v" },
     "<C-d>",
@@ -180,6 +196,17 @@ local keymaps = {
     "<leader>st",
     "<cmd>lua Swft.ToggleLualine()<CR>",
     "Toggle Lualine",
+  },
+
+  {
+    "n",
+    "<leader>ss",
+    function()
+      for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/swft/snips/*.lua", true)) do
+        loadfile(ft_path)()
+      end
+    end,
+    "Source Snippets",
   },
 
   --  Undo Tree

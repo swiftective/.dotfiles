@@ -30,13 +30,10 @@ return {
         -- Autosnippets:
         enable_autosnippets = true,
 
-        -- Crazy highlights!!
-        -- #vid3
-        -- ext_opts = nil,
         ext_opts = {
           [types.choiceNode] = {
             active = {
-              -- virt_text = { { " <- Current Choice", "NonTest" } },
+              virt_text = { { " <- Current Choice", "Comment" } },
             },
           },
         },
@@ -80,13 +77,6 @@ return {
       }
 
       cmp.setup {
-        performance = {
-          debounce = 300,
-          throttle = 60,
-        },
-        completion = {
-          keyword_length = 3,
-        },
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body)
@@ -104,6 +94,13 @@ return {
               end
             end,
           },
+          ["<C-l>"] = cmp.mapping(function(fallback)
+            if luasnip.choice_active() then
+              luasnip.change_choice(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
           ["<C-d>"] = cmp.mapping.scroll_docs(4),
           ["<C-f>"] = cmp.mapping.scroll_docs(-4),
           ["<C-e>"] = cmp.mapping.close(),
@@ -182,9 +179,6 @@ return {
           end,
         },
       }
-
-      vim.opt.runtimepath = vim.opt.runtimepath + "~/.config/nvim/snippets"
-      require("luasnip/loaders/from_vscode").lazy_load()
     end,
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
@@ -205,5 +199,12 @@ return {
     dependencies = {
       { "rafamadriz/friendly-snippets" },
     },
+    config = function()
+      for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/swft/snips/*.lua", true)) do
+        loadfile(ft_path)()
+      end
+
+      require("luasnip/loaders/from_vscode").lazy_load()
+    end,
   },
 }
