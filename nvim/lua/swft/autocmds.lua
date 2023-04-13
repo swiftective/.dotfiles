@@ -58,7 +58,7 @@ local autocmds = {
   },
 
   {
-    event = "BufEnter",
+    event = "FileType",
     callback = function()
       vim.keymap.set("n", "<leader>rc", "<cmd>!racket %<CR>", {
         noremap = true,
@@ -66,7 +66,7 @@ local autocmds = {
         desc = "File Run for Racket",
       })
     end,
-    pattern = "*.rkt",
+    pattern = "racket",
     group = group,
   },
 
@@ -110,7 +110,7 @@ local autocmds = {
     pattern = "*.lua",
     group = group,
     callback = function()
-      vim.lsp.buf.format { async = true }
+      vim.lsp.buf.format()
     end,
   },
 }

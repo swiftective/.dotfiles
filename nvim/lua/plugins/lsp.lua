@@ -80,6 +80,7 @@ return {
         }
       end,
     }
+    lspconfig.racket_langserver.setup {}
     vim.cmd "e"
   end,
 }
