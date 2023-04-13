@@ -61,27 +61,36 @@ ls.add_snippets("text", {
     end)
   ),
 
+  s(
+    { trig = "fx(%d%d%d)", regTrig = true, snippetType = "autosnippet" },
+    f(function(_, snip)
+      return "This is the number: " .. snip.captures[1]
+    end)
+  ),
+
+  s({ trig = "trig", snippetType = "autosnippet" }, t "This is autotrigger"),
+
   -- End Line
 })
 
-ls.add_snippets("scheme", {
+ls.add_snippets("racket", {
   s(
     "df",
     fmt(
       [[
-      ;; {}
-      ;; {}
+          ;; {}
+          ;; {}
 
-      (check-expect ({} {}) {}) ; Tests
-      (check-expect ({} {}) {})
+          (check-expect ({} {}) {}) ; Tests
+          (check-expect ({} {}) {})
 
-      ;; (define ({} {}) {}) ; Stub
+          ;; (define ({} {}) {}) ; Stub
 
-      {}
+          {}
 
-      (define ({} {})
-        ({}))
-    ]],
+          (define ({} {})
+            ({}))
+     ]],
       {
         i(1, "Signature"),
         i(2, "Purpose"),
@@ -109,6 +118,36 @@ ls.add_snippets("scheme", {
         rep(3),
         rep(4),
         i(0, "Function Body"),
+      }
+    )
+  ),
+
+  s(
+    "dd",
+    fmt(
+      [[
+
+          ;; {} is {}
+          ;; Interp. {}
+          ;; (define {})
+
+          #;
+          (define (fn-for-{} {})
+            {}
+          )
+
+          ;; Template rules used
+          ;; - {}
+    ]],
+      {
+        i(1, "Data definition"),
+        i(2, "Type"),
+        i(3, "Interpretation"),
+        i(4, "Examples"),
+        i(5, "type-name"),
+        i(6, "parameter"),
+        i(7, "Function Body"),
+        i(0, "Rules"),
       }
     )
   ),
