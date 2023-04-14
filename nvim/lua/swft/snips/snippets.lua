@@ -173,32 +173,36 @@ ls.add_snippets("racket", {
     { trig = "fc(%d)", regTrig = true },
     fmt(
       [[
-      (define (func-name para)
+      (define ({} {})
         (cond {}
         )
       )
     ]],
-      d(1, function(_, snip)
-        local nodes = {}
+      {
+        i(1, "func"),
+        i(2, "args"),
+        d(3, function(_, snip)
+          local nodes = {}
 
-        local count = tonumber(snip.captures[1])
+          local count = tonumber(snip.captures[1])
 
-        for j = 0, count - 1 do
-          local cond = {
-            t { "", "\t\t[" },
-            i(1 + (j * 2), "Q"),
-            t " ",
-            i(2 + (j * 2), "A"),
-            t "]",
-          }
+          for j = 0, count - 1 do
+            local cond = {
+              t { "", "\t\t[" },
+              i(1 + (j * 2), "Q"),
+              t " ",
+              i(2 + (j * 2), "A"),
+              t "]",
+            }
 
-          for index, _ in ipairs(cond) do
-            table.insert(nodes, cond[index])
+            for index, _ in ipairs(cond) do
+              table.insert(nodes, cond[index])
+            end
           end
-        end
 
-        return sn(nil, nodes)
-      end)
+          return sn(nil, nodes)
+        end),
+      }
     )
   ),
 

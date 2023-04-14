@@ -753,9 +753,9 @@ local keymaps = {
 
   -- SnipRun
   { "n", "#", ":%s/<C-r><C-w>//gc<Left><Left><Left>", opts = { noremap = true } },
-  { "v", "#", '"hy:%s/<C-r>h//gc<left><left><left>', opts = { noremap = true } },
+  { "x", "#", '"hy:%s/<C-r>h//gc<left><left><left>', opts = { noremap = true } },
   { "n", "<leader>rs", "<Plug>SnipRunOperator", opts = {} },
-  { "v", "<leader>rs", "<Plug>SnipRun", opts = {} },
+  { "x", "<leader>rs", "<Plug>SnipRun", opts = {} },
 }
 
 custom_keymaps(keymaps)
