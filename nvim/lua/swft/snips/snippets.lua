@@ -28,6 +28,7 @@ local snippet_collection = require "luasnip.session.snippet_collection"
 snippet_collection.clear_snippets "text"
 snippet_collection.clear_snippets "lua"
 snippet_collection.clear_snippets "scheme"
+snippet_collection.clear_snippets "racket"
 
 -- ls.add_snippets("lua", {
 --   parse("good", "print('good')", {}),
@@ -105,7 +106,7 @@ ls.add_snippets("racket", {
         i(5, "Return Type"),
 
         c(10, {
-          fmt(";; Took template from {}", { i(1, "Data definition") }),
+          fmt(";; <use template from {}>", { i(1, "Data definition") }),
           fmt(
             [[
                 ;; (define ({} {}) ; Template
@@ -167,6 +168,39 @@ ls.add_snippets("racket", {
   ),
 
   s("racket", t "#lang racket"),
+
+  s(
+    { trig = "fu(%d)", regTrig = true },
+    fmt(
+      [[
+      (define (func-name para)
+        (cond {}
+        )
+      )
+    ]],
+      d(1, function(_, snip)
+        local nodes = {}
+
+        local count = tonumber(snip.captures[1])
+
+        for j = 0, count - 1 do
+          local cond = {
+            t { "", "\t\t[" },
+            i(1 + (j * 2), "Q"),
+            t " ",
+            i(2 + (j * 2), "A"),
+            t "]",
+          }
+
+          for index, _ in ipairs(cond) do
+            table.insert(nodes, cond[index])
+          end
+        end
+
+        return sn(nil, nodes)
+      end)
+    )
+  ),
 
   -- Last Line
 })

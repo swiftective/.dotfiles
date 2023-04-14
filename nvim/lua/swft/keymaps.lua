@@ -13,8 +13,8 @@ local function custom_keymaps(keymaps)
 end
 
 local keymaps = {
-  { "", "n", "nzz" },
-  { "", "N", "Nzz" },
+  { { "n", "x" }, "n", "nzz" },
+  { { "n", "x" }, "N", "Nzz" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
   { "i", "<C-e>", "<C-[>ea" },
@@ -107,7 +107,7 @@ local keymaps = {
   },
 
   {
-    { "n", "v" },
+    { "n", "x" },
     "<C-f>",
     "<C-u>zz",
     "I like Ctrl f, ok",
@@ -128,7 +128,7 @@ local keymaps = {
   },
 
   {
-    { "n", "v" },
+    { "n", "x" },
     "<C-d>",
     "<C-d>zz",
     "Scroll Down & Center",
@@ -202,6 +202,7 @@ local keymaps = {
     "<leader>ss",
     function()
       for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/swft/snips/*.lua", true)) do
+        vim.loader.reset(ft_path)
         loadfile(ft_path)()
       end
     end,
