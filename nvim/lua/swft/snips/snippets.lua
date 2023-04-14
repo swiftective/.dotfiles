@@ -170,7 +170,7 @@ ls.add_snippets("racket", {
   s("racket", t "#lang racket"),
 
   s(
-    { trig = "fu(%d)", regTrig = true },
+    { trig = "fc(%d)", regTrig = true },
     fmt(
       [[
       (define (func-name para)
