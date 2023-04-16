@@ -13,6 +13,8 @@ local function custom_keymaps(keymaps)
 end
 
 local keymaps = {
+  { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
+  { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
   { { "n", "x" }, "n", "nzz" },
   { { "n", "x" }, "N", "Nzz" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
