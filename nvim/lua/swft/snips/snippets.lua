@@ -247,5 +247,28 @@ ls.add_snippets("racket", {
     )
   ),
 
+  s(
+    "wish-list",
+    fmt(
+      [[
+
+    ;; {} -> {}
+    ;; {}
+    ;; TODO: {} func tests
+    (define ({} {}) {}) ;stub
+
+    ]],
+      {
+        i(1, "input type"),
+        i(2, "return type"),
+        i(3, "purpose"),
+        rep(4),
+        i(4, "func-name"),
+        i(5, "args"),
+        i(6, "return value"),
+      }
+    )
+  ),
+
   -- Last Line
 })

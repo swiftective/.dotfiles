@@ -15,6 +15,7 @@ end
 local keymaps = {
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
+  { "n", "<CR>", "zz", "Center Screen with Enter" },
   { { "n", "x" }, "n", "nzz" },
   { { "n", "x" }, "N", "Nzz" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
@@ -285,10 +286,17 @@ local keymaps = {
   },
 
   {
-    "",
-    "<A-p>",
+    "n",
+    "<leader>fc",
     "<cmd>Telescope builtin<CR>",
     "Telescope Command Palette",
+  },
+
+  {
+    "n",
+    "<leader>ft",
+    "<cmd>TodoTelescope<CR>",
+    "Telescope Todo",
   },
 
   {
@@ -296,6 +304,25 @@ local keymaps = {
     "<leader>fi",
     "<cmd>lua vim.lsp.buf.format { async = true }<CR>",
     "LSP Formatting",
+  },
+
+  -- TODO
+  {
+    "n",
+    "]t",
+    function()
+      require("todo-comments").jump_next()
+    end,
+    "Next TODO",
+  },
+
+  {
+    "n",
+    "[t",
+    function()
+      require("todo-comments").jump_prev()
+    end,
+    "Previous TODO",
   },
 
   -- Navigation
