@@ -127,7 +127,7 @@ ls.add_snippets("racket", {
     "dd",
     fmt(
       [[
-
+          {}
           ;; {} is {}
           ;; Interp. {}
           ;; (define {})
@@ -141,13 +141,20 @@ ls.add_snippets("racket", {
           ;; - {}
     ]],
       {
-        i(1, "Data definition"),
-        i(2, "Type"),
-        i(3, "Interpretation"),
-        i(4, "Examples"),
-        i(5, "type-name"),
-        i(6, "parameter"),
-        i(7, "Function Body"),
+        c(1, {
+          fmt("(define-struct {} ({}))", {
+            i(1, "struct-name"),
+            i(2, "fields"),
+          }),
+          t "",
+        }),
+        i(2, "Data definition"),
+        i(3, "Type"),
+        i(4, "Interpretation"),
+        i(5, "Examples"),
+        i(6, "type-name"),
+        i(7, "parameter"),
+        i(8, "Function Body"),
         i(0, "Rules"),
       }
     )
@@ -202,6 +209,40 @@ ls.add_snippets("racket", {
 
           return sn(nil, nodes)
         end),
+      }
+    )
+  ),
+
+  s(
+    "big-bang",
+    fmt(
+      [[
+
+        ;; {} -> {}
+        ;; start the world with ...
+        ;;
+        (define (main {})
+          (big-bang {}                   ; {}
+                    (on-tick   tock)     ; {} -> {}
+                    (to-draw   render)   ; {} -> Image
+                    (stop-when ...)      ; {} -> Boolean
+                    (on-mouse  ...)      ; {} Integer Integer MouseEvent -> {}
+                    (on-key    ...)))    ; {} KeyEvent -> {}
+      ]],
+      {
+        i(1, "WS"),
+        i(2, "WS"),
+        i(3, "ws"),
+        rep(3),
+        rep(1),
+        rep(1),
+        rep(1),
+        rep(1),
+        rep(1),
+        rep(1),
+        rep(1),
+        rep(1),
+        rep(1),
       }
     )
   ),
