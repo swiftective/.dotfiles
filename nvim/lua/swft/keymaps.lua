@@ -20,10 +20,9 @@ local keymaps = {
   { { "n", "x" }, "N", "Nzz" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
-  { "i", "<C-e>", "<C-[>ea" },
-  { "i", "<C-b>", "<C-[>bi" },
-  { "i", "<C-h>", "<Left>" },
-  { "i", "<C-l>", "<Right>" },
+  { "i", "<C-h>", "<C-w>" },
+  { "i", "<C-l>", "<C-o>zz" },
+  { "i", "<C-d>", "<Del>" },
   { "n", "'", "%" },
   { { "i", "s" }, "jk", "<Esc>" },
   {
