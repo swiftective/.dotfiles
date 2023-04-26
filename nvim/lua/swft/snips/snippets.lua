@@ -106,7 +106,7 @@ ls.add_snippets("racket", {
         i(5, "Return Type"),
 
         c(10, {
-          fmt(";; took template from {}>", { i(1, "Data definition") }),
+          fmt(";; took template from {}", { i(1, "Data definition") }),
           fmt(
             [[
                 ;; (define ({} {}) ; Template
