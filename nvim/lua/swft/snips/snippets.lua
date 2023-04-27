@@ -254,7 +254,9 @@ ls.add_snippets("racket", {
 
     ;; {} -> {}
     ;; {}
+
     ;; TODO: {} func tests
+
     (define ({} {}) {}) ;stub
 
     ]],
