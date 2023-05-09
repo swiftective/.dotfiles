@@ -30,7 +30,7 @@ return {
           },
           extra_args = { "--single-quote", "--jsx-single-quote" },
         },
-        -- formatting.autopep8,
+        formatting.autopep8,
         -- completion.spell,
       },
     }
