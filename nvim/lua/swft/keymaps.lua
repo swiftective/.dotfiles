@@ -21,16 +21,10 @@ local keymaps = {
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
   { "i", "<C-h>", "<C-w>" },
-  { "i", "<C-l>", "<C-o>zz" },
-  { "i", "<C-d>", "<C-[>lce" },
+  { "i", "<C-l>", "<C-c>zza" },
+  { "i", "<C-d>", "<C-c>lce" },
   { "n", "'", "%" },
   { { "i", "s" }, "jk", "<Esc>" },
-  {
-    "i",
-    "<C-c>",
-    "<Esc>",
-    "Cursed!",
-  },
 
   {
     "n",
@@ -39,7 +33,7 @@ local keymaps = {
     "Zen Mode Toggle",
   },
 
-  { "i", "<C-j>", "<Esc>o" },
+  { "i", "<C-j>", "<C-c>o" },
   {
     "n",
     "<C-j>",
@@ -47,7 +41,7 @@ local keymaps = {
     "Next Item in Quickfix List",
   },
 
-  { "i", "<C-k>", "<Esc>O" },
+  { "i", "<C-k>", "<C-c>O" },
   {
     "n",
     "<C-k>",
@@ -119,6 +113,13 @@ local keymaps = {
     "n",
     "<C-o>",
     "<C-o>zz",
+    "Center",
+  },
+
+  {
+    "n",
+    "<C-i>",
+    "<C-i>zz",
     "Center",
   },
 

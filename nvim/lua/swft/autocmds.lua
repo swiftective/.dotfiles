@@ -10,6 +10,15 @@ end
 
 local autocmds = {
   {
+    event = "InsertLeave",
+    callback = function()
+      vim.cmd "norm! m'"
+    end,
+    pattern = "*",
+    group = group,
+  },
+
+  {
     event = "InsertLeavePre",
     callback = function()
       vim.cmd "TSBufDisable rainbow"
