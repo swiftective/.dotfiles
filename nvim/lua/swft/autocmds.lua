@@ -10,6 +10,16 @@ end
 
 local autocmds = {
   {
+    event = "InsertLeavePre",
+    callback = function()
+      vim.cmd "TSBufDisable rainbow"
+      vim.cmd "TSBufEnable  rainbow"
+    end,
+    pattern = "*",
+    group = group,
+  },
+
+  {
     event = "FileType",
     callback = function()
       vim.keymap.set("n", "m", function()

@@ -22,7 +22,7 @@ local keymaps = {
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
   { "i", "<C-h>", "<C-w>" },
   { "i", "<C-l>", "<C-o>zz" },
-  { "i", "<C-d>", "<Del>" },
+  { "i", "<C-d>", "<C-[>lce" },
   { "n", "'", "%" },
   { { "i", "s" }, "jk", "<Esc>" },
   {
@@ -119,13 +119,6 @@ local keymaps = {
     "n",
     "<C-o>",
     "<C-o>zz",
-    "Center",
-  },
-
-  {
-    "n",
-    "<C-i>",
-    "<C-i>zz",
     "Center",
   },
 
