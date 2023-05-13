@@ -79,6 +79,13 @@ return {
           capabilities = capabilities,
         }
       end,
+      ["tsserver"] = function()
+        lspconfig.tsserver.setup {
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+          end,
+        }
+      end,
     }
     lspconfig.racket_langserver.setup {}
     vim.cmd "e"

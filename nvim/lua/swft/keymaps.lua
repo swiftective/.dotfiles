@@ -60,7 +60,7 @@ local keymaps = {
   {
     "n",
     "<C-l>",
-    "<C-^>",
+    "<C-^>zz",
     "Switch Files",
   },
 

@@ -28,7 +28,7 @@ return {
             "solidity",
             "html",
           },
-          extra_args = { "--single-quote", "--jsx-single-quote" },
+          -- extra_args = { "--single-quote", "--jsx-single-quote" },
         },
         formatting.autopep8,
         -- completion.spell,
