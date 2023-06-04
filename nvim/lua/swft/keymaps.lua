@@ -14,6 +14,7 @@ end
 
 local keymaps = {
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
+  { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
   { "n", "<CR>", "zz", "Center Screen with Enter" },
   { { "n", "x" }, "n", "nzz" },
@@ -303,6 +304,15 @@ local keymaps = {
   {
     "n",
     "]t",
+    function()
+      require("todo-comments").jump_next()
+    end,
+    "Next TODO",
+  },
+
+  {
+    "n",
+    ";t",
     function()
       require("todo-comments").jump_next()
     end,

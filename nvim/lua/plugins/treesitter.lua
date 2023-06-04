@@ -40,17 +40,23 @@ return {
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
               ["]m"] = "@function.outer",
+              [";m"] = "@function.outer",
               ["]]"] = { query = "@class.outer", desc = "Next class start" },
+              [";]"] = { query = "@class.outer", desc = "Next class start" },
               ["]o"] = "@loop.*",
+              [";o"] = "@loop.*",
               ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+              [";s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
               ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+              [";z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
             },
             goto_next_end = {
-              ["]M"] = "@function.outer",
+              ["]f"] = "@function.outer",
+              [";f"] = "@function.outer",
               ["]["] = "@class.outer",
             },
             goto_previous_start = {
-              ["[m"] = "@function.outer",
+              ["[f"] = "@function.outer",
               ["[["] = "@class.outer",
             },
             goto_previous_end = {
@@ -59,6 +65,7 @@ return {
             },
             goto_next = {
               ["]d"] = "@conditional.outer",
+              [";d"] = "@conditional.outer",
             },
             goto_previous = {
               ["[d"] = "@conditional.outer",
@@ -87,7 +94,7 @@ return {
         },
       }
       local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
-      vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+      vim.keymap.set({ "n", "x", "o" }, ";;", ts_repeat_move.repeat_last_move_next)
     end,
   },
 }

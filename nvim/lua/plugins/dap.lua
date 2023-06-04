@@ -20,6 +20,26 @@ return {
       )
       vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticHint", linehl = "", numhl = "" })
 
+      dap.adapters["pwa-node"] = {
+        type = "server",
+        host = "localhost",
+        port = "${port}",
+        executable = {
+          command = "node",
+          args = { os.getenv "HOME" .. "/.local/share/dap-nvim/js-debug/src/dapDebugServer.js", "${port}" },
+        },
+      }
+
+      dap.configurations.javascript = {
+        {
+          type = "pwa-node",
+          request = "launch",
+          name = "Launch file",
+          program = "${file}",
+          cwd = "${workspaceFolder}",
+        },
+      }
+
       dap.configurations.python = {
         {
           type = "python",
@@ -34,7 +54,7 @@ return {
 
       dap.adapters.python = {
         type = "executable",
-        command = "/home/rv/.virtualenvs/debugpy/bin/python",
+        command = os.getenv "HOME" .. "/.virtualenvs/debugpy/bin/python",
         args = { "-m", "debugpy.adapter" },
       }
     end,

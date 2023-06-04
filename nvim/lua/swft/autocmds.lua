@@ -90,6 +90,19 @@ local autocmds = {
   },
 
   {
+    event = "FileType",
+    callback = function()
+      vim.keymap.set("n", "<leader>rc", "<cmd>!smlnj %<CR>", {
+        noremap = true,
+        silent = true,
+        desc = "File Run for Standard ML",
+      })
+    end,
+    pattern = "sml",
+    group = group,
+  },
+
+  {
     event = "InsertEnter",
     callback = function()
       vim.schedule(function()

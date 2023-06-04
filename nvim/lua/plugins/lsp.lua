@@ -88,6 +88,7 @@ return {
       end,
     }
     lspconfig.racket_langserver.setup {}
+    lspconfig.millet.setup {}
     vim.cmd "e"
   end,
 }
