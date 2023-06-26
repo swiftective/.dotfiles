@@ -83,6 +83,7 @@ local autocmds = {
         noremap = true,
         silent = true,
         desc = "File Run for Racket",
+        buffer = true,
       })
     end,
     pattern = "racket",
@@ -96,7 +97,10 @@ local autocmds = {
         noremap = true,
         silent = true,
         desc = "File Run for Standard ML",
+        buffer = true,
       })
+
+      vim.bo.commentstring = "(* %s *)"
     end,
     pattern = "sml",
     group = group,
