@@ -85,6 +85,8 @@ local autocmds = {
         desc = "File Run for Racket",
         buffer = true,
       })
+
+      vim.cmd "ab lambda λ"
     end,
     pattern = "racket",
     group = group,
