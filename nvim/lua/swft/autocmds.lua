@@ -86,6 +86,8 @@ local autocmds = {
         buffer = true,
       })
 
+      vim.bo.commentstring = "; %s"
+
       vim.cmd "ab lambda λ"
     end,
     pattern = "racket",
