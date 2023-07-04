@@ -1,120 +1,39 @@
-# Inserts a blank line between shell prompts
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$cmd_duration\
+$character"""
+
+[cmd_duration]
+format="[$duration ]($style)"
 
 #add_newline = true
 
-# Make prompt a single line instead of two lines
 [line_break]
 disabled = true
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[λ](#565f90)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+[character]
+success_symbol = "[λ](#565f90)"
 error_symbol = "[λ](bold red)"
 vicmd_symbol = "[λ](#5087cc)"
+vimcmd_replace_one_symbol = "[λ](#5087cc)"
+vimcmd_replace_symbol = "[λ](#5087cc)"
+vimcmd_visual_symbol = "[λ](#5087cc)"
 
-# configure directory
 [directory]
 truncation_length = 10
-truncate_to_repo = true # truncates directory to root folder if in github repo
+truncate_to_repo = true
 home_symbol = ""
 style = "#565f90"
 
-# [git_status]
-
-[lua]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[nodejs]
-format = "➤ [$symbol($version )]($style)"
-
-[aws]
-symbol = " "
-
-# [battery]
-# full_symbol = ""
-# charging_symbol = ""
-# discharging_symbol = ""
-
-[conda]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[kotlin]
-format = "➤ [$symbol($version )]($style)"
-
-[dart]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[docker_context]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[elixir]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[elm]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
 [git_branch]
 style="italic bold  yellow"
-
-[golang]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
+format="[$symbol$branch(:$remote_branch)]($style) "
 
 [hg_branch]
-symbol = " "
 style="italic bold  yellow"
-
-[java]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[julia]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[memory_usage]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[nim]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[nix_shell]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[package]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[perl]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[php]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[python]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[ruby]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[rust]
-symbol = " "
-format = "➤ [$symbol($version )]($style)"
-
-[swift]
-symbol = "ﯣ "
-format = "➤ [$symbol($version )]($style)"
-
