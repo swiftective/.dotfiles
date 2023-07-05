@@ -89,6 +89,13 @@ return {
     }
     lspconfig.racket_langserver.setup {}
     lspconfig.millet.setup {}
-    vim.cmd "e"
+
+    if vim.bo.filetype == "" then
+      return
+    end
+
+    if vim.bo.filetype ~= "netrw" then
+      vim.cmd "e"
+    end
   end,
 }

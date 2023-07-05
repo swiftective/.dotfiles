@@ -17,8 +17,6 @@ local keymaps = {
   { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
   { "n", "<CR>", "zz", "Center Screen with Enter" },
-  { { "n", "x" }, "n", "nzz" },
-  { { "n", "x" }, "N", "Nzz" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
   { "i", "<C-h>", "<C-w>" },
@@ -345,6 +343,13 @@ local keymaps = {
       require("harpoon.ui").toggle_quick_menu()
     end,
     "Add File and Open Harpoon Menu",
+  },
+
+  {
+    "n",
+    "mo",
+    "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+    "Open Harpoon Menu",
   },
 
   {

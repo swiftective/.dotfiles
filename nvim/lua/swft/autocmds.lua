@@ -29,6 +29,48 @@ local autocmds = {
   },
 
   {
+    event = "InsertEnter",
+    callback = function()
+      vim.schedule(function()
+        vim.cmd "nohl"
+      end)
+    end,
+    pattern = "*",
+    group = group,
+  },
+
+  {
+    event = "TextYankPost",
+    callback = function()
+      require("vim.highlight").on_yank { timeout = 60 }
+    end,
+    pattern = "*",
+    group = group,
+  },
+
+  { event = "TermOpen", command = "setlocal nonumber norelativenumber", pattern = "*", group = group },
+
+  {
+    event = "FileType",
+    pattern = "fugitive",
+    group = group,
+    callback = function()
+      vim.api.nvim_buf_set_keymap(0, "n", "<Tab>", "=", { noremap = false })
+    end,
+  },
+
+  { event = "BUfWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
+
+  {
+    event = "BufWritePre",
+    pattern = "*.lua",
+    group = group,
+    callback = function()
+      vim.lsp.buf.format()
+    end,
+  },
+
+  {
     event = "FileType",
     callback = function()
       vim.keymap.set("n", "m", function()
@@ -74,84 +116,6 @@ local autocmds = {
     end,
     pattern = "harpoon",
     group = group,
-  },
-
-  {
-    event = "FileType",
-    callback = function()
-      vim.keymap.set("n", "<leader>rc", "<cmd>!racket %<CR>", {
-        noremap = true,
-        silent = true,
-        desc = "File Run for Racket",
-        buffer = true,
-      })
-
-      vim.bo.commentstring = "; %s"
-
-      vim.cmd "ab lambda λ"
-    end,
-    pattern = "racket",
-    group = group,
-  },
-
-  {
-    event = "FileType",
-    callback = function()
-      vim.keymap.set("n", "<leader>rc", "<cmd>!smlnj %<CR>", {
-        noremap = true,
-        silent = true,
-        desc = "File Run for Standard ML",
-        buffer = true,
-      })
-
-      vim.bo.commentstring = "(* %s *)"
-    end,
-    pattern = "sml",
-    group = group,
-  },
-
-  {
-    event = "InsertEnter",
-    callback = function()
-      vim.schedule(function()
-        vim.cmd "nohl"
-      end)
-    end,
-    pattern = "*",
-    group = group,
-  },
-
-  { event = "FileType", command = "set filetype=sh", pattern = "zsh", group = group },
-
-  {
-    event = "TextYankPost",
-    callback = function()
-      require("vim.highlight").on_yank { timeout = 60 }
-    end,
-    pattern = "*",
-    group = group,
-  },
-
-  { event = "TermOpen", command = "setlocal nonumber norelativenumber", pattern = "*", group = group },
-
-  {
-    event = "FileType",
-    pattern = "fugitive",
-    group = group,
-    callback = function()
-      vim.api.nvim_buf_set_keymap(0, "n", "<Tab>", "=", { noremap = false })
-    end,
-  },
-
-  { event = "BUfWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
-
-  {
-    event = "BufWritePre",
-    pattern = "*.lua",
-    group = group,
-    callback = function()
-      vim.lsp.buf.format()
-    end,
   },
 }
 
