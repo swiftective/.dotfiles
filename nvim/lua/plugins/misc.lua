@@ -34,7 +34,7 @@ return {
   -- Autotags for html
   {
     "windwp/nvim-ts-autotag",
-    ft = { "html" },
+    event = "VeryLazy",
     config = true,
     dependencies = "nvim-treesitter/nvim-treesitter",
   },

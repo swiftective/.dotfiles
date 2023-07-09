@@ -4,59 +4,7 @@ return {
     "mfussenegger/nvim-dap",
     lazy = true,
     config = function()
-      require("dap.ext.vscode").load_launchjs()
-      local dap = require "dap"
-      dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
-
-      vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError", linehl = "", numhl = "" })
-      vim.fn.sign_define("DapStopped", { text = "", texthl = "DiagnosticHint", numhl = "" })
-      vim.fn.sign_define(
-        "DapBreakpointCondition",
-        { text = "", texthl = "DiagnosticWarning", linehl = "", numhl = "" }
-      )
-      vim.fn.sign_define(
-        "DapBreakpointRejected",
-        { text = "", texthl = "DiagnosticWarning", linehl = "", numhl = "" }
-      )
-      vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticHint", linehl = "", numhl = "" })
-
-      dap.adapters["pwa-node"] = {
-        type = "server",
-        host = "localhost",
-        port = "${port}",
-        executable = {
-          command = "node",
-          args = { os.getenv "HOME" .. "/.local/share/dap-nvim/js-debug/src/dapDebugServer.js", "${port}" },
-        },
-      }
-
-      dap.configurations.javascript = {
-        {
-          type = "pwa-node",
-          request = "launch",
-          name = "Launch file",
-          program = "${file}",
-          cwd = "${workspaceFolder}",
-        },
-      }
-
-      dap.configurations.python = {
-        {
-          type = "python",
-          request = "launch",
-          name = "Launch file",
-          program = "${file}",
-          pythonPath = function()
-            return "/usr/bin/python"
-          end,
-        },
-      }
-
-      dap.adapters.python = {
-        type = "executable",
-        command = os.getenv "HOME" .. "/.virtualenvs/debugpy/bin/python",
-        args = { "-m", "debugpy.adapter" },
-      }
+      require "swft.dap"
     end,
     dependencies = {
       {
