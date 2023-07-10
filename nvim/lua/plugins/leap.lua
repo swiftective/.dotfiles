@@ -7,7 +7,7 @@ return {
     config = function()
       local leap = require "leap"
       leap.add_default_mappings()
-      leap.opts.safe_labels = { "s", "f", "n", "u", "t", "/", "F", "N", "L", "H", "M", "U", "G", "T", "?" }
+      leap.opts.safe_labels = {}
       leap.opts.labels = {
         "s",
         "f",
