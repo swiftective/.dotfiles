@@ -10,5 +10,5 @@ vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "Diagnosti
 vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DiagnosticWarning", linehl = "", numhl = "" })
 vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticHint", linehl = "", numhl = "" })
 
-require "swft.dap.js"
-require "swft.dap.python"
+require "config.dap.js"
+require "config.dap.python"
