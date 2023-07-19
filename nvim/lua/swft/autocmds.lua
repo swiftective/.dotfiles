@@ -61,14 +61,14 @@ local autocmds = {
 
   { event = "BUfWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
 
-  {
-    event = "BufWritePre",
-    pattern = "*.lua",
-    group = group,
-    callback = function()
-      vim.lsp.buf.format()
-    end,
-  },
+  -- {
+  --   event = "BufWritePre",
+  --   pattern = "*.lua",
+  --   group = group,
+  --   callback = function()
+  --     vim.lsp.buf.format()
+  --   end,
+  -- },
 
   {
     event = "FileType",

@@ -7,6 +7,7 @@ return {
     config = function()
       require "config.leap"
     end,
+    dependencies = "tpope/vim-repeat",
   },
 
   {

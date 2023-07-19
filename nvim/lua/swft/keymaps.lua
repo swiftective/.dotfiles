@@ -13,6 +13,8 @@ local function custom_keymaps(keymaps)
 end
 
 local keymaps = {
+  { "n", "g*", "*Ncgn", "Add word to search" },
+  { "v", "g*", 'y/\\V<C-R>"<CR>Ncgn', "Add word to search" },
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
@@ -64,8 +66,6 @@ local keymaps = {
     "Switch Files",
   },
 
-  { "n", "w<", "5<C-w><" },
-  { "n", "w>", "5<C-w>>" },
   {
     { "n", "x", "o" },
     "H",
