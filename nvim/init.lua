@@ -36,6 +36,10 @@ local opts = {
         "spellfile_plugin",
         "matchit",
         "tarPlugin",
+        "tohtml",
+        "health",
+        "tutor",
+        "man",
       },
     },
   },
@@ -46,8 +50,3 @@ require("lazy").setup("plugins", opts) -- Package Manager
 require "swft.keymaps"
 require "swft.autocmds"
 require "swft.utils"
-
-vim.cmd [[
-  colorscheme tokyonight
-  hi StatusLine guibg=none
-]]

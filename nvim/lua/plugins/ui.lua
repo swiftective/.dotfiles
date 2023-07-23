@@ -41,7 +41,6 @@ return { -- Lua
           telescope = require("telescope.themes").get_cursor(),
         },
       }
-      require "swft.colors"
     end,
     dependencies = {
       "nvim-telescope/telescope.nvim",
