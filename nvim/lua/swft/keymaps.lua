@@ -467,6 +467,14 @@ local keymaps = {
   },
 
   -- treesitter
+
+  {
+    "n",
+    "<leader>sc",
+    "<cmd>TSContextToggle<CR>",
+    "Toggle treesitter context"
+  },
+
   {
     "n",
     "<leader>ts",

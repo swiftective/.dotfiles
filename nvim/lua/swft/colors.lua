@@ -15,6 +15,7 @@ end
 
 local highlights = {
   { "NvimDapVirtualText", { fg = "#455574", bg = "none", bold = true } },
+  { "TreesitterContext", { bg = "none" }},
   { "Folded", { fg = "#5c719c", bg = "#121212" } },
   { "IndentBlanklineContextChar", { fg = "cyan" } },
   { "TSVariable", { fg = "#aed8f2" } },
