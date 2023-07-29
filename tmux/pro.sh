@@ -4,7 +4,7 @@ if [ ! -d ~/projects ]; then
   exit 1
 fi
 
-dir=$(fd -t d -H -g .git --base-directory ~/projects | xargs dirname | sk)
+dir=$(fd -t d -H --base-directory ~/projects | rg "\.git/\$" -r "" | sk)
 
 if [ "$dir" = "" ]; then
   exit 1
