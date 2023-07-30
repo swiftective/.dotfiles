@@ -6,7 +6,6 @@ export EDITOR='nvim'
 export LC_ALL='en_US.UTF-8'
 export LANG="en_US.UTF-8"
 export VISUAL='nvim'
-export MANPAGER="sh -c 'col -bx | bat --theme TwoDark -l man -p'"
 
 export PATH=$PATH:$XDG_DATA_HOME/flutter/bin
 
