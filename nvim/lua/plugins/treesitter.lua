@@ -28,6 +28,6 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-context",
     opts = { enable = false },
-    event = "VeryLazy"
-  }
+    event = "VeryLazy",
+  },
 }

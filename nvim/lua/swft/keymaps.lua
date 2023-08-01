@@ -18,6 +18,7 @@ local keymaps = {
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
+  { "n", "<CR>", "zz", "Center the screen" },
   { "n", "<2-LeftMouse>", "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition" },
   { "n", "<RightMouse>", "<C-o>zz", "Go Back" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
@@ -472,7 +473,7 @@ local keymaps = {
     "n",
     "<leader>sc",
     "<cmd>TSContextToggle<CR>",
-    "Toggle treesitter context"
+    "Toggle treesitter context",
   },
 
   {
