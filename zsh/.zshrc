@@ -20,13 +20,6 @@ ZSH_HIGHLIGHT_STYLES[builtin]=fg=cyan,bold
 # Starship Prompt
 eval "$(starship init zsh)"
 
-# fnm
-fnm () {
-  unset -f fnm
-  eval "$(fnm env --use-on-cd)"
-  fnm "$@"
-}
-
 # pnpm
 export PNPM_HOME="/home/rv/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
