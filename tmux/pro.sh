@@ -6,13 +6,13 @@ fi
 
 cd ~/projects
 
-dir=$(ls -d */ | sk)
+dir=$(ls -d */*/ | sk)
 
 if [ "$dir" = "" ]; then
   exit 1
 fi
 
-session=$(echo projects·$dir | sed 's/\/$//')
+session=$(echo $dir | sed 's/\/$//' | sed 's/\//·/')
 
 if tmux ls | grep -q $session; then
   tmux switch-client -t $session
