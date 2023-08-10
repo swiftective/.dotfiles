@@ -69,6 +69,6 @@ require("gitsigns").setup {
     map("n", "<leader>htd", gs.toggle_deleted, { desc = "Git Toggle Deleted" })
 
     -- Text object
-    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select Hunk" })
+    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select Hunk", silent = true })
   end,
 }
