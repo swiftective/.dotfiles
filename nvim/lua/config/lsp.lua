@@ -79,5 +79,6 @@ mason_lsp.setup_handlers {
 }
 lspconfig.racket_langserver.setup {}
 lspconfig.millet.setup {}
+lspconfig.ocamllsp.setup {}
 
 vim.cmd "LspStart"
