@@ -1,6 +1,5 @@
 local leap = require "leap"
 
-leap.add_default_mappings()
 leap.opts.safe_labels = {}
 leap.opts.labels = {
   "s",
@@ -51,11 +50,16 @@ leap.opts.labels = {
 }
 
 vim.keymap.set(
-  { "n", "x", "o" },
+  "n",
   "gs",
   ":lua require('leap').leap { target_windows = require'leap.util'.get_enterable_windows() }<CR>",
   { noremap = true, silent = true, desc = "Leap from window" }
 )
+
+vim.keymap.set("", "s", function()
+  local current_window = vim.fn.win_getid()
+  require("leap").leap { target_windows = { current_window } }
+end)
 
 vim.cmd [[
 
@@ -65,3 +69,10 @@ nnoremap w< <Plug>WindowR1
 nnoremap <silent> <Plug>WindowR2 5<C-w>>:call repeat#set("\<Plug>WindowR2")<CR>
 nnoremap w> <Plug>WindowR2
 ]]
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LeapEnter",
+  callback = function()
+    vim.o.scrolloff = 0
+  end,
+})

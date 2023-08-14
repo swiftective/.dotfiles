@@ -1,5 +1,6 @@
 vim.g.mapleader = " " -- Leader key
 vim.o.lazyredraw = true
+vim.o.scrolloff = 0
 vim.o.cursorline = true
 vim.o.sessionoptions = "buffers,curdir,folds,help,winsize,winpos,terminal"
 vim.o.mousemodel = "extend"

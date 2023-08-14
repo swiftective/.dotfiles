@@ -12,7 +12,7 @@ return {
       ]]
       require("nvim-surround").setup {
         keymaps = {
-          visual = "E",
+          visual = "S",
         },
       }
     end,

@@ -15,10 +15,24 @@ end
 local keymaps = {
   { "n", "g*", 'yiw/\\V\\C\\<<C-R>"\\><CR>Ncgn', "Add word to search" },
   { "v", "g*", 'y/\\V\\C<C-R>"<CR>Ncgn', "Add word to search" },
+  { { "n", "v" }, "G", "Gzz" },
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
-  { "n", "<CR>", "zz", "Center the screen" },
+  {
+    "n",
+    "g<CR>",
+    function()
+      if vim.o.scrolloff > 0 then
+        vim.o.scrolloff = 0
+        vim.cmd "norm! zz"
+        return
+      end
+      vim.o.scrolloff = 999
+      vim.cmd "norm! zz"
+    end,
+    "Center the screen",
+  },
   { "n", "<2-LeftMouse>", "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition" },
   { "n", "<RightMouse>", "<C-o>zz", "Go Back" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
