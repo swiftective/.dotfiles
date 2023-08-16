@@ -1,6 +1,7 @@
 return {
   -- Comment plugin
   { "numToStr/Comment.nvim", event = "VeryLazy", config = true },
+  { "eandrju/cellular-automaton.nvim", event = "VeryLazy" },
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",

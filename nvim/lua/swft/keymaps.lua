@@ -15,6 +15,10 @@ end
 local keymaps = {
   { "n", "g*", 'yiw/\\V\\C\\<<C-R>"\\><CR>Ncgn', "Add word to search" },
   { "v", "g*", 'y/\\V\\C<C-R>"<CR>Ncgn', "Add word to search" },
+  { "v", "J", ":m '>+1<CR>gv=gv" },
+  { "v", "K", ":m '<-2<CR>gv=gv" },
+  { "n", "n", "nzz" },
+  { "n", "N", "Nzz" },
   { { "n", "v" }, "G", "Gzz" },
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
