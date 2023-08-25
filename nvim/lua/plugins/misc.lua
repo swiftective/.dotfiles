@@ -1,6 +1,16 @@
 return {
   -- Comment plugin
   { "numToStr/Comment.nvim", event = "VeryLazy", config = true },
+
+  -- formatter
+  {
+    "mhartington/formatter.nvim",
+    cmd = { "Format", "FormatWrite" },
+    config = function()
+      require "config.formatter"
+    end,
+  },
+
   { "eandrju/cellular-automaton.nvim", event = "VeryLazy" },
   {
     "kylechui/nvim-surround",

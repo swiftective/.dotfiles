@@ -10,6 +10,17 @@ end
 
 local autocmds = {
   {
+    event = "BufWinEnter",
+    callback = function()
+      vim.schedule(function()
+        vim.cmd "norm! zz"
+      end)
+    end,
+    pattern = "*",
+    group = group,
+  },
+
+  {
     event = "InsertLeave",
     callback = function()
       vim.cmd "norm! m'"
@@ -59,7 +70,18 @@ local autocmds = {
     end,
   },
 
-  { event = "BUfWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
+  { event = "BufWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
+  {
+    event = "BufWritePost",
+    pattern = "*",
+    callback = function()
+      vim.schedule(function()
+        vim.cmd "TSBufDisable rainbow"
+        vim.cmd "TSBufEnable  rainbow"
+      end)
+    end,
+    group = group,
+  },
 
   -- {
   --   event = "BufWritePre",

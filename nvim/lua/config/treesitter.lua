@@ -35,6 +35,10 @@ require("nvim-treesitter.configs").setup {
         ["[s"] = { query = "@scope", query_group = "locals", desc = "Previous scope" },
         ["[C"] = { query = "@conditional.outer", desc = "Previous conditional" },
       },
+      goto_next_end = {
+        ["]m"] = { query = "@function.outer", desc = "Next function end" },
+        [";m"] = { query = "@function.outer", desc = "Next function end" },
+      },
     },
     select = {
       enable = true,

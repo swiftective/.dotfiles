@@ -315,8 +315,8 @@ local keymaps = {
   {
     "n",
     "<leader>fi",
-    "<cmd>lua vim.lsp.buf.format { async = true }<CR>",
-    "LSP Formatting",
+    "<cmd>Format<CR>",
+    "Formatter",
   },
 
   -- TODO
@@ -564,6 +564,13 @@ local keymaps = {
     "K",
     "<cmd>lua vim.lsp.buf.hover()<CR>",
     "LSP Hover",
+  },
+
+  {
+    "n",
+    "<leader>cf",
+    "<cmd>lua vim.lsp.buf.format { async = true }<CR>",
+    "LSP Formatting",
   },
 
   {

@@ -64,7 +64,6 @@ local highlights = {
   { "htmlTag", { fg = "#565f89" } },
   { "htmlEndTag", { fg = "#565f89" } },
   { "htmlTitle", { fg = "#bb9af7" } },
-  { "htmlScriptTag", { fg = "#565f89" } },
   { "htmlSpecialTagName", { fg = "#7aa2f7" } },
   { "htmlH1", { fg = "#bb9af7" } },
   { "htmlH2", { fg = "#bb9af7" } },
