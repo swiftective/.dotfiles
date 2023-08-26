@@ -15,5 +15,7 @@ require("formatter").setup {
     },
 
     ocaml = { lsp_format },
+
+    java = { lsp_format },
   },
 }
