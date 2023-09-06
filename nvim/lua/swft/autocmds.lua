@@ -9,16 +9,6 @@ local create_autocmd = function(autocmds)
 end
 
 local autocmds = {
-  {
-    event = "BufWinEnter",
-    callback = function()
-      vim.schedule(function()
-        vim.cmd "norm! zz"
-      end)
-    end,
-    pattern = "*",
-    group = group,
-  },
 
   {
     event = "InsertLeave",
@@ -71,26 +61,6 @@ local autocmds = {
   },
 
   { event = "BufWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
-  {
-    event = "BufWritePost",
-    pattern = "*",
-    callback = function()
-      vim.schedule(function()
-        vim.cmd "TSBufDisable rainbow"
-        vim.cmd "TSBufEnable  rainbow"
-      end)
-    end,
-    group = group,
-  },
-
-  -- {
-  --   event = "BufWritePre",
-  --   pattern = "*.lua",
-  --   group = group,
-  --   callback = function()
-  --     vim.lsp.buf.format()
-  --   end,
-  -- },
 
   {
     event = "FileType",

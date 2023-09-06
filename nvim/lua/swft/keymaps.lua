@@ -38,6 +38,7 @@ local keymaps = {
     "Center the screen",
   },
   { "n", "<2-LeftMouse>", "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition" },
+  { "n", "<leader>fl", "gg=G<C-o>", "indent" },
   { "n", "<RightMouse>", "<C-o>zz", "Go Back" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
