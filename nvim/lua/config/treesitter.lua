@@ -1,8 +1,7 @@
 require("nvim-treesitter.configs").setup {
   rainbow = {
-    enable = true,
+    enable = false,
     max_file_lines = nil,
-    disable = { "html" },
   },
   highlight = {
     enable = true,
@@ -63,7 +62,4 @@ require("nvim-treesitter.configs").setup {
   },
 }
 
-vim.schedule(function()
-  vim.cmd "TSBufDisable rainbow"
-  vim.cmd "TSBufEnable  rainbow"
-end)
+vim.schedule(require("swft.utils").ColorBracket)

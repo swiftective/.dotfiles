@@ -21,10 +21,7 @@ local autocmds = {
 
   {
     event = "InsertLeavePre",
-    callback = function()
-      vim.cmd "TSBufDisable rainbow"
-      vim.cmd "TSBufEnable  rainbow"
-    end,
+    callback = require("swft.utils").ColorBracket,
     pattern = "*",
     group = group,
   },

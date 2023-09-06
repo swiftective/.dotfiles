@@ -71,6 +71,7 @@ local highlights = {
   { "htmlH4", { fg = "#bb9af7" } },
   { "htmlH5", { fg = "#bb9af7" } },
   { "htmlH6", { fg = "#bb9af7" } },
+  { "@punctuation.bracket", { fg = "#f7768e" } },
 }
 
 for _, val in ipairs(highlights) do

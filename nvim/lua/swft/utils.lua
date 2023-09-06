@@ -51,4 +51,19 @@ Swft.PeekDefinition = function()
   return vim.lsp.buf_request(0, "textDocument/definition", params, preview_location_callback)
 end
 
+Swft.ColorBracket = function()
+  local buf_ft = vim.bo.filetype
+
+  local filetypes = { "javascriptreact", "typescriptreact", "html", "javascript", "svelte" }
+
+  for _, ft in ipairs(filetypes) do
+    if string.match(ft, buf_ft) then
+      return
+    end
+  end
+
+  vim.cmd "TSBufDisable rainbow"
+  vim.cmd "TSBufEnable  rainbow"
+end
+
 return Swft
