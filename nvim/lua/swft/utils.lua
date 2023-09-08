@@ -57,7 +57,7 @@ Swft.ColorBracket = function()
   local filetypes = { "javascriptreact", "typescriptreact", "html", "javascript", "svelte" }
 
   for _, ft in ipairs(filetypes) do
-    if string.match(ft, buf_ft) then
+    if ft == buf_ft then
       return
     end
   end
