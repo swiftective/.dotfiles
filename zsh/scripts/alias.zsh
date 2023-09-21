@@ -46,9 +46,9 @@ alias md='mkdir -p'
 alias rd=rmdir
 
 # List directory contents
-alias ls='exa -a --icons'
-alias l='exa --icons'
-alias la='exa -al --icons'
+alias ls='eza -a --icons'
+alias l='eza --icons'
+alias la='eza -al --icons'
 
 alias cat='bat -p'
 alias less='bat'

@@ -1,4 +1,4 @@
-function la --wraps='exa -al --icons' --description 'alias la exa -al --icons'
-  exa -al --icons $argv
-        
+function la --wraps='eza -al --icons' --description 'alias la eza -al --icons'
+  eza -al --icons $argv
+
 end

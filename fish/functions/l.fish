@@ -1,4 +1,4 @@
-function l --wraps='exa --icons' --description 'alias l exa --icons'
-  exa --icons $argv
-        
+function l --wraps='eza --icons' --description 'alias l eza --icons'
+  eza --icons $argv
+
 end
