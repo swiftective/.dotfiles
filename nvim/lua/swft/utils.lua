@@ -1,6 +1,6 @@
 Swft = {}
 
-Swft.HandleURL = function()
+Swft.handle_url = function()
   local url = string.match(vim.fn.getline ".", "[a-z]*://[^ >,;]*")
   if url ~= nil then
     vim.fn.system(string.format("xdg-open %s", url))
@@ -9,7 +9,7 @@ Swft.HandleURL = function()
   end
 end
 
-Swft.FugitiveToggle = function()
+Swft.fugitive_toggle = function()
   local win = vim.api.nvim_list_wins()
 
   for _, v in ipairs(win) do
@@ -22,7 +22,7 @@ Swft.FugitiveToggle = function()
   vim.cmd [[Git]]
 end
 
-Swft.ToggleLualine = function()
+Swft.toggle_lualine = function()
   local lualine = require "lualine"
   if vim.o.statusline == " " then
     lualine.hide { unhide = true }
@@ -46,24 +46,31 @@ local function preview_location_callback(_, result)
   vim.lsp.util.preview_location(result[1])
 end
 
-Swft.PeekDefinition = function()
+Swft.peek_definition = function()
   local params = vim.lsp.util.make_position_params()
   return vim.lsp.buf_request(0, "textDocument/definition", params, preview_location_callback)
 end
 
-Swft.ColorBracket = function()
+Swft.color_brackets = function()
   local buf_ft = vim.bo.filetype
 
   local filetypes = { "javascriptreact", "typescriptreact", "html", "javascript", "svelte" }
 
   for _, ft in ipairs(filetypes) do
     if ft == buf_ft then
+      vim.cmd "hi @punctuation.bracket guifg=#f7768e"
       return
     end
   end
 
   vim.cmd "TSBufDisable rainbow"
   vim.cmd "TSBufEnable  rainbow"
+end
+
+Swft.norg_project = function()
+  local filepath = "~/notes/"
+  local filename = vim.fn.system({ "tmux", "display-message", "-p", "#S" }):gsub("\n[^\n]*$", "") .. ".norg"
+  vim.cmd("e " .. filepath .. filename)
 end
 
 return Swft

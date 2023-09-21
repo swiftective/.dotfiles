@@ -37,8 +37,8 @@ local keymaps = {
     end,
     "Center the screen",
   },
-  { "n", "<2-LeftMouse>", "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition" },
-  { "n", "<leader>fl", "gg=G<C-o>", "indent" },
+  { "n", "<2-LeftMouse>", "<cmd>lua vim.lsp.buf.definition()<CR>zz", "Go to definition" },
+  { "n", "<leader>fl", "gg=G<C-o>zz", "indent" },
   { "n", "<RightMouse>", "<C-o>zz", "Go Back" },
   { "c", "<C-n>", "<Down>", opts = { noremap = true } },
   { "c", "<C-p>", "<Up>", opts = { noremap = true } },
@@ -203,14 +203,21 @@ local keymaps = {
   {
     "n",
     "gx",
-    "<cmd>lua Swft.HandleURL()<CR>",
+    "<cmd>lua Swft.handle_url()<CR>",
     "Open URL under cursor",
   },
 
   {
     "n",
+    "<leader>op",
+    "<cmd>lua Swft.norg_project()<CR>",
+    "Open Neorg project file",
+  },
+
+  {
+    "n",
     "<leader>st",
-    "<cmd>lua Swft.ToggleLualine()<CR>",
+    "<cmd>lua Swft.toggle_lualine()<CR>",
     "Toggle Lualine",
   },
 
@@ -376,56 +383,56 @@ local keymaps = {
   {
     "n",
     ",f",
-    "<cmd>lua require('harpoon.ui').nav_file(1)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(1)<CR>zz",
     "Harpoon Goto File 1",
   },
 
   {
     "n",
     ",d",
-    "<cmd>lua require('harpoon.ui').nav_file(2)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(2)<CR>zz",
     "Harpoon Goto File 2",
   },
 
   {
     "n",
     ",s",
-    "<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(3)<CR>zz",
     "Harpoon Goto File 3",
   },
 
   {
     "n",
     ",a",
-    "<cmd>lua require('harpoon.ui').nav_file(4)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(4)<CR>zz",
     "Harpoon Goto File 4",
   },
 
   {
     "n",
     ",r",
-    "<cmd>lua require('harpoon.ui').nav_file(5)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(5)<CR>zz",
     "Harpoon Goto File 5",
   },
 
   {
     "n",
     ",e",
-    "<cmd>lua require('harpoon.ui').nav_file(6)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(6)<CR>zz",
     "Harpoon Goto File 6",
   },
 
   {
     "n",
     ",w",
-    "<cmd>lua require('harpoon.ui').nav_file(7)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(7)<CR>zz",
     "Harpoon Goto File 7",
   },
 
   {
     "n",
     ",q",
-    "<cmd>lua require('harpoon.ui').nav_file(8)<CR>",
+    "<cmd>lua require('harpoon.ui').nav_file(8)<CR>zz",
     "Harpoon Goto File 8",
   },
 
@@ -433,7 +440,7 @@ local keymaps = {
   {
     "n",
     "<leader>gs",
-    "<cmd>lua Swft.FugitiveToggle()<CR>",
+    "<cmd>lua Swft.fugitive_toggle()<CR>",
     "Git Fugitive Menu Toggle",
   },
 
@@ -635,7 +642,7 @@ local keymaps = {
   {
     "n",
     "gD",
-    "<cmd>lua Swft.PeekDefinition()<CR>",
+    "<cmd>lua Swft.peek_definition()<CR>",
     "LSP peek definition",
   },
 

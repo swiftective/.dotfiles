@@ -62,4 +62,4 @@ require("nvim-treesitter.configs").setup {
   },
 }
 
-vim.schedule(require("swft.utils").ColorBracket)
+vim.schedule(require("swft.utils").color_brackets)

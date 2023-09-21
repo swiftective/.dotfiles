@@ -21,7 +21,7 @@ local autocmds = {
 
   {
     event = "InsertLeavePre",
-    callback = require("swft.utils").ColorBracket,
+    callback = require("swft.utils").color_brackets,
     pattern = "*",
     group = group,
   },

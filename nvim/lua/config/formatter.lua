@@ -20,6 +20,14 @@ require("formatter").setup {
       require("formatter.filetypes.typescriptreact").prettier,
     },
 
+    css = {
+      require("formatter.filetypes.css").prettier,
+    },
+
+    html = {
+      require("formatter.filetypes.html").prettier,
+    },
+
     ocaml = lsp_format,
 
     java = lsp_format,
