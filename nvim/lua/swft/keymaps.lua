@@ -188,7 +188,7 @@ local keymaps = {
 
   {
     "n",
-    "=",
+    "+",
     "<C-a>",
     "Increment",
   },

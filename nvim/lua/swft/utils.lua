@@ -54,7 +54,7 @@ end
 Swft.color_brackets = function()
   local buf_ft = vim.bo.filetype
 
-  local filetypes = { "javascriptreact", "typescriptreact", "html", "javascript", "svelte" }
+  local filetypes = { "javascriptreact", "typescriptreact", "html", "javascript", "svelte", "typescript" }
 
   for _, ft in ipairs(filetypes) do
     if ft == buf_ft then
