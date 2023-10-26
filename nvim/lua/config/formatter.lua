@@ -33,5 +33,7 @@ require("formatter").setup {
     java = lsp_format,
 
     c = lsp_format,
+
+    cpp = lsp_format,
   },
 }
