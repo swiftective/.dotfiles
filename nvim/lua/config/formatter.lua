@@ -35,5 +35,7 @@ require("formatter").setup {
     c = lsp_format,
 
     cpp = lsp_format,
+
+    python = { require("formatter.filetypes.python").autopep8 },
   },
 }
