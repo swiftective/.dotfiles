@@ -1,0 +1,61 @@
+[colors.bright]
+black = "0x444b6a"
+blue = "0x7da6ff"
+cyan = "0x0db9d7"
+green = "0xb9f27c"
+magenta = "0xbb9af7"
+red = "0xff7a93"
+white = "0xacb0d0"
+yellow = "0xff9e64"
+
+[colors.normal]
+black = "0x32344a"
+blue = "0x7aa2f7"
+cyan = "0x449dab"
+green = "0x9ece6a"
+magenta = "0xad8ee6"
+red = "0xf7768e"
+white = "0x787c99"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "#000000"
+foreground = "#a9b1d6"
+
+[font]
+size = 8.5
+
+[font.bold]
+family = "JetBrainsMono NF"
+style = "bold"
+
+[font.bold_italic]
+family = "JetBrainsMono NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono NF"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono NF"
+style = "medium"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Return"
+mods = "Control"
+
+[scrolling]
+history = 10000
+
+[shell]
+args = ["-c", "tmux attach 2> /dev/null || tmux new -s dev 1> /dev/null"]
+program = "/usr/bin/dash"
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 8
+y = 5
