@@ -12,3 +12,4 @@ vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticHint", lin
 
 require "config.dap.js"
 require "config.dap.python"
+require "config.dap.c"

@@ -173,6 +173,13 @@ local keymaps = {
   },
 
   {
+    "n",
+    "YY",
+    [["+yy]],
+    "System Clipboard Line",
+  },
+
+  {
     "i",
     "<C-v>",
     '<C-r>"',
