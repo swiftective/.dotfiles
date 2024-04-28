@@ -51,6 +51,8 @@ local highlights = {
   { "Pmenu", { fg = "#C0C5CE", bg = "none" } },
   { "TelescopeNormal", { bg = "none" } },
   { "TelescopeBorder", { bg = "none", fg = "#565f89" } },
+  { "TelescopePromptBorder", {bg="none", fg="#565f89"} },
+  { "TelescopePromptTitle", {bg="none", fg="#565f89"} },
   { "rainbowcol3", { bg = "none", fg = "#7aa2f7" } },
   { "NvimTreeExecFile", { fg = "#04cf84" } },
   { "StatusLine", { bg = "none" } },
