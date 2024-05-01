@@ -68,7 +68,7 @@ Swft.color_brackets = function()
 end
 
 Swft.norg_project = function()
-  local filepath = "~/notes/"
+  local filepath = "~/notes/projects/"
   local filename = vim.fn.system({ "tmux", "display-message", "-p", "#S" }):gsub("\n[^\n]*$", "") .. ".norg"
   vim.cmd("e " .. filepath .. filename)
 end
