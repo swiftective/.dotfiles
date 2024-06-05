@@ -23,6 +23,10 @@ local keymaps = {
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
+
+  { "n", "<leader>dd", '"_d', "Delete without yanking" },
+  { "v", "<leader>dd", '"_d', "Delete without yanking" },
+
   {
     "n",
     "g<CR>",
@@ -294,13 +298,6 @@ local keymaps = {
 
   {
     "n",
-    "<leader>fm",
-    "<cmd>Telescope harpoon marks<CR>",
-    "Telescope harpoon marks",
-  },
-
-  {
-    "n",
     "<leader>ff",
     "<cmd>lua Swft.project_files()<CR>",
     "Git Files or Find Files",
@@ -360,87 +357,6 @@ local keymaps = {
       require("todo-comments").jump_prev()
     end,
     "Previous TODO",
-  },
-
-  -- Navigation
-  {
-    "n",
-    "mm",
-    "<cmd>lua require('harpoon.mark').add_file()<CR>",
-    "Harpoon Add File",
-  },
-
-  {
-    "n",
-    "<C-e>",
-    function()
-      require("harpoon.mark").add_file()
-      require("harpoon.ui").toggle_quick_menu()
-    end,
-    "Add File and Open Harpoon Menu",
-  },
-
-  {
-    "n",
-    "mo",
-    "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
-    "Open Harpoon Menu",
-  },
-
-  {
-    "n",
-    ",f",
-    "<cmd>lua require('harpoon.ui').nav_file(1)<CR>zz",
-    "Harpoon Goto File 1",
-  },
-
-  {
-    "n",
-    ",d",
-    "<cmd>lua require('harpoon.ui').nav_file(2)<CR>zz",
-    "Harpoon Goto File 2",
-  },
-
-  {
-    "n",
-    ",s",
-    "<cmd>lua require('harpoon.ui').nav_file(3)<CR>zz",
-    "Harpoon Goto File 3",
-  },
-
-  {
-    "n",
-    ",a",
-    "<cmd>lua require('harpoon.ui').nav_file(4)<CR>zz",
-    "Harpoon Goto File 4",
-  },
-
-  {
-    "n",
-    ",r",
-    "<cmd>lua require('harpoon.ui').nav_file(5)<CR>zz",
-    "Harpoon Goto File 5",
-  },
-
-  {
-    "n",
-    ",e",
-    "<cmd>lua require('harpoon.ui').nav_file(6)<CR>zz",
-    "Harpoon Goto File 6",
-  },
-
-  {
-    "n",
-    ",w",
-    "<cmd>lua require('harpoon.ui').nav_file(7)<CR>zz",
-    "Harpoon Goto File 7",
-  },
-
-  {
-    "n",
-    ",q",
-    "<cmd>lua require('harpoon.ui').nav_file(8)<CR>zz",
-    "Harpoon Goto File 8",
   },
 
   -- Git

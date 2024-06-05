@@ -1,3 +1,5 @@
+local util = require "formatter.util"
+
 local function lsp_format()
   vim.lsp.buf.format { async = true }
 end
@@ -37,5 +39,14 @@ require("formatter").setup {
     cpp = lsp_format,
 
     python = { require("formatter.filetypes.python").autopep8 },
+
+    sql = {
+      {
+        exe = "sqlfmt",
+        args = {
+          "-",
+        },
+      },
+    },
   },
 }

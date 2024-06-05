@@ -8,6 +8,4 @@ if [[ "$url" == "" ]]; then
   exit 0
 fi
 
-echo $url | nohup xclip -loops 0 -sel clipboard
-
-killall xclip
+xdg-open $url
