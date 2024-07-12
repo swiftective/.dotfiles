@@ -53,7 +53,15 @@ local highlights = {
   { "TelescopeBorder", { bg = "none", fg = "#565f89" } },
   { "TelescopePromptBorder", { bg = "none", fg = "#565f89" } },
   { "TelescopePromptTitle", { bg = "none", fg = "#565f89" } },
-  { "rainbowcol3", { bg = "none", fg = "#7aa2f7" } },
+
+  { "rainbowcol1", { fg = "#f7768e", bg = "none" } },
+  { "rainbowcol2", { fg = "#e0af68", bg = "none" } },
+  { "rainbowcol3", { fg = "#7aa2f7", bg = "none" } },
+  { "rainbowcol4", { fg = "#bb9af7", bg = "none" } },
+  { "rainbowcol5", { fg = "#b4f9f8", bg = "none" } },
+  { "rainbowcol6", { fg = "#5a76cc", bg = "none" } },
+  { "rainbowcol7", { fg = "#9ece6a", bg = "none" } },
+
   { "NvimTreeExecFile", { fg = "#04cf84" } },
   { "StatusLine", { bg = "none" } },
   { "StatusLineNC", { bg = "none" } },
