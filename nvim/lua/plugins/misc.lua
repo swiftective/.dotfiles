@@ -64,7 +64,8 @@ return {
 
   {
     "folke/trouble.nvim",
-    event = "VeryLazy",
+    opts = {},
+    cmd = "Trouble",
     dependencies = "kyazdani42/nvim-web-devicons",
   },
 

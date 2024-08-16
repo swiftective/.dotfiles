@@ -6,6 +6,7 @@ require("gitsigns").setup {
     topdelete = { text = "‾" },
     changedelete = { text = "~" },
   },
+  signs_staged_enable = false,
   preview_config = {
     border = "rounded",
   },

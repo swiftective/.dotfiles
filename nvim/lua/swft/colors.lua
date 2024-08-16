@@ -60,7 +60,7 @@ local highlights = {
   { "rainbowcol4", { fg = "#bb9af7", bg = "none" } },
   { "rainbowcol5", { fg = "#b4f9f8", bg = "none" } },
   { "rainbowcol6", { fg = "#5a76cc", bg = "none" } },
-  { "rainbowcol7", { fg = "#9ece6a", bg = "none" } },
+  { "rainbowcol7", { fg = "#f7768e", bg = "none" } },
 
   { "NvimTreeExecFile", { fg = "#04cf84" } },
   { "StatusLine", { bg = "none" } },
@@ -68,6 +68,7 @@ local highlights = {
   { "CmpBorder", { fg = "#353b54" } },
   { "LeapBackdrop", { link = "Comment" } },
   { "LeapMatch", { fg = "white", bold = true, nocombine = true } },
+  { "LeapLabel", { fg = "cyan", bold = true, nocombine = true } },
   { "LeapLabelPrimary", { fg = "cyan", bold = true, nocombine = true } },
   { "LeapLabelSecondary", { fg = "#7aa2f7", bold = true, nocombine = true } },
   { "htmlTagName", { fg = "#7aa2f7" } },

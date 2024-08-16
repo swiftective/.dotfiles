@@ -80,5 +80,10 @@ mason_lsp.setup_handlers {
 lspconfig.racket_langserver.setup {}
 lspconfig.millet.setup {}
 lspconfig.ocamllsp.setup {}
+lspconfig.gdscript.setup {
+  flags = {
+    debounce_text_changes = 150
+  }
+}
 
 vim.cmd "LspStart"

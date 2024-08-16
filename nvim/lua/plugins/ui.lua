@@ -30,9 +30,7 @@ return { -- Lua
     event = "VeryLazy",
     config = true,
     opts = {
-      window = {
-        border = "rounded",
-      },
+      notify = false,
     },
   },
 
