@@ -138,14 +138,14 @@ local keymaps = {
     "n",
     "<C-o>",
     "<C-o>zz",
-    "Center",
+    "Prev pos and center",
   },
 
   {
     "n",
     "<C-i>",
     "<C-i>zz",
-    "Center",
+    "Next pos and center",
   },
 
   {
