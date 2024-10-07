@@ -64,7 +64,13 @@ return {
 
   {
     "folke/trouble.nvim",
-    opts = {},
+    opts = {
+      focus = true,
+      keys = {
+        ["<cr>"] = "jump_close",
+        o = "jump",
+      },
+    },
     cmd = "Trouble",
     dependencies = "kyazdani42/nvim-web-devicons",
   },

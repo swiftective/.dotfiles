@@ -69,8 +69,8 @@ mason_lsp.setup_handlers {
       capabilities = capabilities,
     }
   end,
-  ["tsserver"] = function()
-    lspconfig.tsserver.setup {
+  ["ts_ls"] = function()
+    lspconfig.ts_ls.setup {
       on_attach = function(client)
         client.server_capabilities.documentFormattingProvider = false
       end,
@@ -82,8 +82,8 @@ lspconfig.millet.setup {}
 lspconfig.ocamllsp.setup {}
 lspconfig.gdscript.setup {
   flags = {
-    debounce_text_changes = 150
-  }
+    debounce_text_changes = 150,
+  },
 }
 
 vim.cmd "LspStart"

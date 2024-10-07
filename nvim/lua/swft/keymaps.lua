@@ -427,7 +427,7 @@ local keymaps = {
 
   {
     "n",
-    "<leader>ts",
+    "<leader>tS",
     "<cmd>TSPlaygroundToggle<CR>",
     "Toggle TSPlayground",
   },
@@ -514,57 +514,71 @@ local keymaps = {
   -- lsp trouble
   {
     "n",
-    "<leader>tt",
-    "<cmd>TroubleToggle<CR>",
-    "Trouble Toggle",
-  },
-
-  {
-    "n",
     "gd",
-    "<cmd>lua vim.lsp.buf.definition()<CR>",
+    "<cmd>Trouble lsp_definitions<CR>",
     "LSP definition",
   },
 
   {
     "n",
+    "gD",
+    "<cmd>Trouble lsp_declarations<CR>",
+    "LSP declaration",
+  },
+
+  {
+    "n",
+    "gI",
+    "<cmd>Trouble lsp_implementations<CR>",
+    "LSP declaration",
+  },
+
+  {
+    "n",
     "<leader>tw",
-    "<cmd>TroubleToggle workspace_diagnostics<CR>",
-    "Trouble Toggle Workspace Diagnostics",
+    "<cmd>Trouble diagnostics toggle<CR>",
+    "Trouble Toggle",
   },
 
   {
     "n",
     "<leader>td",
-    "<cmd>TroubleToggle document_diagnostics<CR>",
+    "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
     "Trouble Toggle Document Diagnostics",
   },
 
   {
     "n",
     "<leader>tq",
-    "<cmd>TroubleToggle quickfix<CR>",
+    "<cmd>Trouble qflist toggle<CR>",
     "Trouble Toggle Quickfix List",
   },
 
   {
     "n",
     "<leader>tl",
-    "<cmd>TroubleToggle loclist<CR>",
+    "<cmd>Trouble loclist toggle<CR>",
     "Trouble Toggle Local List",
   },
 
   {
     "n",
+    "<leader>ts",
+    "<cmd>Trouble symbols toggle focus=false<CR>",
+    "Trouble toggle symbols",
+  },
+
+  {
+    "n",
     "gr",
-    "<cmd>TroubleToggle lsp_references<CR>",
+    "<cmd>Trouble lsp_references<CR>",
     "Trouble LSP references",
   },
 
   -- LSP custom functions
   {
     "n",
-    "gD",
+    "gl",
     "<cmd>lua Swft.peek_definition()<CR>",
     "LSP peek definition",
   },
