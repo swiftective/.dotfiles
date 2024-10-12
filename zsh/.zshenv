@@ -9,9 +9,16 @@ export VISUAL='nvim'
 
 # export PATH=$PATH:$XDG_DATA_HOME/flutter/bin
 
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+
+export BUN_INSTALL="$XDG_DATA_HOME/bun"
+export PATH=$PATH:$BUN_INSTALL/bin
+
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PATH=$PATH:$XDG_DATA_HOME/cargo/bin
+
+export PATH="$HOME/.deno/bin:$PATH"
 
 export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
