@@ -40,3 +40,4 @@ export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export HISTFILE="${XDG_DATA_HOME}/zsh/.zsh_history"
 export _ZL_DATA="${XDG_DATA_HOME}/zlua/.zlua"
+export ATAC_KEY_BINDINGS=${XDG_CONFIG_HOME}/atac/vim_key_bindings.toml

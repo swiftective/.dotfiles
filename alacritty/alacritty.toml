@@ -49,7 +49,7 @@ mods = "Control"
 [scrolling]
 history = 10000
 
-[shell]
+[terminal.shell]
 args = ["-c", "tmux attach 2> /dev/null || tmux new -s dev 1> /dev/null"]
 program = "/usr/bin/dash"
 
@@ -59,3 +59,5 @@ opacity = 0.9
 [window.padding]
 x = 8
 y = 5
+
+[terminal]
