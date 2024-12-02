@@ -67,9 +67,9 @@ Swft.color_brackets = function()
   vim.cmd "TSBufEnable  rainbow"
 end
 
-Swft.norg_project = function()
+Swft.project_outline = function()
   local filepath = "~/notes/projects/"
-  local filename = vim.fn.system({ "tmux", "display-message", "-p", "#S" }):gsub("\n[^\n]*$", "") .. ".norg"
+  local filename = vim.fn.system({ "tmux", "display-message", "-p", "#S" }):gsub("\n[^\n]*$", "") .. ".md"
   vim.cmd("e " .. filepath .. filename)
 end
 

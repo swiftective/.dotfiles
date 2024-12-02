@@ -46,20 +46,9 @@ return {
   {
     "windwp/nvim-ts-autotag",
     event = "VeryLazy",
+    ft = "html",
     config = true,
     dependencies = "nvim-treesitter/nvim-treesitter",
-  },
-
-  -- Running code snippet
-  {
-    "michaelb/sniprun",
-    build = "bash ./install.sh",
-    event = "VeryLazy",
-    config = function()
-      require("sniprun").setup {
-        display = { "Classic" },
-      }
-    end,
   },
 
   {
@@ -72,7 +61,7 @@ return {
       },
     },
     cmd = "Trouble",
-    dependencies = "kyazdani42/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
 
   -- Lua
@@ -96,14 +85,4 @@ return {
   },
 
   { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" }, -- A game for vimmers
-
-  -- install without yarn or npm
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
 }

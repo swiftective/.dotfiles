@@ -34,10 +34,4 @@ return {
       require("telescope").load_extension "dap"
     end,
   },
-
-  {
-    "David-Kunz/jester",
-    dependencies = "mfussenegger/nvim-dap",
-    lazy = true,
-  },
 }

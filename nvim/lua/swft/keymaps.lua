@@ -221,7 +221,7 @@ local keymaps = {
   {
     "n",
     "<leader>op",
-    "<cmd>lua Swft.norg_project()<CR>",
+    "<cmd>lua Swft.project_outline()<CR>",
     "Open Neorg project file",
   },
 
@@ -696,29 +696,6 @@ local keymaps = {
     "Dap Hover",
   },
 
-  -- TODO: Change to nvim-test
-  -- jester
-  {
-    "n",
-    "<leader>djdr",
-    '<cmd>lua require"jester".debug({ path_to_jest = "../node_modules/.bin/jest" })<CR>',
-  },
-
-  { "n", "<leader>djr", ':lua require"jester".run()<cr>' },
-  { "n", "<leader>djl", ':lua require"jester".run_last()<cr>' },
-  { "n", "<leader>djf", ':lua require"jester".run_file()<cr>' },
-  {
-    "n",
-    "<leader>djdl",
-    ':lua require"jester".debug_last({ path_to_jest = "../node_modules/.bin/jest" })<cr>',
-  },
-
-  {
-    "n",
-    "<leader>djdf",
-    ':lua require"jester".debug_file({ path_to_jest = "../node_modules/.bin/jest" })<cr>',
-  },
-
   -- telescope-dap
   {
     "n",
@@ -762,18 +739,20 @@ local keymaps = {
     "DAPUI Toggle",
   },
 
+  -- Markview
   {
     "n",
-    "<leader>rc",
-    "<cmd>0,$SnipRun<CR>",
-    "SnipRun File",
+    "<leader>ma",
+    "<cmd>Markview<CR>",
+    "Toggle Markview",
   },
 
-  -- SnipRun
-  { "n", "#", ":%s/<C-r><C-w>//gc<Left><Left><Left>", opts = { noremap = true } },
-  { "x", "#", '"hy:%s/<C-r>h//gc<left><left><left>', opts = { noremap = true } },
-  { "n", "<leader>rs", "<Plug>SnipRunOperator", opts = {} },
-  { "x", "<leader>rs", "<Plug>SnipRun", opts = {} },
+  {
+    "n",
+    "<leader>ms",
+    "<cmd>Markview splitToggle<CR>",
+    "Toggle Markview split",
+  },
 }
 
 custom_keymaps(keymaps)

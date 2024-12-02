@@ -4,7 +4,7 @@ return {
 
   -- file tree
   {
-    "kyazdani42/nvim-tree.lua",
+    "nvim-tree/nvim-tree.lua",
     cmd = "NvimTreeToggle",
     config = function()
       require "config.nvimtree"
