@@ -739,19 +739,12 @@ local keymaps = {
     "DAPUI Toggle",
   },
 
-  -- Markview
+  -- Render Markdown
   {
     "n",
     "<leader>ma",
-    "<cmd>Markview<CR>",
-    "Toggle Markview",
-  },
-
-  {
-    "n",
-    "<leader>ms",
-    "<cmd>Markview splitToggle<CR>",
-    "Toggle Markview split",
+    "<cmd>RenderMarkdown toggle<CR>",
+    "Toggle Render Markdown",
   },
 }
 

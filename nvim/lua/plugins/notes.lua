@@ -1,30 +1,4 @@
 return {
-  {
-    "OXY2DEV/markview.nvim",
-    -- lazy = false,
-    -- ft = "markdown", -- If you decide to lazy-load anyway
-    event = "VeryLazy",
-
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons",
-      "folke/tokyonight.nvim",
-    },
-
-    config = function()
-      local presets_headings = require("markview.presets").headings
-      local presets_checkboxes = require("markview.presets").checkboxes
-
-      require("markview").setup {
-        headings = presets_headings.arrowed,
-        checkboxes = presets_checkboxes.nerd,
-        highlight_groups = "dark",
-        injections = {
-          enable = false,
-        },
-      }
-    end,
-  },
 
   {
     "nvim-neorg/neorg",
@@ -34,5 +8,36 @@ return {
     config = function()
       require "config.norg"
     end,
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    opts = {
+
+      anti_conceal = {
+        enabled = false,
+      },
+
+      heading = {
+        icons = { "❖ ", "❖ ", "❖ ", "◈ ", "◆ ", "◇ " },
+        backgrounds = { "" },
+      },
+
+      checkbox = {
+        checked = { icon = " ", scope_highlight = "@markup.strikethrough" },
+        unchecked = { icon = " " },
+        custom = { todo = { rendered = " " } },
+      },
+
+      sign = {
+        enabled = false,
+      },
+
+      bullet = {
+        icons = { "-" },
+      },
+    },
   },
 }

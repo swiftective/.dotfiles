@@ -40,6 +40,8 @@ require("formatter").setup {
 
     python = { require("formatter.filetypes.python").autopep8 },
 
+    markdown = { require("formatter.filetypes.markdown").prettier },
+
     sql = {
       {
         exe = "sqlfmt",

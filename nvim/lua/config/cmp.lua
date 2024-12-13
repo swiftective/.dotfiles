@@ -69,6 +69,8 @@ local source_mapping = {
   buffer = "[Buffer]",
 }
 
+source_mapping["render-markdown"] = "[ # ]"
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -132,6 +134,7 @@ cmp.setup {
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lsp" },
     { name = "git" },
+    { name = "render-markdown" },
     { name = "path" },
     {
       name = "buffer",
