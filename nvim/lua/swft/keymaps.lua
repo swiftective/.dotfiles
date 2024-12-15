@@ -428,8 +428,10 @@ local keymaps = {
   {
     "n",
     "<leader>tS",
-    "<cmd>TSPlaygroundToggle<CR>",
-    "Toggle TSPlayground",
+    function()
+      vim.treesitter.inspect_tree()
+    end,
+    "Toggle Treesitter tree",
   },
 
   {

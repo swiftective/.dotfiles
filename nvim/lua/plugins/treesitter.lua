@@ -7,13 +7,6 @@ return {
     build = ":TSUpdate",
   },
 
-  {
-    "nvim-treesitter/playground",
-    event = "VeryLazy",
-    cmd = "TSPlaygroundToggle",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-  },
-
   { "p00f/nvim-ts-rainbow", event = "VeryLazy", dependencies = "nvim-treesitter/nvim-treesitter" },
 
   {
