@@ -256,8 +256,10 @@ local keymaps = {
   {
     "n",
     "<leader>e",
-    ":NvimTreeToggle<CR>",
-    "Nvim Tree Toggle",
+    function()
+      require("oil").toggle_float()
+    end,
+    "Toggle Oil float",
   },
 
   --  Telescope

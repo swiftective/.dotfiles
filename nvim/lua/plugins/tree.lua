@@ -2,12 +2,16 @@ return {
   -- undotree
   { "mbbill/undotree", cmd = "UndotreeToggle" },
 
-  -- file tree
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = "NvimTreeToggle",
-    config = function()
-      require "config.nvimtree"
-    end,
+    "stevearc/oil.nvim",
+    lazy = true,
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {
+      float = {
+        padding = 10,
+      },
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }
