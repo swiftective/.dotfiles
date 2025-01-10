@@ -38,6 +38,8 @@ require("formatter").setup {
 
     cpp = lsp_format,
 
+    elixir = lsp_format,
+
     python = { require("formatter.filetypes.python").autopep8 },
 
     markdown = { require("formatter.filetypes.markdown").prettier },
