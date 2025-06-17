@@ -23,7 +23,7 @@ export PATH="$HOME/.deno/bin:$PATH"
 export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
 
-export ANDROID_SDK_ROOT='$XDG_DATA_HOME/Android/Sdk/'
+export ANDROID_HOME='/home/swiftective/Android/Sdk/'
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator

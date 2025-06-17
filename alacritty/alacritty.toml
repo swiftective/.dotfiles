@@ -23,7 +23,7 @@ background = "#000000"
 foreground = "#a9b1d6"
 
 [font]
-size = 8.5
+size = 14
 
 [font.bold]
 family = "JetBrainsMono NF"
@@ -54,7 +54,7 @@ args = ["-c", "tmux attach 2> /dev/null || tmux new -s dev 1> /dev/null"]
 program = "/usr/bin/dash"
 
 [window]
-opacity = 0.9
+opacity = 0.7
 
 [window.padding]
 x = 8

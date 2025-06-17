@@ -25,7 +25,7 @@ local border = {
 }
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
   opts = opts or {}
   opts.border = opts.border or border
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
@@ -51,44 +51,23 @@ mason.setup {
   },
 }
 
-mason_lsp.setup_handlers {
-  function(server_name) -- default handler (optional)
-    lspconfig[server_name].setup {}
-  end,
-  -- Next, you can provide targeted overrides for specific servers.
-  ["lua_ls"] = function()
-    lspconfig.lua_ls.setup {
-      on_attach = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-      end,
-    }
-  end,
-  ["cssls"] = function()
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    lspconfig.cssls.setup {
-      capabilities = capabilities,
-    }
-  end,
-  ["ts_ls"] = function()
-    lspconfig.ts_ls.setup {
-      on_attach = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-      end,
-    }
-  end,
-}
-lspconfig.racket_langserver.setup {}
-lspconfig.millet.setup {}
-lspconfig.ocamllsp.setup {}
-lspconfig.gleam.setup {}
-lspconfig.gdscript.setup {
-  flags = {
-    debounce_text_changes = 150,
-  },
+mason_lsp.setup {
+  ensure_installed = { "lua_ls" },
+  automatic_enable = true,
 }
 
-lspconfig.elixirls.setup {
-  cmd = { "elixir-ls" },
-}
+-- lspconfig.racket_langserver.setup {}
+-- lspconfig.millet.setup {}
+-- lspconfig.ocamllsp.setup {}
+-- lspconfig.gleam.setup {}
+-- lspconfig.gdscript.setup {
+--   flags = {
+--     debounce_text_changes = 150,
+--   },
+-- }
+--
+-- lspconfig.elixirls.setup {
+--   cmd = { "elixir-ls" },
+-- }
 
-vim.cmd "LspStart"
+-- vim.cmd "LspStart"

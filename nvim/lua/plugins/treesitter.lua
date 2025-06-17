@@ -7,7 +7,16 @@ return {
     build = ":TSUpdate",
   },
 
-  { "p00f/nvim-ts-rainbow", event = "VeryLazy", dependencies = "nvim-treesitter/nvim-treesitter" },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("rainbow-delimiters.setup").setup {
+        blacklist = { "html", "tsx" },
+      }
+    end,
+  },
 
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

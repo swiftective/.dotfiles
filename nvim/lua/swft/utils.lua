@@ -51,22 +51,6 @@ Swft.peek_definition = function()
   return vim.lsp.buf_request(0, "textDocument/definition", params, preview_location_callback)
 end
 
-Swft.color_brackets = function()
-  local buf_ft = vim.bo.filetype
-
-  local filetypes = { "javascriptreact", "typescriptreact", "html", "javascript", "svelte", "typescript" }
-
-  for _, ft in ipairs(filetypes) do
-    if ft == buf_ft then
-      vim.cmd "hi @punctuation.bracket guifg=#f7768e"
-      return
-    end
-  end
-
-  vim.cmd "TSBufDisable rainbow"
-  vim.cmd "TSBufEnable  rainbow"
-end
-
 Swft.project_outline = function()
   local filepath = "~/notes/projects/"
   local filename = vim.fn.system({ "tmux", "display-message", "-p", "#S" }):gsub("\n[^\n]*$", "") .. ".md"

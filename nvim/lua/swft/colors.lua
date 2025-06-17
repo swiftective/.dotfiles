@@ -1,5 +1,10 @@
+local function get_hl(hl_name)
+  local hl = vim.api.nvim_get_hl(0, { name = hl_name })
+  return hl
+end
+
 local function mod_hl(hl_name, opts)
-  local is_ok, hl_def = pcall(vim.api.nvim_get_hl_by_name, hl_name, true)
+  local is_ok, hl_def = pcall(get_hl, hl_name)
   if is_ok then
     for k, v in pairs(opts) do
       hl_def[k] = v

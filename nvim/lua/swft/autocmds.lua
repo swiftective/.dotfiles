@@ -20,13 +20,6 @@ local autocmds = {
   },
 
   {
-    event = "InsertLeavePre",
-    callback = require("swft.utils").color_brackets,
-    pattern = "*",
-    group = group,
-  },
-
-  {
     event = "InsertEnter",
     callback = function()
       vim.schedule(function()
@@ -40,7 +33,7 @@ local autocmds = {
   {
     event = "TextYankPost",
     callback = function()
-      require("vim.highlight").on_yank { timeout = 60 }
+      require("vim.hl").on_yank { timeout = 60 }
     end,
     pattern = "*",
     group = group,
