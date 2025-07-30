@@ -72,17 +72,5 @@ return {
     config = true,
   },
 
-  -- vim multi cursors
-  {
-    "mg979/vim-visual-multi",
-    keys = { "<C-n>", desc = "Multi cursors" },
-    config = function()
-      vim.cmd [[
-       let g:VM_mouse_mappings = 1
-       let g:VM_custom_remaps = {'<c-c>': '<c-[>', '<C-f>': '<C-u>', '<C-j>': '<C-Down>', '<C-k>': '<C-Up>'}
-       ]]
-    end,
-  },
-
   { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" }, -- A game for vimmers
 }

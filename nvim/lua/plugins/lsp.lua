@@ -5,7 +5,7 @@ return {
   dependencies = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
-    { "mfussenegger/nvim-jdtls", ft = "java" },
+    -- { "mfussenegger/nvim-jdtls", ft = "java" },
     { "folke/lazydev.nvim", priority = 100, config = true, ft = "lua" },
   },
   config = function()

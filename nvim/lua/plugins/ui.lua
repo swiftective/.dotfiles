@@ -52,6 +52,7 @@ return { -- Lua
 
   {
     "yamatsum/nvim-cursorline",
+    pin = true,
     event = "VeryLazy",
     config = function()
       require("nvim-cursorline").setup {

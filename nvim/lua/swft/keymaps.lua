@@ -222,7 +222,7 @@ local keymaps = {
     "n",
     "<leader>op",
     "<cmd>lua Swft.project_outline()<CR>",
-    "Open Neorg project file",
+    "Open project file",
   },
 
   {

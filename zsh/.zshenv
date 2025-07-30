@@ -20,7 +20,7 @@ export PATH=$PATH:$XDG_DATA_HOME/cargo/bin
 
 export PATH="$HOME/.deno/bin:$PATH"
 
-export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
+export JAVA_HOME='/usr/lib/jvm/java-17-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
 
 export ANDROID_HOME='/home/swiftective/Android/Sdk/'
