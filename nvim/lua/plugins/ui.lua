@@ -50,21 +50,21 @@ return { -- Lua
     },
   },
 
-  {
-    "yamatsum/nvim-cursorline",
-    pin = true,
-    event = "VeryLazy",
-    config = function()
-      require("nvim-cursorline").setup {
-        cursorline = {
-          enable = true,
-          timeout = 4000,
-          number = false,
-        },
-        cursorword = {
-          enable = false,
-        },
-      }
-    end,
-  },
+  -- {
+  --   "yamatsum/nvim-cursorline",
+  --   pin = true,
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("nvim-cursorline").setup {
+  --       cursorline = {
+  --         enable = false,
+  --         timeout = 4000,
+  --         number = false,
+  --       },
+  --       cursorword = {
+  --         enable = false,
+  --       },
+  --     }
+  --   end,
+  -- },
 }
