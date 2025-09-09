@@ -11,7 +11,6 @@ return {
     end,
   },
 
-  { "eandrju/cellular-automaton.nvim", event = "VeryLazy" },
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
@@ -71,6 +70,4 @@ return {
     dependencies = "nvim-lua/plenary.nvim",
     config = true,
   },
-
-  { "ThePrimeagen/vim-be-good", cmd = "VimBeGood" }, -- A game for vimmers
 }

@@ -53,13 +53,6 @@ local keymaps = {
   { "n", "gO", "O<C-[>O" },
   { { "i", "s" }, "jk", "<Esc>" },
 
-  {
-    "n",
-    "wm",
-    ":ZenMode<CR>",
-    "Zen Mode Toggle",
-  },
-
   { "i", "<C-j>", "<C-c>o" },
   {
     "n",
@@ -385,20 +378,6 @@ local keymaps = {
 
   {
     "n",
-    "<leader>gws",
-    "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
-    "Telescope search git worktrees",
-  },
-
-  {
-    "n",
-    "<leader>gwc",
-    "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
-    "Telescope create git worktrees",
-  },
-
-  {
-    "n",
     "gh",
     ":diffget //3<CR>",
     "Git get changes from buffer 3",
@@ -585,162 +564,6 @@ local keymaps = {
     "gl",
     "<cmd>lua Swft.peek_definition()<CR>",
     "LSP peek definition",
-  },
-
-  -- Debugging keymaps
-  {
-    "n",
-    "<leader>dcc",
-    '<cmd>lua require"dap".continue()<CR>',
-    "Dap Continue",
-  },
-
-  {
-    "n",
-    "<leader>dcr",
-    '<cmd>lua require"dap".reverse_continue()<CR>',
-    "Dap Reverse Continue",
-  },
-
-  {
-    "n",
-    "<leader>dv",
-    '<cmd>lua require"dap".step_over()<CR>',
-    "Dap Step Over",
-  },
-
-  {
-    "n",
-    "<leader>di",
-    '<cmd>lua require"dap".step_into()<CR>',
-    "Dap Step Into",
-  },
-
-  {
-    "n",
-    "<leader>do",
-    '<cmd>lua require"dap".step_out()<CR>',
-    "Dap Step Out",
-  },
-
-  {
-    "n",
-    "<leader>dsb",
-    '<cmd>lua require"dap".step_back()<CR>',
-    "Dap Step Back",
-  },
-
-  {
-    "n",
-    "<leader>dk",
-    '<cmd>lua require"dap".up()<CR>',
-    "Dap Step Up",
-  },
-
-  {
-    "n",
-    "<leader>dj",
-    '<cmd>lua require"dap".down()<CR>',
-    "Dap Step Down",
-  },
-
-  {
-    "n",
-    "<leader>dbt",
-    '<cmd>lua require"dap".toggle_breakpoint()<CR>',
-    "Dap Toggle Breakpoint",
-  },
-
-  {
-    "n",
-    "<leader>dbc",
-    '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
-    "Dap Conditional Breakpoint",
-  },
-
-  {
-    "n",
-    "<leader>dbm",
-    '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>',
-    "Dap set breakpoint with log",
-  },
-
-  {
-    "n",
-    "<leader>dbe",
-    ':lua require"dap".set_exception_breakpoints({"all"})<CR>',
-    "Dap Set Exception Breakpoint",
-  },
-
-  {
-    "n",
-    "<leader>drt",
-    ':lua require"dap".repl.toggle({}, "40vsplit")<CR>',
-    "Dap REPL toggle",
-  },
-
-  {
-    "n",
-    "<leader>drl",
-    '<cmd>lua require"dap".repl.run_last()<CR>',
-    "Dap REPL Run Last",
-  },
-
-  {
-    "n",
-    "<leader>d?",
-    ':lua local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes)<CR>',
-    "Dap Scopes (Float)",
-  },
-
-  {
-    "n",
-    "<leader>dh",
-    ':lua require"dap.ui.widgets".hover()<CR>',
-    "Dap Hover",
-  },
-
-  -- telescope-dap
-  {
-    "n",
-    "<leader>dtc",
-    '<cmd>lua require"telescope".extensions.dap.commands{}<CR>',
-    "Telescope dap commands",
-  },
-
-  {
-    "n",
-    "<leader>dts",
-    '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>',
-    "Telescope dap configurations",
-  },
-
-  {
-    "n",
-    "<leader>dtb",
-    '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>',
-    "Telescope dap list breakpoint",
-  },
-
-  {
-    "n",
-    "<leader>dtv",
-    '<cmd>lua require"telescope".extensions.dap.variables{}<CR>',
-    "Telescope dap variables",
-  },
-
-  {
-    "n",
-    "<leader>dtf",
-    '<cmd>lua require"telescope".extensions.dap.frames{}<CR>',
-    "Telescope dap Frames",
-  },
-
-  {
-    "n",
-    "<leader>dui",
-    '<cmd>lua require("dapui").toggle()<CR>',
-    "DAPUI Toggle",
   },
 
   -- Render Markdown

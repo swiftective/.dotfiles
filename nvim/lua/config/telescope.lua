@@ -3,7 +3,6 @@ local actions = require "telescope.actions"
 local previewers = require "telescope.previewers"
 local Job = require "plenary.job"
 
-require("telescope").load_extension "git_worktree"
 require("telescope").load_extension "fzf"
 
 local new_maker = function(filepath, bufnr, opts)

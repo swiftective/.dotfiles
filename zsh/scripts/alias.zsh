@@ -11,11 +11,6 @@ alias glogp='git log --graph --oneline --decorate -p'
 alias gc='git checkout'
 alias gce='git commit -e'
 
-alias gw='git worktree'
-alias gwl='git worktree list'
-alias gwa='git worktree add'
-alias gwr='git worktree remove'
-
 alias grs='git restore'
 
 alias gp='git push'
