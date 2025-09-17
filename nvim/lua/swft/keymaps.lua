@@ -99,6 +99,29 @@ local keymaps = {
   },
 
   { "n", "w", "<C-w>" },
+
+  {
+    "n",
+    "wm",
+    function()
+      local curr_win = vim.fn.winnr()
+      local wins = vim.api.nvim_list_wins()
+      local zen_width = 100
+
+      if #wins > 2 then
+        local increment = math.floor((vim.o.columns - zen_width) / #wins)
+
+        for i, v in ipairs(wins) do
+          if i == curr_win then
+            vim.api.nvim_win_set_width(v, zen_width)
+          else
+            vim.api.nvim_win_set_width(v, increment)
+          end
+        end
+      end
+    end,
+  },
+
   {
     "n",
     "wf",
