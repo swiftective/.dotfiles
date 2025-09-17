@@ -37,28 +37,6 @@ end
 
 require("lspconfig.ui.windows").default_options.border = "rounded"
 
-local mason = require "mason"
-local mason_lsp = require "mason-lspconfig"
-local lspconfig = require "lspconfig"
-
-mason.setup {
-  ui = {
-    border = "rounded",
-    icons = {
-      package_installed = "",
-      package_pending = "",
-      package_uninstalled = "",
-    },
-    keymaps = {
-      apply_language_filter = "f",
-    },
-  },
-}
-
-mason_lsp.setup {
-  ensure_installed = { "lua_ls" },
-  automatic_enable = true,
-}
 
 -- lspconfig.racket_langserver.setup {}
 -- lspconfig.millet.setup {}

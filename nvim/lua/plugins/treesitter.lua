@@ -13,7 +13,7 @@ return {
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
       require("rainbow-delimiters.setup").setup {
-        blacklist = { "html", "tsx" },
+        blacklist = { "html", "tsx", "svelte" },
       }
     end,
   },

@@ -1,3 +1,4 @@
+---@diagnostic disable-next-line: missing-fields
 require("tokyonight").setup {
   style = "night",
   transparent = true,
@@ -16,15 +17,20 @@ require("tokyonight").setup {
   dim_inactive = false,
   lualine_bold = false,
   on_highlights = function(hi)
-    hi.Normal.bg = "none"
-    hi.NormalFloat.bg = "none"
-    hi.CursorLine.bg = "#151c30"
+    local swft_colors = require "swft.colors"
+
+    for k, v in pairs(swft_colors) do
+      if hi[k] and type(hi[k]) == "table" then
+        for key, value in pairs(v) do
+          hi[k][key] = value
+        end
+      else
+        hi[k] = v
+      end
+    end
   end,
 }
 
 vim.cmd [[
   colorscheme tokyonight
-  hi StatusLine guibg=none
 ]]
-
-require "swft.colors"
