@@ -109,7 +109,7 @@ local keymaps = {
       local zen_width = 100
 
       if #wins > 2 then
-        local increment = math.floor((vim.o.columns - zen_width) / #wins)
+        local increment = math.floor((vim.o.columns - zen_width) / (#wins - 1))
 
         for i, v in ipairs(wins) do
           if i == curr_win then
