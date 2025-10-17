@@ -98,7 +98,15 @@ local keymaps = {
     "End of Line",
   },
 
-  { "n", "w", "<C-w>" },
+  { "n", "wv", "<C-w>v"},
+  { "n", "ww", "<C-w>w"},
+  { "n", "wo", "<C-w>o"},
+  { "n", "wq", "<C-w>q"},
+  { "n", "wj", "1<C-w>wwm", opts = { remap = true } },
+  { "n", "wk", "2<C-w>wwm", opts = { remap = true } },
+  { "n", "wl", "3<C-w>wwm", opts = { remap = true } },
+  { "n", "w;", "4<C-w>wwm", opts = { remap = true } },
+  { "n", "we", "<C-w>pwm", opts = { remap = true } },
 
   {
     "n",
@@ -120,13 +128,6 @@ local keymaps = {
         end
       end
     end,
-  },
-
-  {
-    "n",
-    "wf",
-    "<cmd>w<CR>",
-    "Write File",
   },
 
   {

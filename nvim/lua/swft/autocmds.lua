@@ -53,51 +53,19 @@ local autocmds = {
   { event = "BufWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
 
   {
-    event = "FileType",
-    callback = function()
-      vim.keymap.set("n", "m", function()
-        local line = vim.fn.getcharstr(0)
-        if line == "" then
-          return
-        end
-
-        local keys = {
-          f = 1,
-          d = 2,
-          s = 3,
-          a = 4,
-          r = 5,
-          e = 6,
-          w = 7,
-          q = 8,
-        }
-
-        if keys[line] then
-          line = string.format(keys[line])
-        end
-
-        local line_number = tonumber(line)
-        if line_number and line_number ~= 0 then
-          local currentline = vim.api.nvim_win_get_cursor(0)[1]
-          if currentline > line_number then
-            line = string.format(line_number - 1)
-          end
-        end
-
-        ---@diagnostic disable-next-line: param-type-mismatch
-        if not pcall(vim.cmd, "m" .. line) then
-          vim.notify "Invalid line number"
-        end
-        vim.schedule(function()
-          vim.cmd "q"
-        end)
-      end, {
-        noremap = true,
-        buffer = true,
-      })
-    end,
-    pattern = "harpoon",
+    event = "BufLeave",
+    pattern = "*",
     group = group,
+    callback = function()
+      local buffers = vim.api.nvim_list_bufs()
+
+      for _, v in ipairs(buffers) do
+        local ft = vim.api.nvim_get_option_value("filetype", { buf = v })
+        if ft == "fugitive" then
+          vim.api.nvim_buf_delete(v, {})
+        end
+      end
+    end,
   },
 }
 

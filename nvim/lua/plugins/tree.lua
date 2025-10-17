@@ -9,6 +9,7 @@ return {
     ---@type oil.SetupOpts
     opts = {
       float = {
+        border= "rounded",
         padding = 10,
       },
     },
