@@ -49,4 +49,3 @@ require("lazy").setup("plugins", opts) -- Package Manager
 
 require "swft.keymaps"
 require "swft.autocmds"
-require "swft.utils"

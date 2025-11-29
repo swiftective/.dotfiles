@@ -1,6 +1,6 @@
-Swft = {}
+M = {}
 
-Swft.handle_url = function()
+M.handle_url = function()
   local url = string.match(vim.fn.getline ".", "[a-z]*://[^ >,;]*")
   if url ~= nil then
     vim.fn.system(string.format("xdg-open %s", url))
@@ -9,7 +9,7 @@ Swft.handle_url = function()
   end
 end
 
-Swft.fugitive_toggle = function()
+M.fugitive_toggle = function()
   local win = vim.api.nvim_list_wins()
 
   for _, v in ipairs(win) do
@@ -22,7 +22,7 @@ Swft.fugitive_toggle = function()
   vim.cmd [[Git]]
 end
 
-Swft.toggle_lualine = function()
+M.toggle_lualine = function()
   local lualine = require "lualine"
   if vim.o.statusline == " " then
     lualine.hide { unhide = true }
@@ -31,7 +31,7 @@ Swft.toggle_lualine = function()
   lualine.hide()
 end
 
-Swft.project_files = function()
+M.project_files = function()
   local opts = {} -- define here if you want to define something
   local ok = pcall(require("telescope.builtin").git_files, opts)
   if not ok then
@@ -46,15 +46,60 @@ local function preview_location_callback(_, result)
   vim.lsp.util.preview_location(result[1])
 end
 
-Swft.peek_definition = function()
+M.peek_definition = function()
   local params = vim.lsp.util.make_position_params()
   return vim.lsp.buf_request(0, "textDocument/definition", params, preview_location_callback)
 end
 
-Swft.project_outline = function()
+M.project_outline = function()
   local filepath = "~/notes/projects/"
   local filename = vim.fn.system({ "tmux", "display-message", "-p", "#S" }):gsub("\n[^\n]*$", "") .. ".md"
   vim.cmd("e " .. filepath .. filename)
 end
 
-return Swft
+M.custom_keymaps = function(keymaps)
+  for _, value in ipairs(keymaps) do
+    local opts = {}
+    if value.opts then
+      value.opts.desc = value[4]
+      opts = value.opts
+    else
+      opts = { noremap = true, silent = true, desc = value[4] }
+    end
+    vim.keymap.set(value[1], value[2], value[3], opts)
+  end
+end
+
+local get_non_floating_windows = function()
+  local wins = vim.api.nvim_list_wins()
+  local result = {}
+
+  for _, win in ipairs(wins) do
+    local cfg = vim.api.nvim_win_get_config(win)
+    if cfg.relative == "" then -- "" means normal (non-floating) window
+      table.insert(result, win)
+    end
+  end
+
+  return result
+end
+
+M.maximize_win = function()
+  local curr_win = vim.fn.winnr()
+  local wins = get_non_floating_windows()
+  local zen_width = 100
+
+  if #wins > 2 then
+    local increment = math.floor((vim.o.columns - zen_width) / (#wins - 1))
+
+    for i, v in ipairs(wins) do
+      if i == curr_win then
+        vim.api.nvim_win_set_width(v, zen_width)
+      else
+        vim.api.nvim_win_set_width(v, increment)
+      end
+    end
+  end
+end
+
+return M

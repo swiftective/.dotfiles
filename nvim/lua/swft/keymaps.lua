@@ -1,16 +1,4 @@
-local function custom_keymaps(keymaps)
-  for _, value in ipairs(keymaps) do
-    local map = vim.keymap.set
-    local opts = {}
-    if value.opts then
-      value.opts.desc = value[4]
-      opts = value.opts
-    else
-      opts = { noremap = true, silent = true, desc = value[4] }
-    end
-    map(value[1], value[2], value[3], opts)
-  end
-end
+local utils = require "swft.utils"
 
 local keymaps = {
   { "n", "g*", 'yiw/\\V\\C\\<<C-R>"\\><CR>Ncgn', "Add word to search" },
@@ -98,36 +86,24 @@ local keymaps = {
     "End of Line",
   },
 
-  { "n", "wv", "<C-w>v"},
-  { "n", "ww", "<C-w>w"},
-  { "n", "wo", "<C-w>o"},
-  { "n", "wq", "<C-w>q"},
-  { "n", "wj", "1<C-w>wwm", opts = { remap = true } },
-  { "n", "wk", "2<C-w>wwm", opts = { remap = true } },
-  { "n", "wl", "3<C-w>wwm", opts = { remap = true } },
-  { "n", "w;", "4<C-w>wwm", opts = { remap = true } },
+  { "n", "wv", "<C-w>vwm", opts = { remap = true } },
+  { "n", "ww", "<C-w>w" },
+  { "n", "wo", "<C-w>o" },
+  { "n", "wq", "<C-w>q" },
+  { "n", "wj", "<C-w>j" },
+  { "n", "wk", "<C-w>k" },
+  { "n", "wl", "<C-w>l" },
+  { "n", "wh", "<C-w>h" },
+  { "n", "wf", "1<C-w>wwm", opts = { remap = true } },
+  { "n", "wd", "2<C-w>wwm", opts = { remap = true } },
+  { "n", "ws", "3<C-w>wwm", opts = { remap = true } },
+  { "n", "wa", "4<C-w>wwm", opts = { remap = true } },
   { "n", "we", "<C-w>pwm", opts = { remap = true } },
 
   {
     "n",
     "wm",
-    function()
-      local curr_win = vim.fn.winnr()
-      local wins = vim.api.nvim_list_wins()
-      local zen_width = 100
-
-      if #wins > 2 then
-        local increment = math.floor((vim.o.columns - zen_width) / (#wins - 1))
-
-        for i, v in ipairs(wins) do
-          if i == curr_win then
-            vim.api.nvim_win_set_width(v, zen_width)
-          else
-            vim.api.nvim_win_set_width(v, increment)
-          end
-        end
-      end
-    end,
+    utils.maximize_win,
   },
 
   {
@@ -231,21 +207,21 @@ local keymaps = {
   {
     "n",
     "gx",
-    "<cmd>lua Swft.handle_url()<CR>",
+    utils.handle_url,
     "Open URL under cursor",
   },
 
   {
     "n",
     "<leader>op",
-    "<cmd>lua Swft.project_outline()<CR>",
+    utils.project_outline,
     "Open project file",
   },
 
   {
     "n",
     "<leader>st",
-    "<cmd>lua Swft.toggle_lualine()<CR>",
+    utils.toggle_lualine,
     "Toggle Lualine",
   },
 
@@ -318,7 +294,7 @@ local keymaps = {
   {
     "n",
     "<leader>ff",
-    "<cmd>lua Swft.project_files()<CR>",
+    utils.project_files,
     "Git Files or Find Files",
   },
 
@@ -382,7 +358,7 @@ local keymaps = {
   {
     "n",
     "<leader>gs",
-    "<cmd>lua Swft.fugitive_toggle()<CR>",
+    utils.fugitive_toggle,
     "Git Fugitive Menu Toggle",
   },
 
@@ -586,7 +562,7 @@ local keymaps = {
   {
     "n",
     "gl",
-    "<cmd>lua Swft.peek_definition()<CR>",
+    utils.peek_definition,
     "LSP peek definition",
   },
 
@@ -599,4 +575,4 @@ local keymaps = {
   },
 }
 
-custom_keymaps(keymaps)
+utils.custom_keymaps(keymaps)
