@@ -30,7 +30,7 @@ require("formatter").setup {
       require("formatter.filetypes.html").prettier,
     },
 
-    svelte = lsp_format,
+    svelte = require("formatter.filetypes.svelte").prettier,
 
     ocaml = lsp_format,
 
