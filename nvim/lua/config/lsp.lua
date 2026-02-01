@@ -37,6 +37,7 @@ end
 
 require("lspconfig.ui.windows").default_options.border = "rounded"
 
+vim.lsp.enable "gleam"
 
 -- lspconfig.racket_langserver.setup {}
 -- lspconfig.millet.setup {}

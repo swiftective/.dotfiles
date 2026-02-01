@@ -4,6 +4,7 @@ return {
   {
     "ggandor/leap.nvim",
     event = "VeryLazy",
+    commit = "f19d43590c4b6d31188ee1ea2954d2b7558a9e11",
     config = function()
       require "config.leap"
     end,
@@ -17,6 +18,7 @@ return {
     opts = {
       keys = { f = "f", F = "F", t = "t", T = "T" },
       labeled_modes = "nvo",
+      clever_repeat = true,
       multiline = true,
       opts = {},
     },

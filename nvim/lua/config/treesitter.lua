@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 require("nvim-treesitter.configs").setup {
   ensure_installed = { "vim", "vimdoc", "lua", "c", "bash" },
   rainbow = {
@@ -19,15 +20,10 @@ require("nvim-treesitter.configs").setup {
       set_jumps = false, -- whether to set jumps in the jumplist
       goto_next_start = {
         ["]f"] = { query = "@function.outer", desc = "Next function" },
-        [";f"] = { query = "@function.outer", desc = "Next function" },
         ["]c"] = { query = "@class.outer", desc = "Next class" },
-        [";c"] = { query = "@class.outer", desc = "Next class" },
         ["]l"] = { query = "@loop.*", desc = "Next loop" },
-        [";l"] = { query = "@loop.*", desc = "Next loop" },
         ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-        [";s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
         ["]C"] = { query = "@conditional.outer", desc = "Next conditional" },
-        [";C"] = { query = "@conditional.outer", desc = "Next conditional" },
       },
       goto_previous_start = {
         ["[f"] = { query = "@function.outer", desc = "Previous function" },
@@ -37,7 +33,6 @@ require("nvim-treesitter.configs").setup {
       },
       goto_next_end = {
         ["]m"] = { query = "@function.outer", desc = "Next function end" },
-        [";m"] = { query = "@function.outer", desc = "Next function end" },
       },
     },
     select = {

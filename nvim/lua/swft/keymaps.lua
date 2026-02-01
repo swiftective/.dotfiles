@@ -9,7 +9,6 @@ local keymaps = {
   { "n", "N", "Nzz" },
   { { "n", "v" }, "G", "Gzz" },
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
-  { "n", ";b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
 
   { "n", "<leader>dd", '"_d', "Delete without yanking" },
@@ -86,19 +85,13 @@ local keymaps = {
     "End of Line",
   },
 
-  { "n", "wv", "<C-w>vwm", opts = { remap = true } },
-  { "n", "ww", "<C-w>w" },
-  { "n", "wo", "<C-w>o" },
-  { "n", "wq", "<C-w>q" },
-  { "n", "wj", "<C-w>j" },
-  { "n", "wk", "<C-w>k" },
-  { "n", "wl", "<C-w>l" },
-  { "n", "wh", "<C-w>h" },
-  { "n", "wf", "1<C-w>wwm", opts = { remap = true } },
-  { "n", "wd", "2<C-w>wwm", opts = { remap = true } },
-  { "n", "ws", "3<C-w>wwm", opts = { remap = true } },
-  { "n", "wa", "4<C-w>wwm", opts = { remap = true } },
-  { "n", "we", "<C-w>pwm", opts = { remap = true } },
+  { "n", "w", "<C-w>" },
+  { "n", "wv", "<C-w>v<C-w>l" },
+  { "n", "ws", "<C-w>s<C-w>j" },
+  { "n", ";f", "1<C-w>wwm", opts = { remap = true } },
+  { "n", ";d", "2<C-w>wwm", opts = { remap = true } },
+  { "n", ";s", "3<C-w>wwm", opts = { remap = true } },
+  { "n", ";a", "4<C-w>wwm", opts = { remap = true } },
 
   {
     "n",
@@ -330,15 +323,6 @@ local keymaps = {
   {
     "n",
     "]t",
-    function()
-      require("todo-comments").jump_next()
-    end,
-    "Next TODO",
-  },
-
-  {
-    "n",
-    ";t",
     function()
       require("todo-comments").jump_next()
     end,

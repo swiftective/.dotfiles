@@ -8,6 +8,8 @@ local create_autocmd = function(autocmds)
   end
 end
 
+local initialized_clients = {}
+
 local autocmds = {
 
   {
@@ -53,18 +55,48 @@ local autocmds = {
   { event = "BufWritePre", pattern = "*", command = "%s/\\s\\+$//e", group = group },
 
   {
-    event = "BufLeave",
-    pattern = "*",
+    event = "LspAttach",
     group = group,
-    callback = function()
-      local buffers = vim.api.nvim_list_bufs()
+    pattern = "*",
+    callback = function(ev)
+      local client_id = ev.data.client_id
 
-      for _, v in ipairs(buffers) do
-        local ft = vim.api.nvim_get_option_value("filetype", { buf = v })
-        if ft == "fugitive" then
-          vim.api.nvim_buf_delete(v, {})
-        end
+      if initialized_clients[client_id] then
+        return
       end
+
+      initialized_clients[client_id] = true
+
+      vim.defer_fn(function()
+        local clients = vim.lsp.get_clients { bufnr = 0 }
+        if #clients == 0 then
+          return
+        end
+
+        local devicons = require "nvim-web-devicons"
+        local buf_ft = vim.bo.filetype
+
+        local parts = {}
+
+        for _, client in ipairs(clients) do
+          local icon = "[LSP]" -- fallback
+
+          -- Try to get a language icon via filetype
+          local devicon = devicons.get_icon_by_filetype(buf_ft, { default = false })
+          if devicon then
+            icon = devicon
+          end
+
+          table.insert(parts, string.format("%s %s", icon, client.name))
+        end
+
+        require("fidget").notify(table.concat(parts, ", "), nil, {
+          title = "LSP Active",
+          key = "lsp_attach_notify",
+          annote = nil,
+          ttl = 2,
+        })
+      end, 500)
     end,
   },
 }

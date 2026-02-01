@@ -3,8 +3,20 @@ return { -- Lua
   -- LSP
   {
     "j-hui/fidget.nvim",
-    tag = "legacy",
-    opts = { window = { blend = 0, relative = "editor" } },
+    opts = {
+      notification = {
+        configs = {
+          default = {
+            format_annote = function()
+              return ""
+            end,
+          },
+        },
+        window = {
+          winblend = 0, -- Background transparency (0 = solid)
+        },
+      },
+    },
     event = "VeryLazy",
   },
 

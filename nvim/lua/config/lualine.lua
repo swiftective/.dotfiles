@@ -49,6 +49,3 @@ lualine.setup {
   tabline = {},
   extensions = {},
 }
-
----@diagnostic disable-next-line: missing-parameter
-lualine.hide()

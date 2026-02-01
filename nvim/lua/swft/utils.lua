@@ -89,15 +89,13 @@ M.maximize_win = function()
   local wins = get_non_floating_windows()
   local zen_width = 100
 
-  if #wins > 2 then
-    local increment = math.floor((vim.o.columns - zen_width) / (#wins - 1))
+  local increment = math.floor((vim.o.columns - zen_width) / (#wins - 1))
 
-    for i, v in ipairs(wins) do
-      if i == curr_win then
-        vim.api.nvim_win_set_width(v, zen_width)
-      else
-        vim.api.nvim_win_set_width(v, increment)
-      end
+  for i, v in ipairs(wins) do
+    if i == curr_win then
+      vim.api.nvim_win_set_width(v, zen_width)
+    else
+      vim.api.nvim_win_set_width(v, increment)
     end
   end
 end

@@ -46,6 +46,8 @@ require("formatter").setup {
 
     markdown = { require("formatter.filetypes.markdown").prettier },
 
+    go = lsp_format,
+
     sql = {
       {
         exe = "sqlfmt",
