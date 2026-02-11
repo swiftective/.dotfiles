@@ -71,27 +71,11 @@ local keymaps = {
     "Switch Files",
   },
 
-  {
-    { "n", "x", "o" },
-    "H",
-    "0",
-    "Start of Line",
-  },
-
-  {
-    { "n", "x", "o" },
-    "L",
-    "$",
-    "End of Line",
-  },
-
   { "n", "w", "<C-w>" },
   { "n", "wv", "<C-w>v<C-w>l" },
   { "n", "ws", "<C-w>s<C-w>j" },
-  { "n", ";f", "1<C-w>wwm", opts = { remap = true } },
-  { "n", ";d", "2<C-w>wwm", opts = { remap = true } },
-  { "n", ";s", "3<C-w>wwm", opts = { remap = true } },
-  { "n", ";a", "4<C-w>wwm", opts = { remap = true } },
+
+  { "n", "L", "<C-w>wwm", opts = { remap = true } },
 
   {
     "n",

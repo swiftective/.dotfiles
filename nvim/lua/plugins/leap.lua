@@ -12,24 +12,12 @@ return {
   },
 
   {
-    "ggandor/flit.nvim",
-    event = "VeryLazy",
-    dependencies = "ggandor/leap.nvim",
-    opts = {
-      keys = { f = "f", F = "F", t = "t", T = "T" },
-      labeled_modes = "nvo",
-      clever_repeat = true,
-      multiline = true,
-      opts = {},
-    },
-  },
-
-  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     config = function()
       local harpoon = require "harpoon"
+      local utils = require "swft.utils"
 
       harpoon:setup {
         settings = {
@@ -37,18 +25,26 @@ return {
         },
       }
 
-      local function custom_keymaps(keymaps)
-        for _, value in ipairs(keymaps) do
-          local map = vim.keymap.set
-          local opts = {}
-          if value.opts then
-            value.opts.desc = value[4]
-            opts = value.opts
-          else
-            opts = { noremap = true, silent = true, desc = value[4] }
-          end
-          map(value[1], value[2], value[3], opts)
+      harpoon:setup {}
+
+      -- basic telescope configuration
+      local conf = require("telescope.config").values
+      local function toggle_telescope(harpoon_files)
+        local file_paths = {}
+        for _, item in ipairs(harpoon_files.items) do
+          table.insert(file_paths, item.value)
         end
+
+        require("telescope.pickers")
+          .new({}, {
+            prompt_title = "Harpoon",
+            finder = require("telescope.finders").new_table {
+              results = file_paths,
+            },
+            previewer = conf.file_previewer {},
+            sorter = conf.generic_sorter {},
+          })
+          :find()
       end
 
       local keymaps = {
@@ -65,16 +61,6 @@ return {
 
         {
           "n",
-          "<C-e>",
-          function()
-            harpoon:list():add()
-            harpoon.ui:toggle_quick_menu(harpoon:list())
-          end,
-          "Add File and Open Harpoon Menu",
-        },
-
-        {
-          "n",
           "mo",
           function()
             harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -84,42 +70,15 @@ return {
 
         {
           "n",
-          ",f",
+          "H",
           function()
-            harpoon:list():select(1)
+            toggle_telescope(harpoon:list())
           end,
-          "Harpoon Goto File 1",
-        },
-
-        {
-          "n",
-          ",d",
-          function()
-            harpoon:list():select(2)
-          end,
-          "Harpoon Goto File 2",
-        },
-
-        {
-          "n",
-          ",s",
-          function()
-            harpoon:list():select(3)
-          end,
-          "Harpoon Goto File 3",
-        },
-
-        {
-          "n",
-          ",a",
-          function()
-            harpoon:list():select(4)
-          end,
-          "Harpoon Goto File 4",
+          "Open harpoon window",
         },
       }
 
-      custom_keymaps(keymaps)
+      utils.custom_keymaps(keymaps)
     end,
     event = "VeryLazy",
   },
