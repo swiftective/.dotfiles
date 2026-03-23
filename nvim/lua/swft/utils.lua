@@ -22,13 +22,16 @@ M.fugitive_toggle = function()
   vim.cmd [[Git]]
 end
 
+local lualine_hide = true
 M.toggle_lualine = function()
   local lualine = require "lualine"
-  if vim.o.statusline == " " then
+  if lualine_hide then
     lualine.hide { unhide = true }
-    return
+  else
+    lualine.hide()
   end
-  lualine.hide()
+
+  lualine_hide = not lualine_hide
 end
 
 M.project_files = function()

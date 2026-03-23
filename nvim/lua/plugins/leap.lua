@@ -67,15 +67,6 @@ return {
           end,
           "Open Harpoon Menu",
         },
-
-        {
-          "n",
-          "H",
-          function()
-            toggle_telescope(harpoon:list())
-          end,
-          "Open harpoon window",
-        },
       }
 
       utils.custom_keymaps(keymaps)

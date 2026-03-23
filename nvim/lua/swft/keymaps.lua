@@ -8,6 +8,8 @@ local keymaps = {
   { "n", "n", "nzz" },
   { "n", "N", "Nzz" },
   { { "n", "v" }, "G", "Gzz" },
+  { "n", "L", "$" },
+  { "n", "H", "0" },
   { "n", "]b", "<cmd>bn<CR>", "Next Buffer" },
   { "n", "[b", "<cmd>bp<CR>", "Previous Buffer" },
 
@@ -74,8 +76,6 @@ local keymaps = {
   { "n", "w", "<C-w>" },
   { "n", "wv", "<C-w>v<C-w>l" },
   { "n", "ws", "<C-w>s<C-w>j" },
-
-  { "n", "L", "<C-w>wwm", opts = { remap = true } },
 
   {
     "n",

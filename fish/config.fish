@@ -11,3 +11,8 @@ end
 # pnpm end
 
 zoxide init --cmd j fish | source
+
+if string match -q -- "$HOME/projects/*" (pwd)
+  functions -e mise
+  mise activate fish | source
+end

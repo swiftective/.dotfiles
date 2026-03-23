@@ -48,6 +48,8 @@ require("formatter").setup {
 
     go = lsp_format,
 
+    json = require("formatter.filetypes.json").prettier,
+
     sql = {
       {
         exe = "sqlfmt",
